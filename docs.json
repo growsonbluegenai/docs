@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "BlueGenAI Docs",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -11,112 +11,94 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
+        "tab": "Introduction",
+        "pages": [
+          "introduction/welcome",
+          "introduction/plans-and-credits",
+          "introduction/getting-started",
+          "introduction/faq"
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "tab": "Features",
+        "pages": [
+          "features/overview"
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "pages": [
+          "integrations/introduction"
+        ]
+      },
+      {
+        "tab": "Tips & Tricks",
+        "pages": [
+          "tips-tricks/best-practice"
+        ]
+      },
+      {
+        "tab": "Prompt engineering",
+        "pages": [
+          "prompt-engineering/overview"
+        ]
+      },
+      {
+        "tab": "Use cases",
+        "pages": [
+          "use-cases/overview"
+        ]
+      },
+      {
+        "tab": "Glossary",
+        "pages": [
+          "glossary/index"
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "pages": [
+          "changelog/index"
         ]
       }
     ],
     "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
+      "anchors": []
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/bluegenai-light.svg",
+    "dark": "/logo/bluegenai-dark.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://bluegenai.com/support"
+      },
+      {
+        "label": "Blog",
+        "href": "https://bluegenai.com/blog"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/bluegenai",
+      "github": "https://github.com/bluegenai",
+      "linkedin": "https://linkedin.com/company/bluegenai"
     }
   }
 }
