@@ -15,6 +15,36 @@
         "pages": [
           "introduction/welcome"
         ]
+      },
+      {
+        "tab": "Get Help by Topic",
+        "pages": [
+          "help-by-topic/overview"
+        ]
+      },
+      {
+        "tab": "Prompt Writing Tips",
+        "pages": [
+          "prompt-writing-tips/overview"
+        ]
+      },
+      {
+        "tab": "Best Practices",
+        "pages": [
+          "best-practices/overview"
+        ]
+      },
+      {
+        "tab": "Release Notes",
+        "pages": [
+          "release-notes/overview"
+        ]
+      },
+      {
+        "tab": "Change Log",
+        "pages": [
+          "change-log/overview"
+        ]
       }
     ]
   },
