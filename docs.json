@@ -13,7 +13,8 @@
       {
         "tab": "Introduction",
         "pages": [
-          "introduction/welcome"
+          "introduction/welcome",
+          "introduction/getting-started"
         ]
       },
       {
