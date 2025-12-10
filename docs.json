@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "aspen",
+  "theme": "mint",
   "name": "BlueGenAI Docs",
   "colors": {
   "primary": "#16A34A",
