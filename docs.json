@@ -38,7 +38,8 @@
       {
         "tab": "Change Log",
         "pages": [
-          "change-log/change-log"
+          "change-log/change-log",
+          "change-log/change-log-ex"
         ]
       }
     ]
