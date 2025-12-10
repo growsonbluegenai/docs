@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "BlueGenAI Docs",
   "colors": {
-  "primary": "#007BFF",
-  "light": "#07C983",
-  "dark": "#15803D"
+    "primary": "#007BFF",
+    "light": "#66B2FF",
+    "dark": "#0056B3"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -38,8 +38,14 @@
       {
         "tab": "Change Log",
         "pages": [
-          "change-log/11-24-2025",
-          "change-log/11-14-2025"
+          "change-log/11-21-2025",
+          "change-log/11-14-2025",
+          "change-log/11-7-2025",
+          "change-log/10-31-2025",
+          "change-log/10-24-2025",
+          "change-log/10-17-2025",
+          "change-log/10-10-2025",
+          "change-log/September-2025"
         ]
       }
     ]
