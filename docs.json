@@ -13,92 +13,13 @@
       {
         "tab": "Introduction",
         "pages": [
-          "introduction/welcome",
-          "introduction/plans-and-credits",
-          "introduction/getting-started",
-          "introduction/faq"
-        ]
-      },
-      {
-        "tab": "Features",
-        "pages": [
-          "features/overview"
-        ]
-      },
-      {
-        "tab": "Integrations",
-        "pages": [
-          "integrations/introduction"
-        ]
-      },
-      {
-        "tab": "Tips & Tricks",
-        "pages": [
-          "tips-tricks/best-practice"
-        ]
-      },
-      {
-        "tab": "Prompt engineering",
-        "pages": [
-          "prompt-engineering/overview"
-        ]
-      },
-      {
-        "tab": "Use cases",
-        "pages": [
-          "use-cases/overview"
-        ]
-      },
-      {
-        "tab": "Glossary",
-        "pages": [
-          "glossary/index"
-        ]
-      },
-      {
-        "tab": "Changelog",
-        "pages": [
-          "changelog/index"
+          "introduction/welcome"
         ]
       }
-    ],
-    "global": {
-      "anchors": []
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/BGAI_Logo.svg",
-    "dark": "/logo/BGAI_Logo.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "https://bluegenai.com/support"
-      },
-      {
-        "label": "Blog",
-        "href": "https://bluegenai.com/blog"
-      }
-    ]
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/bluegenai",
-      "github": "https://github.com/bluegenai",
-      "linkedin": "https://linkedin.com/company/bluegenai"
-    }
+    "light": "/logo/bluegenai-light.svg",
+    "dark": "/logo/bluegenai-dark.svg"
   }
 }
