@@ -35,12 +35,6 @@
         ]
       },
       {
-        "tab": "Release Notes",
-        "pages": [
-          "release-notes/overview"
-        ]
-      },
-      {
         "tab": "Change Log",
         "pages": [
           "change-log/overview"
