@@ -15,12 +15,13 @@
         "pages": [
           "introduction/welcome",
           "introduction/what-can-users-do-with-blue-gen-ai",
+          "introduction/start-here-how-to-navigate",
           "introduction/getting-started",
           "introduction/things-to-consider"
         ]
       },
       {
-        "tab": "Get Help by Topic",
+        "tab": "Platform",
         "pages": [
           "help-by-topic/overview"
         ]
