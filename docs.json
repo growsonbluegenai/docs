@@ -12,30 +12,25 @@
     "tabs": [
       {
         "tab": "Introduction",
-        "pages": [
-          "introduction/welcome",
-          "introduction/what-can-users-do-with-blue-gen-ai",
-          "introduction/start-here-how-to-navigate",
-          "introduction/getting-started",
-          "introduction/things-to-consider"
-        ]
-      },
-      {
-        "tab": "Platform",
-        "pages": [
-          "help-by-topic/overview"
-        ]
-      },
-      {
-        "tab": "Prompt Engineering",
-        "pages": [
-          "prompt-writing-tips/overview"
-        ]
-      },
-      {
-        "tab": "Tips & Tricks",
-        "pages": [
-          "best-practices/overview"
+        "anchors": [
+          {
+            "anchor": "Platform Overview"
+          },
+          {
+            "anchor": "Building Web Apps"
+          },
+          {
+            "anchor": "Building on Low-Code"
+          },
+          {
+            "anchor": "Resources"
+          },
+          {
+            "anchor": "Untitled Anchor"
+          },
+          {
+            "anchor": "Admin Center"
+          }
         ]
       },
       {
