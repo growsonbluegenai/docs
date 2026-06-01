@@ -9,42 +9,24 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "anchors": [
       {
-        "tab": "Introduction",
-        "anchors": [
-          {
-            "anchor": "Platform Overview"
-          },
-          {
-            "anchor": "Building Web Apps"
-          },
-          {
-            "anchor": "Building on Low-Code"
-          },
-          {
-            "anchor": "Resources"
-          },
-          {
-            "anchor": "Untitled Anchor"
-          },
-          {
-            "anchor": "Admin Center"
-          }
-        ]
+        "anchor": "Platform Overview"
       },
       {
-        "tab": "Change Log",
-        "pages": [
-          "change-log/11-21-2025",
-          "change-log/11-14-2025",
-          "change-log/11-7-2025",
-          "change-log/10-31-2025",
-          "change-log/10-24-2025",
-          "change-log/10-17-2025",
-          "change-log/10-10-2025",
-          "change-log/September-2025"
-        ]
+        "anchor": "Untitled Anchor"
+      },
+      {
+        "anchor": "Building on Low-Code"
+      },
+      {
+        "anchor": "Resources"
+      },
+      {
+        "anchor": "Untitled Anchor"
+      },
+      {
+        "anchor": "Admin Center"
       }
     ]
   },
