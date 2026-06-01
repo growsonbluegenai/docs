@@ -30,6 +30,12 @@
         ]
       },
       {
+        "tab": "Hybrid Solutions",
+        "pages": [
+          "hybrid-solutions/overview"
+        ]
+      },
+      {
         "tab": "Resources",
         "pages": [
           "resources/overview"
