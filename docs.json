@@ -59,5 +59,12 @@
     "light": "https://bluegenai.com/logo.svg",
     "dark": "https://bluegenai.com/logo.svg",
     "href": "https://www.bluegenai.com/"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/user-help-center-portal",
+      "destination": "/platform-overview/overview",
+      "permanent": true
+    }
+  ]
 }
