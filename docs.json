@@ -63,7 +63,7 @@
   "redirects": [
     {
       "source": "/user-help-center-portal",
-      "destination": "/platform-overview/overview",
+      "destination": "/index",
       "permanent": true
     }
   ]
