@@ -11,9 +11,40 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "User Help Center Portal",
+        "tab": "Platform Overview",
         "pages": [
-          "user-help-center-portal"
+          "index",
+          "platform-overview/overview"
+        ]
+      },
+      {
+        "tab": "Building Web Apps",
+        "pages": [
+          "building-web-apps/overview"
+        ]
+      },
+      {
+        "tab": "Building on Low-Code",
+        "pages": [
+          "building-on-low-code/overview"
+        ]
+      },
+      {
+        "tab": "Resources",
+        "pages": [
+          "resources/overview"
+        ]
+      },
+      {
+        "tab": "Help & Support",
+        "pages": [
+          "help-and-support/overview"
+        ]
+      },
+      {
+        "tab": "Admin Center",
+        "pages": [
+          "admin-center/overview"
         ]
       }
     ]
