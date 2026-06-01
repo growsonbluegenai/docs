@@ -9,24 +9,12 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "anchors": [
+    "tabs": [
       {
-        "anchor": "Platform Overview"
-      },
-      {
-        "anchor": "Untitled Anchor"
-      },
-      {
-        "anchor": "Building on Low-Code"
-      },
-      {
-        "anchor": "Resources"
-      },
-      {
-        "anchor": "Untitled Anchor"
-      },
-      {
-        "anchor": "Admin Center"
+        "tab": "User Help Center Portal",
+        "pages": [
+          "user-help-center-portal"
+        ]
       }
     ]
   },
