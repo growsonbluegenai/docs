@@ -13,8 +13,8 @@
       {
         "tab": "Platform Overview",
         "pages": [
-          "platform-overview/overview",
-          "index"
+          "index",
+          "platform-overview/overview"
         ]
       },
       {

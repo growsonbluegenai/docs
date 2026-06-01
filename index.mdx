@@ -5,13 +5,76 @@ mode: "custom"
 hidden: true
 ---
 
-Welcome to the **BlueGenAI User Help Center Portal**.
+{/*
+  ============================================================
+  DEVELOPER NOTES (not visible to end users)
+  ============================================================
+  This is the SITE LANDING PAGE at /index (i.e., docs.bluegenai.com/).
 
-This is your starting point. Use the tabs above to navigate:
+  Why it looks the way it does:
+  - mode: "custom"   → Hides the left sidebar and removes the
+                        "active tab" highlight. Gives a clean landing
+                        page with only the top navbar + tabs.
+  - hidden: true     → Keeps this page OUT of the Platform Overview
+                        sidebar so users don't see a duplicate entry
+                        when they click into that tab.
 
-- **Platform Overview** — Learn what BlueGenAI is and what it does.
-- **Building Web Apps** — Build full-stack web applications.
-- **Building on Low-Code** — Accelerate delivery on platforms like TAP and ServiceNow.
-- **Resources** — Guides, references, and downloads.
-- **Help & Support** — Get help when you need it.
-- **Admin Center** — Manage your account and settings.
+  Why it's nested under the "Platform Overview" tab in the editor:
+  - Mintlify's navigation requires every page to live under a tab.
+    Pages cannot sit at the root above tabs. This page is parked
+    under the first tab (Platform Overview) for that reason only.
+    It does NOT show up in the Platform Overview sidebar for users.
+
+  Redirect:
+  - /user-help-center-portal → /index (configured in docs.json
+    "redirects" so the old BlueGenAI website link still works).
+
+  To edit this landing page's CONTENT, just edit below the
+  closing comment. To edit how it BEHAVES, change the frontmatter
+  fields above.
+  ============================================================
+  */}
+
+<div className="max-w-4xl mx-auto px-6 py-12">
+  ## 1.    What is BlueGenAI?
+
+  BlueGenAI is an AI-powered platform purpose-built for modernizing government systems. It automates every phase of the government software development lifecycle — from early solutioning and requirements through design, build, test, and deployment — in a single platform.
+
+  ***
+
+  ## 2.    Who Are You?
+
+  **Solutioning Teams**  You build proposals, create prototypes, and support BD pursuits. Start with **Phase 1: Pre-RFP Solutioning** in the **Building Web Apps** or **Building on Low-Code** tabs.
+
+  **Business Analysts**  You refine requirements, document workflows, and manage traceability. Start with **Phase 2: Requirements Refinement & CAB**.
+
+  **Application Engineers**  You build and deploy web applications, low-code configurations, and hybrid solutions. Start with **Phase 4: Development** in the **Building Web Apps**, **Building on Low-Code**, or **Hybrid Solutions** tabs.
+
+  ***
+
+  ## 3.    Common Workflows
+
+  **Modernize a Legacy System** — Coming soon
+
+  **Prototype for a Proposal** — Coming soon
+
+  **Build a Web Application** — Coming soon
+
+  **Deploy to a Low-Code Platform** — Coming soon
+
+  **Generate Compliance Documents** — Coming soon
+
+  **Collaborate with a Team** — Coming soon
+
+  ***
+
+  ## 4.    Latest Updates
+
+  Check back here for the latest platform updates and release notes. Full changelog available in the **Resources** tab.
+
+  ***
+
+  ## 5.    Need Help?
+
+  Visit the **Help & Support** tab for troubleshooting guides, FAQs, and contact information.
+</div>
