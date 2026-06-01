@@ -56,8 +56,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/BGAI_Logo.svg",
-    "dark": "/logo/BGAI_Logo.svg",
+    "light": "https://bluegenai.com/logo.svg",
+    "dark": "https://bluegenai.com/logo.svg",
     "href": "https://www.bluegenai.com/"
   }
 }
