@@ -1,6 +1,6 @@
 ---
 title: "User Help Center Portal"
-description: "Welcome to the BlueGenAI User Help Center Portal."
+description: "Your starting point for everything BlueGenAI."
 mode: "custom"
 hidden: true
 ---
@@ -9,86 +9,132 @@ hidden: true
   ============================================================
   DEVELOPER NOTES (not visible to end users)
   ============================================================
-  This is the SITE LANDING PAGE at /index (i.e., docs.bluegenai.com/).
+  This is the SITE LANDING PAGE at /index (docs.bluegenai.com/).
 
-  Why it looks the way it does:
-  - mode: "custom"   → Hides the left sidebar and removes the
-                        "active tab" highlight. Gives a clean landing
-                        page with only the top navbar + tabs.
-  - hidden: true     → Keeps this page OUT of the Platform Overview
-                        sidebar so users don't see a duplicate entry
-                        when they click into that tab.
-
-  Why it's nested under the "Platform Overview" tab in the editor:
-  - Mintlify's navigation requires every page to live under a tab.
-    Pages cannot sit at the root above tabs. This page is parked
-    under the first tab (Platform Overview) for that reason only.
-    It does NOT show up in the Platform Overview sidebar for users.
-
-  Redirect:
-  - /user-help-center-portal → /index (configured in docs.json
-    "redirects" so the old BlueGenAI website link still works).
-
-  To edit this landing page's CONTENT, just edit below the
-  closing comment. To edit how it BEHAVES, change the frontmatter
-  fields above.
+  Behavior:
+  - mode: "custom"  -> Hides left sidebar and active-tab highlight.
+  - hidden: true    -> Keeps page out of Platform Overview sidebar.
+  - Nested under Platform Overview tab in editor (Mintlify requirement).
+  - Redirect /user-help-center-portal -> /index is in docs.json.
   ============================================================
   */}
 
-<div className="max-w-6xl mx-auto px-6 py-16">
-  <div className="text-center mb-20">
-    <div className="inline-block px-4 py-1.5 mb-6 text-sm font-semibold text-blue-700 bg-blue-50 rounded-full border border-blue-100">
-      AI-Powered Government Modernization
-    </div>
+<div className="relative overflow-hidden">
+  {/* Gradient background blobs */}
 
-    <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
-      User Help Center Portal
-    </h1>
+  <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-br from-blue-500/20 via-blue-400/10 to-transparent rounded-full blur-3xl" />
 
-    <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-      Your starting point for everything BlueGenAI — from solutioning and requirements to design, build, and deployment.
-    </p>
+    <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-indigo-500/15 to-transparent rounded-full blur-3xl" />
   </div>
 
-  ## 1.    What is BlueGenAI?
+  <div className="max-w-6xl mx-auto px-6 py-20">
+    {/* HERO */}
 
-  BlueGenAI is an AI-powered platform purpose-built for modernizing government systems. It automates every phase of the government software development lifecycle — from early solutioning and requirements through design, build, test, and deployment — in a single platform.
+    <div className="text-center mb-24">
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-sm font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/50 rounded-full border border-blue-200 dark:border-blue-800">
+        <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
 
-  ***
+        AI-Powered Government Modernization
+      </div>
 
-  ## 2.    Who Are You?
+      <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-none">
+        User Help <br />
+        <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Center Portal</span>
+      </h1>
 
-  **Solutioning Teams** — You build proposals, create prototypes, and support BD pursuits. Start with **Phase 1: Pre-RFP Solutioning** in the **Building Web Apps** or **Building on Low-Code** tabs.
+      <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        Your starting point for everything BlueGenAI — from solutioning and requirements to design, build, and deployment.
+      </p>
+    </div>
 
-  **Business Analysts**  You refine requirements, document workflows, and manage traceability. Start with **Phase 2: Requirements Refinement & CAB**.
+    {/* SECTION 1 - WHAT IS BLUEGENAI */}
 
-  **Application Engineers**  You build and deploy web applications, low-code configurations, and hybrid solutions. Start with **Phase 4: Development** in the **Building Web Apps**, **Building on Low-Code**, or **Hybrid Solutions** tabs.
+    <div className="mb-24 p-8 md:p-12 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">1</div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">What is BlueGenAI?</h2>
+      </div>
 
-  ***
+      <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed m-0">
+        BlueGenAI is an AI-powered platform purpose-built for modernizing government systems. It automates every phase of the government software development lifecycle — from early solutioning and requirements through design, build, test, and deployment — in a single platform.
+      </p>
+    </div>
 
-  ## 3.    Common Workflows
+    {/* SECTION 2 - WHO ARE YOU */}
 
-  **Modernize a Legacy System** — Coming soon
+    <div className="mb-24">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">2</div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">Who Are You?</h2>
+      </div>
 
-  **Prototype for a Proposal** — Coming soon
+      <CardGroup cols={3}>
+        <Card title="Solutioning Teams" icon="lightbulb">
+          You build proposals, create prototypes, and support BD pursuits.
 
-  **Build a Web Application** — Coming soon
+          **Start here:** Phase 1 — Pre-RFP Solutioning.
+        </Card>
 
-  **Deploy to a Low-Code Platform** — Coming soon
+        <Card title="Business Analysts" icon="clipboard-list">
+          You refine requirements, document workflows, and manage traceability.
 
-  **Generate Compliance Documents** — Coming soon
+          **Start here:** Phase 2 — Requirements & CAB.
+        </Card>
 
-  **Collaborate with a Team** — Coming soon
+        <Card title="Application Engineers" icon="code">
+          You build and deploy web apps, low-code configs, and hybrid solutions.
 
-  ***
+          **Start here:** Phase 4 — Development.
+        </Card>
+      </CardGroup>
+    </div>
 
-  ## 4.    Latest Updates
+    {/* SECTION 3 - COMMON WORKFLOWS */}
 
-  Check back here for the latest platform updates and release notes. Full changelog available in the **Resources** tab.
+    <div className="mb-24">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">3</div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">Common Workflows</h2>
+      </div>
 
-  ***
+      <CardGroup cols={2}>
+        <Card title="Modernize a Legacy System" icon="arrows-rotate">
+          <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+        </Card>
 
-  ## 5.    Need Help?
+        <Card title="Prototype for a Proposal" icon="wand-magic-sparkles">
+          <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+        </Card>
 
-  Visit the **Help & Support** tab for troubleshooting guides, FAQs, and contact information.
+        <Card title="Build a Web Application" icon="browser">
+          <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+        </Card>
+
+        <Card title="Deploy to a Low-Code Platform" icon="cubes">
+          <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+        </Card>
+
+        <Card title="Generate Compliance Documents" icon="file-shield">
+          <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+        </Card>
+
+        <Card title="Collaborate with a Team" icon="users">
+          <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+        </Card>
+      </CardGroup>
+    </div>
+
+    {/* SECTION 4 + 5 - UPDATES & HELP */}
+
+    <CardGroup cols={2}>
+      <Card title="Latest Updates" icon="bell" href="/resources/overview">
+        Check back here for the latest platform updates and release notes. Full changelog available in the **Resources** tab.
+      </Card>
+
+      <Card title="Need Help?" icon="life-ring" href="/help-and-support/overview">
+        Visit the **Help & Support** tab for troubleshooting guides, FAQs, and contact information.
+      </Card>
+    </CardGroup>
+  </div>
 </div>
