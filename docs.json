@@ -11,6 +11,11 @@
   "navigation": {
     "tabs": [
       {
+        "tab": "Home",
+        "icon": "house",
+        "href": "/"
+      },
+      {
         "tab": "Platform Overview",
         "pages": [
           "index",
