@@ -82,13 +82,12 @@
         "tab": "Resources",
         "pages": [
           "resources/prompting-best-practices",
-          "resources/bd-pre-sales-usage-guide",
           "resources/bd-and-pre-sales-usage-guide",
           "resources/procurement-document-generation",
+          "resources/changelog-and-release-notes",
           "resources/glossary",
           "resources/compliance-reference-guide",
-          "resources/inspiration-and-examples",
-          "resources/changelog-and-release-notes"
+          "resources/inspiration-and-examples"
         ]
       },
       {
@@ -105,11 +104,10 @@
         "pages": [
           "admin-center/admin-dashboard-overview",
           "admin-center/user-management",
-          "admin-center/credits-billing-configuration",
+          "admin-center/platform-configuration",
           "admin-center/credits-and-billing-configuration",
           "admin-center/authentication-settings",
-          "admin-center/bulk-operations",
-          "admin-center/platform-configuration"
+          "admin-center/bulk-operations"
         ]
       }
     ]
