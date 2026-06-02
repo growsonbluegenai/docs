@@ -19,43 +19,97 @@
         "tab": "Platform Overview",
         "pages": [
           "index",
-          "platform-overview/overview"
+          "platform-overview/what-is-bluegenai",
+          "platform-overview/who-is-it-for",
+          "platform-overview/six-phase-sdlc",
+          "platform-overview/platform-inputs-guide",
+          "platform-overview/foundational-capabilities",
+          "platform-overview/compliance-and-security",
+          "platform-overview/home-screen-and-projects",
+          "platform-overview/navigation-and-interface-guide",
+          "platform-overview/collaboration-and-sharing",
+          "platform-overview/tokens-credits-billing",
+          "platform-overview/quick-start-guide"
         ]
       },
       {
         "tab": "Building Web Apps",
         "pages": [
-          "building-web-apps/overview"
+          "building-web-apps/web-apps-overview",
+          "building-web-apps/preparing-your-inputs",
+          "building-web-apps/phase-1-pre-rfp-solutioning",
+          "building-web-apps/phase-2-requirements-refinement-cab",
+          "building-web-apps/phase-3-system-design",
+          "building-web-apps/phase-4-development-build-mode",
+          "building-web-apps/phase-4-ticket-generation-management",
+          "building-web-apps/phase-4-ai-vs-human-work-allocation",
+          "building-web-apps/phase-5-testing",
+          "building-web-apps/phase-6-deployment-and-sharing",
+          "building-web-apps/generating-supporting-documents",
+          "building-web-apps/design-mode-and-prototyping",
+          "building-web-apps/supported-tech-stack"
         ]
       },
       {
         "tab": "Building on Low-Code",
         "pages": [
-          "building-on-low-code/overview"
+          "building-on-low-code/low-code-overview",
+          "building-on-low-code/supported-platforms-guide",
+          "building-on-low-code/connecting-to-your-platform-instance",
+          "building-on-low-code/preparing-your-inputs",
+          "building-on-low-code/phase-1-pre-rfp-solutioning",
+          "building-on-low-code/phase-2-requirements-refinement-cab",
+          "building-on-low-code/phase-3-system-design",
+          "building-on-low-code/phase-4-development-build-mode",
+          "building-on-low-code/phase-4-ticket-generation-management",
+          "building-on-low-code/phase-4-ai-vs-human-work-allocation",
+          "building-on-low-code/phase-5-testing",
+          "building-on-low-code/phase-6-deployment",
+          "building-on-low-code/generating-supporting-documents",
+          "building-on-low-code/tap-platform-reference",
+          "building-on-low-code/servicenow-platform-reference",
+          "building-on-low-code/salesforce-platform-reference",
+          "building-on-low-code/powerapps-platform-reference"
         ]
       },
       {
         "tab": "Hybrid Solutions",
         "pages": [
-          "hybrid-solutions/overview"
+          "hybrid-solutions/coming-soon"
         ]
       },
       {
         "tab": "Resources",
         "pages": [
-          "resources/overview"
+          "resources/prompting-best-practices",
+          "resources/bd-pre-sales-usage-guide",
+          "resources/bd-and-pre-sales-usage-guide",
+          "resources/procurement-document-generation",
+          "resources/glossary",
+          "resources/compliance-reference-guide",
+          "resources/inspiration-and-examples",
+          "resources/changelog-and-release-notes"
         ]
       },
       {
         "tab": "Help & Support",
         "pages": [
-          "help-and-support/overview"
+          "help-and-support/troubleshooting-guide",
+          "help-and-support/faq",
+          "help-and-support/contact-support",
+          "help-and-support/known-issues"
         ]
       },
       {
         "tab": "Admin Center",
         "pages": [
-          "admin-center/overview"
+          "admin-center/admin-dashboard-overview",
+          "admin-center/user-management",
+          "admin-center/credits-billing-configuration",
+          "admin-center/credits-and-billing-configuration",
+          "admin-center/authentication-settings",
+          "admin-center/bulk-operations",
+          "admin-center/platform-configuration"
         ]
       }
     ]
