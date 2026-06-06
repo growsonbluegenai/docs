@@ -5,6 +5,26 @@ mode: "custom"
 
 {/*
   ============================================================
+  ⚠️  DO NOT EDIT WITHOUT REVIEW  ⚠️
+  ============================================================
+  This is the LOCKED landing page for docs.bluegenai.com.
+
+  Layout decisions that MUST be preserved:
+  - mode: "custom"                  -> Hides sidebar + tab highlight on landing.
+  - Single top-level wrapper <div>  -> Do NOT duplicate the block; the page
+                                       previously rendered all content twice.
+  - max-w-full mx-auto px-6 md:px-12 -> Content fills full screen width.
+  - hidden: true                    -> Keeps page out of Platform Overview sidebar.
+  - Nested under Platform Overview tab in editor (Mintlify requirement).
+  - Redirect /user-help-center-portal -> /index is in docs.json.
+
+  Before changing ANY of the above, confirm with the docs owner.
+  Accidental edits here will break the demo landing experience.
+  ============================================================
+  */}
+
+{/*
+  ============================================================
   DEVELOPER NOTES (not visible to end users)
   ============================================================
   This is the SITE LANDING PAGE at /index (docs.bluegenai.com/).
