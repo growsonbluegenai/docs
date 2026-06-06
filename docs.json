@@ -18,6 +18,7 @@
       {
         "tab": "Platform Overview",
         "pages": [
+          "index",
           "platform-overview/what-is-bluegenai",
           "platform-overview/who-is-it-for",
           "platform-overview/six-phase-sdlc",
