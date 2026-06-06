@@ -13,12 +13,13 @@
       {
         "tab": "Home",
         "icon": "house",
-        "href": "/"
+        "pages": [
+          "index"
+        ]
       },
       {
         "tab": "Platform Overview",
         "pages": [
-          "index",
           "platform-overview/what-is-bluegenai",
           "platform-overview/who-is-it-for",
           "platform-overview/six-phase-sdlc",
@@ -120,6 +121,11 @@
   "redirects": [
     {
       "source": "/user-help-center-portal",
+      "destination": "/index",
+      "permanent": true
+    },
+    {
+      "source": "/home",
       "destination": "/index",
       "permanent": true
     }
