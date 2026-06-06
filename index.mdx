@@ -155,16 +155,23 @@ hidden: true
       </div>
     </div>
 
-    {/* SECTION 4 + 5 - UPDATES & HELP */}
+    {/* SECTION 4 - UPDATES & SUPPORT */}
 
-    <CardGroup cols={2}>
-      <Card title="Latest Updates" icon="bell">
-        Check back here for the latest platform updates and release notes. Full changelog available in the **Resources** tab.
-      </Card>
+    <div className="mb-12">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">4</div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">Updates & Support</h2>
+      </div>
 
-      <Card title="Need Help?" icon="life-ring" href="/help-and-support/overview">
-        Visit the **Help & Support** tab for troubleshooting guides, FAQs, and contact information.
-      </Card>
-    </CardGroup>
+      <CardGroup cols={2}>
+        <Card title="Latest Updates" icon="bell">
+          Stay current on new features, platform improvements, and content additions to this portal. Release notes and detailed change history live in the **Resources** tab under Changelog & Release Notes.
+        </Card>
+
+        <Card title="Need Help?" icon="life-ring" href="/help-and-support/overview">
+          Stuck on something or want to report an issue? The **Help & Support** tab has troubleshooting guides, FAQs, known issues, and ways to reach the BlueGenAI team directly.
+        </Card>
+      </CardGroup>
+    </div>
   </div>
 </div>
