@@ -1,5 +1,119 @@
 ---
 title: "Compliance & Security"
+description: "How BlueGenAI supports government compliance standards and what that means for your project."
 ---
 
-This page is a placeholder. Content coming soon.
+<Warning>
+  **Draft — Pending Platform Owner and Legal Review**
+
+  This page is a draft. All compliance claims, certification statuses, and standard descriptions must be reviewed and approved by the Platform Owner and legal team before this page is published to the live portal.
+</Warning>
+
+---
+
+BlueGenAI is designed as secure, compliant, and traceable from the ground up. Compliance is not a feature added after the fact — it is embedded in the platform architecture. Every generated artifact includes traceability markers connecting it to requirements and compliance standards.
+
+<Note>
+  This page covers application-level compliance — the standards that applications built with BlueGenAI must meet. Platform-level security (user authentication, access control, role-based permissions) is covered in the [Admin Center](/admin-center/overview).
+</Note>
+
+---
+
+## How BlueGenAI approaches compliance
+
+Three principles drive BlueGenAI's compliance architecture:
+
+**Compliance by design** — Security and compliance considerations are embedded at the point of generation. You do not need to retrofit compliance after the application is built.
+
+**Full traceability** — Every generated artifact maintains a traceable link from requirements through to deployed code. This supports audit documentation, security assessments, and technical reviews.
+
+**Procurement-friendly outputs** — The platform generates documentation formats recognized in government procurement: RTM, SOO, SOW, SDD, ICD.
+
+---
+
+## Supported compliance standards
+
+### ITAR — International Traffic in Arms Regulations
+
+**What it is:** U.S. regulations controlling the export and import of defense-related articles, services, and technical data.
+
+**Who it applies to:** Contractors and agencies working with defense-related systems, technologies, or information.
+
+**How BlueGenAI supports it:** \[Platform Owner to provide specifics before publishing\]
+
+---
+
+### CUI — Controlled Unclassified Information
+
+**What it is:** Government-created or government-owned information that requires safeguarding or dissemination controls per applicable law, regulation, or government-wide policy.
+
+**Who it applies to:** Any federal agency or contractor handling sensitive but unclassified information.
+
+**How BlueGenAI supports it:** \[Platform Owner to provide specifics before publishing\]
+
+---
+
+### FedRAMP — Federal Risk and Authorization Management Program
+
+**What it is:** A government-wide program providing a standardized approach to security assessment, authorization, and continuous monitoring for cloud products and services.
+
+**Who it applies to:** Cloud service providers and federal agencies using cloud-based services.
+
+**BlueGenAI FedRAMP status:** \[Platform Owner to confirm certification status before publishing\]
+
+---
+
+### ATO / ATT — Authority to Operate / Authority to Test
+
+**What it is:** ATO is formal approval for a system to operate in a government production environment. ATT is formal approval to enter testing. Both require documented evidence that the system meets security requirements.
+
+**Who it applies to:** Any system being deployed in a federal or state government environment.
+
+**How BlueGenAI supports ATO documentation:** BlueGenAI generates ATO-readiness artifacts including CAB documentation, requirements traceability matrices, system design documentation, and deployment artifacts. These outputs are structured to support the ATO package preparation process.
+
+---
+
+### SOC — System and Organization Controls
+
+**What it is:** Audit reports that certify a service organization's controls are designed and operating effectively. SOC 2 Type II is the standard most relevant to cloud-based platforms.
+
+**BlueGenAI SOC compliance status:** \[Platform Owner to confirm before publishing\]
+
+---
+
+### UEI — Unique Entity Identifier
+
+**What it is:** A 12-character alphanumeric identifier assigned by SAM.gov to entities doing business with the federal government. Replaced the DUNS number in 2022.
+
+**How UEI applies to BlueGenAI usage:** \[Platform Owner to confirm before publishing\]
+
+---
+
+## How to generate compliance artifacts for your project
+
+At any phase of your project, you can prompt the agent to generate compliance documentation:
+
+1. Write a prompt referencing the applicable standard
+2. Example: `Generate a requirements traceability matrix aligned to FedRAMP requirements.`
+3. Example: `Generate ATO readiness documentation for this application based on our approved requirements.`
+4. Example: `Produce a system design document with traceability to the attached SOW.`
+5. The generated artifact is saved as a file in your project
+6. Export the file for inclusion in audit submissions, procurement packages, or compliance reviews
+
+---
+
+## Secure-by-design architecture
+
+BlueGenAI's platform architecture includes:
+
+- Full traceability and documentation generation across the lifecycle
+- Low-code and full-code hybrid support
+- Automated ATO/CAB readiness documentation
+- Legacy system modernization with compliance artifact generation
+- Procurement-friendly outputs: RTM, SDD, ICD, User Guides
+
+---
+
+<Note>
+  For a quick reference summary of all supported compliance standards, see the [Compliance Reference Guide](/resources/compliance-reference-guide) in the Resources tab.
+</Note>
