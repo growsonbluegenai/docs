@@ -31,7 +31,8 @@
           "platform-overview/collaboration-and-sharing",
           "platform-overview/tokens-credits-billing",
           "platform-overview/quick-start-guide"
-        ]
+        ],
+        "icon": "layer-group"
       },
       {
         "tab": "Building Web Apps",
@@ -49,7 +50,8 @@
           "building-web-apps/generating-supporting-documents",
           "building-web-apps/design-mode-and-prototyping",
           "building-web-apps/supported-tech-stack"
-        ]
+        ],
+        "icon": "code"
       },
       {
         "tab": "Building on Low-Code",
@@ -71,13 +73,15 @@
           "building-on-low-code/servicenow-platform-reference",
           "building-on-low-code/salesforce-platform-reference",
           "building-on-low-code/powerapps-platform-reference"
-        ]
+        ],
+        "icon": "puzzle-piece"
       },
       {
         "tab": "Hybrid Solutions",
         "pages": [
           "hybrid-solutions/coming-soon"
-        ]
+        ],
+        "icon": "shuffle"
       },
       {
         "tab": "Resources",
@@ -89,7 +93,8 @@
           "resources/glossary",
           "resources/compliance-reference-guide",
           "resources/inspiration-and-examples"
-        ]
+        ],
+        "icon": "book"
       },
       {
         "tab": "Help & Support",
@@ -98,7 +103,8 @@
           "help-and-support/faq",
           "help-and-support/contact-support",
           "help-and-support/known-issues"
-        ]
+        ],
+        "icon": "life-ring"
       },
       {
         "tab": "Admin Center",
@@ -109,7 +115,8 @@
           "admin-center/credits-and-billing-configuration",
           "admin-center/authentication-settings",
           "admin-center/bulk-operations"
-        ]
+        ],
+        "icon": "gear"
       }
     ]
   },
