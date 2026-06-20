@@ -1,5 +1,89 @@
 ---
 title: "Foundational Capabilities"
+description: "The four AI capabilities that power the BlueGenAI platform and how each one affects your experience."
 ---
 
-This page is a placeholder. Content coming soon.
+BlueGenAI is built on four foundational AI capabilities. You do not need to understand these to use the platform — but knowing how they work helps you get more out of it.
+
+---
+
+## Multi-Agent Orchestration
+
+BlueGenAI uses multiple specialized AI agents working in coordination across the project lifecycle. Each agent is optimized for a specific type of work — requirements, design, data modeling, code generation, testing, and so on.
+
+**What this means for you:**
+
+- You do not need to manage which agent handles your request — the platform routes it automatically based on what you ask for
+- When you ask for a TAP form, the DataForm Agent handles it. When you ask for a workflow, the Workflow Agent handles it. When you ask for a data model, the Data Object Agent handles it
+- Multiple agents can work on different components of the same project simultaneously
+
+**Why it matters:**
+
+Each agent is purpose-built for its task. The result is more accurate, more consistent output than a single general-purpose model attempting to handle every type of work.
+
+---
+
+## LLM Network Optimization
+
+The platform selects and optimizes the AI model used for each type of task. Different tasks call for different models — and the platform makes those choices automatically.
+
+**What this means for you:**
+
+- You do not configure or select AI models — the platform handles this
+- The right model is applied to the right task without any action on your part
+- Model tier selections (Low, Medium, High) in CAB give you control over depth and cost when you need it
+
+**Why it matters:**
+
+Optimized model selection produces better results at lower cost than routing every task through a single model regardless of complexity.
+
+---
+
+## Continuous Contextualization
+
+The platform maintains a persistent understanding of your project context across sessions. The agent remembers prior steps, decisions, and artifacts — you do not need to re-explain your project every time you return.
+
+**What this means for you:**
+
+- Open a project after days away and the agent already knows what you have built and decided
+- Context tokens store project state and are referenced across an agent run
+- Larger projects accumulate more context over time — this improves output quality but also increases token consumption
+
+**Why it matters:**
+
+Without continuous contextualization, every session would require re-establishing context from scratch. The platform maintains coherence across a long, complex project lifecycle.
+
+<Tip>
+  Because context grows over time, keeping your prompts focused and your reference files relevant helps manage token costs. See [Tokens, Credits & Billing](/platform-overview/tokens-credits-billing) for tips on managing usage efficiently.
+</Tip>
+
+---
+
+## Compliance Frameworks
+
+Support for government compliance standards is built into the platform architecture — not added after the fact. Every generated artifact includes traceability markers aligned to the standards your project requires.
+
+**Supported standards:**
+
+| Standard | What it covers |
+| --- | --- |
+| ITAR | International Traffic in Arms Regulations — controls export of defense-related articles and services |
+| CUI | Controlled Unclassified Information — government information requiring safeguarding per law or policy |
+| FedRAMP | Federal Risk and Authorization Management Program — standardized cloud security assessment |
+| ATO / ATT | Authority to Operate / Authority to Test — formal government approval to operate or test a system |
+| SOC | System and Organization Controls — audit certification for service organizations |
+| UEI | Unique Entity Identifier — SAM.gov identifier for entities doing business with the federal government |
+
+**What this means for you:**
+
+- Compliance considerations are embedded at the point of generation — not manually added afterward
+- Generated artifacts include traceability markers connecting them to requirements and compliance standards
+- Compliance documentation can be generated at any phase by prompting the agent with the applicable standard
+
+**Why it matters:**
+
+Government applications must meet strict compliance requirements. Building compliance in from the start — rather than retrofitting it — reduces risk, accelerates ATO processes, and produces cleaner audit trails.
+
+<Note>
+  For a full reference on compliance standards and how to generate compliance artifacts for your project, see the [Compliance Reference Guide](/resources/compliance-reference-guide) in Resources.
+</Note>
