@@ -1,5 +1,117 @@
 ---
 title: "Platform Inputs Guide"
+description: "Find out what to gather and how to prepare it before starting your BlueGenAI project."
 ---
 
-This page is a placeholder. Content coming soon.
+BlueGenAI accepts four categories of input. You do not need all four — use what you have. The more relevant context you provide, the better the platform output. But a plain language description of what you need to build is a valid and powerful starting point on its own.
+
+---
+
+## How to decide what inputs to gather
+
+Start by identifying which scenario below best describes your situation, then gather the inputs listed for that scenario.
+
+<CardGroup cols={3}>
+  <Card title="Modernizing a legacy system" icon="arrows-rotate">
+    Gather source code, database schemas, existing documentation, screenshots of the current application, and any ATO or compliance artifacts.
+
+    **Your entry point:** [Phase 2 Path B — Legacy System Modernization](/building-web-apps/phase-2-path-b)
+  </Card>
+
+  <Card title="Responding to a solicitation" icon="file-contract">
+    Gather the RFP, task order, SOW, SOR, or Tech Spec documents. If you have discovery notes, interview transcripts, or JAD session outputs, include those as well.
+
+    **Your entry point:** [Phase 1 Path A — Prototype from a Solicitation](/building-web-apps/phase-1-path-a)
+  </Card>
+
+  <Card title="Starting from an idea" icon="lightbulb">
+    You do not need any files to get started. Describe what you need in plain language — that description becomes your first prompt. BlueGenAI generates a complete, modern, accessible application design from that description alone.
+
+    **Your entry point:** [Phase 1 Path B — Stakeholder Alignment](/building-web-apps/phase-1-path-b)
+  </Card>
+</CardGroup>
+
+---
+
+## Preparing your inputs
+
+### Contractual Requirements
+
+RFP, RFI, RFQ, SOW, SOR, or Tech Spec documents.
+
+1. Locate your solicitation or contract documents
+2. Export as PDF or keep as Word files — both are supported
+3. Include the full document — do not excerpt or summarize before uploading
+4. Upload via the Files icon in the toolbar
+
+---
+
+### Legacy Application Artifacts
+
+Source code, database schemas, configuration files, and interface specifications.
+
+1. Create a ZIP archive of the entire codebase — this is the preferred format for full codebases
+2. Include configuration files in the archive: `package.json`, `requirements.txt`, `docker-compose.yml`, `.env.example`
+3. Include database DDL scripts and schema exports
+4. Include API interface specifications for any connected systems
+5. Do not clean or filter the code before uploading — messy code is handled; removing files loses context
+
+**Supported legacy patterns:**
+
+| Pattern | Examples |
+| --- | --- |
+| Mainframe | COBOL, JCL, RPG, AS/400 |
+| Legacy web | Classic ASP, VB6, VBScript |
+| Legacy Java | J2EE, Struts, older Spring |
+| Legacy .NET | Web Forms, WCF |
+| Database | SQL, PL/SQL, T-SQL stored procedures |
+| Modern languages | Python, JavaScript, Java, C#, and all others |
+
+---
+
+### Support Documentation
+
+Process flows, SOPs, policy documents, compliance artifacts, and screenshots.
+
+1. Gather process flow documents, standard operating procedures, and policy documents
+2. Take screenshots of existing application screens if available
+3. Include ATO/Compliance documentation if you have it
+4. Include system manuals, operator guides, and user guides
+
+---
+
+### Natural Language
+
+User stories, meeting notes, JAD transcripts, and plain language descriptions.
+
+1. Compile user stories, meeting notes, and JAD session transcripts into a document
+2. These can be uploaded as files or typed directly into prompts — both work
+3. Even informal notes and rough descriptions are useful
+
+---
+
+## Supported file formats
+
+| Category | Formats |
+| --- | --- |
+| Documents | PDF (.pdf), Word (.docx), PowerPoint (.pptx) |
+| Source code | Individual files (.py, .js, .java, .cs, etc.) or ZIP archives |
+| Images & screenshots | PNG (.png), JPEG (.jpg / .jpeg), GIF (.gif) |
+| Archives | ZIP (.zip) — CAB extracts and categorizes contents automatically |
+
+<Warning>
+  Image-only PDFs with no text layer produce limited results. If your PDF is a scanned document with no selectable text, the platform may not be able to extract useful content from it.
+</Warning>
+
+---
+
+## How to upload inputs to the platform
+
+1. Open your project
+2. Click the **Files** icon in the toolbar
+3. Click **Upload** and select your files
+4. Your files are now available to reference in any prompt
+
+<Tip>
+  You can also attach files directly in the chat input for immediate use in a single prompt. Drag and drop a file into the chat or click the attachment icon next to the prompt field. See [Navigation & Interface Guide](/platform-overview/navigation-and-interface-guide) for the difference between chat attachments and toolbar uploads.
+</Tip>
