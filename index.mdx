@@ -367,3 +367,334 @@ mode: "custom"
     </div>
   </div>
 </div>
+
+<div className="relative overflow-hidden">
+  {/* Gradient background blobs */}
+
+  <div className="absolute inset-0 -z-10 overflow-hidden">
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-gradient-to-br from-blue-500/50 via-cyan-400/30 to-transparent rounded-full blur-3xl" />
+
+    <div className="absolute top-1/3 right-0 w-[700px] h-[700px] bg-gradient-to-bl from-indigo-500/45 via-purple-500/25 to-transparent rounded-full blur-3xl" />
+
+    <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-gradient-to-tr from-fuchsia-500/35 via-pink-400/20 to-transparent rounded-full blur-3xl" />
+
+    <div className="absolute top-2/3 left-1/3 w-[500px] h-[500px] bg-gradient-to-r from-teal-400/30 to-transparent rounded-full blur-3xl" />
+  </div>
+
+  <div className="max-w-full mx-auto px-6 md:px-12 py-20">
+    {/* UNDER-DEVELOPMENT BANNER */}
+
+    <div className="mb-12 p-5 rounded-2xl border border-amber-200 dark:border-amber-900/50 bg-amber-50/80 dark:bg-amber-950/30 flex items-start gap-4">
+      <div className="text-2xl leading-none">🚧</div>
+
+      <div className="text-sm md:text-base text-amber-900 dark:text-amber-200 leading-relaxed">
+        <strong>This portal is currently under development.</strong> Navigation structure and placeholder pages are in place across all tabs. Content population is in progress. Pages marked "Coming Soon" will be updated as content is written and reviewed. Questions or feedback? Email us at <a href="mailto:feedback@bluegenai.com" className="font-semibold underline">[feedback@bluegenai.com](mailto:feedback@bluegenai.com)</a>
+      </div>
+    </div>
+
+    {/* HERO */}
+
+    <div className="text-center mb-24">
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 text-sm font-semibold text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/50 rounded-full border border-blue-200 dark:border-blue-800">
+        <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+
+        AI-Powered Government Modernization
+      </div>
+
+      <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6 leading-none">
+        User Help <br />
+        <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Center Portal</span>
+      </h1>
+
+      <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        Welcome to the BlueGenAI User Help Center. This portal is your step-by-step guide to building with BlueGenAI — whatever you are building and wherever you are starting from. Find guidance for every phase of your project, from solutioning and requirements through design, build, and deployment.
+      </p>
+    </div>
+
+    {/* SECTION 1 - WHAT IS BLUEGENAI */}
+
+    <div className="mb-24 p-8 md:p-12 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">1</div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">What is BlueGenAI?</h2>
+      </div>
+
+      <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed m-0">
+        BlueGenAI is an AI-powered platform purpose-built for modernizing government systems. It automates every phase of the government project lifecycle — from pre-RFP solutioning through deployment — in a single platform. Whether you are modernizing a legacy system, responding to a solicitation, or starting with nothing more than an idea, BlueGenAI meets you where you are. Describe what you need in plain language and the platform generates a complete, modern, accessible application design — no layouts to define, no frameworks to choose, no design expertise required. As your understanding evolves, the design evolves with it. Describe what you want to change and the platform updates accordingly.
+      </p>
+    </div>
+
+    {/* SECTION 2 - PICK YOUR PROJECT PATH */}
+
+    <div className="mb-24">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">2</div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">Pick Your Project Path</h2>
+      </div>
+
+      <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+        Regardless of what you are starting from, your role in the project determines your path through the platform. Select the path that best describes your work.
+      </p>
+
+      <CardGroup cols={3}>
+        <Card title="Solutioning Teams" icon="lightbulb">
+          BlueGenAI accelerates every phase of government pursuit work — from pre-RFP prototyping through proposal support. Use this portal to learn how to generate client demos, proposal artifacts, and procurement documents directly from solicitation materials.
+
+          **Start here:** Phase 1 — Pre-RFP Solutioning <span className="inline-block px-2 py-0.5 ml-1 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">link coming soon</span>
+        </Card>
+
+        <Card title="Business Analysts" icon="clipboard-list">
+          BlueGenAI transforms legacy documentation, transcripts, and natural language inputs into structured, traceable requirements. Use this portal to learn how to generate user stories, acceptance criteria, and compliance-ready documentation at every stage of your project.
+
+          **Start here:** Phase 2 — Requirements & CAB <span className="inline-block px-2 py-0.5 ml-1 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">link coming soon</span>
+        </Card>
+
+        <Card title="Application Engineers" icon="code">
+          BlueGenAI generates full-stack web applications, low-code platform configurations, and hybrid solutions using AI agents. Use this portal to learn how to build, test, and deploy applications across web and low-code platforms efficiently and accurately.
+
+          **Start here:** Phase 3 — System Design <span className="inline-block px-2 py-0.5 ml-1 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">link coming soon</span>
+        </Card>
+      </CardGroup>
+    </div>
+
+    {/* ============================================================
+                                        HOW DO I CHOOSE THE RIGHT APPROACH?
+                                        Sits between Section 2 (Pick Your Project Path)
+                                        and Section 3 (Common Workflows) in the portal landing page MDX file.
+                                        DEVELOPER NOTES:
+                                        - Unnumbered section — visual break, not a portal section
+                                        - Each card is a placeholder for an animated workflow graphic
+                                        - Replace the graphic-placeholder div with Jitter/Lottie embed or SVG
+                                        - Each href is a placeholder — update once sub-topics exist
+                                        - See Development Plan Section 2.4 for full graphic requirements
+                                        ============================================================ */}
+
+    <div className="mb-24">
+      <h2
+        style={{
+  fontSize: "22px",
+  fontWeight: 700,
+  color: "#1F4E79",
+  marginBottom: "24px",
+  paddingBottom: "10px",
+  borderBottom: "2px solid #2E75B6",
+  display: "flex",
+  alignItems: "center",
+  gap: "10px"
+}}
+      >
+        How do I choose the right approach?
+        <span style={{
+                            background: "#2E75B6",
+                            color: "white",
+                            fontSize: "10px",
+                            fontWeight: 700,
+                            padding: "2px 8px",
+                            borderRadius: "12px",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.05em"
+                          }}>New</span>
+      </h2>
+
+      <div
+        style={{
+  display: "grid",
+  gridTemplateColumns: "repeat(4, 1fr)",
+  gap: "16px"
+}}
+      >
+        {[
+                                  {
+                                    icon: "💡",
+                                    title: "Web App from an Idea",
+                                    href: "/building-web-apps/phase-1-path-b",
+                                    steps: ["Idea", "Design", "Build", "Deploy"],
+                                    description: "Start with nothing but a description. BlueGenAI generates a complete, modern application — no layouts, no frameworks, no expertise required.",
+                                    link: "Phase 1 Path B"
+                                  },
+                                  {
+                                    icon: "📋",
+                                    title: "Web App from a Solicitation",
+                                    href: "/building-web-apps/phase-1-path-a",
+                                    steps: ["RFP / SOW", "Upload", "Prototype", "Proposal"],
+                                    description: "Upload your RFP, task order, or SOW and generate a working prototype and proposal artifacts directly from the solicitation materials.",
+                                    link: "Phase 1 Path A"
+                                  },
+                                  {
+                                    icon: "🔄",
+                                    title: "Modernize a Legacy System",
+                                    href: "/building-web-apps/phase-2-path-b",
+                                    steps: ["Legacy", "CAB", "Blueprint", "Deploy"],
+                                    description: "Upload your existing system — code, schemas, documentation — and generate a full architectural blueprint and requirements for its replacement.",
+                                    link: "Phase 2 Path B"
+                                  },
+                                  {
+                                    icon: "⚙️",
+                                    title: "Deploy to a Low-Code Platform",
+                                    href: "/building-on-low-code/overview",
+                                    steps: ["Requirements", "Data Model", "Configure", "Deploy"],
+                                    description: "Generate platform-native configurations for TAP, ServiceNow, Salesforce, or PowerApps and deploy to your existing instance.",
+                                    link: "Low-Code Overview"
+                                  }
+                                ].map((card, i) => (
+                                  <a key={i} href={card.href} style={{
+                                    background: "white",
+                                    border: "1px solid #e2e8f0",
+                                    borderRadius: "12px",
+                                    padding: "20px",
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: "12px",
+                                    textDecoration: "none",
+                                    color: "inherit",
+                                    transition: "box-shadow 0.2s, border-color 0.2s"
+                                  }}>
+                                    <div style={{
+                                      width: "36px",
+                                      height: "36px",
+                                      background: "#EBF3FB",
+                                      borderRadius: "8px",
+                                      display: "flex",
+                                      alignItems: "center",
+                                      justifyContent: "center",
+                                      fontSize: "18px"
+                                    }}>{card.icon}</div>
+
+                                    <div style={{
+                                      fontSize: "14px",
+                                      fontWeight: 700,
+                                      color: "#1F4E79",
+                                      lineHeight: 1.3
+                                    }}>{card.title}</div>
+
+                                    <div style={{
+                                      background: "#EBF3FB",
+                                      border: "2px dashed #2E75B6",
+                                      borderRadius: "8px",
+                                      padding: "20px 12px",
+                                      textAlign: "center",
+                                      color: "#2E75B6"
+                                    }}>
+                                      <div style={{
+                                        fontSize: "12px",
+                                        fontWeight: 600,
+                                        marginBottom: "8px"
+                                      }}>🎬 Graphic coming soon</div>
+                                      <div style={{
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        flexWrap: "wrap",
+                                        gap: "4px"
+                                      }}>
+                                        {card.steps.map((step, j) => (
+                                          <span key={j} style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                                            <span style={{
+                                              background: "white",
+                                              border: "1px solid #2E75B6",
+                                              borderRadius: "4px",
+                                              padding: "3px 6px",
+                                              fontSize: "10px",
+                                              color: "#1F4E79",
+                                              fontWeight: 500,
+                                              whiteSpace: "nowrap"
+                                            }}>{step}</span>
+                                            {j < card.steps.length - 1 && (
+                                              <span style={{ color: "#2E75B6", fontSize: "10px", fontWeight: 700 }}>→</span>
+                                            )}
+                                          </span>
+                                        ))}
+                                      </div>
+                                    </div>
+
+                                    <div style={{
+                                      fontSize: "13px",
+                                      color: "#475569",
+                                      lineHeight: 1.5,
+                                      flexGrow: 1
+                                    }}>{card.description}</div>
+
+                                    <div style={{
+                                      fontSize: "12px",
+                                      color: "#2E75B6",
+                                      fontWeight: 600,
+                                      marginTop: "auto"
+                                    }}>{card.link} →</div>
+                                  </a>
+                                ))}
+      </div>
+    </div>
+
+    {/* SECTION 3 - COMMON WORKFLOWS */}
+
+    <div className="mb-24">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">3</div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">Common Workflows</h2>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Column 1 — Solutioning Teams */}
+
+        <div className="flex flex-col gap-4">
+          <div className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">Solutioning Teams</div>
+
+          <Card title="Prototype for a Proposal" icon="wand-magic-sparkles">
+            <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+          </Card>
+        </div>
+
+        {/* Column 2 — Business Analysts */}
+
+        <div className="flex flex-col gap-4">
+          <div className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">Business Analysts</div>
+
+          <Card title="Modernize a Legacy System" icon="arrows-rotate">
+            <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+          </Card>
+
+          <Card title="Generate Compliance Documents" icon="file-shield">
+            <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+          </Card>
+
+          <Card title="Collaborate with a Team" icon="users">
+            <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+          </Card>
+        </div>
+
+        {/* Column 3 — Application Engineers */}
+
+        <div className="flex flex-col gap-4">
+          <div className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">Application Engineers</div>
+
+          <Card title="Build a Web Application" icon="browser">
+            <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+          </Card>
+
+          <Card title="Deploy to a Low-Code Platform" icon="cubes">
+            <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
+          </Card>
+        </div>
+      </div>
+    </div>
+
+    {/* SECTION 4 - UPDATES & SUPPORT */}
+
+    <div className="mb-12">
+      <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">4</div>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">Updates & Support</h2>
+      </div>
+
+      <CardGroup cols={2}>
+        <Card title="Latest Updates" icon="bell">
+          Stay current on new features, platform improvements, and content additions to this portal. Release notes and detailed change history live in the **Resources** tab under Changelog & Release Notes.
+        </Card>
+
+        <Card title="Need Help?" icon="life-ring" href="/help-and-support/overview">
+          Stuck on something or want to report an issue? The **Help & Support** tab has troubleshooting guides, FAQs, known issues, and ways to reach the BlueGenAI team directly.
+        </Card>
+      </CardGroup>
+    </div>
+  </div>
+</div>
