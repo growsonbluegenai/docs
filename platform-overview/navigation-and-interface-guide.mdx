@@ -1,5 +1,150 @@
 ---
 title: "Navigation & Interface Guide"
+description: "Learn your way around every major element of the BlueGenAI project workspace."
 ---
 
-This page is a placeholder. Content coming soon.
+Once you open a project in BlueGenAI you enter the project workspace. The workspace has four tabs — CAB, Tickets, Prototype, and Build — each serving a distinct purpose in your project lifecycle. This page walks you through every element so you can move confidently between them.
+
+---
+
+## The four tabs
+
+Every project workspace has four tabs across the top. Click any tab to switch to that workspace.
+
+| Tab | What it is for |
+| --- | --- |
+| **CAB** | Analyze an existing legacy system and generate an architectural blueprint |
+| **Tickets**_(Beta)_ | View and manage tickets generated from your requirements |
+| **Prototype** | Design your application through prompts and Requirement Folders |
+| **Build** | Generate and deploy your full-stack application through prompts |
+
+---
+
+## The CAB tab
+
+CAB — Common Application Blueprint — is where you upload an existing system's artifacts and generate a comprehensive architectural blueprint. It is the starting point for legacy system modernization.
+
+![The CAB tab showing the upload panel on the left and the blueprint preview panel on the right](/images/1-8-cab-tab.png)
+
+**Left panel — CAB Configuration:**
+
+- Upload area — drag and drop files or click Upload file
+- Supports PDF, documents, images, and source code files (as a ZIP)
+
+**Right panel — Common Application Blueprint Preview:**
+
+- Displays the generated blueprint once analysis is complete
+- Shows "No Blueprint Yet" until files are uploaded and Generate Blueprint is clicked
+
+**Generate Blueprint button** — starts the CAB analysis pipeline once files are uploaded.
+
+For full guidance on using CAB see [Phase 2 Path B — Modernize a Legacy System](/building-web-apps/phase-2-path-b).
+
+---
+
+## The Tickets tab
+
+The Tickets tab is a project management workspace where tickets generated from your requirements are tracked and managed.
+
+![The Tickets tab showing the Views panel on the left and the ticket list with filters on the right](/images/1-8-tickets-tab.png)
+
+**Left panel — Views:**
+
+- All Tickets view with a count badge
+
+**Right panel — Ticket list:**
+
+- Search tickets field
+- Four filter dropdowns: Status, Priority, Source, Work Type
+- Ticket list area — shows "No tickets found" until tickets are generated
+
+<Note>
+  Tickets is currently in Beta. Tickets are generated from approved requirements and represent individual units of work — some assigned to AI, some requiring human action. Full documentation for this tab is coming soon.
+</Note>
+
+---
+
+## The Prototype tab
+
+The Prototype tab is where you design your application. You interact with the Web Application Prototype Design Agent through prompts to generate interactive prototypes, design systems, and visual assets.
+
+![The Prototype tab showing Requirement Folders on the left and the chat workspace on the right](/images/1-8-prototype-tab.png)
+
+### Requirement Folders panel (left)
+
+Requirement Folders organize your design work by feature area, screen, or workflow step.
+
+- Click **\+** to add a new folder
+- Use the **Search** field to find folders by name
+- Click any folder to work within it
+- Each folder shows a count of items inside
+
+### Chat workspace (right)
+
+- **Welcome message** — the Prototype Design Agent introduces itself and its capabilities when you first open the tab
+- **Chat history** — prompts and responses appear here as you work
+- **Type your message** — the prompt input field at the bottom
+
+### Chat input toolbar
+
+| Element | What it does |
+| --- | --- |
+| **📎 Attachment** | Attach files directly to your prompt — documents, source code, images, screenshots, spreadsheets, transcripts, and more. Works the same way as attaching files in any AI chat tool. |
+| **Medium ▾** | Select the AI model tier for this prompt — Medium or High. Higher tiers produce more thorough results but consume more tokens. |
+| **⚙️ ▾** | Additional settings for the prompt |
+| **Send button** (blue circle) | Submit your prompt to the agent |
+
+<Tip>
+  You can attach virtually anything to a prompt in the chat — PDFs, Word documents, PowerPoint files, source code, ZIP archives, images, screenshots, CSVs, and plain text files. If you can attach it to an email, you can attach it here.
+</Tip>
+
+---
+
+## The Build tab
+
+The Build tab is where you generate and deploy your full-stack application. It uses the same chat interface as the Prototype tab but without the Requirement Folders panel — the full workspace is dedicated to the build conversation.
+
+![The Build tab showing the full-width chat workspace with the message input at the bottom](/images/1-8-build-tab.png)
+
+- No left panel — the entire workspace is the chat area
+- The same chat input toolbar as Prototype: attachment, model selector, settings, send
+- Build conversations are separate from Prototype conversations — attach your design files in your first Build prompt
+
+<Note>
+  Build Mode starts a fresh conversation. The agent does not automatically see your Prototype chat history. Attach your relevant design files and include key context in your first Build prompt.
+</Note>
+
+---
+
+## The toolbar
+
+The toolbar runs across the top right of the workspace and is available in both Prototype and Build tabs. It gives you access to project tools without leaving your current conversation.
+
+| Icon | Tool | What it does |
+| --- | --- | --- |
+| 📄 | **Files** | View all project files — system-generated and uploaded |
+| ✏️ | **Design System** | Apply themes, colors, and typography without writing prompts |
+| 🔗 | **Link** | Access shareable links for your project outputs |
+| 🌐 | **URLs** | View live endpoints for your deployed application |
+| **\</\>** | **Code** | Browse and interact with the generated source code |
+| 🗄️ | **Database** | View and manage your application's database |
+| 🔑 | **Credentials** | Manage API keys and environment variables |
+| 📋 | **Checklist** | Access project checklist and task tracking |
+| 👤 | **Collaboration** | Manage team members and sharing settings |
+
+---
+
+## The header
+
+The header appears at the top of every page in the platform.
+
+| Element | What it does |
+| --- | --- |
+| **BlueGenAI logo** | Returns you to the Projects dashboard |
+| **Breadcrumb** (Home \> Project Name) | Shows your current location; click Home to return to the dashboard |
+| **Timer** (🕐 0s) | Tracks time spent on the current session |
+| **Dark mode** (🌙) | Switches between light and dark mode |
+| **Notifications** (🔔) | Shows platform notifications and alerts |
+| **Help** (?) | Opens help and support options |
+| **User avatar** | Access account options — Update Profile, My Credits, Change Password, Logout |
+| **Collaboration** (👤) | Manage project collaborators — top right of the workspace |
