@@ -1,11 +1,11 @@
 ---
 title: "Quick Start Guide"
-description: "Follow this guide to design, prototype, and build your first application with BlueGenAI."
+description: "Follow this guide to design and build your first application with BlueGenAI."
 ---
 
 You do not need files, designs, or prior experience to get started. A plain language description of what you want to build is all that is required. BlueGenAI generates a complete, modern, accessible application from that description alone — and adjusts it based on your feedback.
 
-This guide walks you through your first complete project from account access through a working prototype.
+This guide walks you through your first complete project from account access through a deployed application.
 
 ---
 
@@ -13,15 +13,51 @@ This guide walks you through your first complete project from account access thr
 
 Before you start, here is the big picture. BlueGenAI takes inputs from the left, processes them through a central AI platform, and produces target solutions and deliverables on the right.
 
-![The BlueGenAI platform overview showing Sources on the left flowing through CAB, Design, Build, Test, and Deploy to Target Solutions and Deliverables on the right, powered by four Foundational Capabilities](/images/bluegenai-platform-overview.png)
+![The BlueGenAI platform overview showing Sources on the left flowing through CAB, Design, Build, Test, and Deploy to Target Solutions and Deliverables on the right](/images/bluegenai-platform-overview.png)
 
 **Sources** — what you bring: contractual requirements, legacy applications, support documentation, or natural language descriptions
 
-**Platform** — five processing nodes: CAB (legacy analysis), Design (prototyping), Build (code generation), Test (validation), Deploy (deployment)
+**Platform** — five processing nodes: CAB (legacy analysis), Design (draft app generation), Build (code generation), Test (validation), Deploy (deployment)
 
 **Target Solutions** — what gets produced: Custom Web applications, Low Code Apps, or Hybrid Solutions — plus Contractual Docs and Support Materials
 
 **Foundational Capabilities** — the AI engine underneath: Multi-Agent Orchestration, LLM Network Optimization, Continuous Contextualization, and Compliance Frameworks
+
+---
+
+## Which path applies to you?
+
+Your starting point depends on what you are building and what you are starting from. Select the graphic that matches your situation — each one shows your specific path through the platform highlighted.
+
+<CardGroup cols={2}>
+  <Card title="Web App from an Idea">
+    Starting with a plain language description — no files needed.
+
+    ![1 11 Path Idea](/images/1-11-path-idea.png)
+  </Card>
+
+  <Card title="Web App from a Solicitation">
+    Starting with an RFP, task order, or SOW.
+
+    ![1 11 Path Solicitation](/images/1-11-path-solicitation.png)
+  </Card>
+
+  <Card title="Modernize a Legacy System">
+    Starting with an existing system — source code, schemas, or documentation.
+
+    ![1 11 Path Legacy](/images/1-11-path-legacy.png)
+  </Card>
+
+  <Card title="Deploy to a Low-Code Platform">
+    Building for TAP, ServiceNow, Salesforce, or PowerApps.
+
+    ![1 11 Path Lowcode](/images/1-11-path-lowcode.png)
+  </Card>
+</CardGroup>
+
+<Note>
+  The graphics above are static placeholders. Animated interactive versions — where you can click your path and go directly to the relevant section — are in development. See Development Plan Section 2.4.
+</Note>
 
 ---
 
@@ -38,7 +74,9 @@ Before you start, here is the big picture. BlueGenAI takes inputs from the left,
 
 ---
 
-## Step 2: Design your application in Prototype Mode
+## Step 2: Generate a Draft App in the Prototype tab
+
+The Prototype tab is where you describe what you want to build. The AI agent reads your description and generates a **Draft App** — a fully functional, interactive version of your application with mock data that you can review, share, and iterate on before committing to a full build.
 
 1. Click the **Prototype** tab in the workspace
 2. Click **\+** in the Requirement Folders panel to create your first folder — name it by feature area (for example: Intake Form)
@@ -60,19 +98,18 @@ accessible, plain-language, and appropriate for the public.
 ```
 
 4. Click the **Send** button (blue circle)
-5. The Prototype Design Agent generates your first design artifact
-6. Review the result in the chat — the agent produces an interactive prototype with mock data
+5. The agent generates your Draft App and displays it in the chat
 
 {/* ============================================================
     PLACEHOLDER — Screenshot needed
-    What to capture: The Prototype tab chat workspace after the agent 
-    has responded — showing the agent's reply and the generated 
-    prototype artifact in the chat.
-    File name to use: 1-11-prototype-result.png
+    What to capture: The Prototype tab chat workspace after the agent
+    has responded — showing the agent's message and the Draft App
+    result card in the chat.
+    File name to use: 1-11-draft-app.png
     ============================================================ */}
 
 <Note>
-  **📸 Screenshot coming soon** — This section will include a screenshot of a generated prototype result once captured.
+  **📸 Screenshot coming soon** — This section will include a screenshot showing a Draft App result in the Prototype tab chat workspace. File to add: `1-11-draft-app.png`
 </Note>
 
 <Tip>
@@ -81,77 +118,64 @@ accessible, plain-language, and appropriate for the public.
 
 ---
 
-## Step 3: Iterate on your design
+## Step 3: Review and refine your Draft App
 
-Continue prompting to refine, extend, or adjust the design:
+Open the Draft App from the chat and review it against your requirements. Continue prompting to refine, extend, or adjust:
 
 - _"Simplify the language and reduce the number of required fields"_
 - _"Add a document upload section"_
 - _"Update the layout to use a two-column form"_
 
-Each prompt builds on the previous result. You do not start over — the agent adjusts what it has already produced.
+Each prompt updates the Draft App. You do not start over — the agent adjusts what it has already produced.
 
 <Tip>
-  Use the **Medium** or **High** model selector in the chat input toolbar to control the depth of the agent's response. Medium is faster and sufficient for most design iterations. High produces more thorough results for complex requirements.
+  Use the **Medium** or **High** model selector in the chat input to control the depth of the agent's response. Medium is faster and sufficient for most iterations. High produces more thorough results for complex requirements.
 </Tip>
 
 ---
 
 ## Step 4: Build your application
 
-When you are satisfied with the design:
+When you are satisfied with the Draft App:
 
 1. Click the **Build** tab in the workspace
-2. In the chat input, type a build prompt referencing your design work
-3. Use the 📎 attachment icon to attach any design files or reference documents
+2. In the chat input, describe what you want to build
+3. Use the 📎 attachment icon to attach your Draft App files as references
 4. Click **Send**
 5. The Build agent generates your full-stack application
 6. When the build completes, your live application URL appears in the chat
 
 {/* ============================================================
     PLACEHOLDER — Screenshot needed
-    What to capture: The Build tab chat workspace after a successful 
-    build — showing the agent's completion message and the live 
-    application URL appearing in the chat.
+    What to capture: The Build tab chat workspace after a successful
+    build — showing the agent's completion message and the live
+    application URL in the chat.
     File name to use: 1-11-build-complete.png
     ============================================================ */}
 
 <Note>
-  **📸 Screenshot coming soon** — This section will include a screenshot of a completed build with the live application URL once captured.
+  **📸 Screenshot coming soon** — This section will include a screenshot showing a completed build with the live application URL. File to add: `1-11-build-complete.png`
 </Note>
 
 ---
 
 ## Step 5: Review and continue
 
-1. Click the live URL to open your application in a browser
+1. Click the live URL to open your deployed application in a browser
 2. Test it against your original requirements
-3. Return to Build Mode and continue prompting to fix issues or add features
+3. Return to the Build tab and continue prompting to fix issues or add features
 4. Each iteration builds on the existing application — you are not starting over
 
 {/* ============================================================
     PLACEHOLDER — Screenshot needed
-    What to capture: A deployed BlueGenAI application open in a 
+    What to capture: A deployed BlueGenAI application open in a
     browser — showing what the live result looks like.
     File name to use: 1-11-deployed-application.png
     ============================================================ */}
 
 <Note>
-  **📸 Screenshot coming soon** — This section will include a screenshot of a deployed application in the browser once captured.
+  **📸 Screenshot coming soon** — This section will include a screenshot of a deployed application open in a browser. File to add: `1-11-deployed-application.png`
 </Note>
-
-{/* ============================================================
-    PLACEHOLDER — Animated path graphics
-    Once the BlueGenAI source file and animation tool are available,
-    replace the static bluegenai-platform-overview.png in the 
-    "How the platform works" section above with path-specific 
-    animated graphics showing each journey:
-    - Web App from an Idea
-    - Web App from a Solicitation  
-    - Legacy System Modernization
-    - Low-Code Deployment
-    See Development Plan Section 2.4 for full requirements.
-    ============================================================ */}
 
 ---
 
