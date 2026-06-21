@@ -1,5 +1,124 @@
 ---
 title: "Quick Start Guide"
+description: "Follow this guide to design, prototype, and build your first application with BlueGenAI."
 ---
 
-This page is a placeholder. Content coming soon.
+You do not need files, designs, or prior experience to get started. A plain language description of what you want to build is all that is required. BlueGenAI generates a complete, modern, accessible application from that description alone — and adjusts it based on your feedback.
+
+This guide walks you through your first complete project from account access through a working prototype.
+
+---
+
+## How the platform works
+
+Before you start, here is the big picture. BlueGenAI takes inputs from the left, processes them through a central AI platform, and produces target solutions and deliverables on the right.
+
+![The BlueGenAI platform overview showing Sources on the left flowing through CAB, Design, Build, Test, and Deploy to Target Solutions and Deliverables on the right, powered by four Foundational Capabilities](/images/bluegenai-platform-overview.png)
+
+**Sources** — what you bring: contractual requirements, legacy applications, support documentation, or natural language descriptions
+
+**Platform** — five processing nodes: CAB (legacy analysis), Design (prototyping), Build (code generation), Test (validation), Deploy (deployment)
+
+**Target Solutions** — what gets produced: Custom Web applications, Low Code Apps, or Hybrid Solutions — plus Contractual Docs and Support Materials
+
+**Foundational Capabilities** — the AI engine underneath: Multi-Agent Orchestration, LLM Network Optimization, Continuous Contextualization, and Compliance Frameworks
+
+---
+
+## Step 1: Open or create a project
+
+1. Log in at [BlueGenAI.ai](https://bluegenai.ai)
+2. From the Projects dashboard, click **\+ Create Project**
+3. Enter a **Project Title**
+4. Select a **Project Type** — Web Application or Low Code Application
+5. Optionally enter a **Client Name** and **Custom Domain**
+6. Click **Create** — your project opens in the workspace
+
+![The Create New Project dialog showing Project Title, Project Type, Platform Type, Client Name, and Custom Domain fields](/images/1-7-create-project.png)
+
+---
+
+## Step 2: Design your application in Prototype Mode
+
+1. Click the **Prototype** tab in the workspace
+2. Click **\+** in the Requirement Folders panel to create your first folder — name it by feature area (for example: Intake Form)
+3. In the chat input, type a prompt describing what you want to build
+
+**Write a prompt that includes:**
+
+- What the application needs to do
+- Who will use it
+- Any constraints (accessibility, compliance, data sensitivity)
+
+**Example prompt:**
+
+```text
+Build an intake application that allows residents to submit requests 
+for a license permit and routes them to the correct program. 
+The application is for a state permitting agency and must be 
+accessible, plain-language, and appropriate for the public.
+```
+
+4. Click the **Send** button (blue circle)
+5. The Prototype Design Agent generates your first design artifact
+6. Review the result in the chat — the agent produces an interactive prototype with mock data
+
+<Tip>
+  You can attach files directly in the chat to give the agent more context — upload an RFP, a screenshot of an existing system, or a requirements document using the 📎 attachment icon next to the prompt field.
+</Tip>
+
+---
+
+## Step 3: Iterate on your design
+
+Continue prompting to refine, extend, or adjust the design:
+
+- _"Simplify the language and reduce the number of required fields"_
+- _"Add a document upload section"_
+- _"Update the layout to use a two-column form"_
+
+Each prompt builds on the previous result. You do not start over — the agent adjusts what it has already produced.
+
+<Tip>
+  Use the **Medium** or **High** model selector in the chat input toolbar to control the depth of the agent's response. Medium is faster and sufficient for most design iterations. High produces more thorough results for complex requirements.
+</Tip>
+
+---
+
+## Step 4: Build your application
+
+When you are satisfied with the design:
+
+1. Click the **Build** tab in the workspace
+2. In the chat input, type a build prompt referencing your design work
+3. Use the 📎 attachment icon to attach any design files or reference documents
+4. Click **Send**
+5. The Build agent generates your full-stack application
+6. When the build completes, your live application URL appears in the chat
+
+---
+
+## Step 5: Review and continue
+
+1. Click the live URL to open your application in a browser
+2. Test it against your original requirements
+3. Return to Build Mode and continue prompting to fix issues or add features
+4. Each iteration builds on the existing application — you are not starting over
+
+---
+
+## Where to go next
+
+<CardGroup cols={3}>
+  <Card title="Who is it for?" icon="user" href="/platform-overview/who-is-it-for">
+    Find the path through the platform that matches your role.
+  </Card>
+
+  <Card title="Prompting Best Practices" icon="message" href="/resources/prompting-best-practices">
+    Write more effective prompts and get better results with fewer iterations.
+  </Card>
+
+  <Card title="Collaboration & Sharing" icon="users" href="/platform-overview/collaboration-sharing">
+    Invite teammates and share your project with stakeholders.
+  </Card>
+</CardGroup>
