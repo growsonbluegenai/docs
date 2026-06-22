@@ -25,7 +25,13 @@ Every project workspace has four tabs across the top. Click any tab to switch to
 CAB — Common Application Blueprint — is where you upload an existing system's artifacts and generate a comprehensive architectural blueprint. It is the starting point for legacy system modernization.
 
 <Frame>
-  ![1 8 Cab Tab](/images/1-8-cab-tab.png)
+  <img
+    src="https://mintcdn.com/bluegenai/Jpvt0h7q371bq42Z/images/1-8-cab-tab.png?fit=max&auto=format&n=Jpvt0h7q371bq42Z&q=85&s=3dea33c177b86d1d367f6afa8fd0b8b5"
+    alt="The CAB tab showing the upload area on the left and blueprint preview on the right"
+    width="2254"
+    height="1080"
+    data-path="images/1-8-cab-tab.png"
+  />
 </Frame>
 
 **Left panel — CAB Configuration:**
@@ -48,7 +54,13 @@ For full guidance on using CAB see [Phase 2 Path B — Modernize a Legacy System
 
 The Tickets tab is a project management workspace where tickets generated from your requirements are tracked and managed.
 
-![1 8 Tickets Tab](/images/1-8-tickets-tab.png)
+<img
+  src="https://mintcdn.com/bluegenai/Jpvt0h7q371bq42Z/images/1-8-tickets-tab.png?fit=max&auto=format&n=Jpvt0h7q371bq42Z&q=85&s=e4f549e0913c25ffc874650f9e61b405"
+  alt="The Tickets tab showing the ticket list with Status, Priority, Source, and Work Type filters"
+  width="2540"
+  height="1190"
+  data-path="images/1-8-tickets-tab.png"
+/>
 
 **Left panel — Views:**
 
@@ -71,7 +83,13 @@ The Tickets tab is a project management workspace where tickets generated from y
 The Prototype tab is where you design your application. You interact with the Web Application Prototype Design Agent through prompts to generate interactive prototypes, design systems, and visual assets.
 
 <Frame>
-  ![1 8 Prototype Tab](/images/1-8-prototype-tab.png)
+  <img
+    src="https://mintcdn.com/bluegenai/Jpvt0h7q371bq42Z/images/1-8-prototype-tab.png?fit=max&auto=format&n=Jpvt0h7q371bq42Z&q=85&s=f5826da9fd747acfa3d50d5190feee49"
+    alt="The Prototype tab showing the Requirement Folders panel on the left and chat workspace on the right"
+    width="2518"
+    height="1204"
+    data-path="images/1-8-prototype-tab.png"
+  />
 </Frame>
 
 ### Requirement Folders panel (left)
@@ -94,7 +112,7 @@ Requirement Folders organize your design work by feature area, screen, or workfl
 | Element | What it does |
 | --- | --- |
 | **📎 Attachment** | Attach files directly to your prompt — documents, source code, images, screenshots, spreadsheets, transcripts, and more. Works the same way as attaching files in any AI chat tool. |
-| **Medium ▾** | Select the AI model tier for this prompt — Medium or High. Higher tiers produce more thorough results but consume more tokens. |
+| **Medium ▾** | Select the AI model tier for this prompt — Medium or High. Higher tiers produce more thorough results but consume more credits. |
 | **⚙️ ▾** | Additional settings for the prompt |
 | **Send button** (blue circle) | Submit your prompt to the agent |
 
@@ -108,14 +126,20 @@ Requirement Folders organize your design work by feature area, screen, or workfl
 
 The Build tab is where you generate and deploy your full-stack application. It uses the same chat interface as the Prototype tab but without the Requirement Folders panel — the full workspace is dedicated to the build conversation.
 
-![The Build tab showing the full-width chat workspace with the message input at the bottom](/images/1-8-build-tab.png)
+<img
+  src="https://mintcdn.com/bluegenai/Jpvt0h7q371bq42Z/images/1-8-build-tab.png?fit=max&auto=format&n=Jpvt0h7q371bq42Z&q=85&s=3ccb7ff69b56f1f7fccb8456944e5c85"
+  alt="The Build tab showing the full-width chat workspace with the message input at the bottom"
+  width="2518"
+  height="1198"
+  data-path="images/1-8-build-tab.png"
+/>
 
 - No left panel — the entire workspace is the chat area
 - The same chat input toolbar as Prototype: attachment, model selector, settings, send
 - Build conversations are separate from Prototype conversations — attach your design files in your first Build prompt
 
 <Note>
-  Build Mode starts a fresh conversation. The agent does not automatically see your Prototype chat history. Attach your relevant design files and include key context in your first Build prompt.
+  The Build tab starts a fresh conversation. The agent does not automatically see your Prototype chat history. Attach your relevant design files and include key context in your first Build prompt.
 </Note>
 
 ---
@@ -135,6 +159,16 @@ The toolbar runs across the top right of the workspace and is available in both 
 | 🔑 | **Credentials** | Manage API keys and environment variables |
 | 📋 | **Checklist** | Access project checklist and task tracking |
 | 👤 | **Collaboration** | Manage team members and sharing settings |
+
+### Application URLs panel
+
+Clicking the **URLs** icon opens the Application URLs panel. This is where your deployed application endpoints appear after a successful build.
+
+![The Application URLs panel showing "No Application URLs Found" — URLs appear here once your project has been deployed by the development assistant.](/images/1-8-application-urls.png)
+
+<Note>
+  Application URLs populate automatically when your build completes. If you see "No Application URLs Found" it means no build has been deployed in this project yet.
+</Note>
 
 ---
 
