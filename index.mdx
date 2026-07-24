@@ -42,37 +42,37 @@ mode: "custom"
 
 <style>
   {`
-                          card {
-                            background-color: rgba(235, 243, 251, 0.55) !important;
-                            backdrop-filter: blur(4px);
-                            border-color: rgba(46, 117, 182, 0.25) !important;
-                          }
-                          .dark card {
-                            background-color: rgba(30, 58, 95, 0.35) !important;
-                            border-color: rgba(96, 165, 250, 0.25) !important;
-                          }
-                          `}
+                                              card {
+                                                background-color: rgba(235, 243, 251, 0.55) !important;
+                                                backdrop-filter: blur(4px);
+                                                border-color: rgba(46, 117, 182, 0.25) !important;
+                                              }
+                                              .dark card {
+                                                background-color: rgba(30, 58, 95, 0.35) !important;
+                                                border-color: rgba(96, 165, 250, 0.25) !important;
+                                              }
+                                              `}
 </style>
 
 <div className="relative overflow-hidden">
   <style>
     {`
-                                                /* Make Mintlify Card components tinted-transparent so the gradient
-                                                   background is visible through them on the landing page. */
-                                                #content-area card,
-                                                #content-area .card,
-                                                #content-area [class*="Card_card"] {
-                                                  background-color: rgba(235, 243, 251, 0.55) !important;
-                                                  backdrop-filter: blur(4px);
-                                                  border-color: rgba(46, 117, 182, 0.25) !important;
-                                                }
-                                                .dark #content-area card,
-                                                .dark #content-area .card,
-                                                .dark #content-area [class*="Card_card"] {
-                                                  background-color: rgba(30, 58, 95, 0.35) !important;
-                                                  border-color: rgba(96, 165, 250, 0.25) !important;
-                                                }
-                                              `}
+                                                                                        /* Make Mintlify Card components tinted-transparent so the gradient
+                                                                                           background is visible through them on the landing page. */
+                                                                                        #content-area card,
+                                                                                        #content-area .card,
+                                                                                        #content-area [class*="Card_card"] {
+                                                                                          background-color: rgba(235, 243, 251, 0.55) !important;
+                                                                                          backdrop-filter: blur(4px);
+                                                                                          border-color: rgba(46, 117, 182, 0.25) !important;
+                                                                                        }
+                                                                                        .dark #content-area card,
+                                                                                        .dark #content-area .card,
+                                                                                        .dark #content-area [class*="Card_card"] {
+                                                                                          background-color: rgba(30, 58, 95, 0.35) !important;
+                                                                                          border-color: rgba(96, 165, 250, 0.25) !important;
+                                                                                        }
+                                                                                      `}
   </style>
 
   {/* Gradient background blobs */}
@@ -90,7 +90,7 @@ mode: "custom"
   <div className="max-w-full mx-auto px-6 md:px-12 py-20">
     {/* UNDER-DEVELOPMENT BANNER */}
 
-    <div className="mb-12 flex items-start gap-4 p-5 md:p-6 bg-amber-50/25 dark:bg-amber-950/20 border border-amber-300/60 dark:border-amber-800/60 rounded-xl backdrop-blur-sm">
+    <div className="mb-12 flex items-start gap-4 p-5 md:p-6 bg-amber-100/70 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-800 rounded-xl backdrop-blur-md shadow-sm">
       <div className="text-2xl">🚧</div>
 
       <div className="text-sm md:text-base text-amber-900 dark:text-amber-200 leading-relaxed">
@@ -119,7 +119,7 @@ mode: "custom"
 
     {/* SECTION 1 - WHAT IS BLUEGENAI */}
 
-    <div className="mb-24 p-8 md:p-12 bg-blue-50/20 dark:bg-blue-950/20 backdrop-blur-sm rounded-2xl border border-blue-200/60 dark:border-blue-800/40 shadow-sm">
+    <div className="mb-24 p-8 md:p-12 bg-blue-100/60 dark:bg-blue-950/50 backdrop-blur-md rounded-2xl border border-blue-300/70 dark:border-blue-800 shadow-sm">
       <div className="flex items-center gap-4 mb-6">
         <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-bold text-lg shadow-lg shadow-blue-500/30">1</div>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">What is BlueGenAI?</h2>
@@ -143,7 +143,7 @@ mode: "custom"
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <a href="/building-web-apps/phase-1-pre-rfp-solutioning" className="block p-6 rounded-xl border border-blue-200/60 dark:border-blue-800/40 bg-blue-50/20 dark:bg-blue-950/20 backdrop-blur-sm shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all no-underline">
+        <a href="/building-web-apps/phase-1-pre-rfp-solutioning" className="block p-6 rounded-xl border border-indigo-300 dark:border-indigo-800 bg-indigo-100/60 dark:bg-indigo-950/50 backdrop-blur-md shadow-sm hover:shadow-md hover:border-indigo-400 dark:hover:border-indigo-700 transition-all no-underline">
           <div className="text-blue-600 dark:text-blue-400 mb-3">
             <Icon icon="lightbulb" size={24} />
           </div>
@@ -171,7 +171,7 @@ mode: "custom"
           <p className="text-sm text-gray-700 dark:text-gray-300"><strong>Start here:</strong> Phase 2 — Requirements Refinement & CAB</p>
         </a>
 
-        <a href="/building-web-apps/phase-3-system-design" className="block p-6 rounded-xl border border-blue-200/60 dark:border-blue-800/40 bg-blue-50/20 dark:bg-blue-950/20 backdrop-blur-sm shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all no-underline">
+        <a href="/building-web-apps/phase-3-system-design" className="block p-6 rounded-xl border border-indigo-300 dark:border-indigo-800 bg-indigo-100/60 dark:bg-indigo-950/50 backdrop-blur-md shadow-sm hover:shadow-md hover:border-indigo-400 dark:hover:border-indigo-700 transition-all no-underline">
           <div className="text-blue-600 dark:text-blue-400 mb-3">
             <Icon icon="code" size={24} />
           </div>
@@ -188,16 +188,16 @@ mode: "custom"
     </div>
 
     {/* ============================================================
-                                                                                            HOW DO I CHOOSE THE RIGHT APPROACH?
-                                                                                            Sits between Section 2 (Pick Your Project Path)
-                                                                                            and Section 3 (Common Workflows) in the portal landing page MDX file.
-                                                                                            DEVELOPER NOTES:
-                                                                                            - Unnumbered section — visual break, not a portal section
-                                                                                            - Each card is a placeholder for an animated workflow graphic
-                                                                                            - Replace the graphic-placeholder div with Jitter/Lottie embed or SVG
-                                                                                            - Each href is a placeholder — update once sub-topics exist
-                                                                                            - See Development Plan Section 2.4 for full graphic requirements
-                                                                                            ============================================================ */}
+                                                                                                                                    HOW DO I CHOOSE THE RIGHT APPROACH?
+                                                                                                                                    Sits between Section 2 (Pick Your Project Path)
+                                                                                                                                    and Section 3 (Common Workflows) in the portal landing page MDX file.
+                                                                                                                                    DEVELOPER NOTES:
+                                                                                                                                    - Unnumbered section — visual break, not a portal section
+                                                                                                                                    - Each card is a placeholder for an animated workflow graphic
+                                                                                                                                    - Replace the graphic-placeholder div with Jitter/Lottie embed or SVG
+                                                                                                                                    - Each href is a placeholder — update once sub-topics exist
+                                                                                                                                    - See Development Plan Section 2.4 for full graphic requirements
+                                                                                                                                    ============================================================ */}
 
     <div className="mb-24">
       <h2
@@ -215,15 +215,15 @@ gap: "10px"
       >
         How do I choose the right approach?
         <span style={{
-                                                                                                                                                    background: "#2E75B6",
-                                                                                                                                                    color: "white",
-                                                                                                                                                    fontSize: "10px",
-                                                                                                                                                    fontWeight: 700,
-                                                                                                                                                    padding: "2px 8px",
-                                                                                                                                                    borderRadius: "12px",
-                                                                                                                                                    textTransform: "uppercase",
-                                                                                                                                                    letterSpacing: "0.05em"
-                                                                                                                                                  }}>New</span>
+                                                                                                                                                                                                                background: "#2E75B6",
+                                                                                                                                                                                                                color: "white",
+                                                                                                                                                                                                                fontSize: "10px",
+                                                                                                                                                                                                                fontWeight: 700,
+                                                                                                                                                                                                                padding: "2px 8px",
+                                                                                                                                                                                                                borderRadius: "12px",
+                                                                                                                                                                                                                textTransform: "uppercase",
+                                                                                                                                                                                                                letterSpacing: "0.05em"
+                                                                                                                                                                                                              }}>New</span>
       </h2>
 
       <div
@@ -234,125 +234,125 @@ gap: "16px"
 }}
       >
         {[
-                                                                                                                                                                                                {
-                                                                                                                                                                                                  icon: "💡",
-                                                                                                                                                                                                  title: "Web App from an Idea",
-                                                                                                                                                                                                  href: "/building-web-apps/phase-1-pre-rfp-solutioning",
-                                                                                                                                                                                                  steps: ["Idea", "Design", "Build", "Deploy"],
-                                                                                                                                                                                                  description: "Start with nothing but a description. BlueGenAI generates a complete, modern application — no layouts, no frameworks, no expertise required.",
-                                                                                                                                                                                                  link: "Phase 1 — Pre-RFP Solutioning"
-                                                                                                                                                                                                },
-                                                                                                                                                                                                {
-                                                                                                                                                                                                  icon: "📋",
-                                                                                                                                                                                                  title: "Web App from a Solicitation",
-                                                                                                                                                                                                  href: "/building-web-apps/phase-1-pre-rfp-solutioning",
-                                                                                                                                                                                                  steps: ["RFP / SOW", "Upload", "Prototype", "Proposal"],
-                                                                                                                                                                                                  description: "Upload your RFP, task order, or SOW and generate a working prototype and proposal artifacts directly from the solicitation materials.",
-                                                                                                                                                                                                  link: "Phase 1 — Pre-RFP Solutioning"
-                                                                                                                                                                                                },
-                                                                                                                                                                                                {
-                                                                                                                                                                                                  icon: "🔄",
-                                                                                                                                                                                                  title: "Modernize a Legacy System",
-                                                                                                                                                                                                  href: "/building-web-apps/phase-2-requirements-refinement-cab",
-                                                                                                                                                                                                  steps: ["Legacy", "CAB", "Blueprint", "Deploy"],
-                                                                                                                                                                                                  description: "Upload your existing system — code, schemas, documentation — and generate a full architectural blueprint and requirements for its replacement.",
-                                                                                                                                                                                                  link: "Phase 2 — Requirements Refinement & CAB"
-                                                                                                                                                                                                },
-                                                                                                                                                                                                {
-                                                                                                                                                                                                  icon: "⚙️",
-                                                                                                                                                                                                  title: "Deploy to a Low-Code Platform",
-                                                                                                                                                                                                  href: "/building-on-low-code/overview",
-                                                                                                                                                                                                  steps: ["Requirements", "Data Model", "Configure", "Deploy"],
-                                                                                                                                                                                                  description: "Generate platform-native configurations for TAP, ServiceNow, Salesforce, or PowerApps and deploy to your existing instance.",
-                                                                                                                                                                                                  link: "Low-Code Overview"
-                                                                                                                                                                                                }
-                                                                                                                                                                                              ].map((card, i) => (
-                                                                                                                                                                                                <a key={i} href={card.href} style={{
-                                                                                                                                                                                                  background: "rgba(235, 243, 251, 0.25)",
-                                                                                                                                                                                                  backdropFilter: "blur(4px)",
-                                                                                                                                                                                                  border: "1px solid #e2e8f0",
-                                                                                                                                                                                                  borderRadius: "12px",
-                                                                                                                                                                                                  padding: "20px",
-                                                                                                                                                                                                  display: "flex",
-                                                                                                                                                                                                  flexDirection: "column",
-                                                                                                                                                                                                  gap: "12px",
-                                                                                                                                                                                                  textDecoration: "none",
-                                                                                                                                                                                                  color: "inherit",
-                                                                                                                                                                                                  transition: "box-shadow 0.2s, border-color 0.2s"
-                                                                                                                                                                                                }}>
-                                                                                                                                                                                                  <div style={{
-                                                                                                                                                                                                    width: "36px",
-                                                                                                                                                                                                    height: "36px",
-                                                                                                                                                                                                    background: "#EBF3FB",
-                                                                                                                                                                                                    borderRadius: "8px",
-                                                                                                                                                                                                    display: "flex",
-                                                                                                                                                                                                    alignItems: "center",
-                                                                                                                                                                                                    justifyContent: "center",
-                                                                                                                                                                                                    fontSize: "18px"
-                                                                                                                                                                                                  }}>{card.icon}</div>
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                  icon: "💡",
+                                                                                                                                                                                                                                                                                  title: "Web App from an Idea",
+                                                                                                                                                                                                                                                                                  href: "/building-web-apps/phase-1-pre-rfp-solutioning",
+                                                                                                                                                                                                                                                                                  steps: ["Idea", "Design", "Build", "Deploy"],
+                                                                                                                                                                                                                                                                                  description: "Start with nothing but a description. BlueGenAI generates a complete, modern application — no layouts, no frameworks, no expertise required.",
+                                                                                                                                                                                                                                                                                  link: "Phase 1 — Pre-RFP Solutioning"
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                  icon: "📋",
+                                                                                                                                                                                                                                                                                  title: "Web App from a Solicitation",
+                                                                                                                                                                                                                                                                                  href: "/building-web-apps/phase-1-pre-rfp-solutioning",
+                                                                                                                                                                                                                                                                                  steps: ["RFP / SOW", "Upload", "Prototype", "Proposal"],
+                                                                                                                                                                                                                                                                                  description: "Upload your RFP, task order, or SOW and generate a working prototype and proposal artifacts directly from the solicitation materials.",
+                                                                                                                                                                                                                                                                                  link: "Phase 1 — Pre-RFP Solutioning"
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                  icon: "🔄",
+                                                                                                                                                                                                                                                                                  title: "Modernize a Legacy System",
+                                                                                                                                                                                                                                                                                  href: "/building-web-apps/phase-2-requirements-refinement-cab",
+                                                                                                                                                                                                                                                                                  steps: ["Legacy", "CAB", "Blueprint", "Deploy"],
+                                                                                                                                                                                                                                                                                  description: "Upload your existing system — code, schemas, documentation — and generate a full architectural blueprint and requirements for its replacement.",
+                                                                                                                                                                                                                                                                                  link: "Phase 2 — Requirements Refinement & CAB"
+                                                                                                                                                                                                                                                                                },
+                                                                                                                                                                                                                                                                                {
+                                                                                                                                                                                                                                                                                  icon: "⚙️",
+                                                                                                                                                                                                                                                                                  title: "Deploy to a Low-Code Platform",
+                                                                                                                                                                                                                                                                                  href: "/building-on-low-code/overview",
+                                                                                                                                                                                                                                                                                  steps: ["Requirements", "Data Model", "Configure", "Deploy"],
+                                                                                                                                                                                                                                                                                  description: "Generate platform-native configurations for TAP, ServiceNow, Salesforce, or PowerApps and deploy to your existing instance.",
+                                                                                                                                                                                                                                                                                  link: "Low-Code Overview"
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                              ].map((card, i) => (
+                                                                                                                                                                                                                                                                                <a key={i} href={card.href} style={{
+                                                                                                                                                                                                                                                                                  background: "rgba(235, 243, 251, 0.25)",
+                                                                                                                                                                                                                                                                                  backdropFilter: "blur(4px)",
+                                                                                                                                                                                                                                                                                  border: "1px solid #e2e8f0",
+                                                                                                                                                                                                                                                                                  borderRadius: "12px",
+                                                                                                                                                                                                                                                                                  padding: "20px",
+                                                                                                                                                                                                                                                                                  display: "flex",
+                                                                                                                                                                                                                                                                                  flexDirection: "column",
+                                                                                                                                                                                                                                                                                  gap: "12px",
+                                                                                                                                                                                                                                                                                  textDecoration: "none",
+                                                                                                                                                                                                                                                                                  color: "inherit",
+                                                                                                                                                                                                                                                                                  transition: "box-shadow 0.2s, border-color 0.2s"
+                                                                                                                                                                                                                                                                                }}>
+                                                                                                                                                                                                                                                                                  <div style={{
+                                                                                                                                                                                                                                                                                    width: "36px",
+                                                                                                                                                                                                                                                                                    height: "36px",
+                                                                                                                                                                                                                                                                                    background: "#EBF3FB",
+                                                                                                                                                                                                                                                                                    borderRadius: "8px",
+                                                                                                                                                                                                                                                                                    display: "flex",
+                                                                                                                                                                                                                                                                                    alignItems: "center",
+                                                                                                                                                                                                                                                                                    justifyContent: "center",
+                                                                                                                                                                                                                                                                                    fontSize: "18px"
+                                                                                                                                                                                                                                                                                  }}>{card.icon}</div>
 
-                                                                                                                                                                                                  <div style={{
-                                                                                                                                                                                                    fontSize: "14px",
-                                                                                                                                                                                                    fontWeight: 700,
-                                                                                                                                                                                                    color: "#1F4E79",
-                                                                                                                                                                                                    lineHeight: 1.3
-                                                                                                                                                                                                  }}>{card.title}</div>
+                                                                                                                                                                                                                                                                                  <div style={{
+                                                                                                                                                                                                                                                                                    fontSize: "14px",
+                                                                                                                                                                                                                                                                                    fontWeight: 700,
+                                                                                                                                                                                                                                                                                    color: "#1F4E79",
+                                                                                                                                                                                                                                                                                    lineHeight: 1.3
+                                                                                                                                                                                                                                                                                  }}>{card.title}</div>
 
-                                                                                                                                                                                                  <div style={{
-                                                                                                                                                                                                    background: "#EBF3FB",
-                                                                                                                                                                                                    border: "2px dashed #2E75B6",
-                                                                                                                                                                                                    borderRadius: "8px",
-                                                                                                                                                                                                    padding: "20px 12px",
-                                                                                                                                                                                                    textAlign: "center",
-                                                                                                                                                                                                    color: "#2E75B6"
-                                                                                                                                                                                                  }}>
-                                                                                                                                                                                                    <div style={{
-                                                                                                                                                                                                      fontSize: "12px",
-                                                                                                                                                                                                      fontWeight: 600,
-                                                                                                                                                                                                      marginBottom: "8px"
-                                                                                                                                                                                                    }}>🎬 Graphic coming soon</div>
-                                                                                                                                                                                                    <div style={{
-                                                                                                                                                                                                      display: "flex",
-                                                                                                                                                                                                      alignItems: "center",
-                                                                                                                                                                                                      justifyContent: "center",
-                                                                                                                                                                                                      flexWrap: "wrap",
-                                                                                                                                                                                                      gap: "4px"
-                                                                                                                                                                                                    }}>
-                                                                                                                                                                                                      {card.steps.map((step, j) => (
-                                                                                                                                                                                                        <span key={j} style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                                                                                                                                                                                                          <span style={{
-                                                                                                                                                                                                            background: "white",
-                                                                                                                                                                                                            border: "1px solid #2E75B6",
-                                                                                                                                                                                                            borderRadius: "4px",
-                                                                                                                                                                                                            padding: "3px 6px",
-                                                                                                                                                                                                            fontSize: "10px",
-                                                                                                                                                                                                            color: "#1F4E79",
-                                                                                                                                                                                                            fontWeight: 500,
-                                                                                                                                                                                                            whiteSpace: "nowrap"
-                                                                                                                                                                                                          }}>{step}</span>
-                                                                                                                                                                                                          {j < card.steps.length - 1 && (
-                                                                                                                                                                                                            <span style={{ color: "#2E75B6", fontSize: "10px", fontWeight: 700 }}>→</span>
-                                                                                                                                                                                                          )}
-                                                                                                                                                                                                        </span>
-                                                                                                                                                                                                      ))}
-                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                  </div>
+                                                                                                                                                                                                                                                                                  <div style={{
+                                                                                                                                                                                                                                                                                    background: "#EBF3FB",
+                                                                                                                                                                                                                                                                                    border: "2px dashed #2E75B6",
+                                                                                                                                                                                                                                                                                    borderRadius: "8px",
+                                                                                                                                                                                                                                                                                    padding: "20px 12px",
+                                                                                                                                                                                                                                                                                    textAlign: "center",
+                                                                                                                                                                                                                                                                                    color: "#2E75B6"
+                                                                                                                                                                                                                                                                                  }}>
+                                                                                                                                                                                                                                                                                    <div style={{
+                                                                                                                                                                                                                                                                                      fontSize: "12px",
+                                                                                                                                                                                                                                                                                      fontWeight: 600,
+                                                                                                                                                                                                                                                                                      marginBottom: "8px"
+                                                                                                                                                                                                                                                                                    }}>🎬 Graphic coming soon</div>
+                                                                                                                                                                                                                                                                                    <div style={{
+                                                                                                                                                                                                                                                                                      display: "flex",
+                                                                                                                                                                                                                                                                                      alignItems: "center",
+                                                                                                                                                                                                                                                                                      justifyContent: "center",
+                                                                                                                                                                                                                                                                                      flexWrap: "wrap",
+                                                                                                                                                                                                                                                                                      gap: "4px"
+                                                                                                                                                                                                                                                                                    }}>
+                                                                                                                                                                                                                                                                                      {card.steps.map((step, j) => (
+                                                                                                                                                                                                                                                                                        <span key={j} style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                                                                                                                                                                                                                                                                                          <span style={{
+                                                                                                                                                                                                                                                                                            background: "white",
+                                                                                                                                                                                                                                                                                            border: "1px solid #2E75B6",
+                                                                                                                                                                                                                                                                                            borderRadius: "4px",
+                                                                                                                                                                                                                                                                                            padding: "3px 6px",
+                                                                                                                                                                                                                                                                                            fontSize: "10px",
+                                                                                                                                                                                                                                                                                            color: "#1F4E79",
+                                                                                                                                                                                                                                                                                            fontWeight: 500,
+                                                                                                                                                                                                                                                                                            whiteSpace: "nowrap"
+                                                                                                                                                                                                                                                                                          }}>{step}</span>
+                                                                                                                                                                                                                                                                                          {j < card.steps.length - 1 && (
+                                                                                                                                                                                                                                                                                            <span style={{ color: "#2E75B6", fontSize: "10px", fontWeight: 700 }}>→</span>
+                                                                                                                                                                                                                                                                                          )}
+                                                                                                                                                                                                                                                                                        </span>
+                                                                                                                                                                                                                                                                                      ))}
+                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                  </div>
 
-                                                                                                                                                                                                  <div style={{
-                                                                                                                                                                                                    fontSize: "13px",
-                                                                                                                                                                                                    color: "#475569",
-                                                                                                                                                                                                    lineHeight: 1.5,
-                                                                                                                                                                                                    flexGrow: 1
-                                                                                                                                                                                                  }}>{card.description}</div>
+                                                                                                                                                                                                                                                                                  <div style={{
+                                                                                                                                                                                                                                                                                    fontSize: "13px",
+                                                                                                                                                                                                                                                                                    color: "#475569",
+                                                                                                                                                                                                                                                                                    lineHeight: 1.5,
+                                                                                                                                                                                                                                                                                    flexGrow: 1
+                                                                                                                                                                                                                                                                                  }}>{card.description}</div>
 
-                                                                                                                                                                                                  <div style={{
-                                                                                                                                                                                                    fontSize: "12px",
-                                                                                                                                                                                                    color: "#2E75B6",
-                                                                                                                                                                                                    fontWeight: 600,
-                                                                                                                                                                                                    marginTop: "auto"
-                                                                                                                                                                                                  }}>{card.link} →</div>
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                              ))}
+                                                                                                                                                                                                                                                                                  <div style={{
+                                                                                                                                                                                                                                                                                    fontSize: "12px",
+                                                                                                                                                                                                                                                                                    color: "#2E75B6",
+                                                                                                                                                                                                                                                                                    fontWeight: 600,
+                                                                                                                                                                                                                                                                                    marginTop: "auto"
+                                                                                                                                                                                                                                                                                  }}>{card.link} →</div>
+                                                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                                              ))}
       </div>
     </div>
 
@@ -381,7 +381,7 @@ gap: "16px"
         <div className="flex flex-col gap-4">
           <div className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">Business Analysts</div>
 
-          <div className="p-5 rounded-xl border border-blue-200/60 dark:border-blue-800/40 bg-blue-50/20 dark:bg-blue-950/20 backdrop-blur-sm shadow-sm">
+          <div className="p-5 rounded-xl border border-cyan-300 dark:border-cyan-800 bg-cyan-100/60 dark:bg-cyan-950/50 backdrop-blur-md shadow-sm">
             <div className="flex items-center gap-3 mb-2"><Icon icon="arrows-rotate" size={20} /><div className="font-semibold text-gray-900 dark:text-gray-100">Modernize a Legacy System</div></div>
             <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
           </div>
@@ -391,7 +391,7 @@ gap: "16px"
             <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
           </div>
 
-          <div className="p-5 rounded-xl border border-blue-200/60 dark:border-blue-800/40 bg-blue-50/20 dark:bg-blue-950/20 backdrop-blur-sm shadow-sm">
+          <div className="p-5 rounded-xl border border-cyan-300 dark:border-cyan-800 bg-cyan-100/60 dark:bg-cyan-950/50 backdrop-blur-md shadow-sm">
             <div className="flex items-center gap-3 mb-2"><Icon icon="users" size={20} /><div className="font-semibold text-gray-900 dark:text-gray-100">Collaborate with a Team</div></div>
             <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
           </div>
@@ -402,12 +402,12 @@ gap: "16px"
         <div className="flex flex-col gap-4">
           <div className="text-sm font-semibold uppercase tracking-wide text-blue-700 dark:text-blue-300">Application Engineers</div>
 
-          <div className="p-5 rounded-xl border border-blue-200/60 dark:border-blue-800/40 bg-blue-50/20 dark:bg-blue-950/20 backdrop-blur-sm shadow-sm">
+          <div className="p-5 rounded-xl border border-cyan-300 dark:border-cyan-800 bg-cyan-100/60 dark:bg-cyan-950/50 backdrop-blur-md shadow-sm">
             <div className="flex items-center gap-3 mb-2"><Icon icon="browser" size={20} /><div className="font-semibold text-gray-900 dark:text-gray-100">Build a Web Application</div></div>
             <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
           </div>
 
-          <div className="p-5 rounded-xl border border-blue-200/60 dark:border-blue-800/40 bg-blue-50/20 dark:bg-blue-950/20 backdrop-blur-sm shadow-sm">
+          <div className="p-5 rounded-xl border border-cyan-300 dark:border-cyan-800 bg-cyan-100/60 dark:bg-cyan-950/50 backdrop-blur-md shadow-sm">
             <div className="flex items-center gap-3 mb-2"><Icon icon="cubes" size={20} /><div className="font-semibold text-gray-900 dark:text-gray-100">Deploy to a Low-Code Platform</div></div>
             <span className="inline-block px-2 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 rounded">Coming soon</span>
           </div>
@@ -432,7 +432,7 @@ gap: "16px"
           </p>
         </div>
 
-        <a href="/help-and-support/overview" className="block p-6 rounded-xl border border-blue-200/60 dark:border-blue-800/40 bg-blue-50/20 dark:bg-blue-950/20 backdrop-blur-sm shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all no-underline">
+        <a href="/help-and-support/overview" className="block p-6 rounded-xl border border-fuchsia-300 dark:border-fuchsia-800 bg-fuchsia-100/60 dark:bg-fuchsia-950/50 backdrop-blur-md shadow-sm hover:shadow-md hover:border-fuchsia-400 dark:hover:border-fuchsia-700 transition-all no-underline">
           <div className="flex items-center gap-3 mb-3"><Icon icon="life-ring" size={22} /><div className="font-semibold text-gray-900 dark:text-gray-100">Need Help?</div></div>
 
           <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed m-0">
