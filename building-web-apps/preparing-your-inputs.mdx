@@ -1,5 +1,169 @@
 ---
 title: "Preparing Your Inputs"
+description: "Identify what inputs to gather and how to prepare them before opening BlueGenAI for your Web App project."
 ---
 
-This page is a placeholder. Content coming soon.
+BlueGenAI accepts four categories of input — contractual requirements, legacy applications, support documentation, and natural language. You do not need all four. Use what you have. More context produces better results, but the platform works with whatever is available — including nothing at all.
+
+Start by identifying which scenario best describes your situation, then gather the inputs listed for that scenario.
+
+---
+
+## Which scenario describes your situation?
+
+### Scenario 1 — You have a legacy system to modernize
+
+Gather as much of the following as you can find:
+
+- Source code (as a ZIP archive — preferred format)
+- Database schemas or DDL scripts
+- Existing documentation — system manuals, process flows, operator guides
+- Screenshots of the current application
+- ATO, compliance artifacts, or security documentation
+
+<Tip>
+  This is the richest starting point. The more you provide, the more comprehensive the architectural blueprint BlueGenAI produces. Even outdated or incomplete documentation helps — include it.
+</Tip>
+
+Once your inputs are gathered, proceed to [Phase 2 — Requirements Refinement & CAB](/building-web-apps/phase-2-requirements-refinement-cab) where the CAB tool will analyze your system and generate a blueprint.
+
+---
+
+### Scenario 2 — You are working from a solicitation or contract
+
+Gather the relevant contract documents:
+
+- RFP, RFI, RFQ, SOW, SOR, or Tech Spec documents
+- Discovery notes, interview transcripts, or JAD session outputs if available
+- Any existing design references or style guides mentioned in the solicitation
+
+Include full documents — not excerpts. BlueGenAI reads the full context and produces more accurate outputs when it has the complete picture.
+
+Once your inputs are gathered, proceed to [Phase 1 — Pre-RFP Solutioning](/building-web-apps/phase-1-pre-rfp-solutioning).
+
+---
+
+### Scenario 3 — You are starting with an idea
+
+You do not need any files or existing artifacts to get started. A clear description of what the application needs to do is all that is required.
+
+This is one of the most powerful demonstrations of what BlueGenAI can do. Describe the application in plain language and the platform generates a complete, modern, fully designed working prototype from that description alone.
+
+<Note>
+  You do not need to define layouts, specify colors, choose frameworks, or enumerate every UI component. BlueGenAI applies modern design best practices and government accessibility standards automatically.
+</Note>
+
+The design is not fixed. Describe what you want to change in plain language and the platform adjusts accordingly — no design expertise required. As the project evolves you can add supporting materials at any time — requirements documents, design references, compliance artifacts — and the platform incorporates them.
+
+Once you are ready, proceed to [Phase 1 — Pre-RFP Solutioning](/building-web-apps/phase-1-pre-rfp-solutioning).
+
+---
+
+## How to prepare your inputs
+
+### Contractual requirements
+
+<Steps>
+  <Step title="Locate your documents">
+    Gather the RFP, RFI, RFQ, SOW, SOR, or Tech Spec. Include the full document — not excerpts or summaries.
+  </Step>
+  <Step title="Export or keep as-is">
+    PDF or Word format both work. No conversion or cleanup needed.
+  </Step>
+</Steps>
+
+---
+
+### Source code
+
+<Steps>
+  <Step title="Create a ZIP archive">
+    Compress the full codebase into a single ZIP file — this is the preferred upload format for source code.
+  </Step>
+  <Step title="Include configuration files">
+    Add `package.json`, `requirements.txt`, `docker-compose.yml`, `.env.example`, and any similar dependency or environment files. These help BlueGenAI understand the project's structure and runtime dependencies.
+  </Step>
+  <Step title="Include database scripts">
+    Add DDL scripts, schema exports, and any migration files.
+  </Step>
+  <Step title="Do not clean or filter">
+    Upload the code as-is. Messy, inconsistent, or legacy code is fine — BlueGenAI handles it. Removing files you think are unimportant risks losing context the platform needs.
+  </Step>
+</Steps>
+
+---
+
+### Support documentation
+
+<Steps>
+  <Step title="Gather process and policy documents">
+    Collect process flows, SOPs, and policy documents relevant to the application's business logic.
+  </Step>
+  <Step title="Take screenshots">
+    Capture screenshots of existing application screens — even partial or low-quality screenshots are useful.
+  </Step>
+  <Step title="Include compliance artifacts">
+    Add ATO documentation, security assessments, and compliance requirements.
+  </Step>
+</Steps>
+
+---
+
+### Natural language inputs
+
+<Steps>
+  <Step title="Compile written materials">
+    Gather user stories, meeting notes, JAD session transcripts, or any written description of what the application needs to do.
+  </Step>
+  <Step title="Upload as files or type directly">
+    Written materials can be uploaded as files or typed directly into the prompt field — both work equally well.
+  </Step>
+</Steps>
+
+---
+
+## How to upload inputs
+
+<Steps>
+  <Step title="Open your project">
+    Navigate to your project in BlueGenAI.
+  </Step>
+  <Step title="Open the Files panel">
+    Click the **Files icon** in the toolbar.
+  </Step>
+  <Step title="Upload your files">
+    Click **Upload** and select the files you have prepared. You can upload multiple files at once.
+  </Step>
+  <Step title="Reference files in your prompts">
+    Once uploaded, files appear in the Files panel and can be attached to any prompt using the 📎 attachment icon in the chat input.
+  </Step>
+</Steps>
+
+<Warning>
+  Every uploaded file consumes credits when referenced in a prompt. Be intentional about what you include — attach only the files relevant to the current prompt. Remove test data, build artifacts, and unrelated documentation before uploading.
+</Warning>
+
+---
+
+## Supported file formats
+
+| Category | Formats |
+| --- | --- |
+| **Documents** | PDF (.pdf), Word (.docx), PowerPoint (.pptx) |
+| **Source code** | Any language — individual files (.py, .js, .java, .cs, etc.) or ZIP archives (.zip) |
+| **Images** | PNG (.png), JPEG (.jpg, .jpeg), GIF (.gif) |
+| **Archives** | ZIP (.zip) — CAB extracts and categorizes contents automatically |
+
+---
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Phase 1 — Pre-RFP Solutioning" icon="file-contract" href="/building-web-apps/phase-1-pre-rfp-solutioning">
+    Start here if you are working from a solicitation or starting with an idea.
+  </Card>
+
+  <Card title="Phase 2 — Requirements Refinement & CAB" icon="magnifying-glass" href="/building-web-apps/phase-2-requirements-refinement-cab">
+    Start here if you have a legacy system to modernize.
+  </Card>
+</CardGroup>
