@@ -42,7 +42,6 @@
           {
             "group": "Phase 1: Pre-RFP Solutioning",
             "pages": [
-              "building-web-apps/phase-1-pre-rfp-solutioning",
               "building-web-apps/phase-1-path-a",
               "building-web-apps/phase-1-path-b"
             ]
@@ -56,7 +55,8 @@
           "building-web-apps/phase-6-deployment-and-sharing",
           "building-web-apps/generating-supporting-documents",
           "building-web-apps/design-mode-and-prototyping",
-          "building-web-apps/supported-tech-stack"
+          "building-web-apps/supported-tech-stack",
+          "building-web-apps/phase-1-pre-rfp-solutioning"
         ],
         "icon": "code"
       },
