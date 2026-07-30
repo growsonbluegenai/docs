@@ -39,7 +39,14 @@
         "pages": [
           "building-web-apps/web-apps-overview",
           "building-web-apps/preparing-your-inputs",
-          "building-web-apps/phase-1-pre-rfp-solutioning",
+          {
+            "group": "Phase 1: Pre-RFP Solutioning",
+            "pages": [
+              "building-web-apps/phase-1-pre-rfp-solutioning",
+              "building-web-apps/phase-1-path-a",
+              "building-web-apps/phase-1-path-b"
+            ]
+          },
           "building-web-apps/phase-2-requirements-refinement-cab",
           "building-web-apps/phase-3-system-design",
           "building-web-apps/phase-4-development-build-mode",
@@ -49,9 +56,7 @@
           "building-web-apps/phase-6-deployment-and-sharing",
           "building-web-apps/generating-supporting-documents",
           "building-web-apps/design-mode-and-prototyping",
-          "building-web-apps/supported-tech-stack",
-          "building-web-apps/phase-1-path-a",
-          "building-web-apps/phase-1-path-b"
+          "building-web-apps/supported-tech-stack"
         ],
         "icon": "code"
       },
