@@ -1,5 +1,202 @@
 ---
-title: "Phase 1 Path A"
+title: "Path A: Contractor / Integrator BD Solutioning"
+sidebarTitle: "Path A: BD Solutioning"
+description: "Use BlueGenAI to generate client prototypes, proposal artifacts, and procurement documents from RFP and solicitation materials to support a competitive bid."
 ---
 
-This page is a placeholder. Content coming soon.
+Path A is for contractors and integrators pursuing a government contract. BlueGenAI lets you generate a working prototype of the proposed solution, produce proposal artifacts, and create procurement documents — all directly from the solicitation materials, before a single line of production code is written.
+
+<Tip>
+  A polished prototype of one key workflow is more impactful than a rough draft of an entire system. Start focused — the intake process, the review queue, or the public-facing portal — and use it to drive the conversation.
+</Tip>
+
+---
+
+## Before you start
+
+You will need:
+
+- The client's RFP, task order, SOW, or solicitation document
+- A BlueGenAI account and an active project
+- Optionally: the client's branding (hex color codes or a style guide URL)
+
+---
+
+## How to generate a prototype from a solicitation
+
+<Steps>
+  <Step title="Create a new project">
+    Open BlueGenAI and click **\+ Create Project**. Name it for the client or pursuit. Select **Web Application** as the project type.
+  </Step>
+  <Step title="Upload the solicitation document">
+    Click the **Files** icon in the toolbar and upload the RFP, SOW, or task order. Include the full document — not excerpts.
+  </Step>
+  <Step title="Write your first prompt">
+    Reference the uploaded document and describe the workflow you want to prototype. Be specific about the user, the outcome, and any constraints.
+
+    **Example:**
+
+    ```text
+    Based on the attached RFP for the Department of Health's inspection 
+    management system, design the inspector's field report form. Include 
+    fields for facility information, inspection type, findings, corrective 
+    actions, and follow-up scheduling. The form should be accessible and 
+    use plain language.
+    ```
+  </Step>
+  <Step title="Review the Draft App">
+    Click the blue card in the chat to preview the generated Draft App in your browser. Review it against the solicitation requirements.
+  </Step>
+  <Step title="Iterate until it reflects the proposed solution">
+    Continue prompting to refine, extend, or adjust. Each iteration updates the Draft App — you do not start over.
+  </Step>
+</Steps>
+
+<Note>
+  The Draft App generated in the Prototype tab is functional HTML code — not a static image or wireframe. It is one click away from becoming a fully deployed production application by switching to the Build tab. For BD purposes it is a working demonstration of the proposed solution.
+</Note>
+
+---
+
+## How to generate proposal artifacts
+
+The Prototype tab can generate written proposal artifacts as well as visual prototypes. These make strong proposal attachments.
+
+<Steps>
+  <Step title="Write a prompt requesting the specific document">
+    Be explicit about what type of document you need and what it should cover.
+  </Step>
+  <Step title="Reference your uploaded solicitation for context">
+    Attach the solicitation file using the 📎 icon so the agent generates content aligned to the specific requirements.
+  </Step>
+  <Step title="Save the generated file">
+    Click the save icon on the generated file card. The document is saved to your project's Files panel and can be downloaded for proposal attachment.
+  </Step>
+</Steps>
+
+**Example prompts for proposal artifacts:**
+
+```text
+Generate a requirements document based on the attached SOW that 
+demonstrates our understanding of scope.
+```
+
+```text
+Create a project charter for this engagement including timeline, 
+deliverables, and technical approach.
+```
+
+```text
+Generate a Requirements Traceability Matrix based on the requirements 
+in the attached SOW.
+```
+
+**Supported procurement document formats:**
+
+| Document | Prompt guidance |
+| --- | --- |
+| RTM — Requirements Traceability Matrix | Reference the SOW and ask for a matrix mapping requirements to proposed solution components |
+| SOO — Statement of Objectives | Describe the client's mission area and ask for a performance-based objectives document |
+| SOW — Statement of Work | Reference the RFP and ask for a draft SOW aligned to the requirements |
+| Project Charter | Describe the engagement and ask for a charter with timeline, deliverables, and approach |
+| Technical Approach Narrative | Reference the solicitation and ask for a narrative demonstrating understanding of scope |
+
+---
+
+## How to apply client branding
+
+<Steps>
+  <Step title="Open the Design System">
+    Click the **Design System** icon in the toolbar.
+  </Step>
+  <Step title="Enter the client's colors">
+    Input the client's hex color codes. If the client has a published style guide or design system, reference it by URL in a prompt.
+  </Step>
+  <Step title="Apply">
+    Changes apply immediately across the Draft App. Applying the Design System does not consume credits.
+  </Step>
+</Steps>
+
+---
+
+## How to share a prototype with a client
+
+<Steps>
+  <Step title="Open the Manage Collaboration panel">
+    Click the **👤 collaboration icon** in the top-right corner of the workspace.
+  </Step>
+  <Step title="Enable Shareable Link Access">
+    Toggle **Shareable Link Access** to On.
+  </Step>
+  <Step title="Copy and share the link">
+    Copy the shareable URL and include it in your proposal email or follow-up communication. Recipients must be logged in to BlueGenAI to view the link.
+  </Step>
+  <Step title="Disable after review">
+    Return to the Manage Collaboration panel and toggle Shareable Link Access to Off after the review period ends — especially for prototypes based on sensitive solicitation materials.
+  </Step>
+</Steps>
+
+---
+
+## How to download a prototype for offline demo use
+
+<Steps>
+  <Step title="Open the Files panel">
+    Click the **Files** icon in the toolbar and locate the Draft App file.
+  </Step>
+  <Step title="Download the file">
+    Click the download icon on the file card. The downloaded file includes embedded styles and scripts — it renders correctly offline without a network connection.
+  </Step>
+</Steps>
+
+<Tip>
+  Always test the prototype URL and confirm it loads before a client meeting. If presenting offline, test the downloaded file on the same machine you will use for the presentation.
+</Tip>
+
+---
+
+## BD demo preparation checklist
+
+<Steps>
+  <Step title="Review the solicitation">
+    Read the RFP, SOW, or task order before generating anything. Understand the client's mission, the key requirements, and the evaluation criteria.
+  </Step>
+  <Step title="Create a project and upload the solicitation">
+    Create a new BlueGenAI project and upload the full solicitation document.
+  </Step>
+  <Step title="Generate a focused prototype">
+    Prototype one key workflow — the intake process, the review queue, or the primary user-facing screen. Keep it focused and polished.
+  </Step>
+  <Step title="Apply client branding">
+    Open the Design System and apply the client's colors. If the client has a published design system, reference it in a prompt.
+  </Step>
+  <Step title="Test before the meeting">
+    Open the prototype URL and confirm it loads. Prepare a shareable link and a downloaded offline backup.
+  </Step>
+  <Step title="Disable the share link after review">
+    Once the review period ends, disable the Shareable Link Access toggle in the Manage Collaboration panel.
+  </Step>
+</Steps>
+
+---
+
+## BD tips
+
+- **Use Requirement Folders for multi-module proposals.** Organize the prototype by capability area so you can walk the client through each section.
+- **Generate realistic placeholder data.** Ask the agent to populate the prototype with realistic sample data so it looks like a live application during demos.
+- **The Prototype tab uses significantly fewer credits than the Build tab.** Do all BD and pre-sales work in the Prototype tab — only switch to Build when development begins.
+- **Reference the SOW directly.** Upload the solicitation and prompt the agent to work from it. This demonstrates understanding and saves time.
+
+---
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Phase 1 Path B — Stakeholder Alignment" icon="building-columns" href="/building-web-apps/phase-1-path-b">
+    Not responding to a solicitation? Use Phase 1 to align stakeholders before development begins.
+  </Card>
+
+  <Card title="Phase 2 — Requirements Refinement & CAB" icon="list-check" href="/building-web-apps/phase-2-requirements-refinement-cab">
+    After award — develop structured requirements for the build phase.
+  </Card>
+</CardGroup>
