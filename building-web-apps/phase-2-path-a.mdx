@@ -1,0 +1,75 @@
+---
+title: "Path A: Post-Award Requirements Development"
+sidebarTitle: "Path A: Post-Award Requirements"
+description: "Generate structured, traceable requirements from solicitation materials, discovery notes, and stakeholder input."
+---
+
+This path is for Business Analysts working post-award from solicitation materials, discovery notes, and stakeholder input.
+
+## When to use this path
+
+- You have a contract award, and you have conducted (or are conducting) discovery.
+- Your inputs are solicitation materials, interview notes, JAD session transcripts, and existing documentation.
+- You do not have a legacy codebase to analyze — or you have already analyzed it using Path B.
+
+## Set up your project for requirements development
+
+<Steps>
+  <Step title="Open your project">
+    Work in the Prototype tab.
+  </Step>
+  <Step title="Upload your input files">
+    Add the SOW, RFP sections, discovery notes, JAD transcripts, and interview summaries.
+  </Step>
+  <Step title="Organize into Requirement Folders">
+    Group inputs by feature area or functional domain.
+  </Step>
+</Steps>
+
+## Generate user stories from solicitation materials
+
+<Steps>
+  <Step title="Write a prompt referencing your uploaded documents">
+    For example: _"Based on the attached SOW and discovery notes, generate user stories for the permit intake workflow. Include acceptance criteria for each story."_
+  </Step>
+  <Step title="Review for accuracy and completeness">
+    Confirm the generated user stories reflect what's actually in your source materials.
+  </Step>
+  <Step title="Iterate as needed">
+    For example: _"Add user stories for the document upload and verification steps."_
+  </Step>
+</Steps>
+
+## Generate a Requirements Traceability Matrix
+
+Prompt the agent directly:
+
+> "Generate a Requirements Traceability Matrix that maps each requirement from the attached SOW to a user story and test case."
+
+Review the result for completeness and identify any gaps.
+
+## Generate compliance-ready documentation
+
+- _"Generate acceptance criteria for each user story that include accessibility compliance requirements aligned to Section 508."_
+- _"Generate a data model and workflow diagram based on the requirements we have developed."_
+
+## Prepare Phase 2 outputs for handoff to Phase 3
+
+<Steps>
+  <Step title="Save your outputs">
+    Save all finalized user stories, the RTM, and supporting documentation as files.
+  </Step>
+  <Step title="Review your Requirement Folders">
+    Confirm they reflect the final organization of your work.
+  </Step>
+  <Step title="Document open questions">
+    Note any assumptions or unresolved items that need attention before System Design.
+  </Step>
+  <Step title="Proceed to Phase 3">
+    Continue to System Design once your requirements are finalized.
+  </Step>
+</Steps>
+
+<Card title="Phase 3: System Design" icon="arrow-right" href="/building-web-apps/phase-3-system-design">
+  Continue to the next phase.
+</Card>

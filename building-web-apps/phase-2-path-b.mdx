@@ -1,0 +1,119 @@
+---
+title: "Path B: Legacy System Modernization (CAB)"
+sidebarTitle: "Path B: Legacy Modernization (CAB)"
+description: "Use CAB to reverse-engineer an existing legacy system and develop requirements for its replacement."
+---
+
+This path is for government offices, Business Analysts, and contracted teams modernizing a legacy system. It is the primary entry point for the modernization scenario.
+
+## When to use this path
+
+- A government office has an existing legacy system that needs to be modernized.
+- The team needs to understand what the current system does before defining what the replacement should do.
+- Resources are already under contract — this is post-award or in-house work.
+
+## Prepare your legacy system artifacts for upload
+
+1. Gather source code — package it as a ZIP archive if it's a full codebase.
+2. Include configuration files: `package.json`, `requirements.txt`, `docker-compose.yml`, `.env.example`.
+3. Include database DDL scripts and schema exports.
+4. Gather any existing documentation: user guides, system manuals, process flows, ATO artifacts.
+5. Take screenshots of the existing application UI if available.
+6. Gather interface specifications for any connected systems.
+
+<Warning>
+  Do not clean or filter the code before uploading. CAB handles messy, inconsistent code — removing files you think are unimportant risks losing context the analyzer needs.
+</Warning>
+
+## Set up CAB and upload your inputs
+
+<Steps>
+  <Step title="Open your project">
+    Navigate to the CAB viewer within your project.
+  </Step>
+  <Step title="Upload your prepared files">
+    Add your source code ZIP, documentation, and screenshots.
+  </Step>
+</Steps>
+
+<Tip>
+  Source code \+ documentation \+ screenshots together produce the richest blueprint. Any single input type alone will be more limited.
+</Tip>
+
+## Select the right model tier
+
+Always use the **High** tier for legacy system analysis. Legacy systems tend to be complex with deeply intertwined logic — High tier gives CAB the room it needs to surface nuance. Low and Medium tiers are only suitable for quick explorations.
+
+## Generate the architectural blueprint
+
+Click Generate and monitor progress through CAB's seven pipeline phases:
+
+1. Parse and extract content from each uploaded file.
+2. Analyze codebase structure — languages, frameworks, entry points, dependencies.
+3. Identify architectural patterns and map them to a normalized structure.
+4. Simplify and consolidate patterns.
+5. Reassemble into a coherent system description.
+6. Create a semantic search index for cross-referencing.
+7. Generate the final blueprint sections.
+
+Credit usage is tracked per phase — review the breakdown after generation completes.
+
+## Read the architectural blueprint
+
+The completed blueprint (`CAB.md`) covers:
+
+- **System overview** — what the legacy system does and who it serves
+- **Architecture and components** — frontend, backend, data, and integration layers
+- **Data models** — entity definitions, relationships, and key data structures
+- **Business logic and workflows** — the rules the system enforces and the processes it supports
+- **Integration points** — external systems, APIs, and services the application connects to
+- **UI patterns** — page layouts and form structures (present only if screenshots or frontend code were uploaded)
+
+## Validate the blueprint with SMEs
+
+<Steps>
+  <Step title="Share the read-only link">
+    Send it to government SMEs for review.
+  </Step>
+  <Step title="Walk through the blueprint together">
+    Confirm the analysis accurately reflects the real system.
+  </Step>
+  <Step title="Note gaps or inaccuracies">
+    These inform the requirements you write for the replacement system.
+  </Step>
+</Steps>
+
+## Share the blueprint
+
+CAB generates a shareable read-only link automatically. Copy and share it — recipients must be logged in to BlueGenAI. Disable the share link from Project Settings once reviews are complete.
+
+## Review and edit generated user stories (CAB Phase 2)
+
+<Warning>
+  This section requires a Platform Owner walkthrough before it can be fully documented. The workflow below reflects what's confirmed so far — treat it as provisional.
+</Warning>
+
+- Review AI-generated user stories for the future-state modernized system.
+- Edit and update user stories to reflect what the replacement should do.
+- Whether edits propagate automatically to dependent artifacts is still being confirmed with the Platform Owner.
+
+## Prepare Phase 2 outputs for handoff to Phase 3
+
+<Steps>
+  <Step title="Save the architectural blueprint">
+    It becomes a reference artifact for System Design.
+  </Step>
+  <Step title="Save approved user stories">
+    Include any supporting documentation.
+  </Step>
+  <Step title="Document what should change">
+    Record decisions about what the replacement system must do differently from the legacy system.
+  </Step>
+  <Step title="Proceed to Phase 3">
+    Continue to System Design once your requirements and blueprint are finalized.
+  </Step>
+</Steps>
+
+<Card title="Phase 3: System Design" icon="arrow-right" href="/building-web-apps/phase-3-system-design">
+  Continue to the next phase.
+</Card>

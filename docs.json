@@ -49,8 +49,14 @@
                   "building-web-apps/phase-1-path-b"
                 ]
               },
-              "building-web-apps/phase-1-pre-rfp-solutioning",
-              "building-web-apps/phase-2-requirements-refinement-cab",
+              {
+                "group": "Phase 2: Requirements Refinement & CAB",
+                "pages": [
+                  "building-web-apps/phase-2-path-a",
+                  "building-web-apps/phase-2-path-b",
+                  "building-web-apps/phase-2-requirements-refinement-cab"
+                ]
+              },
               "building-web-apps/phase-3-system-design",
               {
                 "group": "Phase 4: Development",
