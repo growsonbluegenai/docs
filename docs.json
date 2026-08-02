@@ -160,5 +160,39 @@
       "destination": "/index",
       "permanent": true
     }
-  ]
+  ],
+  "footer": {
+    "links": [
+      {
+        "header": "Resources",
+        "items": [
+          {
+            "label": "Glossary",
+            "href": "/resources/glossary"
+          },
+          {
+            "label": "Changelog & Release Notes",
+            "href": "/resources/changelog-and-release-notes"
+          }
+        ]
+      },
+      {
+        "header": "Support",
+        "items": [
+          {
+            "label": "Contact Support",
+            "href": "/help-and-support/contact-support"
+          },
+          {
+            "label": "FAQ",
+            "href": "/help-and-support/faq"
+          },
+          {
+            "label": "Known Issues",
+            "href": "/help-and-support/known-issues"
+          }
+        ]
+      }
+    ]
+  }
 }
