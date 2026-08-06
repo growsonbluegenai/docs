@@ -1,75 +1,145 @@
 ---
 title: "Path B: Government Office Stakeholder Alignment"
-description: "Build internal stakeholder alignment and obtain leadership approval before development begins under an existing contract."
+description: "Use BlueGenAI to build internal stakeholder alignment and obtain leadership approval before development work begins under an existing contract."
+sidebarTitle: "Path B: Stakeholder Alignment"
 ---
 
-This path is for government offices and contracted teams with existing contract vehicles who need to align stakeholders and secure leadership approval before development work begins.
+Path B is for government offices and contracted teams who already have resources in place. The contract is awarded, the team is assembled — but development has not started because stakeholders have not aligned on what the modernized system should look like.
+
+Phase 1 in this context is not a proposal tool. It is an alignment tool. The goal is to get leadership and stakeholders to agree on the vision before development begins — preventing costly rework later.
 
 <Note>
-  There's no competitive proposal to write here — the resources are already in place. Phase 1 in this context is about alignment: getting stakeholders to agree on what the modernized system should look like before development begins.
+  Phase 1 Path B is optional. If stakeholder alignment already exists and requirements are clear, you can skip directly to [Phase 2 — Requirements Refinement & CAB](/building-web-apps/phase-2-requirements-refinement-cab).
 </Note>
 
-## How this phase works under contract
+---
 
-The outputs are prototypes for leadership review, concept of operations documents, and solution narratives for internal approval.
+## Before you start
 
-<Warning>
-  The HTML prototype generated in the Prototype tab is functional rendered code — not yet deployed to a production environment, but one click away from becoming one. Switching to the Build tab converts it into a fully deployed application. Your stakeholder alignment prototype is essentially production-ready.
-</Warning>
+You will need:
 
-This phase is optional. If alignment already exists, you can skip directly to Phase 2.
+- A BlueGenAI account and an active project
+- Any existing documentation about the current system — process flows, screenshots, user guides, or requirements documents
+- A plain language description of what the modernized system should do
 
-## Generate a stakeholder alignment prototype
+---
+
+## How to generate a stakeholder alignment prototype
 
 <Steps>
   <Step title="Create a new project">
-    Start a new BlueGenAI project.
+    Open BlueGenAI and click **\+ Create Project**. Name it for the modernization effort.
   </Step>
   <Step title="Upload existing documentation">
-    Include requirements docs, process flows, and screenshots of the current system alongside any documentation of the desired future state.
+    Click the **Files** icon and upload any documentation you have about the current system and the desired future state — requirements documents, process flows, screenshots of the existing system, user guides.
   </Step>
-  <Step title="Describe the modernized system">
-    Write a prompt describing what the modernized system should do.
+  <Step title="Write your first prompt">
+    Describe what the modernized system should do. Focus on the user experience and key capabilities — not technical implementation details.
 
-    For example: _"Generate a prototype of a modernized permit tracking system for a state agency. The current system is a legacy desktop application. The modernized version should be web-based, accessible, and allow residents to submit and track permit requests online."_
+    **Example:**
+
+    ```text
+    Generate a prototype of a modernized permit tracking system for a 
+    state agency. The current system is a legacy desktop application. 
+    The modernized version should be web-based, accessible, and allow 
+    residents to submit and track permit requests online. Agency staff 
+    should be able to review submissions in a queue and approve or deny 
+    requests with supporting notes.
+    ```
   </Step>
   <Step title="Review and iterate">
-    Click Send, review the generated prototype, and continue iterating until it reflects the agreed-upon vision.
+    Review the generated Draft App. Continue prompting to refine until the prototype reflects the agreed-upon vision for the modernized system.
   </Step>
 </Steps>
 
-## Generate a concept of operations document
+<Note>
+  The Draft App generated in the Prototype tab is functional rendered code — not a static image or wireframe. It is one click away from becoming a fully deployed production application by switching to the Build tab. Stakeholders reviewing the prototype are seeing something very close to what the production system will look like.
+</Note>
 
-Prompt the agent directly, referencing any uploaded documentation for context:
+---
 
-> "Generate a concept of operations document for the modernization of our permit tracking system. Include current state summary, future state vision, key stakeholders, and high-level implementation approach."
+## How to generate a concept of operations document
 
-Save and share the generated document for leadership review.
+A concept of operations (ConOps) document describes the current state, the future state vision, key stakeholders, and the high-level implementation approach. It is a standard artifact for leadership review and approval.
 
-## Use the prototype for leadership sign-off
+<Steps>
+  <Step title="Write a prompt requesting the ConOps">
+    Reference any uploaded documentation so the agent generates content aligned to your specific system.
+
+    **Example:**
+
+    ```text
+    Generate a concept of operations document for the modernization of 
+    our permit tracking system. Include: current state summary, future 
+    state vision, key stakeholders, high-level implementation approach, 
+    and expected outcomes.
+    ```
+  </Step>
+  <Step title="Review and adjust">
+    Review the generated document. Continue prompting to adjust language, add sections, or align to your agency's document standards.
+  </Step>
+  <Step title="Save the file">
+    Click the save icon on the generated file card. The document is saved to your project's Files panel and can be downloaded for leadership review.
+  </Step>
+</Steps>
+
+---
+
+## How to use the prototype for leadership approval
 
 <Steps>
   <Step title="Generate a shareable link">
-    Available from Project Settings.
+    Open the **👤 Manage Collaboration** panel and toggle **Shareable Link Access** to On.
   </Step>
   <Step title="Share with leadership and stakeholders">
-    Send the link for asynchronous review, or use the prototype in a live presentation.
+    Copy the shareable URL and distribute it for asynchronous review. Recipients must be logged in to BlueGenAI to view the link.
+  </Step>
+  <Step title="Walk stakeholders through the prototype">
+    Use the prototype in a presentation or meeting to walk stakeholders through the proposed modernized system. The prototype is interactive — stakeholders can click through it in real time.
   </Step>
   <Step title="Collect feedback and iterate">
-    Refine the prototype before proceeding to Phase 2.
+    Gather feedback from stakeholders and continue prompting to adjust the prototype until alignment is reached.
   </Step>
-  <Step title="Disable the link after review">
-    Return to Project Settings once the review period ends.
+  <Step title="Disable the share link">
+    Once the review period ends, toggle **Shareable Link Access** to Off in the Manage Collaboration panel.
   </Step>
 </Steps>
 
-## When to skip Phase 1
+---
 
-Proceed directly to Phase 2 if:
+## When to skip Phase 1 and go directly to Phase 2
 
-- Stakeholder alignment already exists and leadership has approved the modernization direction.
-- The existing contract already defines the scope clearly enough to begin requirements work.
+Phase 1 Path B is the right starting point when stakeholders need to see something before they can agree. If that alignment already exists, skip it.
 
-<Card title="Phase 2: Requirements Refinement & CAB" icon="arrow-right" href="/building-web-apps/phase-2-requirements-refinement-cab">
-  Continue to legacy system analysis and requirements development.
+Go directly to Phase 2 if:
+
+- Stakeholders are already aligned on the future state vision
+- Requirements exist from a previous effort or discovery phase
+- The modernization scope is already documented and approved
+
+<Card title="Phase 2 — Requirements Refinement & CAB" icon="list-check" href="/building-web-apps/phase-2-requirements-refinement-cab">
+  Proceed here once stakeholders are aligned. Phase 2 transforms your existing system artifacts and approved vision into structured, traceable requirements.
 </Card>
+
+---
+
+## Tips for effective stakeholder alignment
+
+- **Show, don't tell.** A working prototype drives faster alignment than a slide deck. Stakeholders can click through the proposed system and react to something concrete.
+- **Start with one workflow.** Prototype the most contentious or highest-priority workflow first — the one most likely to generate disagreement. Resolve that alignment before expanding scope.
+- **Document decisions as you go.** Use the Prototype tab to generate a running requirements or decisions document alongside the prototype. This becomes the input for Phase 2.
+- **The prototype is production-ready.** Remind stakeholders that what they are reviewing is functional code — not a mockup. Their feedback directly shapes the application that gets built.
+
+---
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="Phase 1 Path A — BD Solutioning" icon="file-contract" href="/building-web-apps/phase-1-path-a">
+    Responding to an RFP or building a proposal? Use Path A instead.
+  </Card>
+
+  <Card title="Phase 2 — Requirements Refinement & CAB" icon="list-check" href="/building-web-apps/phase-2-requirements-refinement-cab">
+    Once alignment is reached, move to Phase 2 to develop structured requirements.
+  </Card>
+</CardGroup>
