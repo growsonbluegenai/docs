@@ -54,23 +54,19 @@ mode: "custom"
               }
 
               /*
-              Elevated scenario cards in "How do I choose the right approach?" section.
-              Uses a scoped class because inline styles cannot set !important and can be
-              overridden by Mintlify global card/link resets.
+              NOTE (unresolved): scenario cards no longer use this class — they're
+              now styled with a plain <div> wrapper inside a display:contents <a>,
+              avoiding the anchor-tag reset entirely. See index.mdx SECTION 2.
+
+              UNVERIFIED: this whole <style> block may not render at all in
+              Mintlify's custom-mode MDX (style tags are commonly stripped by
+              HTML sanitizers the same way script tags are). The "card" rule
+              below has not been visually confirmed on the live site. If the
+              native Card styling (Common Workflows / Updates & Support) still
+              looks unstyled, this entire block needs to move to a real CSS
+              file added to the repository — Mintlify's documented mechanism —
+              rather than an inline style tag.
               */
-              .bgai-scenario-card {
-                background: red !important;
-                -webkit-backdrop-filter: blur(6px) !important;
-                backdrop-filter: blur(6px) !important;
-                border: 1px solid rgba(226, 232, 240, 0.8) !important;
-                box-shadow: 0 10px 30px rgba(15, 23, 42, 0.10), 0 4px 10px rgba(15, 23, 42, 0.05) !important;
-                transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s !important;
-              }
-              .bgai-scenario-card:hover {
-                box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14), 0 6px 14px rgba(15, 23, 42, 0.07) !important;
-                transform: translateY(-2px);
-                border-color: rgba(46, 117, 182, 0.4) !important;
-              }
             `}
 </style>
 
@@ -119,7 +115,17 @@ mode: "custom"
 
     {/* SECTION 1 - WHAT IS BLUEGENAI */}
 
-    <div className="mb-24 p-8 md:p-12 bg-white dark:bg-gray-900/50 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm">
+    <div
+      style={{
+    marginBottom: "96px",
+    padding: "48px",
+    background: "rgba(255, 255, 255, 0.94)",
+    backdropFilter: "blur(6px)",
+    borderRadius: "16px",
+    border: "1px solid rgba(226, 232, 240, 0.8)",
+    boxShadow: "0 8px 24px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04)"
+  }}
+    >
       <div className="flex items-center gap-4 mb-6">
         <div style={{
                                               display: "flex",
@@ -266,16 +272,23 @@ gap: "16px"
                                                           link: "Low-Code Overview"
                                                         }
                                                       ].map((card, i) => (
-                                                        <a key={i} href={card.href} className="bgai-scenario-card" style={{
+                                                        <a key={i} href={card.href} style={{ display: "contents" }}>
+                                                        <div style={{
                                                           gridColumn: i + 1,
                                                           gridRow: "1 / 6",
                                                           display: "grid",
                                                           gridTemplateRows: "subgrid",
                                                           rowGap: "12px",
+                                                          background: "rgba(255, 255, 255, 0.94)",
+                                                          backdropFilter: "blur(6px)",
+                                                          border: "1px solid rgba(226, 232, 240, 0.8)",
                                                           borderRadius: "12px",
                                                           padding: "20px",
                                                           textDecoration: "none",
-                                                          color: "inherit"
+                                                          color: "inherit",
+                                                          boxShadow: "0 10px 30px rgba(15, 23, 42, 0.10), 0 4px 10px rgba(15, 23, 42, 0.05)",
+                                                          transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+                                                          cursor: "pointer"
                                                         }}>
                                                           <div style={{
                                                             gridRow: 1,
@@ -353,6 +366,7 @@ gap: "16px"
                                                             fontWeight: 600,
                                                             alignSelf: "end"
                                                           }}>{card.link} →</div>
+                                                        </div>
                                                         </a>
                                                       ))}
       </div>
