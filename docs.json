@@ -18,6 +18,38 @@
         ]
       },
       {
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/what-is-bluegenai",
+              "getting-started/platform-overview-architecture",
+              "getting-started/navigation-ui-guide",
+              "getting-started/user-role-management",
+              "getting-started/quick-start-guide"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "CAB",
+        "groups": [
+          {
+            "group": "CAB",
+            "pages": [
+              "cab/what-is-cab",
+              "cab/supported-input-types",
+              "cab/blueprint-output-reference",
+              "cab/step-by-step-workflow",
+              "cab/requirement-clarification",
+              "cab/legacy-code-translation-guide",
+              "cab/editing-your-cab"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Tickets",
         "groups": [
           {
@@ -143,38 +175,6 @@
               "tips-and-tricks/bd-pre-sales-usage-guide",
               "tips-and-tricks/common-workflows-by-role",
               "tips-and-tricks/troubleshooting-faq"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Getting Started",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "getting-started/what-is-bluegenai",
-              "getting-started/platform-overview-architecture",
-              "getting-started/navigation-ui-guide",
-              "getting-started/user-role-management",
-              "getting-started/quick-start-guide"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "CAB",
-        "groups": [
-          {
-            "group": "CAB",
-            "pages": [
-              "cab/what-is-cab",
-              "cab/supported-input-types",
-              "cab/blueprint-output-reference",
-              "cab/step-by-step-workflow",
-              "cab/requirement-clarification",
-              "cab/legacy-code-translation-guide",
-              "cab/editing-your-cab"
             ]
           }
         ]
