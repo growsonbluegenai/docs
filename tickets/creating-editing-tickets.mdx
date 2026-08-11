@@ -1,0 +1,71 @@
+---
+title: "Manually creating or editing tickets"
+description: "Writing Tickets by hand, editing generated ones, and deleting Tickets singly or in bulk."
+icon: "pen-line"
+---
+
+You can write Tickets by hand alongside generated ones, and edit any Ticket after it exists.
+
+## What you'll learn
+
+How to create a Ticket, what you can change on one, and how deletion works.
+
+## Creating a Ticket
+
+<Frame caption="The Create Ticket form. Status, Priority, and Epic arrive pre-filled; everything else is blank.">
+  ![The Create Ticket modal showing fields for title, epic, status, priority, work type, expertise, assign to, and due date, with Status set to Open, Priority set to Medium, and Epic set to Unassigned.](/images/tickets/creating-editing-tickets-create-modal.png)
+</Frame>
+
+<Steps>
+  <Step title="Select Create Ticket">
+    The control sits at the right of the filter bar on the **All Tickets** view.
+  </Step>
+  <Step title="Fill in the form">
+    Only **Title** is required. Three fields arrive with defaults: **Status** as `Open`, **Priority** as `Medium`, and **Epic** as `Unassigned`.
+
+    Work Type, Expertise, Assign To, Due Date, CAB Reference, Description, and Note are all optional, and can be filled in later.
+  </Step>
+  <Step title="Save it">
+    The new Ticket takes the next number in sequence and appears in the list with a Source of `Manual`.
+  </Step>
+</Steps>
+
+## Editing
+
+Open a Ticket from the list to edit it. Every field a Ticket carries can be changed, including on generated ones.
+
+Two shortcuts are worth knowing. **Status is editable from the list itself** through the dropdown in each row, without opening the Ticket. And moving a Ticket between Epics is done from the Epics view rather than here.
+
+<Note>
+  Editing the **Note** on a Ticket does not change your blueprint. The field is carried over from the blueprint when the Ticket is generated, and from that point the two are independent.
+</Note>
+
+## Work Type accepts values outside the list
+
+**Work Type is deliberately open.** The dropdown offers a fixed set, but the field accepts anything, because generated Tickets can carry categories the list does not include.
+
+This is why filtering by Work Type can return nothing on a project whose Tickets were generated. See [What are Tickets](/tickets/what-are-tickets).
+
+## Deleting
+
+Selecting a row checkbox replaces the filter bar with a selection toolbar showing the count, a **Clear** link, and a delete control naming how many are selected.
+
+<Frame caption="Selecting any row swaps the filter bar for the selection toolbar. Filters are not reachable while a selection is active.">
+  ![The Tickets list with one row selected, showing a toolbar reading 1 selected with a Clear link and a red Delete selected button.](/images/tickets/creating-editing-tickets-bulk-select.png)
+</Frame>
+
+Deletion is permanent, and both the single and bulk confirmations say so.
+
+## Your next step
+
+Once you have the Tickets you want, the next question is what order to build them in.
+
+<CardGroup cols={2}>
+  <Card title="Sequence your work into waves" icon="layer-group" href="/tickets/epics">
+    How Epics group Tickets and set the build order.
+  </Card>
+
+  <Card title="Hand a Ticket to the build agent" icon="code" href="/tickets/using-tickets-in-build-mode">
+    Referencing a Ticket in a Build conversation.
+  </Card>
+</CardGroup>

@@ -1,0 +1,94 @@
+---
+title: "Step-by-Step Workflow"
+description: "What you set before generating a CAB, the seven phases a run moves through, and how to pause, stop, or resume it."
+icon: "list-check"
+---
+
+Generating a CAB takes three decisions from you, then runs through seven phases without further input.
+
+## What you'll learn
+
+What to set before you start, what each phase is doing while you wait, and which controls are available once a run is under way.
+
+<Frame caption="CAB Configuration before a run. Uploaded files, the section checklist, and the model quality setting sit above the generate control; the footer shows cost and elapsed time once a run has finished.">
+  ![The CAB Configuration panel showing an uploaded source archive, the Sections to Generate checklist with ten of ten selected, the Model Quality options Low, Medium and High with Medium chosen, and a footer reading Generation Cost 6.53 dollars and 97 minutes 54 seconds.](/images/cab/step-by-step-workflow-generation.png)
+</Frame>
+
+## Before you start
+
+<Steps>
+  <Step title="Upload your source material">
+    Add the documents, images, or source archive the CAB should read. At least one file is needed before generation can begin.
+
+    See [Supported Input Types](/cab/supported-input-types) for what is accepted.
+  </Step>
+  <Step title="Choose which sections to generate">
+    The **Sections to Generate** checklist offers 10 sections, all selected by default. **Deselect All** clears them, and the counter beside the heading tracks your selection.
+
+    Deselecting a section removes it from the finished document. It also narrows what earlier phases look for, because source material is analysed against the sections you asked for.
+  </Step>
+  <Step title="Set Model Quality">
+    Three options, each with a stated trade-off: **Low** for fastest and most affordable, **Medium** for balanced speed and quality, **High** for best quality output.
+
+    This setting applies to the whole run, and it moves both the cost and the elapsed time.
+  </Step>
+</Steps>
+
+## The seven phases
+
+Once you generate, the run moves through these in order. Two are skipped automatically when they have nothing to do.
+
+| # | Phase | What it does | Skipped when |
+| --- | --- | --- | --- |
+| 1 | File Processing | Parses documents, extracts archives, and finds the source files inside them | Never |
+| 2 | Code Analysis | Reads source files and summarises them in batches | No source code was uploaded |
+| 3 | Skeleton Extraction | Pulls a partial outline out of each chunk of input, working on chunks in parallel | Never |
+| 4 | Skeleton Merge | Merges those partial outlines into one, section by section | Never |
+| 5 | Skeleton Assembly | Assigns the IDs you see in the finished document and saves the outline | Never |
+| 6 | Vector Store Indexing | Indexes your material so later phases can retrieve the relevant parts | Your material is below the size threshold |
+| 7 | Section Generation | Writes the full detail for each selected section, in batches | Never |
+
+Indexing is skipped below 120,000 tokens, a token being roughly a fragment of a word. Small source sets are read whole, so there is nothing to gain from indexing them.
+
+The outline built in phases 3 to 5 is what makes the finished document internally consistent. Roles, entities, and screens are named once during assembly, so every later reference points at the same thing.
+
+## Controls during a run
+
+A run reports one of six statuses, and the controls change with it.
+
+| Status | What you can do |
+| --- | --- |
+| `idle` | Generate, or delete everything uploaded |
+| `processing` | Pause, or stop |
+| `paused` | Resume, or stop |
+| `completed` | Delete everything and start again |
+| `error` | Resume, or delete everything |
+| `cancelled` | Generate again, or delete everything |
+
+**Pausing is yours to trigger, not something the run does on its own.** The pause control appears only while a run is processing, and a paused run waits until you resume it. Stopping asks for confirmation first.
+
+Each phase carries its own status as it goes, so a run in progress shows you which phase is active and which are still pending.
+
+## What you should see
+
+While the run is going, the preview pane reads **Generating Blueprint** and explains that the document appears once generation completes.
+
+When it finishes, the preview fills with the document and the footer reports what the run cost and how long it took. In the example above, a 9 MB source archive generating all 10 sections at **Medium** cost \$6.53 and took 97 minutes 54 seconds.
+
+<Note>
+  Cost and elapsed time vary with the volume of source material, the number of sections selected, and the **Model Quality** setting. Treat the figure above as one observed run, not a benchmark.
+</Note>
+
+## Your next step
+
+A finished run gives you a document to read and correct. Knowing what each section is for makes it obvious which parts deserve your attention.
+
+<CardGroup cols={2}>
+  <Card title="Understand what your blueprint contains" icon="file-lines" href="/cab/blueprint-output-reference">
+    What each of the 10 sections tells you about your application.
+  </Card>
+
+  <Card title="Correct a blueprint before you build" icon="pen-line" href="/cab/editing-your-cab">
+    How manual edits and AI-suggested changes are reviewed.
+  </Card>
+</CardGroup>

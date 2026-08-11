@@ -1,0 +1,107 @@
+---
+title: "Prompting Best Practices"
+description: "How to write prompts for a platform where the specification lives outside the prompt, and when to revert rather than iterate."
+icon: "pen-line"
+---
+
+Prompting BlueGenAI is different from prompting a coding tool, because the specification does not live in the prompt.
+
+## What you'll learn
+
+Where the detail belongs, how prompting differs between Prototype and Build, and when to throw work away rather than patch it.
+
+## The specification is not the prompt
+
+**Your CAB is the specification. Your Tickets shape the build. A Build prompt is an instruction to act on work that is already defined.**
+
+So a prompt is not a description of an application from scratch. It points the agent at requirements that already exist, in an order that is already set, and says which part to act on.
+
+The flow that produces the most thorough result is **CAB → Tickets → Build**. The CAB is the fundamental first part, where requirements get clarified and corrected. Tickets shape the build, breaking the specification into units and putting them in a deliberate order.
+
+<Note>
+  **This is best practice, not a required sequence.** You can prompt Prototype or Build directly without a CAB, and for a small experiment that is often the right call. The flow above is what to do when the result matters.
+</Note>
+
+For why the platform is built this way, see [What is BlueGenAI?](/getting-started/what-is-bluegenai).
+
+## Narrow the goal, maximise the context
+
+**There is no recommended prompt length and no sweet spot.** Include as much context and reference material as the outcome requires, in plain, clear language.
+
+That sits alongside a second rule that resolves the apparent tension: **one outcome per prompt.** Narrow what you are asking for; do not narrow what you tell the agent about it.
+
+A prompt asking for one screen, with three paragraphs of background on who uses it and what the rules are, is a good prompt. A prompt asking for four screens in one line is not.
+
+<Note>
+  There is no standard constraint block and no prompt template. Anything presenting itself as the required shape of a prompt did not come from this documentation.
+</Note>
+
+## Prototype and Build want different prompts
+
+**Prototype Mode is faster and lighter, so it tolerates a vaguer prompt.** Exploratory instructions work there, and iteration is cheap because there is no infrastructure behind it.
+
+**Build needs consistently good results, so precision pays.** A vague Build prompt produces a real application built on a guess, and correcting that costs a build rather than a prompt.
+
+This is a difference in what each mode is for, not a judgement about which prompts are better. Use Prototype to work out what you want; use Build to get it made.
+
+See [Prototype Mode](/web-apps/prototype-mode/overview) and [Build Mode](/web-apps/build-mode/overview).
+
+## When to revert rather than iterate
+
+This is the judgement that separates a smooth build from a long one.
+
+**Iterate when the agent has made a local error.** A wrong label, a missing field, a rule applied in the wrong place. Say what is wrong and it fixes it.
+
+**Revert when the agent has made a structural decision you disagree with** — one whose pattern replicates across everything similar.
+
+<Note>
+  **A worked example.** On one build, the agent implemented child records as separate, isolated objects linked back to their parent by ID. Opening **Project Budgets** did not show budgets living under the project. It showed a separate list, filtered to that project's ID.
+
+  The result was a confusing experience and data prone to error. More importantly, the same pattern would have applied to every similar record type in the system, and it ran against both the customer's practice and the industry's.
+
+  The right move was to revert and redo that aspect with more specificity, not to patch it forward.
+</Note>
+
+The test is whether the decision repeats. A local error stays local; a structural one propagates, and every prompt spent patching it makes the eventual unwind larger.
+
+Every prompt you send the build agent creates a checkpoint, so reverting is always available. See [Build Agent Guide](/web-apps/build-mode/build-agent-guide).
+
+## Use Ask mode deliberately
+
+Ask is read-only and it has three real uses.
+
+- **Fast answers.** Questions about how something works, without waiting for a build.
+- **Read-only access for people who should not change anything.** Stakeholders, business development, contracts — anyone who needs information out of the build but should not be editing it.
+- **Thinking a change through.** A builder can brainstorm an approach or ask how something was built before deciding what to do about it.
+
+See [Ask Mode](/web-apps/ask-mode).
+
+## When the agent asks questions
+
+**Elaboration is a collaborative exchange working as intended.** If the agent responds to your prompt with clarifying questions, that is neither a flaw in your prompt nor a sign you wrote a good one. Answer the questions, correct anything it has misread, and continue.
+
+## Two things that go wrong
+
+**Building with an invented example.** Conjured scenarios lack the depth of real ones, so what comes back looks thinner than the platform is capable of, and people conclude the tool is limited when the input was. Use a real business case, with its awkward edges intact.
+
+**Being prescriptive about how rather than clear about what.** The builders who get the best results are technically minded and fluent in their subject matter, aware of good system design without carrying strong opinions about implementation. Describe the outcome and the constraints that matter. Leave the construction to the agent unless a specific approach is genuinely a requirement.
+
+<Info>
+  **PLACEHOLDER — not for publish.** Two or three real worked prompts belong here, ideally one Prototype and one Build, following the worked-prompt rules in the authoring guide. To be supplied at review.
+</Info>
+
+<Info>
+  **PLACEHOLDER — not for publish.** One real prompt that failed, paired with the fixed version, belongs here. A before-and-after is the most useful thing this page can carry. To be supplied at review.
+</Info>
+
+## Your next step
+
+<CardGroup cols={2}>
+  <Card title="Start with the specification" icon="book-open" href="/cab/what-is-cab">
+    Why the platform generates a CAB rather than asking you to write one.
+  </Card>
+
+  <Card title="Fix what went wrong" icon="circle-question" href="/tips-and-tricks/troubleshooting-faq">
+    Common messages, and the behaviours that surprise people.
+  </Card>
+</CardGroup>

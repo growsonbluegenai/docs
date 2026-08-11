@@ -1,0 +1,87 @@
+---
+title: "Using CAB to support Requirement Clarification"
+description: "How a blueprint records what your source material left undecided, and how to use those questions with stakeholders."
+icon: "circle-question"
+---
+
+Every CAB ends with **Suggested Questions**, a list of what the source material did not settle.
+
+This is the section that tells you where your requirements are thin. It is generated from the same reading pass as everything else, so the gaps it names are gaps the platform hit while trying to specify your application.
+
+## What you'll learn
+
+How the questions are produced, what each one carries, and how to work through them with stakeholders.
+
+<Frame caption="Suggested Questions is the tenth item in the section checklist. Deselecting it removes the appendix from the generated document.">
+  ![The CAB Configuration panel showing the Sections to Generate checklist with ten of ten selected, including Suggested Questions as the final entry in the right-hand column.](/images/cab/requirement-clarification-sections.png)
+</Frame>
+
+## How the questions are found
+
+**The CAB reads your material in chunks, and each chunk is examined for gaps independently.** One chunk might flag an undefined approval threshold, another the same threshold from a different document.
+
+Those separate findings are then reconciled in one pass over the whole set. That pass does three things worth knowing about.
+
+- **It merges duplicates.** A gap flagged in four documents becomes one question, not four.
+- **It ranks by impact.** The questions that most affect what gets built appear first, so the list is in the order you should work through it.
+- **It combines context.** Where several documents touch the same gap, the question carries what each of them said.
+
+The instruction behind this pass is to read like a business analyst running a joint design session — looking for what is missing, not summarising what is present.
+
+## What each question carries
+
+| Field | What it gives you |
+| --- | --- |
+| The question | Written against a concrete part of your system, not in the abstract |
+| Context | What in your source material prompted it |
+| Impact | What is affected if it stays unanswered |
+| Suggested options | Concrete choices to put in front of a stakeholder |
+| Related section | Which part of the blueprint the answer changes |
+
+**The suggested options are what make this usable in a meeting.** A question with two or three concrete choices attached moves faster than an open one, because a stakeholder is picking rather than composing.
+
+## What it looks for
+
+Nine kinds of gap are examined, and they are worth knowing because they tell you what a CAB treats as a missing requirement.
+
+| Area | Example of what gets flagged |
+| --- | --- |
+| Validation and business logic | A field with no stated rule |
+| Error handling and edge cases | What happens when a step fails |
+| Role permissions | Where a boundary between two roles is unclear |
+| Integration detail | Authentication, error handling, or rate limits left unstated |
+| Workflow transitions | A state with no route out, or a transition with no trigger |
+| Data retention | How long records are kept, and what happens after |
+| Non-functional requirements | Performance, security, or scalability expectations |
+| Contradictions | Two source documents that disagree |
+| Features named but not detailed | Something mentioned once and never specified |
+
+## Working through them
+
+The list is ordered by impact, so take it in order. For each question, the useful output is a decision, not a discussion — the suggested options exist to get you one.
+
+Answers go back into the blueprint through the normal editing route, either directly or by asking the CAB agent. See [Editing your CAB](/cab/editing-your-cab).
+
+<Tip>
+  Run this section against a solicitation before you bid, not after. The questions it raises are the ones a delivery team hits in month two, and they are cheaper to ask during clarification than to discover mid-build.
+</Tip>
+
+## A note on completeness
+
+The questions come from what the platform read. A gap it did not recognise as a gap does not appear, and neither does anything your source material never touched on.
+
+Treat the list as a strong starting agenda rather than an exhaustive audit of your requirements.
+
+## Your next step
+
+Answering these questions changes the blueprint, and every change goes through review before it lands.
+
+<CardGroup cols={2}>
+  <Card title="Fold the answers back into your blueprint" icon="pen-line" href="/cab/editing-your-cab">
+    How manual edits and AI-suggested changes are reviewed and applied.
+  </Card>
+
+  <Card title="See where the answers land" icon="file-lines" href="/cab/blueprint-output-reference">
+    What each of the 10 sections tells you about your application.
+  </Card>
+</CardGroup>

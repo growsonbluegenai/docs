@@ -1,0 +1,77 @@
+---
+title: "Codebase and Database view"
+description: "Browsing the generated source tree and inspecting the application database, including running SQL against it."
+icon: "folder-tree"
+---
+
+Two panels let you inspect what the agent built: **Codebase** for the source tree, **Database** for the data behind it.
+
+## What you'll learn
+
+How to browse generated code, how to query the application database, and what the destructive control in the database panel does.
+
+## Codebase
+
+<Frame caption="The Codebase panel. The tree is on the left, the file viewer on the right, and the Git controls sit in the footer.">
+  ![The Codebase panel showing a file tree containing backend, frontend, dockerignore, env, gitignore backup and docker-compose entries, beside an empty file viewer reading No file selected, with Checkout, Pull and Push controls in the footer.](/images/web-apps/codebase-and-database-codebase.png)
+</Frame>
+
+The tree shows the project as the agent built it. Selecting a file opens it in the viewer; until you do, the viewer reads `No file selected`.
+
+The header carries a download control and a refresh control. The footer carries **Checkout**, **Pull**, and **Push** — see [Git Integration](/web-apps/git-integration).
+
+## Database
+
+The **Database Viewer** has two modes, selected by a toggle in its header.
+
+### Browse
+
+<Frame caption="Browse mode before a table is selected. Schemas and their table counts are on the left.">
+  ![The Database Viewer in Browse mode showing a TABLES heading with a count of 28, a filter field, and a schema tree listing drizzle with one table and public with 27, beside an empty state reading Select a table from the left to explore its data.](/images/web-apps/codebase-and-database-browse.png)
+</Frame>
+
+The left column lists schemas and their tables with a count, filterable by name. Selecting a table shows its rows.
+
+The `drizzle` schema holds the migration bookkeeping the ORM maintains. Your application's own tables are in `public`.
+
+### Query
+
+<Frame caption="Query mode. The editor is pre-filled with a template, and Run stays disabled until you write something.">
+  ![The Database Viewer in Query mode showing a SQL EDITOR heading, a keyboard hint reading command plus Enter to run, a disabled Run button, an editor containing a commented template with a SELECT statement, and an empty results area.](/images/web-apps/codebase-and-database-query.png)
+</Frame>
+
+The editor runs SQL against the application database. It opens with a template, and the results area reads `Run a query to see results here` until you run something. `⌘ + Enter` runs the query.
+
+## Deleting the database
+
+<Frame caption="The delete confirmation lists exactly what is dropped.">
+  ![The Delete Database confirmation asking whether to delete the entire database, with a red-bordered box listing that it will drop all tables and data, drop all custom schemas, and that the action cannot be undone, above Cancel and Delete Database buttons.](/images/web-apps/codebase-and-database-delete.png)
+</Frame>
+
+<Warning>
+  Deleting the database drops every table, all data, and any custom schemas. It cannot be undone, and it does not remove the code that expects those tables to exist.
+</Warning>
+
+## When something is not available
+
+| Message | What it means |
+| --- | --- |
+| `Database connection is unavailable` | The application is not running, or its database has not started |
+| `SQL query cannot be empty` | Run was triggered with nothing in the editor |
+| `Failed to get tables` | The database responded but the schema could not be read |
+
+If the connection is unavailable, start the application and let its health checks pass before retrying. See [Deployment Guide](/web-apps/build-mode/deployment-guide).
+
+## Your next step
+
+Reading the code is one way to check the agent's work. Asking it to explain itself is another.
+
+<CardGroup cols={2}>
+  <Card title="Ask about the code instead of reading it" icon="magnifying-glass" href="/web-apps/ask-mode">
+    A read-only mode that traces behaviour and cites its evidence.
+  </Card>
+
+  <Card title="Push the code to a repository" icon="code-branch" href="/web-apps/git-integration">
+    Checkout, pull, and push from the Codebase panel.
+  </Card>
+</CardGroup>

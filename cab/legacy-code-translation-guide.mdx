@@ -1,0 +1,86 @@
+---
+title: "Legacy Code Translation Guide"
+description: "How the CAB reads an existing codebase and turns it into written requirements, and what it deliberately does not do."
+icon: "file-code"
+---
+
+The CAB reads an existing codebase and writes down what it does, in the form of requirements you can read, correct, and build from.
+
+<Note>
+  **This is code-to-requirements, not code-to-code.** Nothing here converts COBOL to Java, or any language to any other language. The output is a specification in plain language, not a translated codebase. If you are looking for automated language migration, this is not that.
+</Note>
+
+## What you'll learn
+
+What happens to source code you upload, what comes out of it, and where it fits in a modernisation project.
+
+<Frame caption="A source archive uploaded to CAB Configuration. Source code always arrives as an archive and is extracted before analysis.">
+  ![The CAB Configuration panel showing a 9.0 MB source archive named GMRV underscore 50 underscore 40V19 underscore src dot zip in the Uploaded Files list, categorised as Archive with a green Uploaded status.](/images/cab/legacy-code-translation-source-archive.png)
+</Frame>
+
+## What actually happens
+
+**Your code is read and described, not parsed.** There is no compiler, no syntax tree, and no language-specific analyser in this path. A language model reads each file the way a senior analyst would and writes down what it found.
+
+The run works through four steps.
+
+1. **Discovery.** Your archive is extracted and the source files inside it are found. Text-based files are kept; compiled output and binary artifacts are set aside.
+2. **Batching.** Files are grouped into batches of 25, with three batches read at once.
+3. **Summarisation.** Each batch goes to a language model, which returns a purpose line and an implementation summary per file, plus any blueprint-relevant items it recognised.
+4. **Carry-forward.** Those summaries become input to the phases that build your blueprint. The original code is not carried into the finished document.
+
+## What it looks for
+
+The model is not summarising in the abstract. It is told which kinds of thing to watch for, and that list comes from the sections you selected before the run.
+
+| Section you selected | What the model looks for in your code |
+| --- | --- |
+| Data Model | Database models, schemas, entity definitions, and their fields |
+| Screens & UI/UX | UI components, pages, views, and forms |
+| Workflows | State machines, process flows, and status transitions |
+| Rules | Validation rules, business logic, and calculations |
+| System Integrations | API calls, external service connections, and webhooks |
+| Reporting & Analytics | Report definitions, analytics, and dashboards |
+| Roles | End-user roles, excluding project governance and delivery roles |
+
+Deselect a section and the model stops looking for that kind of thing. This is why the section checklist is worth setting deliberately on a legacy project rather than left at its default.
+
+The model is instructed to use the exact names it finds in your code, to record specific values such as validation thresholds and status codes, and not to invent anything that is not there.
+
+## What is skipped
+
+Compiled output and binary files carry nothing a reader can use, so they are excluded before analysis begins. The exclusion list covers ordinary build artifacts and a long tail of platform-specific ones, including COBOL compiled output, mainframe load modules, MUMPS and VistA binary exports, and Java, .NET, and Delphi build products.
+
+Documents are excluded here too, because they are parsed separately in the phase before this one.
+
+<Tip>
+  Upload the source tree rather than a built or packaged release. An archive of compiled artifacts yields nothing, because everything in it is on the exclusion list.
+</Tip>
+
+## Where this fits in a modernisation project
+
+The result is a written specification of a system that already exists. That is useful in three situations, and worth being clear about which one you are in.
+
+- **You have the code but not the documentation.** The blueprint becomes the description nobody wrote down, and the **Suggested Questions** section names what the code alone could not settle.
+- **You are scoping a rebuild.** The blueprint gives you a specification to estimate against, in the same shape as one written from scratch.
+- **You are rebuilding on this platform.** The corrected blueprint feeds Tickets and then Build Mode, so the specification you validated is the one that gets built.
+
+**What it does not give you is a migrated system.** Between the blueprint and a working replacement sit your corrections, your decisions on everything the source left open, and a build.
+
+<Note>
+  This phase is skipped when no source code was uploaded. A CAB built only from written documents runs the same way without it.
+</Note>
+
+## Your next step
+
+Source code alone rarely settles every question, and the blueprint tells you which ones remain open.
+
+<CardGroup cols={2}>
+  <Card title="Find what your source material left undecided" icon="circle-question" href="/cab/requirement-clarification">
+    How the blueprint surfaces gaps and turns them into questions for stakeholders.
+  </Card>
+
+  <Card title="Check what came out of your codebase" icon="file-lines" href="/cab/blueprint-output-reference">
+    What each of the 10 sections tells you about the system.
+  </Card>
+</CardGroup>

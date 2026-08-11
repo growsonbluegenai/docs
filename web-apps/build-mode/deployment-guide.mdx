@@ -1,0 +1,78 @@
+---
+title: "Deployment Guide"
+description: "Where your built application lives, why the URL format differs between projects, and how to start and stop it."
+icon: "link"
+---
+
+A finished build runs on the platform and is reachable at a URL the agent gives you.
+
+## What you'll learn
+
+Where to find your application's URL, why that URL looks different on different projects, and how to start and stop it.
+
+## Finding your application
+
+The agent includes the URLs in its reply when a build finishes. You can reopen them any time from **URLs** in the panel rail.
+
+<Frame caption="The Application URLs panel. Each entry has a link, an open control, and a copy control.">
+  ![The Application URLs drawer titled Access your deployed application endpoints, listing an Application row and a Backend API row, each showing a URL with an external link arrow and a copy icon.](/images/web-apps/build-mode-deployment-urls.png)
+</Frame>
+
+## Why the URL format differs
+
+**Projects come in two architectures, and each produces a different kind of URL.** Which one you have depends on when the project was created.
+
+|  | Version 1 (legacy) | Version 2 (gateway) |
+| --- | --- | --- |
+| What you get | One URL per service | A single URL for the whole application |
+| Typical form | `http://<host>:<port>` and `http://<host>:<port>/api` | A subdomain address |
+| Panel shows | **Application** and **Backend API** | **Application** only |
+
+New projects are created at version 2 and get the single subdomain address. Older projects keep the direct host-and-port form and are not migrated. The panel above is a version 1 project, which is why it lists two entries.
+
+<Note>
+  Version 1 applications are served over plain HTTP. That is why the **Preview** panel cannot embed them and offers **Open in new tab** instead.
+</Note>
+
+<Frame caption="The Preview panel on a version 1 project. Applications served over HTTP open in a new tab rather than embedding.">
+  ![The Preview panel showing a padlock icon above the message Preview not available, explaining the app is served over HTTP and cannot be embedded in a secure context, with an Open in new tab button.](/images/web-apps/build-mode-deployment-preview.png)
+</Frame>
+
+## Custom domains
+
+A project can be given a custom domain in place of the generated address. Your chosen name becomes a subdomain of `apps.bluegenai.ai`.
+
+The name has to be lowercase letters, numbers, and hyphens only, at most 63 characters, and it cannot look like a system identifier.
+
+Custom domains are available on Web projects that are recent enough to use the gateway architecture.
+
+## Starting and stopping
+
+Applications can be stopped to free resources and started again from the panel rail. **Stop App** sits among the panel controls in both Prototype and Build.
+
+Two messages tell you the application is not ready rather than broken:
+
+| Message | What it means |
+| --- | --- |
+| `Project has no working directory. Generate code first.` | Nothing has been built yet |
+| `No docker-compose file found in the project directory.` | A build exists but is missing the file describing how to run it |
+
+After starting, give the health checks a moment before retrying the URL.
+
+## What you should see
+
+Opening the application URL loads your built application. On a version 1 project the second entry, labelled **Backend API**, addresses the same application directly, which is useful when you want to check one part of it in isolation.
+
+## Your next step
+
+With the application running, the next question is usually what is inside it.
+
+<CardGroup cols={2}>
+  <Card title="Look inside what was built" icon="folder-tree" href="/web-apps/codebase-and-database">
+    Browsing the codebase and querying the database.
+  </Card>
+
+  <Card title="Test it automatically" icon="vial" href="/web-apps/app-testing">
+    How the agent tests your application in a browser.
+  </Card>
+</CardGroup>

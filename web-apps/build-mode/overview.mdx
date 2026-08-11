@@ -1,0 +1,75 @@
+---
+title: "Overview"
+description: "Build Mode turns your requirements into a running application with a database behind it, through a conversation with the build agent."
+icon: "code"
+---
+
+Build Mode turns requirements into a running application, with a database behind it and a URL you can open.
+
+## What you'll learn
+
+What Build Mode does, how it differs from Prototype Mode, and the two ways of talking to the agent inside it.
+
+<Frame caption="Build Mode. The conversation runs down the left; the composer carries the mode selector, quality selector, and agent settings.">
+  ![The Build Mode workspace showing a conversation with a user message and an agent response, above a composer with a paperclip, a Build dropdown, a High dropdown, a settings gear with a badge reading one, and a send button.](/images/web-apps/build-mode-overview-composer.png)
+</Frame>
+
+## How it differs from Prototype Mode
+
+[Prototype Mode](/web-apps/prototype-mode/overview) builds a front end with mock data and no infrastructure behind it. Build Mode builds the real thing: front end, backend, database, and everything needed to run them.
+
+That difference sets everything else. A prototype changes in seconds because there is nothing to rebuild. A build takes longer because there is.
+
+<Note>
+  **Build Mode starts a fresh conversation.** It does not inherit your Prototype Mode chat history, and it does not pick up your Design System either. Anything from prototyping that should influence the build has to be attached to your prompt. See [Output Handoff](/web-apps/prototype-mode/output-handoff).
+</Note>
+
+## Two ways of talking to the agent
+
+Inside Build Mode the composer carries its own selector with two options, and the distinction matters.
+
+| Composer option | What it does |
+| --- | --- |
+| **Build** | Creates, edits, and ships changes to your codebase |
+| **Ask** | Answers questions about your codebase, changing nothing |
+
+**Build is the default.** Ask is a read-only sub-mode you switch to when you want to understand something rather than change it.
+
+<Note>
+  "Build" names both the mode tab and the composer's default option. They are not the same control: the tab decides which workspace you are in, and the composer decides what the agent does with your next message. Throughout this documentation, **Build Mode** means the workspace and **the composer's Build option** means the selector.
+</Note>
+
+The difference is enforced rather than advisory. In Ask, the agent is given only tools that read — it cannot write a file or run a command even if you ask it to. See [Ask Mode](/web-apps/ask-mode).
+
+## Choosing a quality setting
+
+Beside the composer's mode selector sits a quality selector offering **Medium** and **High**.
+
+<Warning>
+  Build offers two settings. The CAB workspace offers three, including a **Low** option, under a heading that reads **Model Quality** rather than **MODEL SELECTION**. They are separate controls with separate option sets, not one shared setting seen from two places.
+</Warning>
+
+## When to use it
+
+- **The requirements are settled enough to build against.** Tickets, a corrected blueprint, or a prototype you are happy with.
+- **You need real data.** Anything that has to persist needs Build Mode.
+- **You need something people can use.** A build produces a URL you can hand to a colleague.
+
+## When not to
+
+- **You are still deciding what to make.** Iterate in Prototype Mode, where changes cost a prompt.
+- **You only want to understand existing code.** Use the composer's Ask option, which changes nothing.
+
+## Your next step
+
+A build starts with a prompt, and what happens next is worth knowing before you send one.
+
+<CardGroup cols={2}>
+  <Card title="Run your first build" icon="play" href="/web-apps/build-mode/workflow">
+    What happens after you send a build prompt.
+  </Card>
+
+  <Card title="See what the agent can do" icon="robot" href="/web-apps/build-mode/build-agent-guide">
+    Its tools, its rules, and the limits it works within.
+  </Card>
+</CardGroup>

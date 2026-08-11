@@ -1,0 +1,115 @@
+---
+title: "Quick Start Guide"
+description: "One pass through the whole platform: upload requirements, generate a specification, break it into work, prototype it, build it, and open the result."
+icon: "rocket"
+---
+
+This guide runs a project through every stage the platform offers, from a requirements document to an application you can open.
+
+It is deliberately end to end. Each stage produces something the next one uses, and seeing that chain once is more useful than reading about any single part of it.
+
+## What you'll learn
+
+How a project moves from source material to a running application, and what each stage hands to the next.
+
+<Note>
+  **Before you start:** you need an account and something to build from — a requirements document, a solicitation, or an existing codebase. Anything the platform can read is enough to begin.
+</Note>
+
+<Steps>
+  <Step title="Create a project">
+    Select **Create Project** on the dashboard. Give it a title, choose **Web Application**, and create it.
+
+    <Frame caption="Creating a web project. Only the title is required.">
+      ![The Create New Project drawer showing a project title field, Project Type options for Web Application and Low Code Application, a Platform Type description, and client name and custom domain fields.](/images/getting-started/quick-start-guide-create-project.png)
+    </Frame>
+
+    The project opens on the **CAB** tab, which is where every project starts.
+  </Step>
+  <Step title="Upload what you have and generate a specification">
+    Upload your documents or a source archive, leave all ten sections selected, and select **Generate Blueprint**.
+
+    <Frame caption="The CAB workspace. Upload on the left, the generated blueprint on the right.">
+      ![The CAB workspace showing the CAB Configuration tab with an upload area, and the blueprint preview pane to the right.](/images/getting-started/quick-start-guide-cab-upload.png)
+    </Frame>
+
+    Generation takes a while — it reads everything you uploaded and writes a full specification, so minutes rather than seconds. The preview fills when it finishes.
+
+    **What you should see:** a document covering the project's identity, its user stories, its data model, screens, roles, workflows, rules, reporting, integrations, and a list of questions your source material left unanswered.
+
+    Read the **Suggested Questions** section first. It is the platform telling you where your requirements are thin, and it is usually the most valuable output of this step.
+
+    See [Step-by-Step Workflow](/cab/step-by-step-workflow) for what happens during generation.
+  </Step>
+  <Step title="Correct the specification">
+    Select **Edit CAB** to change anything the platform misread, or ask the **BlueGenAI CAB Agent** to make a change for you.
+
+    Either way the change goes to a review screen where you accept or discard each one before it is written. Saving creates a version you can return to.
+
+    This step is the one people skip and regret. Everything downstream is generated from this document.
+
+    See [Editing your CAB](/cab/editing-your-cab).
+  </Step>
+  <Step title="Turn the specification into work">
+    Select **Generate Tickets** in the blueprint toolbar, then open the **Tickets** tab.
+
+    <Frame caption="Tickets generated from the specification. Each traces back to the requirement that produced it.">
+      ![The Tickets list showing generated tickets with ID, title, status, priority, work type, source and created date columns.](/images/getting-started/quick-start-guide-tickets.png)
+    </Frame>
+
+    Each Ticket carries the user story it came from, including its acceptance criteria, and a reference back to the blueprint element that produced it.
+
+    Open the **Epics** view. Tickets are grouped into Epics, and each Epic is a wave in the build order — Wave 1 holds the foundations everything else depends on.
+
+    **What you should see:** a numbered list of Tickets, and an Epics view where each Epic carries a wave number and a progress count.
+
+    See [Epics](/tickets/epics).
+  </Step>
+  <Step title="Prototype it">
+    Switch to **Prototype** and describe what you want to see. The agent builds a working front end with mock data, so you can click through the application before anything real is built.
+
+    Iterate here. A change costs a prompt, where the same change after a build costs a build.
+
+    When you are happy, **save the files you want to keep** — they appear in **Files**, and they are how this work reaches the next stage.
+
+    See [Prototype Mode](/web-apps/prototype-mode/overview).
+  </Step>
+  <Step title="Build it">
+    Switch to **Build**. This starts a fresh conversation, so attach the prototype files you saved and reference the Tickets you want built.
+
+    Type `@` followed by at least two characters to reference a Ticket. Keep the number small, and stay within one Epic — the waves are ordered for a reason.
+
+    The agent classifies your request, asks questions if it is ambiguous, then writes the application, runs it, and fixes what breaks before replying.
+
+    **What you should see:** a summary of what changed and a URL for your running application.
+
+    See [Build Mode](/web-apps/build-mode/overview).
+  </Step>
+  <Step title="Test and open it">
+    With **App testing** enabled, the agent opens your application in a browser after building and works through it, checking the acceptance criteria that came from your original requirements.
+
+    Open the URL from the agent's reply, or from **URLs** in the panel rail.
+
+    See [App Testing](/web-apps/app-testing).
+  </Step>
+</Steps>
+
+## What you just did
+
+You took source material, turned it into a reviewed specification, broke that into ordered work, saw it before building it, built it, and had it tested against the acceptance criteria written in the original requirement.
+
+**That chain is the point.** Every Ticket traces to a requirement, every Epic sets a build order, and the tests exercise criteria that were written down before any code existed.
+
+## Your next step
+
+Run it again on something real. The second project is where the workflow starts paying off, because you already know what each stage hands to the next.
+
+<CardGroup cols={2}>
+  <Card title="Start with better requirements" icon="book-open" href="/cab/what-is-cab">
+    What a CAB is, and why the platform generates it rather than asking you to write it.
+  </Card>
+
+  <Card title="Work with your team" icon="users" href="/getting-started/user-role-management">
+    Roles, invitations, and the two kinds of sharing.
+  </Card>
+</CardGroup>

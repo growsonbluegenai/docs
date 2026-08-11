@@ -1,0 +1,93 @@
+---
+title: "Build Agent Guide"
+description: "What the build agent can do to your project, the rules it follows, and the boundaries it cannot cross."
+icon: "robot"
+---
+
+The build agent works inside your project on its own, using a fixed set of capabilities and a fixed set of limits.
+
+This page is about trust rather than mechanics: what it is able to touch, what it is prevented from touching, and what it does without being asked.
+
+## What you'll learn
+
+The agent's capabilities, the rules governing how it uses them, and the boundaries enforced regardless of what you ask.
+
+## What the agent can do
+
+Nineteen capabilities, grouped by what they affect.
+
+| Group | What it can do |
+| --- | --- |
+| Inspect your project | Read files, list them, search inside them, and produce a tree of the whole project |
+| Change your project | Create, overwrite, append to, edit, and delete files and folders |
+| Run commands | Execute shell commands inside your project — builds, installs, scripts, Docker, and Git |
+| Reach the web | Fetch a page as text or source, capture a screenshot, or download a file |
+| Handle credentials | Ask you for a secret, write stored secrets into `.env`, and report which are already set |
+| Allocate ports | Reserve the externally reachable ports your services need |
+| Test the application | Run browser tests against the running app, and save notes for future test runs |
+
+## What it does without being asked
+
+**The agent brings your application up and fixes what breaks, before it replies.** Its instructions require it to run the containers, confirm they are healthy, and resolve errors as part of the same turn. A build that reports success has been run, not just written.
+
+It also generates internal secrets for you rather than asking. Database credentials, session keys, and signing keys are created automatically; only third-party service keys are requested.
+
+## Boundaries it cannot cross
+
+These are enforced in the platform rather than requested in the prompt, so they hold regardless of what you ask for.
+
+**It cannot leave your project.** Any path resolving outside your project's workspace is rejected.
+
+**It cannot see your secrets.** Values in `.env` files are masked before the agent reads them. It knows a credential is set, and can write a stored value back, but the value itself is never shown to it.
+
+**Dangerous commands are blocked.** Shell commands are parsed and classified before they run, rather than matched against a list of forbidden words. Deleting a build directory inside your project is allowed; deleting outside it is not, and neither is smuggling one command inside another.
+
+**Ask mode is read-only.** Switching the composer to Ask gives the agent only the four capabilities that read — read a file, list files, search, and produce a tree. The rest are withheld, so it cannot change anything even if you ask it to. The code marks this a security boundary.
+
+**Browser testing runs in isolation.** The sub-agent that tests your application gets browser controls only. It has no access to your files, your terminal, or the web.
+
+## The one setting you control
+
+<Frame caption="The agent settings menu holds a single toggle. The badge on the gear counts settings that are on, not settings that exist.">
+  ![The composer's settings menu headed AGENT SETTINGS showing one option, App testing, described as Agent tests your app automatically, with its toggle switched on.](/images/web-apps/build-mode-agent-guide-settings.png)
+</Frame>
+
+**App testing** is the only agent setting. With it on, the agent tests your application in a browser after building it. Turning it off stops that automatic test run.
+
+The number on the gear is a count of settings currently enabled. With one toggle, on, it reads `1`.
+
+## When it stops to ask
+
+If your request is ambiguous, the agent writes out its understanding of the requirements and waits for you to approve or correct it before writing code. See [Workflow](/web-apps/build-mode/workflow).
+
+## Checkpoints and restoring
+
+**Every prompt you send the build agent creates a checkpoint automatically.** You do not ask for one, and there is nothing to configure — each change to your project produces a save point you can return to.
+
+A checkpoint appears as a small badge beneath the agent's reply, showing a short reference and the checkpoint's title. **Hover the badge and a `Restore` button appears.** Selecting it takes your project's code back to that point.
+
+Restoring is available in Build Mode, and only to people who can change the project. It is unavailable while the agent is working.
+
+<Warning>
+  **Restoring is a permanent jump backward, not an undo step.** Your code returns to the checkpoint, and the work done after it is no longer what your project contains. There is no confirmation prompt — the button acts immediately.
+</Warning>
+
+After a restore the conversation continues on a new branch. The earlier branch is kept and marked in the conversation, so the history of what you tried is not lost even though the code has moved back.
+
+Restoring also rebuilds the running application, which takes a few minutes. The platform waits for the containers to come back healthy rather than reporting success immediately.
+
+For version control you operate yourself — branches, and pushing to a repository — see [Git Integration](/web-apps/git-integration).
+
+## Your next step
+
+Knowing the limits makes the read-only mode more useful, because it is the safe way to interrogate what the agent built.
+
+<CardGroup cols={2}>
+  <Card title="Ask questions without changing anything" icon="magnifying-glass" href="/web-apps/ask-mode">
+    What the read-only mode can answer, and why it cannot edit.
+  </Card>
+
+  <Card title="See the stack it builds on" icon="layer-group" href="/web-apps/build-mode/tech-stack-reference">
+    The technologies, conventions, and project layout.
+  </Card>
+</CardGroup>
