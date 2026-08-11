@@ -1,0 +1,79 @@
+---
+title: "MCP Integrations"
+description: "Connecting a remote MCP server so the build agent can use an external service's tools during a build."
+icon: "plug"
+---
+
+An MCP server connection gives the build agent tools from an external service, alongside its own.
+
+MCP is the Model Context Protocol, an open standard for exposing a service's capabilities to an AI agent. Connecting one means the agent can act against that service during a build.
+
+## What you'll learn
+
+How to add a server, what the connection states mean, and how credentials are scoped across a project.
+
+<Frame caption="The MCP Servers panel before anything is connected.">
+  ![The MCP Servers drawer subtitled Connect external tools to Build mode via MCP, with an Add MCP server button and an empty state reading No MCP Servers.](/images/web-apps/mcp-integrations-panel.png)
+</Frame>
+
+## Adding a server
+
+<Frame caption="The Add MCP Server form.">
+  ![The Add MCP Server form showing fields for Name, an optional Description with a character counter, a Transport dropdown set to Streamable HTTP, a URL field, Credential sharing radios set to Shared, and an Add header link.](/images/web-apps/mcp-integrations-add-server.png)
+</Frame>
+
+| Field | Notes |
+| --- | --- |
+| **Name** | How the server appears in your project |
+| **Description** | Optional, up to 600 characters |
+| **Transport** | `Streamable HTTP` or `SSE` |
+| **URL** | The server's endpoint |
+| **Credential sharing** | `Shared` or `Individual` — see below |
+| **Custom headers** | Optional key-value headers sent with each request |
+
+### URLs are checked before they are accepted
+
+The URL is validated against a set of rules that block servers on private or internal addresses. The hostname is resolved first, so a public name pointing at an internal address is rejected too.
+
+| Rejected | Message |
+| --- | --- |
+| Any scheme but HTTP or HTTPS | `Only http:// and https:// URLs are allowed` |
+| Credentials embedded in the URL | `URLs with embedded credentials are not allowed` |
+| A hostname that does not resolve | `Could not resolve hostname '<name>'` |
+| A private or internal address | `Hostname '<name>' resolves to a private or internal address and is not allowed` |
+
+## Connection states
+
+| State | What it means |
+| --- | --- |
+| `unconfigured` | Saved but never successfully tested |
+| `testing` | A connection test is running |
+| `auth_required` | Credentials were rejected, or authorisation has not been completed |
+| `connected` | The last test succeeded |
+| `error` | The last test failed for some other reason |
+
+## Shared or individual credentials
+
+**Shared** means one credential set is used by everyone on the project. **Individual** means the server definition is visible to everyone, but each person authorises with their own credentials.
+
+Shared is the default. Choose Individual when the external service should see who is acting rather than one shared identity.
+
+## How the agent uses them
+
+Tools from your connected servers are added to the agent's own set for that project. They are treated cautiously by default: the platform does not assume an external tool is read-only, and none of them are available in Ask mode.
+
+That last point is deliberate. Ask mode is a read-only boundary, and an external tool could write, so MCP tools are excluded from it entirely.
+
+## Your next step
+
+Connected tools widen what a build can do. What the agent does with them follows the same rules as everything else.
+
+<CardGroup cols={2}>
+  <Card title="See the agent's own capabilities" icon="robot" href="/web-apps/build-mode/build-agent-guide">
+    The nineteen built-in capabilities and the boundaries around them.
+  </Card>
+
+  <Card title="Provide a service key instead" icon="key" href="/web-apps/credentials">
+    How third-party credentials are requested and stored.
+  </Card>
+</CardGroup>

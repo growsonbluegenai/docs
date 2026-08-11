@@ -1,0 +1,61 @@
+---
+title: "Git Integration"
+description: "Checkout, pull, and push your generated project against its repository, from the Codebase panel footer."
+icon: "code-branch"
+---
+
+The Codebase panel footer carries three Git controls: **Checkout**, **Pull**, and **Push**.
+
+## What you'll learn
+
+What each control does, what blocks them, and what version control is not available here.
+
+<Frame caption="The Git controls sit in the Codebase panel footer.">
+  ![The Codebase panel showing a file tree and viewer, with Checkout, Pull and Push controls in the footer beside a branch icon.](/images/web-apps/git-integration-footer.png)
+</Frame>
+
+## The three controls
+
+**Checkout** switches branches.
+
+**Pull** brings remote changes into your project.
+
+**Push** sends your project's commits to the remote. If there are uncommitted changes, you are asked for a commit message so they can be committed and pushed together.
+
+## What blocks them
+
+Git operations are refused while a build is running, because the agent is writing to the same files.
+
+| Message | What it means |
+| --- | --- |
+| `Cannot pull while development is in progress. Please wait for the current operation to complete.` | A build is running |
+| `Cannot push while development is in progress. Please wait for the current operation to complete.` | A build is running |
+| `There are uncommitted local changes. Pulling will discard them.` | Pull would overwrite work not yet committed |
+| `There are uncommitted changes. Provide a commit message to commit and push.` | Push needs a message before it can proceed |
+| `Project has no working directory` | Nothing has been built yet |
+
+## Where the repository lives
+
+Projects are backed by a self-hosted Git server rather than an external host. Access is managed for you, and the platform can reset your access token if it stops working.
+
+## This is not the same as checkpoints
+
+The controls above are for the project's repository — branches, and moving commits to and from a remote.
+
+**Checkpoints are separate and automatic.** The platform saves one with every prompt you send the build agent, and you restore one from the conversation rather than from here. See [Build Agent Guide](/web-apps/build-mode/build-agent-guide).
+
+Use Git when you want the code in a repository your other tools can reach. Use a checkpoint restore when you want to undo what the agent just did.
+
+## Your next step
+
+With the code in a repository, the rest of your toolchain can reach it.
+
+<CardGroup cols={2}>
+  <Card title="Browse what you are pushing" icon="folder-tree" href="/web-apps/codebase-and-database">
+    The source tree and the application database.
+  </Card>
+
+  <Card title="See how the code got there" icon="robot" href="/web-apps/build-mode/build-agent-guide">
+    What the agent is allowed to write, and where.
+  </Card>
+</CardGroup>

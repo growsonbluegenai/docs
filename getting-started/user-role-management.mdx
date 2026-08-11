@@ -1,0 +1,71 @@
+---
+title: "User & Role Management"
+description: "Who can do what on a project: the three roles, how invitations work, and the two different ways to share."
+icon: "users"
+---
+
+A project has one owner and any number of people invited to it, each holding a role that decides what they can do.
+
+## What you'll learn
+
+The three roles, how to invite someone, and the difference between the two sharing mechanisms.
+
+## The three roles
+
+| Role | What it means |
+| --- | --- |
+| **Owner** | The person who created the project. Manages collaborators and their roles |
+| **Editor** | Can work in the project — prompt the agents, edit the CAB, change Tickets |
+| **Viewer** | Can see the project without changing it |
+
+**Owner is not something you are granted.** It comes from creating the project.
+
+## Inviting someone
+
+<Frame caption="Manage Collaboration. Invitations take a role, and the members list shows who already has one.">
+  ![The Manage Collaboration drawer showing an Invite Collaborators card with an email field and Viewer and Editor permission options, a Shareable Link Access toggle, and a members list.](/images/getting-started/user-role-management-collaboration.png)
+</Frame>
+
+Open **Manage Collaborators** from the panel rail, or **Manage Collaborations** from a project card on the dashboard. Both open the same drawer.
+
+Enter one or more email addresses, choose **Viewer** or **Editor**, and send. Invitations appear in the recipient's **Invitations** tab on their dashboard, and in your **Pending Invites** list until they respond.
+
+<Frame caption="The members list separates people who have accepted from invitations still outstanding.">
+  ![The members list showing tabs for Active Members and Pending Invites, a search field, and rows showing each member's name, email, date added, and role.](/images/getting-started/user-role-management-members.png)
+</Frame>
+
+An invitation can be accepted, rejected, or withdrawn before it is accepted. Someone who has accepted can later leave, or be removed.
+
+<Note>
+  Each collaborator carries a billing preference, set when they are invited: their agent runs are charged either to the project owner or to the collaborator.
+</Note>
+
+## Two kinds of sharing
+
+These are different mechanisms with different audiences, and it is worth not confusing them.
+
+**Shareable Link Access** is a toggle in the collaboration drawer. It lets anyone who is signed in and has the link **request** access to the project. It does not grant access — someone still approves the request.
+
+**Read-only share links** are set per item, on things like an artifact or a finished CAB. Anyone with the link can open that one item **without signing in at all**. Nothing else in the project becomes visible.
+
+<Warning>
+  A read-only share link needs no account and no approval. Only enable one on an item you are content for anyone holding the URL to read.
+</Warning>
+
+## What a role changes
+
+Roles are checked wherever an action would alter the project. A Viewer can open the workspace, read the CAB, and look at Tickets, but the controls that change things are unavailable to them.
+
+Read-only questions are treated separately from changes, so a collaborator may be able to ask the agent about a codebase on a project where they cannot build.
+
+## Your next step
+
+<CardGroup cols={2}>
+  <Card title="Start a project" icon="rocket" href="/getting-started/quick-start-guide">
+    Requirements to deployed application, in one pass.
+  </Card>
+
+  <Card title="Find your way around" icon="compass" href="/getting-started/navigation-ui-guide">
+    The dashboard, the workspaces, and the four modes.
+  </Card>
+</CardGroup>

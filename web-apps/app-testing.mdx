@@ -1,0 +1,75 @@
+---
+title: "App Testing and Testing Context"
+description: "How the agent tests your application in a browser after building it, and the context you give it to test well."
+icon: "vial"
+---
+
+After a build, the agent opens your application in a browser and works through it the way a person would.
+
+Two controls govern this. **App testing** in the agent settings turns it on and off, and **Testing Context** is where you tell the testing agent what it needs to know.
+
+## What you'll learn
+
+How to turn testing on and off, what to put in the testing context, and what the testing agent is allowed to do.
+
+## Turning it on and off
+
+<Frame caption="Agent settings holds one toggle. The badge counts settings that are on.">
+  ![The composer settings menu headed AGENT SETTINGS showing a single option, App testing, described as Agent tests your app automatically, with its toggle switched on.](/images/web-apps/app-testing-toggle.png)
+</Frame>
+
+**App testing** is the only agent setting. With it on, the agent tests your application after building it. The number on the gear counts enabled settings, so with the one toggle on it reads `1`.
+
+## Testing Context
+
+<Frame caption="Testing Context. The agent writes here as well as reading from it.">
+  ![The Testing Context drawer subtitled Context that helps the Testing Agent understand your app, showing guidance text, a large free-text Context field containing an app summary and a personas block, a last updated line, and Clear Context and Save Changes buttons.](/images/web-apps/app-testing-context.png)
+</Frame>
+
+**This is where you put what a tester would need to be told.** The panel's own guidance names it: user details and test logins, how the application works, what to focus on, and areas to avoid.
+
+The field is free text. There is no required format, so write it in whatever shape suits your application.
+
+**The agent writes here too.** The guidance says so directly — it saves useful context as it learns. So the panel accumulates knowledge across test runs rather than only holding what you typed.
+
+**Clear Context** wipes it. Use that when the application has changed enough that old notes would mislead the next run.
+
+<Tip>
+  Test logins are the highest-value thing to put here. Without them the testing agent cannot get past your sign-in screen, and every test it runs stops at the front door.
+</Tip>
+
+## What the testing agent can do
+
+**The agent that tests your application is a separate one, and it is deliberately confined.** It gets browser controls only — no access to your files, no ability to run commands, no access to the web. It can look at your running application and interact with it, and nothing else.
+
+Within the browser it can navigate, click, fill single fields and whole forms, type, hover, press keys, drag, upload a file, handle pop-up dialogs, resize the window, and wait for the page to settle. It can also read the browser's error log and network activity, which is how it notices a failure the page does not show.
+
+It cannot open new tabs or take screenshots. Both are handled outside it.
+
+## How a test run works
+
+The agent writes its own test scenarios, each a complete user journey starting from navigation. Every scenario runs in a fresh browser session, so one cannot leave state behind that affects another.
+
+Only the pass or fail summary comes back into your conversation. The clicking and reading happens inside the testing agent, which keeps a long test run from flooding your chat.
+
+A build can run at most five test rounds. That is a cap on repeated attempts within one request, not a limit on how often you can ask for testing.
+
+## What you should see
+
+The agent reports which scenarios passed and which failed, and generally attempts a fix for failures before finishing the turn.
+
+If everything fails at the same point, check Testing Context first. A missing or stale test login is the usual cause.
+
+## Your next step
+
+Testing is the last step of a build. What happens before it is worth understanding too.
+
+<CardGroup cols={2}>
+  <Card title="See what the build agent does" icon="robot" href="/web-apps/build-mode/build-agent-guide">
+    Its capabilities, its rules, and the boundaries around them.
+  </Card>
+
+  <Card title="Open your running application" icon="link" href="/web-apps/build-mode/deployment-guide">
+    Where your application lives and how to start it.
+  </Card>
+</CardGroup>

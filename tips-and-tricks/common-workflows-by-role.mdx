@@ -1,0 +1,111 @@
+---
+title: "Common Workflows by Role"
+description: "Where each role on a delivery team starts, what they do on a BlueGenAI project, and which pages they need."
+icon: "users-gear"
+---
+
+A delivery team brings several roles to a BlueGenAI project, and each one enters the platform at a different point.
+
+## What you'll learn
+
+What each role does here, the access they typically hold, and where to send them first.
+
+<Note>
+  **"Role" means three different things around this product.** This page is about the **delivery role** someone holds on a project — analyst, engineer, stakeholder. That is separate from the **access tier** their account holds, and separate again from who a given documentation page is written for.
+</Note>
+
+## Access, briefly
+
+Two levels, and neither decides what someone does on the project — only what they are permitted to do.
+
+| Level | Options |
+| --- | --- |
+| Platform | **User** — this is what everyone on a customer team holds |
+| Project | **Owner** (created it), **Editor** (works in it), **Viewer** (reads it) |
+
+That is the whole mechanism. See [User & Role Management](/getting-started/user-role-management) for how it works, and [Collaboration Features](/admin-platform/collaboration-features) for inviting people and setting it.
+
+<Note>
+  Every account on a customer team holds the platform role **User**. There is a separate administrator role, but it is held by BlueGenAI staff and operates across the whole platform rather than within one organisation. It is not something a customer can hold or grant.
+</Note>
+
+## The roles on a project
+
+| Role | What they do here | Typical access |
+| --- | --- | --- |
+| **Customers and stakeholders** | Read the specification, agree it, follow progress | Viewer, or no account at all |
+| **Subject matter experts** | Answer what the source material left open, correct the specification where it is wrong | Editor, or Viewer with someone editing on their behalf |
+| **Business analysts** | Generate and correct the CAB, turn it into Tickets, shape the build order | Editor |
+| **Project leadership** | Track scope, sequence, and progress against the plan | Viewer or Editor |
+| **Application engineers and developers** | Inspect generated code, connect repositories and tools, judge what was built | Editor |
+| **AI Platform Engineer** | Drive the build — prompt the agents, decide when to iterate and when to revert | Editor or Owner |
+
+<Note>
+  This list is expected to grow as more teams use the platform. It reflects the roles seen on real projects rather than a fixed taxonomy.
+</Note>
+
+## Where each role should start
+
+<CardGroup cols={2}>
+  <Card title="Customers and stakeholders" icon="user-check" href="/cab/what-is-cab">
+    Read the specification the platform generated, and understand what it commits to.
+  </Card>
+
+  <Card title="Subject matter experts" icon="lightbulb" href="/cab/requirement-clarification">
+    Answer the questions the source material left open — usually the highest-value hour anyone spends.
+  </Card>
+
+  <Card title="Business analysts" icon="book-open" href="/cab/editing-your-cab">
+    Correct a generated specification, then turn it into work.
+  </Card>
+
+  <Card title="Project leadership" icon="layer-group" href="/tickets/epics">
+    See the build order and track progress against it.
+  </Card>
+
+  <Card title="Engineers and developers" icon="folder-tree" href="/web-apps/codebase-and-database">
+    Inspect what was built, and connect it to your own toolchain.
+  </Card>
+
+  <Card title="AI Platform Engineers" icon="wand-magic-sparkles" href="/tips-and-tricks/prompting-best-practices">
+    Prompt well, and know when to revert rather than iterate.
+  </Card>
+</CardGroup>
+
+## The AI Platform Engineer
+
+**This is the primary human builder, and the name is deliberate.** It describes a discipline rather than a job title, because the work does not map onto anything in a traditional delivery team.
+
+The people who do it well have a blended skillset. **Technically minded, but fluent in the subject matter** — they understand the domain the application serves, not only the mechanics of building one. **Aware of good system design, but not carrying strong opinions about implementation.** They recognise a bad structural decision when they see one, without arriving with a fixed view of how every piece should be constructed.
+
+That second half matters more than it sounds. The habits that make someone effective writing code by hand can work against them here, because the most productive instruction describes an outcome rather than a construction. Someone who cannot resist specifying the implementation gets a narrower result than someone who states what the application must do and lets the agent decide how.
+
+It is a role that suits a strong analyst who is comfortable with systems as readily as it suits a developer willing to work differently.
+
+For why the platform rewards this shape of person, see [What is BlueGenAI?](/getting-started/what-is-bluegenai).
+
+## Ask mode is where roles diverge
+
+**This is the clearest case of the platform treating roles differently**, and it is worth setting up properly on any project with more than a couple of people.
+
+Ask is read-only and enforced — the agent is given only the capabilities that read, so it cannot change anything even when asked to. That makes it the right access for two quite different situations.
+
+**People who need information out of the build but should not change it.** Stakeholders, business development, contracts. They can ask what the application does, how a rule works, or what a screen contains, and get an answer grounded in the actual code, without any possibility of altering it.
+
+**Builders thinking a change through.** An AI Platform Engineer can brainstorm an approach, or ask how something was built, before deciding what to do about it. Ask outlines the change; Build makes it.
+
+The practical effect is that the read-only conversation becomes the safe way for a project's wider team to interrogate what has been built, without needing anyone to summarise it for them.
+
+See [Ask Mode](/web-apps/ask-mode).
+
+## Your next step
+
+<CardGroup cols={2}>
+  <Card title="Give someone the right access" icon="users" href="/admin-platform/collaboration-features">
+    Inviting collaborators, roles, and who pays for their work.
+  </Card>
+
+  <Card title="Prompt well once you are in" icon="pen-line" href="/tips-and-tricks/prompting-best-practices">
+    Where detail belongs, and when to revert rather than iterate.
+  </Card>
+</CardGroup>

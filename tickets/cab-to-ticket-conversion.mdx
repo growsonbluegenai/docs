@@ -1,0 +1,73 @@
+---
+title: "CAB-to-Ticket conversion"
+description: "How a finished blueprint becomes a set of Tickets, what the conversion produces, and what happens when you run it again."
+icon: "wand-magic-sparkles"
+---
+
+**Generate Tickets** turns a finished blueprint into a set of Tickets, one per unit of work it finds.
+
+## What you'll learn
+
+How to run the conversion, what comes out of it, and why running it a second time is a destructive act.
+
+<Frame caption="Generate Tickets sits in the blueprint preview toolbar, available once a blueprint exists.">
+  ![The CAB workspace with the Common Application Blueprint Preview pane on the right, showing the Generate Tickets button in its toolbar above the rendered document.](/images/tickets/cab-to-ticket-conversion-generate.png)
+</Frame>
+
+## Before you start
+
+You need a finished blueprint. Running the conversion without one returns `CAB blueprint not found. Generate the blueprint first.`
+
+## Running the conversion
+
+<Steps>
+  <Step title="Open the blueprint preview">
+    Go to **CAB** and generate a blueprint if you have not already. See [Step-by-Step Workflow](/cab/step-by-step-workflow).
+  </Step>
+  <Step title="Select Generate Tickets">
+    The control sits in the preview toolbar. On a Web project the Tickets appear straight away. On a low-code project the work is handed to an external service and a banner reports progress while it runs.
+  </Step>
+  <Step title="Open Tickets">
+    Every generated Ticket carries a **Source** of `CAB` and a **CAB Reference** pointing back at the blueprint element it came from.
+  </Step>
+</Steps>
+
+## What the conversion produces
+
+On a Web project, the conversion reads the **User Stories** section and creates one Ticket per story. Each keeps the story's title, its acceptance criteria, and its steps in the description, and each is stamped `Open`, `Medium` priority, and a work type of `User Story`.
+
+Nothing is merged or skipped. The count of Tickets matches the count of user stories in your blueprint.
+
+<Note>
+  On low-code projects the conversion is handled by an external service rather than in the platform, so the work types and the level of breakdown differ from what is described here.
+</Note>
+
+## Running it again replaces what is there
+
+**Regenerating deletes every Ticket with a source of `CAB` and creates a fresh set.** Manual Tickets are untouched.
+
+Anything you changed on a generated Ticket goes with it — status, assignee, priority, epic assignment, and any note you added. The product warns you before it happens:
+
+> Tickets already exist from this Blueprint. Regenerating will replace all previously generated CAB tickets. Are you sure?
+
+<Warning>
+  Regenerate after correcting your blueprint, not after working your Tickets. If your team has been updating statuses and assignments for a week, regenerating discards that week.
+</Warning>
+
+## What you should see
+
+The Tickets list fills with entries numbered `TKT-001` upward, each showing `CAB` in the Source column. Opening one shows the user story it came from, with its acceptance criteria and steps in the description and the originating element in **CAB Reference**.
+
+## Your next step
+
+Generated Tickets arrive ungrouped. Epics put them in build order.
+
+<CardGroup cols={2}>
+  <Card title="Put your Tickets in build order" icon="layer-group" href="/tickets/epics">
+    How Epics group work into waves, and how they are generated.
+  </Card>
+
+  <Card title="Adjust what came out" icon="pen-line" href="/tickets/creating-editing-tickets">
+    Editing, reassigning, and deleting Tickets by hand.
+  </Card>
+</CardGroup>

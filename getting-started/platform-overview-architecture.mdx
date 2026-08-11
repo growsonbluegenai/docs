@@ -1,0 +1,69 @@
+---
+title: "Platform Overview & Architecture"
+description: "What the platform is made of, where your project and its application live, and which parts are agents."
+icon: "sitemap"
+---
+
+The platform is one hosted application with a set of AI agents behind it, and it hosts the applications it builds for you.
+
+## What you'll learn
+
+What the pieces are, where your work lives, and which parts of the system are agents rather than software you operate.
+
+## The pieces
+
+| Part | What it does |
+| --- | --- |
+| **The workspace** | What you see: the dashboard, your projects, and the four modes |
+| **The agents** | Generate your specification, build your application, and test it |
+| **Your project** | Your uploaded material, your specification, your Tickets, and your generated code |
+| **Your running application** | The application the agents build, hosted and reachable at its own address |
+| **Supporting services** | Sign-in, source control, and the search index the agents use |
+
+**Your project and the application it produces are separate things.** The project is your working material and it persists whether or not the application is running. The application can be stopped and started without affecting it.
+
+## The agents
+
+Not one agent, several — each with a different job and a different set of things it is allowed to do.
+
+| Agent | What it works on |
+| --- | --- |
+| **CAB generation** | Reads your uploaded material and writes the specification |
+| **CAB agent** | Answers questions about a blueprint and proposes changes to it |
+| **Prototype agent** | Builds front ends with mock data |
+| **Build agent** | Builds the real application, with data and infrastructure |
+| **Testing agent** | Opens the built application in a browser and works through it |
+
+**Each is confined to its own job.** The prototype agent does not touch databases. The testing agent has no access to your files or to the internet. The build agent cannot reach outside your project's own workspace.
+
+That separation is deliberate, and it is enforced by the platform rather than requested in an instruction.
+
+## Where your application runs
+
+Applications built on the platform are hosted by it. Each gets an address you can share, and you can stop and start it from the workspace.
+
+Web projects can also be given a custom domain. See [Deployment Guide](/web-apps/build-mode/deployment-guide).
+
+## Low-code projects work differently
+
+For Tyler Application Platform, ServiceNow, PowerApps, and Salesforce, the platform does not host the result. It produces the configuration those systems expect and sends it to the environment you connect, which is why a low-code project asks you to link your site before you can build.
+
+<Note>
+  Some low-code work is carried out by services outside this platform. The specification, the Tickets, and the ordering are produced here; the platform-specific build is handed onward.
+</Note>
+
+## Signing in
+
+Accounts and passwords are handled by a dedicated identity service rather than by the platform itself, which is why password and verification emails come from it.
+
+## Your next step
+
+<CardGroup cols={2}>
+  <Card title="Run a project end to end" icon="rocket" href="/getting-started/quick-start-guide">
+    Requirements to deployed application, in one pass.
+  </Card>
+
+  <Card title="See what the build agent can do" icon="robot" href="/web-apps/build-mode/build-agent-guide">
+    Its capabilities, and the boundaries around them.
+  </Card>
+</CardGroup>

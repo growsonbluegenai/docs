@@ -1,0 +1,77 @@
+---
+title: "Workflow"
+description: "What happens after you send a build prompt: how the agent classifies your request, when it asks questions first, and what it does before replying."
+icon: "play"
+---
+
+A build prompt goes through classification, sometimes a round of questions, then development, and the agent works until the application runs.
+
+## What you'll learn
+
+What the agent does with your prompt, why it sometimes asks questions instead of building, and how to tell when a build is finished.
+
+<Frame caption="A Build Mode conversation. The agent reports its thinking time, then what it changed.">
+  ![A Build Mode conversation showing a user message in a blue bubble with a timestamp, and an agent response headed BlueGenAI Agent reporting thinking time, a summary that containers are running, and a list of changes made.](/images/web-apps/build-mode-workflow-conversation.png)
+</Frame>
+
+## Sending a build prompt
+
+<Steps>
+  <Step title="Attach anything the agent should work from">
+    Use the paperclip to attach saved prototype files, reference documents, or images. Build Mode has not seen your Prototype conversation, so attachments are how context arrives.
+  </Step>
+  <Step title="Check the composer is set to Build">
+    The composer's selector should read **Build** rather than **Ask**. Ask changes nothing, by design.
+  </Step>
+  <Step title="Describe the outcome">
+    Say what the application should do and who it is for. Name any constraints as requirements rather than preferences, and say which part to start with.
+  </Step>
+</Steps>
+
+## What happens next
+
+**The agent classifies your request before acting on it.** A clear, specific request goes straight to development. An ambiguous one goes to elaboration first, where the agent writes out its understanding of the requirements and waits for you to approve or correct it.
+
+That pause is deliberate. Resolving an ambiguity before code exists is cheaper than discovering it in a finished build.
+
+| Phase | What it means |
+| --- | --- |
+| Classification | Deciding whether your request is clear enough to build from |
+| Elaboration | Writing out the requirements and waiting for your approval |
+| Development | Writing code, running containers, and fixing what breaks |
+| Completed | The work finished |
+| Failed | The run stopped without completing |
+
+## What the agent does before replying
+
+The agent does not report a build as finished until the application is actually running. Its instructions require it to bring the containers up, confirm they are healthy, and fix anything that fails, before it responds.
+
+That is why a single build prompt can take several minutes and return one message. The work in between is the agent building, running, reading errors, and correcting.
+
+## What you should see
+
+A finished build returns a summary of what changed and the URLs to open the application. See [Deployment Guide](/web-apps/build-mode/deployment-guide) for what those URLs look like.
+
+If the agent asks questions instead, that is elaboration. Answer them, correct anything it misread, and approve. The build begins after that.
+
+## Iterating
+
+Each prompt continues on the existing codebase rather than starting over, so you can build in steps: one capability, check it, then the next.
+
+<Tip>
+  Build one outcome per prompt. A prompt naming five features gives the agent no order to apply them in, and a build that goes wrong halfway is harder to unpick than five that went right one at a time. See [Prompting Best Practices](/tips-and-tricks/prompting-best-practices).
+</Tip>
+
+## Your next step
+
+Knowing what the agent is allowed to do makes it easier to judge what it did.
+
+<CardGroup cols={2}>
+  <Card title="See what the agent can and cannot do" icon="robot" href="/web-apps/build-mode/build-agent-guide">
+    Its tools, its rules, and the limits it works within.
+  </Card>
+
+  <Card title="Open your running application" icon="link" href="/web-apps/build-mode/deployment-guide">
+    Where your application lives and how to start and stop it.
+  </Card>
+</CardGroup>

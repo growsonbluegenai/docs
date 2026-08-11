@@ -1,0 +1,73 @@
+---
+title: "Using Tickets and Epics in Build Mode"
+description: "Referencing a Ticket in a Build conversation so the agent gets the requirement behind it, not just its title."
+icon: "code"
+---
+
+Typing `@` followed by part of a Ticket id or title in Build Mode attaches that Ticket to your prompt.
+
+The point is not the reference itself. It is that the agent receives the requirement the Ticket came from, so you do not have to restate it.
+
+## What you'll learn
+
+How the mention gesture works, what the agent receives, and how to sequence a build using your Epics.
+
+## Referencing a Ticket
+
+<Frame caption="The picker after typing @TKT. Each row shows the category, the ticket id and title, and its current status.">
+  ![The Build Mode composer with @TKT typed, showing a suggestion list of ticket rows each labelled Tickets, with the ticket id and title in monospace and the status Open or Closed in parentheses at the right.](/images/tickets/using-tickets-in-build-mode-mention.png)
+</Frame>
+
+<Steps>
+  <Step title="Open Build Mode">
+    The mention gesture works in the Build Mode composer.
+  </Step>
+  <Step title="Type @ and at least two more characters">
+    **Typing `@` on its own does nothing.** One character after it is not enough either. The picker opens at two.
+
+    Search covers both ids and titles, so `@TKT` lists everything in id order while `@allerg` finds the Ticket about allergies wherever it sits.
+  </Step>
+  <Step title="Choose a Ticket">
+    Each row shows the ticket id and title, with the current status in brackets at the right, so you can see at a glance whether you already closed it.
+  </Step>
+</Steps>
+
+## What the agent receives
+
+**A referenced Ticket brings its blueprint context with it.** Behind the mention, a read-only agent searches your blueprint for the parts relevant to that Ticket and passes them into the conversation.
+
+That agent can read and search, and nothing else. It cannot edit files, run commands, or reach the internet — its job is to find the right requirement and hand it over.
+
+The practical effect is that a short prompt carries the full requirement. You do not need to paste acceptance criteria into the composer.
+
+## Sequencing a build with Epics
+
+Epics set the order work should be built in, and that order is worth following. Wave 1 usually holds the foundations later work depends on — authentication, core records, the shell of the application.
+
+A workable rhythm is one Epic at a time: open the Epic, work its Tickets in order, then move to the next Wave. Each Build conversation continues on the existing codebase rather than starting over, so the second Epic builds on the first.
+
+See [Epics](/tickets/epics) for how the ordering is set.
+
+<Tip>
+  **Keep the number of Tickets in a single prompt small.** The more you tag, the more the build agent has to hold in view at once, and the harder the result is to review.
+
+  **Tag only one Epic per prompt.** An Epic is a wave, and waves are meant to be built in sequence. Spanning two in one prompt asks the agent to build work that was deliberately ordered.
+</Tip>
+
+## What you should see
+
+The agent responds having read the Ticket's requirement, and its plan reflects the acceptance criteria rather than only the title you referenced.
+
+## Your next step
+
+Building from Tickets is one half of Build Mode. The other is knowing what the agent can and cannot do on your behalf.
+
+<CardGroup cols={2}>
+  <Card title="Understand what the build agent does" icon="robot" href="/web-apps/build-mode/build-agent-guide">
+    Its tools, its operating rules, and the limits it works within.
+  </Card>
+
+  <Card title="Group your work first" icon="layer-group" href="/tickets/epics">
+    How Epics set the order work gets built in.
+  </Card>
+</CardGroup>

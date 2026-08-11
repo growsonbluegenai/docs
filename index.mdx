@@ -36,37 +36,37 @@ mode: "custom"
 
 <style>
   {`
-              /*
-              Custom card styling — raised/elevated look with subtle translucency.
-              Historical note: this rule targeted Mintlify's native Card
-              component, previously used in Common Workflows
-              and Updates & Support sections on the landing page).
-              */
-              card {
-              background: rgba(255, 255, 255, 0.40) !important;
-              backdrop-filter: blur(10px);
-              border: 1px solid rgba(226, 232, 240, 0.8) !important;
-              box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22), 0 4px 10px rgba(15, 23, 42, 0.12);
-              transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-              }
-              card:hover {
-              box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12), 0 4px 8px rgba(15, 23, 42, 0.06);
-              transform: translateY(-1px);
-              }
+                          /*
+                          Custom card styling — raised/elevated look with subtle translucency.
+                          Historical note: this rule targeted Mintlify's native Card
+                          component, previously used in Common Workflows
+                          and Updates & Support sections on the landing page).
+                          */
+                          card {
+                          background: rgba(255, 255, 255, 0.40) !important;
+                          backdrop-filter: blur(10px);
+                          border: 1px solid rgba(226, 232, 240, 0.8) !important;
+                          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22), 0 4px 10px rgba(15, 23, 42, 0.12);
+                          transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+                          }
+                          card:hover {
+                          box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12), 0 4px 8px rgba(15, 23, 42, 0.06);
+                          transform: translateY(-1px);
+                          }
 
-              /*
-              NOTE: scenario cards no longer use this class -- they are now styled
-              with a plain wrapper element inside a display-contents anchor,
-              avoiding the anchor-tag reset entirely. See index dot mdx SECTION 2.
+                          /*
+                          NOTE: scenario cards no longer use this class -- they are now styled
+                          with a plain wrapper element inside a display-contents anchor,
+                          avoiding the anchor-tag reset entirely. See index dot mdx SECTION 2.
 
-              CONFIRMED BROKEN (video evidence, Aug 9): this style block does
-              not render in Mintlify custom-mode MDX. Native Card elements in
-              Common Workflows and Updates and Support show zero visual effect
-              even with a gradient blob directly overlapping the card edge.
-              This entire card selector rule is dead code and should be removed
-              once the native Card replacements below are confirmed working.
-              */
-            `}
+                          CONFIRMED BROKEN (video evidence, Aug 9): this style block does
+                          not render in Mintlify custom-mode MDX. Native Card elements in
+                          Common Workflows and Updates and Support show zero visual effect
+                          even with a gradient blob directly overlapping the card edge.
+                          This entire card selector rule is dead code and should be removed
+                          once the native Card replacements below are confirmed working.
+                          */
+                        `}
 </style>
 
 <svg width="0" height="0" style={{ position: "absolute" }}>
@@ -138,39 +138,39 @@ mode: "custom"
 
     <div
       style={{
-    marginBottom: "96px",
-    padding: "48px",
-    background: "rgba(255, 255, 255, 0.40)",
-    borderRadius: "16px",
-    border: "1px solid rgba(226, 232, 240, 0.8)",
-    boxShadow: "-7.5px 7.5px 5.3px rgba(0, 0, 0, 0.35), -12px 12px 10px rgba(0, 0, 0, 0.16)",
-    position: "relative"
-  }}
+marginBottom: "96px",
+padding: "48px",
+background: "rgba(255, 255, 255, 0.40)",
+borderRadius: "16px",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+boxShadow: "-7.5px 7.5px 5.3px rgba(0, 0, 0, 0.35), -12px 12px 10px rgba(0, 0, 0, 0.16)",
+position: "relative"
+}}
     >
       <div
         style={{
-      position: "absolute",
-      inset: 0,
-      borderRadius: "16px",
-      backdropFilter: "url(#glass-refraction-strong)",
-      pointerEvents: "none"
-    }}
+position: "absolute",
+inset: 0,
+borderRadius: "16px",
+backdropFilter: "url(#glass-refraction-strong)",
+pointerEvents: "none"
+}}
       />
 
       <div className="flex items-center gap-4 mb-6">
         <div style={{
-                                              display: "flex",
-                                              alignItems: "center",
-                                              justifyContent: "center",
-                                              width: "48px",
-                                              height: "48px",
-                                              borderRadius: "12px",
-                                              background: "white",
-                                              color: "#1F4E79",
-                                              fontWeight: 700,
-                                              fontSize: "18px",
-                                              boxShadow: "0 10px 15px -3px rgba(37,99,235,0.3)"
-                                            }}>1</div>
+                                                                                  display: "flex",
+                                                                                  alignItems: "center",
+                                                                                  justifyContent: "center",
+                                                                                  width: "48px",
+                                                                                  height: "48px",
+                                                                                  borderRadius: "12px",
+                                                                                  background: "white",
+                                                                                  color: "#1F4E79",
+                                                                                  fontWeight: 700,
+                                                                                  fontSize: "18px",
+                                                                                  boxShadow: "0 10px 15px -3px rgba(37,99,235,0.3)"
+                                                                                }}>1</div>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">What is BlueGenAI?</h2>
       </div>
 
@@ -184,18 +184,18 @@ mode: "custom"
     <div className="mb-24">
       <div className="flex items-center gap-4 mb-8">
         <div style={{
-                                              display: "flex",
-                                              alignItems: "center",
-                                              justifyContent: "center",
-                                              width: "48px",
-                                              height: "48px",
-                                              borderRadius: "12px",
-                                              background: "white",
-                                              color: "#1F4E79",
-                                              fontWeight: 700,
-                                              fontSize: "18px",
-                                              boxShadow: "0 10px 15px -3px rgba(37,99,235,0.3)"
-                                            }}>2</div>
+                                                                                  display: "flex",
+                                                                                  alignItems: "center",
+                                                                                  justifyContent: "center",
+                                                                                  width: "48px",
+                                                                                  height: "48px",
+                                                                                  borderRadius: "12px",
+                                                                                  background: "white",
+                                                                                  color: "#1F4E79",
+                                                                                  fontWeight: 700,
+                                                                                  fontSize: "18px",
+                                                                                  boxShadow: "0 10px 15px -3px rgba(37,99,235,0.3)"
+                                                                                }}>2</div>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">Pick Your Project Path</h2>
       </div>
 
@@ -205,77 +205,77 @@ mode: "custom"
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px" }}>
         {[
-                  {
-                    icon: "💡",
-                    title: "Solutioning Teams",
-                    href: "/building-web-apps/phase-1-pre-rfp-solutioning",
-                    description: "BlueGenAI accelerates every phase of government pursuit work — from pre-RFP prototyping through proposal support. Use this portal to learn how to generate client demos, proposal artifacts, and procurement documents directly from solicitation materials.",
-                    link: "Start here: Phase 1 — Pre-RFP Solutioning"
-                  },
-                  {
-                    icon: "📋",
-                    title: "Business Analysts",
-                    href: "/building-web-apps/phase-2-requirements-refinement-cab",
-                    description: "BlueGenAI transforms legacy documentation, transcripts, and natural language inputs into structured, traceable requirements. Use this portal to learn how to generate user stories, acceptance criteria, and compliance-ready documentation at every stage of your project.",
-                    link: "Start here: Phase 2 — Requirements Refinement & CAB"
-                  },
-                  {
-                    icon: "💻",
-                    title: "Application Engineers",
-                    href: "/building-web-apps/phase-3-system-design",
-                    description: "BlueGenAI generates full-stack web applications, low-code platform configurations, and hybrid solutions using AI agents. Use this portal to learn how to build, test, and deploy applications across web and low-code platforms efficiently and accurately.",
-                    link: "Start here: Phase 3 — System Design"
-                  }
-                ].map((card, i) => (
-                  <a key={i} href={card.href} style={{ display: "contents" }}>
-                    <div style={{
-                      background: "rgba(255, 255, 255, 0.40)",
-                      border: "1px solid rgba(226, 232, 240, 0.8)",
-                      borderRadius: "12px",
-                      padding: "24px",
-                      boxShadow: "-7.5px 7.5px 5.3px rgba(0, 0, 0, 0.35), -12px 12px 10px rgba(0, 0, 0, 0.16)",
-                      transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-                      textDecoration: "none",
-                      color: "inherit",
-                      cursor: "pointer",
-                      position: "relative"
-                    }}>
-                      <div style={{
-                        position: "absolute",
-                        inset: 0,
-                        borderRadius: "12px",
-                        backdropFilter: "url(#glass-refraction-medium)",
-                        pointerEvents: "none"
-                      }} />
-                      <div style={{
-                        width: "36px",
-                        height: "36px",
-                        background: "#EBF3FB",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "18px",
-                        marginBottom: "12px"
-                      }}>{card.icon}</div>
-                      <div style={{ fontSize: "16px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>{card.title}</div>
-                      <div style={{ fontSize: "14px", color: "#475569", lineHeight: 1.5, marginBottom: "12px" }}>{card.description}</div>
-                      <div style={{ fontSize: "13px", color: "#2E75B6", fontWeight: 600 }}>{card.link}</div>
-                    </div>
-                  </a>
-                ))}
+                                                                  {
+                                                                    icon: "💡",
+                                                                    title: "Solutioning Teams",
+                                                                    href: "/building-web-apps/phase-1-pre-rfp-solutioning",
+                                                                    description: "BlueGenAI accelerates every phase of government pursuit work — from pre-RFP prototyping through proposal support. Use this portal to learn how to generate client demos, proposal artifacts, and procurement documents directly from solicitation materials.",
+                                                                    link: "Start here: Phase 1 — Pre-RFP Solutioning"
+                                                                  },
+                                                                  {
+                                                                    icon: "📋",
+                                                                    title: "Business Analysts",
+                                                                    href: "/building-web-apps/phase-2-requirements-refinement-cab",
+                                                                    description: "BlueGenAI transforms legacy documentation, transcripts, and natural language inputs into structured, traceable requirements. Use this portal to learn how to generate user stories, acceptance criteria, and compliance-ready documentation at every stage of your project.",
+                                                                    link: "Start here: Phase 2 — Requirements Refinement & CAB"
+                                                                  },
+                                                                  {
+                                                                    icon: "💻",
+                                                                    title: "Application Engineers",
+                                                                    href: "/building-web-apps/phase-3-system-design",
+                                                                    description: "BlueGenAI generates full-stack web applications, low-code platform configurations, and hybrid solutions using AI agents. Use this portal to learn how to build, test, and deploy applications across web and low-code platforms efficiently and accurately.",
+                                                                    link: "Start here: Phase 3 — System Design"
+                                                                  }
+                                                                ].map((card, i) => (
+                                                                  <a key={i} href={card.href} style={{ display: "contents" }}>
+                                                                    <div style={{
+                                                                      background: "rgba(255, 255, 255, 0.40)",
+                                                                      border: "1px solid rgba(226, 232, 240, 0.8)",
+                                                                      borderRadius: "12px",
+                                                                      padding: "24px",
+                                                                      boxShadow: "-7.5px 7.5px 5.3px rgba(0, 0, 0, 0.35), -12px 12px 10px rgba(0, 0, 0, 0.16)",
+                                                                      transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+                                                                      textDecoration: "none",
+                                                                      color: "inherit",
+                                                                      cursor: "pointer",
+                                                                      position: "relative"
+                                                                    }}>
+                                                                      <div style={{
+                                                                        position: "absolute",
+                                                                        inset: 0,
+                                                                        borderRadius: "12px",
+                                                                        backdropFilter: "url(#glass-refraction-medium)",
+                                                                        pointerEvents: "none"
+                                                                      }} />
+                                                                      <div style={{
+                                                                        width: "36px",
+                                                                        height: "36px",
+                                                                        background: "#EBF3FB",
+                                                                        borderRadius: "8px",
+                                                                        display: "flex",
+                                                                        alignItems: "center",
+                                                                        justifyContent: "center",
+                                                                        fontSize: "18px",
+                                                                        marginBottom: "12px"
+                                                                      }}>{card.icon}</div>
+                                                                      <div style={{ fontSize: "16px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>{card.title}</div>
+                                                                      <div style={{ fontSize: "14px", color: "#475569", lineHeight: 1.5, marginBottom: "12px" }}>{card.description}</div>
+                                                                      <div style={{ fontSize: "13px", color: "#2E75B6", fontWeight: 600 }}>{card.link}</div>
+                                                                    </div>
+                                                                  </a>
+                                                                ))}
       </div>
     </div>
 
     {/* ============================================================
-                              HOW DO I CHOOSE THE RIGHT APPROACH?
-                              DEVELOPER NOTES:
-                              - Unnumbered section — visual break, not a portal section
-                              - Each card is a placeholder for an animated workflow graphic
-                              - Replace the graphic-placeholder div with Jitter/Lottie embed or SVG
-                              - See Development Plan Section 2.4 for full graphic requirements
-                              - ORDER: Solicitation → Legacy → Idea → Low-Code (locked June 2026)
-                              ============================================================ */}
+                                                      HOW DO I CHOOSE THE RIGHT APPROACH?
+                                                      DEVELOPER NOTES:
+                                                      - Unnumbered section — visual break, not a portal section
+                                                      - Each card is a placeholder for an animated workflow graphic
+                                                      - Replace the graphic-placeholder div with Jitter/Lottie embed or SVG
+                                                      - See Development Plan Section 2.4 for full graphic requirements
+                                                      - ORDER: Solicitation → Legacy → Idea → Low-Code (locked June 2026)
+                                                      ============================================================ */}
 
     <div className="mb-24">
       <h2
@@ -293,15 +293,15 @@ gap: "10px"
       >
         How do I choose the right approach?
         <span style={{
-                                              background: "#2E75B6",
-                                              color: "white",
-                                              fontSize: "10px",
-                                              fontWeight: 700,
-                                              padding: "2px 8px",
-                                              borderRadius: "12px",
-                                              textTransform: "uppercase",
-                                              letterSpacing: "0.05em"
-                                            }}>New</span>
+                                                                                  background: "#2E75B6",
+                                                                                  color: "white",
+                                                                                  fontSize: "10px",
+                                                                                  fontWeight: 700,
+                                                                                  padding: "2px 8px",
+                                                                                  borderRadius: "12px",
+                                                                                  textTransform: "uppercase",
+                                                                                  letterSpacing: "0.05em"
+                                                                                }}>New</span>
       </h2>
 
       <div
@@ -313,143 +313,143 @@ gap: "16px"
 }}
       >
         {[
-                                                        {
-                                                          icon: "📋",
-                                                          title: "Web App from a Solicitation",
-                                                          href: "/building-web-apps/phase-1-pre-rfp-solutioning",
-                                                          steps: ["RFP / SOW", "Upload", "Prototype", "Proposal"],
-                                                          description: "Upload your RFP, task order, or SOW and generate a working prototype and proposal artifacts directly from the solicitation materials.",
-                                                          link: "Phase 1 — Pre-RFP Solutioning"
-                                                        },
-                                                        {
-                                                          icon: "🔄",
-                                                          title: "Modernize a Legacy System",
-                                                          href: "/building-web-apps/phase-2-requirements-refinement-cab",
-                                                          steps: ["Legacy", "CAB", "Blueprint", "Deploy"],
-                                                          description: "Upload your existing system — code, schemas, documentation — and generate a full architectural blueprint and requirements for its replacement.",
-                                                          link: "Phase 2 — Requirements Refinement & CAB"
-                                                        },
-                                                        {
-                                                          icon: "💡",
-                                                          title: "Web App from an Idea",
-                                                          href: "/building-web-apps/phase-1-pre-rfp-solutioning",
-                                                          steps: ["Idea", "Design", "Build", "Deploy"],
-                                                          description: "Start with nothing but a description. BlueGenAI generates a complete, modern application — no layouts, no frameworks, no expertise required.",
-                                                          link: "Phase 1 — Pre-RFP Solutioning"
-                                                        },
-                                                        {
-                                                          icon: "⚙️",
-                                                          title: "Deploy to a Low-Code Platform",
-                                                          href: "/building-on-low-code/low-code-overview",
-                                                          steps: ["Requirements", "Data Model", "Configure", "Deploy"],
-                                                          description: "Generate platform-native configurations for Tyler Application Platform (TAP), ServiceNow, Salesforce, or PowerApps and deploy to your existing instance.",
-                                                          link: "Low-Code Overview"
-                                                        }
-                                                      ].map((card, i) => (
-                                                        <a key={i} href={card.href} style={{ display: "contents" }}>
-                                                        <div style={{
-                                                          gridColumn: i + 1,
-                                                          gridRow: "1 / 6",
-                                                          display: "grid",
-                                                          gridTemplateRows: "subgrid",
-                                                          rowGap: "12px",
-                                                          background: "rgba(255, 255, 255, 0.40)",
-                                                          border: "1px solid rgba(226, 232, 240, 0.8)",
-                                                          borderRadius: "12px",
-                                                          padding: "20px",
-                                                          textDecoration: "none",
-                                                          color: "inherit",
-                                                          boxShadow: "-5px 5px 4px rgba(0, 0, 0, 0.28), -8px 8px 7px rgba(0, 0, 0, 0.12)",
-                                                          transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-                                                          cursor: "pointer",
-                                                          position: "relative"
-                                                        }}>
-                                                          <div style={{
-                                                            position: "absolute",
-                                                            inset: 0,
-                                                            borderRadius: "12px",
-                                                            backdropFilter: "url(#glass-refraction-strong)",
-                                                            pointerEvents: "none"
-                                                          }} />
-                                                          <div style={{
-                                                            gridRow: 1,
-                                                            width: "36px",
-                                                            height: "36px",
-                                                            background: "#EBF3FB",
-                                                            borderRadius: "8px",
-                                                            display: "flex",
-                                                            alignItems: "center",
-                                                            justifyContent: "center",
-                                                            fontSize: "18px"
-                                                          }}>{card.icon}</div>
-                                                          <div style={{
-                                                            gridRow: 2,
-                                                            display: "flex",
-                                                            alignItems: "center"
-                                                          }}>
-                                                            <div style={{
-                                                              fontSize: "14px",
-                                                              fontWeight: 700,
-                                                              color: "#1F4E79",
-                                                              lineHeight: 1.3
-                                                            }}>{card.title}</div>
-                                                          </div>
-                                                          <div style={{
-                                                            gridRow: 3,
-                                                            boxSizing: "border-box",
-                                                            background: "#EBF3FB",
-                                                            border: "2px dashed #2E75B6",
-                                                            borderRadius: "8px",
-                                                            padding: "20px 12px",
-                                                            textAlign: "center",
-                                                            color: "#2E75B6",
-                                                            display: "flex",
-                                                            flexDirection: "column",
-                                                            justifyContent: "center"
-                                                          }}>
-                                                            <div style={{ fontSize: "12px", fontWeight: 600, marginBottom: "8px" }}>🎬 Graphic coming soon</div>
-                                                            <div style={{
-                                                              display: "flex",
-                                                              alignItems: "center",
-                                                              justifyContent: "center",
-                                                              flexWrap: "wrap",
-                                                              gap: "4px"
-                                                            }}>
-                                                              {card.steps.map((step, j) => (
-                                                                <span key={j} style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                                                                  <span style={{
-                                                                    background: "white",
-                                                                    border: "1px solid #2E75B6",
-                                                                    borderRadius: "4px",
-                                                                    padding: "3px 6px",
-                                                                    fontSize: "10px",
-                                                                    color: "#1F4E79",
-                                                                    fontWeight: 500,
-                                                                    whiteSpace: "nowrap"
-                                                                  }}>{step}</span>
-                                                                  {j < card.steps.length - 1 && (
-                                                                    <span style={{ color: "#2E75B6", fontSize: "10px", fontWeight: 700 }}>→</span>
-                                                                  )}
-                                                                </span>
-                                                              ))}
-                                                            </div>
-                                                          </div>
-                                                          <div style={{
-                                                            gridRow: 4,
-                                                            fontSize: "13px",
-                                                            color: "#475569",
-                                                            lineHeight: 1.5
-                                                          }}>{card.description}</div>
-                                                          <div style={{
-                                                            gridRow: 5,
-                                                            fontSize: "12px",
-                                                            color: "#2E75B6",
-                                                            fontWeight: 600,
-                                                            alignSelf: "end"
-                                                          }}>{card.link} →</div>
-                                                        </div>
-                                                        </a>
-                                                      ))}
+                                                                                                        {
+                                                                                                          icon: "📋",
+                                                                                                          title: "Web App from a Solicitation",
+                                                                                                          href: "/building-web-apps/phase-1-pre-rfp-solutioning",
+                                                                                                          steps: ["RFP / SOW", "Upload", "Prototype", "Proposal"],
+                                                                                                          description: "Upload your RFP, task order, or SOW and generate a working prototype and proposal artifacts directly from the solicitation materials.",
+                                                                                                          link: "Phase 1 — Pre-RFP Solutioning"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          icon: "🔄",
+                                                                                                          title: "Modernize a Legacy System",
+                                                                                                          href: "/building-web-apps/phase-2-requirements-refinement-cab",
+                                                                                                          steps: ["Legacy", "CAB", "Blueprint", "Deploy"],
+                                                                                                          description: "Upload your existing system — code, schemas, documentation — and generate a full architectural blueprint and requirements for its replacement.",
+                                                                                                          link: "Phase 2 — Requirements Refinement & CAB"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          icon: "💡",
+                                                                                                          title: "Web App from an Idea",
+                                                                                                          href: "/building-web-apps/phase-1-pre-rfp-solutioning",
+                                                                                                          steps: ["Idea", "Design", "Build", "Deploy"],
+                                                                                                          description: "Start with nothing but a description. BlueGenAI generates a complete, modern application — no layouts, no frameworks, no expertise required.",
+                                                                                                          link: "Phase 1 — Pre-RFP Solutioning"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          icon: "⚙️",
+                                                                                                          title: "Deploy to a Low-Code Platform",
+                                                                                                          href: "/building-on-low-code/low-code-overview",
+                                                                                                          steps: ["Requirements", "Data Model", "Configure", "Deploy"],
+                                                                                                          description: "Generate platform-native configurations for Tyler Application Platform (TAP), ServiceNow, Salesforce, or PowerApps and deploy to your existing instance.",
+                                                                                                          link: "Low-Code Overview"
+                                                                                                        }
+                                                                                                      ].map((card, i) => (
+                                                                                                        <a key={i} href={card.href} style={{ display: "contents" }}>
+                                                                                                        <div style={{
+                                                                                                          gridColumn: i + 1,
+                                                                                                          gridRow: "1 / 6",
+                                                                                                          display: "grid",
+                                                                                                          gridTemplateRows: "subgrid",
+                                                                                                          rowGap: "12px",
+                                                                                                          background: "rgba(255, 255, 255, 0.40)",
+                                                                                                          border: "1px solid rgba(226, 232, 240, 0.8)",
+                                                                                                          borderRadius: "12px",
+                                                                                                          padding: "20px",
+                                                                                                          textDecoration: "none",
+                                                                                                          color: "inherit",
+                                                                                                          boxShadow: "-5px 5px 4px rgba(0, 0, 0, 0.28), -8px 8px 7px rgba(0, 0, 0, 0.12)",
+                                                                                                          transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+                                                                                                          cursor: "pointer",
+                                                                                                          position: "relative"
+                                                                                                        }}>
+                                                                                                          <div style={{
+                                                                                                            position: "absolute",
+                                                                                                            inset: 0,
+                                                                                                            borderRadius: "12px",
+                                                                                                            backdropFilter: "url(#glass-refraction-strong)",
+                                                                                                            pointerEvents: "none"
+                                                                                                          }} />
+                                                                                                          <div style={{
+                                                                                                            gridRow: 1,
+                                                                                                            width: "36px",
+                                                                                                            height: "36px",
+                                                                                                            background: "#EBF3FB",
+                                                                                                            borderRadius: "8px",
+                                                                                                            display: "flex",
+                                                                                                            alignItems: "center",
+                                                                                                            justifyContent: "center",
+                                                                                                            fontSize: "18px"
+                                                                                                          }}>{card.icon}</div>
+                                                                                                          <div style={{
+                                                                                                            gridRow: 2,
+                                                                                                            display: "flex",
+                                                                                                            alignItems: "center"
+                                                                                                          }}>
+                                                                                                            <div style={{
+                                                                                                              fontSize: "14px",
+                                                                                                              fontWeight: 700,
+                                                                                                              color: "#1F4E79",
+                                                                                                              lineHeight: 1.3
+                                                                                                            }}>{card.title}</div>
+                                                                                                          </div>
+                                                                                                          <div style={{
+                                                                                                            gridRow: 3,
+                                                                                                            boxSizing: "border-box",
+                                                                                                            background: "#EBF3FB",
+                                                                                                            border: "2px dashed #2E75B6",
+                                                                                                            borderRadius: "8px",
+                                                                                                            padding: "20px 12px",
+                                                                                                            textAlign: "center",
+                                                                                                            color: "#2E75B6",
+                                                                                                            display: "flex",
+                                                                                                            flexDirection: "column",
+                                                                                                            justifyContent: "center"
+                                                                                                          }}>
+                                                                                                            <div style={{ fontSize: "12px", fontWeight: 600, marginBottom: "8px" }}>🎬 Graphic coming soon</div>
+                                                                                                            <div style={{
+                                                                                                              display: "flex",
+                                                                                                              alignItems: "center",
+                                                                                                              justifyContent: "center",
+                                                                                                              flexWrap: "wrap",
+                                                                                                              gap: "4px"
+                                                                                                            }}>
+                                                                                                              {card.steps.map((step, j) => (
+                                                                                                                <span key={j} style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                                                                                                                  <span style={{
+                                                                                                                    background: "white",
+                                                                                                                    border: "1px solid #2E75B6",
+                                                                                                                    borderRadius: "4px",
+                                                                                                                    padding: "3px 6px",
+                                                                                                                    fontSize: "10px",
+                                                                                                                    color: "#1F4E79",
+                                                                                                                    fontWeight: 500,
+                                                                                                                    whiteSpace: "nowrap"
+                                                                                                                  }}>{step}</span>
+                                                                                                                  {j < card.steps.length - 1 && (
+                                                                                                                    <span style={{ color: "#2E75B6", fontSize: "10px", fontWeight: 700 }}>→</span>
+                                                                                                                  )}
+                                                                                                                </span>
+                                                                                                              ))}
+                                                                                                            </div>
+                                                                                                          </div>
+                                                                                                          <div style={{
+                                                                                                            gridRow: 4,
+                                                                                                            fontSize: "13px",
+                                                                                                            color: "#475569",
+                                                                                                            lineHeight: 1.5
+                                                                                                          }}>{card.description}</div>
+                                                                                                          <div style={{
+                                                                                                            gridRow: 5,
+                                                                                                            fontSize: "12px",
+                                                                                                            color: "#2E75B6",
+                                                                                                            fontWeight: 600,
+                                                                                                            alignSelf: "end"
+                                                                                                          }}>{card.link} →</div>
+                                                                                                        </div>
+                                                                                                        </a>
+                                                                                                      ))}
       </div>
     </div>
 
@@ -458,18 +458,18 @@ gap: "16px"
     <div style={{ marginBottom: "96px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "32px" }}>
         <div style={{
-                                              display: "flex",
-                                              alignItems: "center",
-                                              justifyContent: "center",
-                                              width: "48px",
-                                              height: "48px",
-                                              borderRadius: "12px",
-                                              background: "white",
-                                              color: "#1F4E79",
-                                              fontWeight: 700,
-                                              fontSize: "18px",
-                                              boxShadow: "0 10px 15px -3px rgba(37,99,235,0.3)"
-                                            }}>3</div>
+                                                                                  display: "flex",
+                                                                                  alignItems: "center",
+                                                                                  justifyContent: "center",
+                                                                                  width: "48px",
+                                                                                  height: "48px",
+                                                                                  borderRadius: "12px",
+                                                                                  background: "white",
+                                                                                  color: "#1F4E79",
+                                                                                  fontWeight: 700,
+                                                                                  fontSize: "18px",
+                                                                                  boxShadow: "0 10px 15px -3px rgba(37,99,235,0.3)"
+                                                                                }}>3</div>
         <h2 style={{ fontSize: "32px", fontWeight: 700, color: "#111827", margin: 0 }}>Common Workflows</h2>
       </div>
 
@@ -481,36 +481,36 @@ gap: "16px"
 
           <div
             style={{
-            background: "rgba(255, 255, 255, 0.40)",
-            border: "1px solid rgba(226, 232, 240, 0.8)",
-            borderRadius: "12px",
-            padding: "20px",
-            boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
-            transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-            position: "relative"
-          }}
+background: "rgba(255, 255, 255, 0.40)",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+borderRadius: "12px",
+padding: "20px",
+boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
+transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+position: "relative"
+}}
           >
             <div
               style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "12px",
-            backdropFilter: "url(#glass-refraction-subtle)",
-            pointerEvents: "none"
-          }}
+position: "absolute",
+inset: 0,
+borderRadius: "12px",
+backdropFilter: "url(#glass-refraction-subtle)",
+pointerEvents: "none"
+}}
             />
 
             <div style={{
-                        width: "32px",
-                        height: "32px",
-                        background: "#EBF3FB",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "16px",
-                        marginBottom: "12px"
-                      }}>✨</div>
+                                                                                    width: "32px",
+                                                                                    height: "32px",
+                                                                                    background: "#EBF3FB",
+                                                                                    borderRadius: "8px",
+                                                                                    display: "flex",
+                                                                                    alignItems: "center",
+                                                                                    justifyContent: "center",
+                                                                                    fontSize: "16px",
+                                                                                    marginBottom: "12px"
+                                                                                  }}>✨</div>
             <div style={{ fontSize: "15px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>Prototype for a Proposal</div>
             <span style={{ display: "inline-block", padding: "2px 8px", fontSize: "12px", fontWeight: 600, color: "#b45309", background: "#fffbeb", borderRadius: "4px" }}>Coming soon</span>
           </div>
@@ -523,108 +523,108 @@ gap: "16px"
 
           <div
             style={{
-            background: "rgba(255, 255, 255, 0.40)",
-            border: "1px solid rgba(226, 232, 240, 0.8)",
-            borderRadius: "12px",
-            padding: "20px",
-            boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
-            transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-            position: "relative"
-          }}
+background: "rgba(255, 255, 255, 0.40)",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+borderRadius: "12px",
+padding: "20px",
+boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
+transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+position: "relative"
+}}
           >
             <div
               style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "12px",
-            backdropFilter: "url(#glass-refraction-subtle)",
-            pointerEvents: "none"
-          }}
+position: "absolute",
+inset: 0,
+borderRadius: "12px",
+backdropFilter: "url(#glass-refraction-subtle)",
+pointerEvents: "none"
+}}
             />
 
             <div style={{
-                        width: "32px",
-                        height: "32px",
-                        background: "#EBF3FB",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "16px",
-                        marginBottom: "12px"
-                      }}>🔄</div>
+                                                                                    width: "32px",
+                                                                                    height: "32px",
+                                                                                    background: "#EBF3FB",
+                                                                                    borderRadius: "8px",
+                                                                                    display: "flex",
+                                                                                    alignItems: "center",
+                                                                                    justifyContent: "center",
+                                                                                    fontSize: "16px",
+                                                                                    marginBottom: "12px"
+                                                                                  }}>🔄</div>
             <div style={{ fontSize: "15px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>Modernize a Legacy System</div>
             <span style={{ display: "inline-block", padding: "2px 8px", fontSize: "12px", fontWeight: 600, color: "#b45309", background: "#fffbeb", borderRadius: "4px" }}>Coming soon</span>
           </div>
 
           <div
             style={{
-            background: "rgba(255, 255, 255, 0.40)",
-            border: "1px solid rgba(226, 232, 240, 0.8)",
-            borderRadius: "12px",
-            padding: "20px",
-            boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
-            transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-            position: "relative"
-          }}
+background: "rgba(255, 255, 255, 0.40)",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+borderRadius: "12px",
+padding: "20px",
+boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
+transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+position: "relative"
+}}
           >
             <div
               style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "12px",
-            backdropFilter: "url(#glass-refraction-subtle)",
-            pointerEvents: "none"
-          }}
+position: "absolute",
+inset: 0,
+borderRadius: "12px",
+backdropFilter: "url(#glass-refraction-subtle)",
+pointerEvents: "none"
+}}
             />
 
             <div style={{
-                        width: "32px",
-                        height: "32px",
-                        background: "#EBF3FB",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "16px",
-                        marginBottom: "12px"
-                      }}>🛡️</div>
+                                                                                    width: "32px",
+                                                                                    height: "32px",
+                                                                                    background: "#EBF3FB",
+                                                                                    borderRadius: "8px",
+                                                                                    display: "flex",
+                                                                                    alignItems: "center",
+                                                                                    justifyContent: "center",
+                                                                                    fontSize: "16px",
+                                                                                    marginBottom: "12px"
+                                                                                  }}>🛡️</div>
             <div style={{ fontSize: "15px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>Generate Compliance Documents</div>
             <span style={{ display: "inline-block", padding: "2px 8px", fontSize: "12px", fontWeight: 600, color: "#b45309", background: "#fffbeb", borderRadius: "4px" }}>Coming soon</span>
           </div>
 
           <div
             style={{
-            background: "rgba(255, 255, 255, 0.40)",
-            border: "1px solid rgba(226, 232, 240, 0.8)",
-            borderRadius: "12px",
-            padding: "20px",
-            boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
-            transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-            position: "relative"
-          }}
+background: "rgba(255, 255, 255, 0.40)",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+borderRadius: "12px",
+padding: "20px",
+boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
+transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+position: "relative"
+}}
           >
             <div
               style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "12px",
-            backdropFilter: "url(#glass-refraction-subtle)",
-            pointerEvents: "none"
-          }}
+position: "absolute",
+inset: 0,
+borderRadius: "12px",
+backdropFilter: "url(#glass-refraction-subtle)",
+pointerEvents: "none"
+}}
             />
 
             <div style={{
-                        width: "32px",
-                        height: "32px",
-                        background: "#EBF3FB",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "16px",
-                        marginBottom: "12px"
-                      }}>👥</div>
+                                                                                    width: "32px",
+                                                                                    height: "32px",
+                                                                                    background: "#EBF3FB",
+                                                                                    borderRadius: "8px",
+                                                                                    display: "flex",
+                                                                                    alignItems: "center",
+                                                                                    justifyContent: "center",
+                                                                                    fontSize: "16px",
+                                                                                    marginBottom: "12px"
+                                                                                  }}>👥</div>
             <div style={{ fontSize: "15px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>Collaborate with a Team</div>
             <span style={{ display: "inline-block", padding: "2px 8px", fontSize: "12px", fontWeight: 600, color: "#b45309", background: "#fffbeb", borderRadius: "4px" }}>Coming soon</span>
           </div>
@@ -637,72 +637,72 @@ gap: "16px"
 
           <div
             style={{
-            background: "rgba(255, 255, 255, 0.40)",
-            border: "1px solid rgba(226, 232, 240, 0.8)",
-            borderRadius: "12px",
-            padding: "20px",
-            boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
-            transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-            position: "relative"
-          }}
+background: "rgba(255, 255, 255, 0.40)",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+borderRadius: "12px",
+padding: "20px",
+boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
+transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+position: "relative"
+}}
           >
             <div
               style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "12px",
-            backdropFilter: "url(#glass-refraction-subtle)",
-            pointerEvents: "none"
-          }}
+position: "absolute",
+inset: 0,
+borderRadius: "12px",
+backdropFilter: "url(#glass-refraction-subtle)",
+pointerEvents: "none"
+}}
             />
 
             <div style={{
-                        width: "32px",
-                        height: "32px",
-                        background: "#EBF3FB",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "16px",
-                        marginBottom: "12px"
-                      }}>🌐</div>
+                                                                                    width: "32px",
+                                                                                    height: "32px",
+                                                                                    background: "#EBF3FB",
+                                                                                    borderRadius: "8px",
+                                                                                    display: "flex",
+                                                                                    alignItems: "center",
+                                                                                    justifyContent: "center",
+                                                                                    fontSize: "16px",
+                                                                                    marginBottom: "12px"
+                                                                                  }}>🌐</div>
             <div style={{ fontSize: "15px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>Build a Web Application</div>
             <span style={{ display: "inline-block", padding: "2px 8px", fontSize: "12px", fontWeight: 600, color: "#b45309", background: "#fffbeb", borderRadius: "4px" }}>Coming soon</span>
           </div>
 
           <div
             style={{
-            background: "rgba(255, 255, 255, 0.40)",
-            border: "1px solid rgba(226, 232, 240, 0.8)",
-            borderRadius: "12px",
-            padding: "20px",
-            boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
-            transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-            position: "relative"
-          }}
+background: "rgba(255, 255, 255, 0.40)",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+borderRadius: "12px",
+padding: "20px",
+boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
+transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+position: "relative"
+}}
           >
             <div
               style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "12px",
-            backdropFilter: "url(#glass-refraction-subtle)",
-            pointerEvents: "none"
-          }}
+position: "absolute",
+inset: 0,
+borderRadius: "12px",
+backdropFilter: "url(#glass-refraction-subtle)",
+pointerEvents: "none"
+}}
             />
 
             <div style={{
-                        width: "32px",
-                        height: "32px",
-                        background: "#EBF3FB",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "16px",
-                        marginBottom: "12px"
-                      }}>🧩</div>
+                                                                                    width: "32px",
+                                                                                    height: "32px",
+                                                                                    background: "#EBF3FB",
+                                                                                    borderRadius: "8px",
+                                                                                    display: "flex",
+                                                                                    alignItems: "center",
+                                                                                    justifyContent: "center",
+                                                                                    fontSize: "16px",
+                                                                                    marginBottom: "12px"
+                                                                                  }}>🧩</div>
             <div style={{ fontSize: "15px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>Deploy to a Low-Code Platform</div>
             <span style={{ display: "inline-block", padding: "2px 8px", fontSize: "12px", fontWeight: 600, color: "#b45309", background: "#fffbeb", borderRadius: "4px" }}>Coming soon</span>
           </div>
@@ -715,100 +715,100 @@ gap: "16px"
     <div className="mb-12">
       <div className="flex items-center gap-4 mb-8">
         <div style={{
-                                              display: "flex",
-                                              alignItems: "center",
-                                              justifyContent: "center",
-                                              width: "48px",
-                                              height: "48px",
-                                              borderRadius: "12px",
-                                              background: "white",
-                                              color: "#1F4E79",
-                                              fontWeight: 700,
-                                              fontSize: "18px",
-                                              boxShadow: "0 10px 15px -3px rgba(37,99,235,0.3)"
-                                            }}>4</div>
+                                                                                  display: "flex",
+                                                                                  alignItems: "center",
+                                                                                  justifyContent: "center",
+                                                                                  width: "48px",
+                                                                                  height: "48px",
+                                                                                  borderRadius: "12px",
+                                                                                  background: "white",
+                                                                                  color: "#1F4E79",
+                                                                                  fontWeight: 700,
+                                                                                  fontSize: "18px",
+                                                                                  boxShadow: "0 10px 15px -3px rgba(37,99,235,0.3)"
+                                                                                }}>4</div>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white m-0">Updates & Support</h2>
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }}>
         <div
           style={{
-        background: "rgba(255, 255, 255, 0.40)",
-        border: "1px solid rgba(226, 232, 240, 0.8)",
-        borderRadius: "12px",
-        padding: "20px",
-        boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
-        position: "relative"
-      }}
+background: "rgba(255, 255, 255, 0.40)",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+borderRadius: "12px",
+padding: "20px",
+boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
+position: "relative"
+}}
         >
           <div
             style={{
-          position: "absolute",
-          inset: 0,
-          borderRadius: "12px",
-          backdropFilter: "url(#glass-refraction-subtle)",
-          pointerEvents: "none"
-        }}
+position: "absolute",
+inset: 0,
+borderRadius: "12px",
+backdropFilter: "url(#glass-refraction-subtle)",
+pointerEvents: "none"
+}}
           />
 
           <div style={{
-                    width: "36px",
-                    height: "36px",
-                    background: "#EBF3FB",
-                    borderRadius: "8px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "18px",
-                    marginBottom: "12px"
-                  }}>🔔</div>
+                                                                    width: "36px",
+                                                                    height: "36px",
+                                                                    background: "#EBF3FB",
+                                                                    borderRadius: "8px",
+                                                                    display: "flex",
+                                                                    alignItems: "center",
+                                                                    justifyContent: "center",
+                                                                    fontSize: "18px",
+                                                                    marginBottom: "12px"
+                                                                  }}>🔔</div>
           <div style={{ fontSize: "16px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>Latest Updates</div>
 
           <div style={{ fontSize: "14px", color: "#475569", lineHeight: 1.5 }}>
-            Stay current on new features, platform improvements, and content additions to this portal. Release notes and detailed change history live in the <strong>Resources</strong> tab under Changelog & Release Notes.
+            Stay current on new features, platform improvements, and content additions to this portal. Release notes and detailed change history live in the <strong>Changelog</strong> tab.
           </div>
         </div>
 
-        <a href="/help-and-support/troubleshooting-guide" style={{ display: "contents" }}>
+        <a href="/tips-and-tricks/troubleshooting-faq" style={{ display: "contents" }}>
           <div
             style={{
-          background: "rgba(255, 255, 255, 0.40)",
-          border: "1px solid rgba(226, 232, 240, 0.8)",
-          borderRadius: "12px",
-          padding: "20px",
-          boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
-          transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
-          textDecoration: "none",
-          color: "inherit",
-          cursor: "pointer",
-          position: "relative"
-        }}
+background: "rgba(255, 255, 255, 0.40)",
+border: "1px solid rgba(226, 232, 240, 0.8)",
+borderRadius: "12px",
+padding: "20px",
+boxShadow: "-3px 3px 2.5px rgba(0, 0, 0, 0.22), -5px 5px 4px rgba(0, 0, 0, 0.08)",
+transition: "box-shadow 0.2s, transform 0.2s, border-color 0.2s",
+textDecoration: "none",
+color: "inherit",
+cursor: "pointer",
+position: "relative"
+}}
           >
             <div
               style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "12px",
-            backdropFilter: "url(#glass-refraction-subtle)",
-            pointerEvents: "none"
-          }}
+position: "absolute",
+inset: 0,
+borderRadius: "12px",
+backdropFilter: "url(#glass-refraction-subtle)",
+pointerEvents: "none"
+}}
             />
 
             <div style={{
-                        width: "36px",
-                        height: "36px",
-                        background: "#EBF3FB",
-                        borderRadius: "8px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "18px",
-                        marginBottom: "12px"
-                      }}>🛟</div>
+                                                                                    width: "36px",
+                                                                                    height: "36px",
+                                                                                    background: "#EBF3FB",
+                                                                                    borderRadius: "8px",
+                                                                                    display: "flex",
+                                                                                    alignItems: "center",
+                                                                                    justifyContent: "center",
+                                                                                    fontSize: "18px",
+                                                                                    marginBottom: "12px"
+                                                                                  }}>🛟</div>
             <div style={{ fontSize: "16px", fontWeight: 700, color: "#1F4E79", marginBottom: "8px" }}>Need Help?</div>
 
             <div style={{ fontSize: "14px", color: "#475569", lineHeight: 1.5 }}>
-              Stuck on something or want to report an issue? The <strong>Help & Support</strong> tab has troubleshooting guides, FAQs, known issues, and ways to reach the BlueGenAI team directly.
+              Stuck on something or want to report an issue? The <strong>Tips & Tricks</strong> tab has troubleshooting guides and FAQs, and you can reach the BlueGenAI team directly at [feedback@bluegenai.com](mailto:feedback@bluegenai.com).
             </div>
           </div>
         </a>
@@ -834,8 +834,7 @@ padding: "0 24px"
       <div style={{ fontWeight: 700, fontSize: "14px", color: "#1F4E79", marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Resources</div>
 
       <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
-        <li><a href="/resources/glossary" style={{ color: "#4b5563", textDecoration: "none", fontSize: "14px" }}>Glossary</a></li>
-        <li><a href="/resources/changelog-and-release-notes" style={{ color: "#4b5563", textDecoration: "none", fontSize: "14px" }}>Changelog & Release Notes</a></li>
+        <li><a href="/changelog/weekly-release-notes" style={{ color: "#4b5563", textDecoration: "none", fontSize: "14px" }}>Changelog & Release Notes</a></li>
       </ul>
     </div>
 
@@ -843,9 +842,8 @@ padding: "0 24px"
       <div style={{ fontWeight: 700, fontSize: "14px", color: "#1F4E79", marginBottom: "12px", textTransform: "uppercase", letterSpacing: "0.05em" }}>Support</div>
 
       <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
-        <li><a href="/help-and-support/contact-support" style={{ color: "#4b5563", textDecoration: "none", fontSize: "14px" }}>Contact Support</a></li>
-        <li><a href="/help-and-support/faq" style={{ color: "#4b5563", textDecoration: "none", fontSize: "14px" }}>FAQ</a></li>
-        <li><a href="/help-and-support/known-issues" style={{ color: "#4b5563", textDecoration: "none", fontSize: "14px" }}>Known Issues</a></li>
+        <li><a href="/tips-and-tricks/troubleshooting-faq" style={{ color: "#4b5563", textDecoration: "none", fontSize: "14px" }}>Troubleshooting & FAQ</a></li>
+        <li><a href="mailto:feedback@bluegenai.com" style={{ color: "#4b5563", textDecoration: "none", fontSize: "14px" }}>Contact Support</a></li>
       </ul>
     </div>
   </div>

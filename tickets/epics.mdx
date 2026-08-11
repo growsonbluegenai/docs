@@ -1,0 +1,79 @@
+---
+title: "Epics"
+description: "Epics group Tickets and set the order work gets built in, and how re-evaluating them affects manual changes."
+icon: "layer-group"
+---
+
+An Epic is a named group of Tickets, and its position in the list is the order that group gets built in.
+
+## What you'll learn
+
+What an Epic is, why you see it called a Wave in places, and what re-evaluating the build order destroys.
+
+<Frame caption="The Epics view. Each row shows a stable id, the name, progress, and the wave badge marking its position.">
+  ![The Epics view listing nine epics from EPIC-001 Authentication and Session Management through EPIC-009 User Preferences and Accessibility, each with a progress readout, a blue wave badge, and edit and delete icons, followed by an Unassigned row.](/images/tickets/epics-list.png)
+</Frame>
+
+## An Epic is a Wave
+
+**These are one concept with two names, and the product shows you both.** An Epic is the group. Its position in the build order is its Wave. The first Epic is Wave 1.
+
+The Tickets list and the detail panel show **Epic** and **Wave** as separate fields, which makes them look like two things you set. You only ever set one. Move an Epic up or down and its Wave follows automatically; reorder the list and every Wave renumbers to match. There is no way to give a Ticket a Wave without putting it in an Epic.
+
+<Note>
+  If you are reading a Ticket and wondering which field to change, the answer is neither. Wave is a readout of where its Epic sits. Move the Ticket to a different Epic, or move the Epic itself.
+</Note>
+
+## Reading an Epic row
+
+| Element | What it tells you |
+| --- | --- |
+| `EPIC-001` | A stable id that survives reordering |
+| Name | What the group covers |
+| `5/5 done` | Closed Tickets against total in that Epic |
+| `Wave 1` | Its position in the build order |
+| Drag handle | Reorder by dragging |
+
+At the bottom sits an **Unassigned** row holding Tickets that belong to no Epic. It has no id, no wave badge, and no edit or delete controls, because it is a bucket rather than an Epic. The count in the header excludes it.
+
+## Working with Epics
+
+<Frame caption="An expanded Epic. The overflow control on each Ticket row opens a searchable picker for moving it to another Epic.">
+  ![An expanded epic showing its child ticket rows, each with a drag handle, ticket id, title, an inline status dropdown, an assignee dash, and an overflow button.](/images/tickets/epics-expanded.png)
+</Frame>
+
+**New Epic** adds one at the end of the list. It is an inline field rather than a dialog, and the add control stays disabled until you type a name.
+
+**Reordering** works by dragging, either an Epic among Epics or a Ticket within an Epic. Moving a Ticket between Epics is done through the overflow control on its row, which opens a searchable list of every Epic.
+
+**Deleting** an Epic does not delete its Tickets. They fall back to **Unassigned** and the remaining Waves renumber.
+
+## Re-evaluate Build Order
+
+**This is the most destructive control in Tickets.** It deletes every Epic and rebuilds the whole grouping from scratch using AI.
+
+<Frame caption="The Re-evaluate confirmation names exactly what is lost.">
+  ![The Re-evaluate Build Order confirmation dialog warning that all existing epics will be deleted and re-created from scratch, that manual changes including renames, custom epics and ticket assignments will be lost, and that the action cannot be undone.](/images/tickets/epics-re-evaluate-warning.png)
+</Frame>
+
+What goes: every Epic you renamed, every Epic you created by hand, and every Ticket assignment you made. What survives: the Tickets themselves, which are regrouped rather than deleted.
+
+<Warning>
+  Re-evaluating discards manual grouping work with no way back. Use it when the grouping is wrong enough to be worth restarting, not to refresh a mostly-good build order.
+</Warning>
+
+Re-evaluation spends credits, and it fails with an insufficient-credits message if your balance does not cover it.
+
+## Your next step
+
+With work grouped and ordered, a Ticket can be handed to the build agent.
+
+<CardGroup cols={2}>
+  <Card title="Build from a Ticket" icon="code" href="/tickets/using-tickets-in-build-mode">
+    Referencing a Ticket in a Build conversation, and what context comes with it.
+  </Card>
+
+  <Card title="Adjust individual Tickets" icon="pen-line" href="/tickets/creating-editing-tickets">
+    Editing, reassigning, and deleting Tickets by hand.
+  </Card>
+</CardGroup>

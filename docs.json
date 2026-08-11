@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "BlueGenAI Docs",
+  "name": "BlueGenAI",
   "colors": {
-    "primary": "#007BFF",
-    "light": "#66B2FF",
-    "dark": "#0056B3"
+    "primary": "#2563EB",
+    "light": "#60A5FA",
+    "dark": "#1D4ED8"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -18,129 +18,190 @@
         ]
       },
       {
-        "tab": "Platform Overview",
-        "pages": [
-          "platform-overview/what-is-bluegenai",
-          "platform-overview/who-is-it-for",
-          "platform-overview/six-phase-government-project-lifecycle",
-          "platform-overview/platform-inputs-guide",
-          "platform-overview/foundational-capabilities",
-          "platform-overview/compliance-and-security",
-          "platform-overview/home-screen-and-projects",
-          "platform-overview/navigation-and-interface-guide",
-          "platform-overview/collaboration-and-sharing",
-          "platform-overview/tokens-credits-billing",
-          "platform-overview/quick-start-guide"
-        ],
-        "icon": "layer-group"
+        "tab": "Tickets",
+        "groups": [
+          {
+            "group": "Tickets",
+            "pages": [
+              "tickets/what-are-tickets",
+              "tickets/cab-to-ticket-conversion",
+              "tickets/creating-editing-tickets",
+              "tickets/epics",
+              "tickets/using-tickets-in-build-mode"
+            ]
+          }
+        ]
       },
       {
-        "tab": "Building Web Apps",
-        "pages": [
-          "building-web-apps/web-apps-overview",
-          "building-web-apps/preparing-your-inputs",
+        "tab": "Web Apps",
+        "groups": [
           {
-            "group": "Project Lifecycle Phases",
+            "group": "Prototype Mode",
             "pages": [
-              {
-                "group": "Phase 1: Pre-RFP Solutioning",
-                "pages": [
-                  "building-web-apps/phase-1-pre-rfp-solutioning",
-                  "building-web-apps/phase-1-path-a",
-                  "building-web-apps/phase-1-path-b"
-                ]
-              },
-              {
-                "group": "Phase 2: Requirements Refinement & CAB",
-                "pages": [
-                  "building-web-apps/phase-2-requirements-refinement-cab",
-                  "building-web-apps/phase-2-path-a",
-                  "building-web-apps/phase-2-path-b"
-                ]
-              },
-              "building-web-apps/phase-3-system-design",
-              {
-                "group": "Phase 4: Development",
-                "pages": [
-                  "building-web-apps/phase-4-development-build-mode",
-                  "building-web-apps/phase-4-ticket-generation-management",
-                  "building-web-apps/phase-4-ai-vs-human-work-allocation"
-                ]
-              },
-              "building-web-apps/phase-5-testing",
-              "building-web-apps/phase-6-deployment-and-sharing"
+              "web-apps/prototype-mode/overview",
+              "web-apps/prototype-mode/workflow",
+              "web-apps/prototype-mode/output-handoff"
             ]
           },
-          "building-web-apps/generating-supporting-documents",
-          "building-web-apps/design-mode-and-prototyping",
-          "building-web-apps/supported-tech-stack"
-        ],
-        "icon": "code"
+          {
+            "group": "Build Mode",
+            "pages": [
+              "web-apps/build-mode/overview",
+              "web-apps/build-mode/workflow",
+              "web-apps/build-mode/tech-stack-reference",
+              "web-apps/build-mode/build-agent-guide",
+              "web-apps/build-mode/deployment-guide"
+            ]
+          },
+          {
+            "group": "Working in a project",
+            "pages": [
+              "web-apps/ask-mode",
+              "web-apps/files",
+              "web-apps/codebase-and-database",
+              "web-apps/git-integration",
+              "web-apps/credentials",
+              "web-apps/mcp-integrations",
+              "web-apps/app-testing"
+            ]
+          }
+        ]
       },
       {
-        "tab": "Building on Low-Code",
-        "pages": [
-          "building-on-low-code/low-code-overview",
-          "building-on-low-code/supported-platforms-guide",
-          "building-on-low-code/connecting-to-your-platform-instance",
-          "building-on-low-code/preparing-your-inputs",
-          "building-on-low-code/phase-1-pre-rfp-solutioning",
-          "building-on-low-code/phase-2-requirements-refinement-cab",
-          "building-on-low-code/phase-3-system-design",
-          "building-on-low-code/phase-4-development-build-mode",
-          "building-on-low-code/phase-4-ticket-generation-management",
-          "building-on-low-code/phase-4-ai-vs-human-work-allocation",
-          "building-on-low-code/phase-5-testing",
-          "building-on-low-code/phase-6-deployment",
-          "building-on-low-code/generating-supporting-documents",
-          "building-on-low-code/tap-platform-reference",
-          "building-on-low-code/servicenow-platform-reference",
-          "building-on-low-code/salesforce-platform-reference",
-          "building-on-low-code/powerapps-platform-reference"
-        ],
-        "icon": "puzzle-piece"
+        "tab": "Low Code",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "low-code/overview"
+            ]
+          },
+          {
+            "group": "TAP",
+            "pages": [
+              "low-code/tap/overview",
+              {
+                "group": "TAP Prototype Mode",
+                "pages": [
+                  "low-code/tap/prototype-mode/overview",
+                  "low-code/tap/prototype-mode/workflow",
+                  "low-code/tap/prototype-mode/output-handoff"
+                ]
+              },
+              {
+                "group": "TAP Build Mode",
+                "pages": [
+                  "low-code/tap/build-mode/overview",
+                  "low-code/tap/build-mode/workflow",
+                  "low-code/tap/build-mode/component-reference",
+                  "low-code/tap/build-mode/build-agent-guide"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Salesforce",
+            "pages": [
+              "low-code/salesforce"
+            ]
+          },
+          {
+            "group": "ServiceNow",
+            "pages": [
+              "low-code/servicenow/overview",
+              {
+                "group": "ServiceNow Build Mode",
+                "pages": [
+                  "low-code/servicenow/build-mode/overview",
+                  "low-code/servicenow/build-mode/workflow",
+                  "low-code/servicenow/build-mode/component-reference"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "MS PowerApps",
+            "pages": [
+              {
+                "group": "PowerApps Build Mode",
+                "pages": [
+                  "low-code/powerapps/build-mode/overview",
+                  "low-code/powerapps/build-mode/workflow"
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
-        "tab": "Hybrid Solutions",
-        "pages": [
-          "hybrid-solutions/coming-soon"
-        ],
-        "icon": "shuffle"
+        "tab": "Tips & Tricks",
+        "groups": [
+          {
+            "group": "Tips & Tricks",
+            "pages": [
+              "tips-and-tricks/prompting-best-practices",
+              "tips-and-tricks/bd-pre-sales-usage-guide",
+              "tips-and-tricks/common-workflows-by-role",
+              "tips-and-tricks/troubleshooting-faq"
+            ]
+          }
+        ]
       },
       {
-        "tab": "Resources",
-        "pages": [
-          "resources/prompting-best-practices",
-          "resources/bd-and-pre-sales-usage-guide",
-          "resources/procurement-document-generation",
-          "resources/changelog-and-release-notes",
-          "resources/glossary",
-          "resources/compliance-reference-guide",
-          "resources/inspiration-and-examples"
-        ],
-        "icon": "book"
+        "tab": "Getting Started",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "getting-started/what-is-bluegenai",
+              "getting-started/platform-overview-architecture",
+              "getting-started/navigation-ui-guide",
+              "getting-started/user-role-management",
+              "getting-started/quick-start-guide"
+            ]
+          }
+        ]
       },
       {
-        "tab": "Help & Support",
-        "pages": [
-          "help-and-support/troubleshooting-guide",
-          "help-and-support/faq",
-          "help-and-support/contact-support",
-          "help-and-support/known-issues"
-        ],
-        "icon": "life-ring"
+        "tab": "CAB",
+        "groups": [
+          {
+            "group": "CAB",
+            "pages": [
+              "cab/what-is-cab",
+              "cab/supported-input-types",
+              "cab/blueprint-output-reference",
+              "cab/step-by-step-workflow",
+              "cab/requirement-clarification",
+              "cab/legacy-code-translation-guide",
+              "cab/editing-your-cab"
+            ]
+          }
+        ]
       },
       {
-        "tab": "Admin Center",
-        "pages": [
-          "admin-center/admin-dashboard-overview",
-          "admin-center/user-management",
-          "admin-center/platform-configuration",
-          "admin-center/credits-and-billing-configuration",
-          "admin-center/authentication-settings",
-          "admin-center/bulk-operations"
-        ],
-        "icon": "gear"
+        "tab": "Admin & Platform",
+        "groups": [
+          {
+            "group": "Admin & Platform",
+            "pages": [
+              "admin-platform/collaboration-features",
+              "admin-platform/integrations",
+              "admin-platform/cloning-your-project"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Changelog",
+            "pages": [
+              "changelog/weekly-release-notes"
+            ]
+          }
+        ]
       }
     ]
   },
@@ -167,12 +228,8 @@
         "header": "Resources",
         "items": [
           {
-            "label": "Glossary",
-            "href": "/resources/glossary"
-          },
-          {
             "label": "Changelog & Release Notes",
-            "href": "/resources/changelog-and-release-notes"
+            "href": "/changelog/weekly-release-notes"
           }
         ]
       },
@@ -180,16 +237,12 @@
         "header": "Support",
         "items": [
           {
+            "label": "Troubleshooting & FAQ",
+            "href": "/tips-and-tricks/troubleshooting-faq"
+          },
+          {
             "label": "Contact Support",
-            "href": "/help-and-support/contact-support"
-          },
-          {
-            "label": "FAQ",
-            "href": "/help-and-support/faq"
-          },
-          {
-            "label": "Known Issues",
-            "href": "/help-and-support/known-issues"
+            "href": "mailto:feedback@bluegenai.com"
           }
         ]
       }

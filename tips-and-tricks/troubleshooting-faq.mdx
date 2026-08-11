@@ -1,0 +1,213 @@
+---
+title: "Troubleshooting & FAQ"
+description: "What to do about the messages you are most likely to hit, and answers to the behaviours that surprise people."
+icon: "circle-question"
+---
+
+Two halves: what to do when the platform stops you, and why it behaves in ways that catch people out.
+
+## What you'll learn
+
+The messages worth recognising, grouped by what you were trying to do, and short answers to the questions that come up most.
+
+<Note>
+  This is a curated set, not every message the platform can produce. It covers what a user actually hits and can act on.
+</Note>
+
+## Signing in
+
+<AccordionGroup>
+  <Accordion title="Please verify your email address before signing in">
+    Your account exists but the address has not been confirmed. Open the verification link in your inbox, then sign in. You can request a new link from the verification screen if the original has gone stale.
+  </Accordion>
+
+  <Accordion title="Your session has expired. Please sign in again">
+    Sessions do not last indefinitely. Sign in again — nothing in your projects is affected, and any work already saved is intact.
+  </Accordion>
+
+  <Accordion title="Invalid email or password">
+    The credentials did not match. If you are certain they are right, check whether the account has been disabled: a disabled account reports **Account is disabled, contact your administrator** rather than a credential failure.
+  </Accordion>
+
+  <Accordion title="An account with this email address already exists">
+    Sign in rather than signing up, or use the password reset flow if you cannot remember the password.
+  </Accordion>
+
+  <Accordion title="CAPTCHA wasn't convinced this time">
+    The verification check did not pass. Refresh the page and complete it again. This is common on a slow connection where the check times out before you finish.
+  </Accordion>
+</AccordionGroup>
+
+## Starting a project
+
+Several messages exist to tell you that a step earlier in the sequence has not happened yet. They are not failures.
+
+| Message | What it means | What to do |
+| --- | --- | --- |
+| `CAB blueprint not found. Generate the blueprint first.` | You asked for Tickets before a blueprint exists | Generate a CAB first — see [Step-by-Step Workflow](/cab/step-by-step-workflow) |
+| `Project has no working directory. Generate code first.` | You tried to start an application before anything was built | Run a build in Build Mode first |
+| `HTML file not found. Please generate HTML first.` | You opened a prototype preview before prototyping | Prompt the agent in Prototype Mode first |
+| `Project workspace not initialized` | File operations before the project has any files | Send your first prompt; the workspace is created with it |
+| `Please link your TAP site to enable the chat` | Build Mode on a low-code project with no environment connected | Link your site — see [Integrations](/admin-platform/integrations) |
+
+## Generating or editing a CAB
+
+<AccordionGroup>
+  <Accordion title="Cannot edit CAB while generation is in progress">
+    A blueprint cannot be changed while it is being written. The same applies to running an AI review, applying one, and restoring a version. Wait for generation to finish, then try again.
+  </Accordion>
+
+  <Accordion title="CAB not available yet. Generation must be completed first">
+    The blueprint is still being generated. The preview fills when it finishes — the left pane shows progress meanwhile.
+  </Accordion>
+
+  <Accordion title="CAB must be completed before enabling sharing">
+    A share link can only be created for a finished blueprint. Wait for generation to complete, then enable sharing. See [Editing your CAB](/cab/editing-your-cab).
+  </Accordion>
+
+  <Accordion title="Only the lock owner can release the lock">
+    Someone else has the blueprint open for editing. Only one person can edit at a time. Wait for them to save or discard, or ask them to finish.
+  </Accordion>
+</AccordionGroup>
+
+## Running a build
+
+<AccordionGroup>
+  <Accordion title="Another run is already active for this thread">
+    The agent is still working on your previous message. Wait for it to finish, or stop it, before sending another.
+  </Accordion>
+
+  <Accordion title="Cannot edit files while development is in progress">
+    The agent is writing to the same files. This also blocks pulling, pushing, and restoring a checkpoint. Wait for the run to complete.
+  </Accordion>
+
+  <Accordion title="This conversation was permanently stopped by user and cannot be resumed">
+    A hard stop cannot be undone. Start a new conversation in the same project — your code and files are unaffected.
+  </Accordion>
+
+  <Accordion title="Service Busy — the AI service is experiencing high traffic">
+    Capacity, not your project. Wait a moment and send the message again. The same applies to **Service Busy** from high demand rather than rate limiting.
+  </Accordion>
+
+  <Accordion title="Message Too Long — your conversation is too long">
+    The conversation has outgrown what the agent can hold at once. Start a new conversation in the same project, or shorten the message. Work already built is unaffected.
+  </Accordion>
+</AccordionGroup>
+
+## Opening your application
+
+<AccordionGroup>
+  <Accordion title="Preview not available — this app is served over HTTP">
+    Older projects serve their application over plain HTTP, which a page served over HTTPS cannot embed. Use **Open in new tab** instead. See [Deployment Guide](/web-apps/build-mode/deployment-guide).
+  </Accordion>
+
+  <Accordion title="No docker-compose file found in the project directory">
+    A build exists but is missing the file describing how to run it. Ask the agent to set up the application to run, then start it again.
+  </Accordion>
+
+  <Accordion title="Database connection is unavailable">
+    The application or its database is not running. Start the application and give its health checks a moment before retrying. See [Codebase and Database view](/web-apps/codebase-and-database).
+  </Accordion>
+
+  <Accordion title="Custom domain functionality is only available for newer projects">
+    Custom domains need the gateway architecture that newer projects use. Older projects keep their direct address. You may also see **only available for web projects**, or **already in use** if the name is taken.
+  </Accordion>
+</AccordionGroup>
+
+## Working with other people
+
+<AccordionGroup>
+  <Accordion title="Only project owners can update member roles">
+    Changing someone's role is the owner's to do. Ask the project owner.
+  </Accordion>
+
+  <Accordion title="Cannot update your own role">
+    Nobody can change their own role, including the owner. Another owner has to do it.
+  </Accordion>
+
+  <Accordion title="Insufficient credits to re-evaluate the build order">
+    The account paying for this project does not have enough credit for the run. Which account that is depends on the billing preference set when the collaborator was invited. See [Collaboration Features](/admin-platform/collaboration-features).
+  </Accordion>
+
+  <Accordion title="Maximum retry attempts (3) exceeded">
+    A clone has failed three times. Delete the failed copy and start a new clone. The original project is unaffected. See [Cloning your project](/admin-platform/cloning-your-project).
+  </Accordion>
+</AccordionGroup>
+
+---
+
+# Frequently asked
+
+Behaviours that surprise people. Each answer is short, and links to the page that explains it properly.
+
+<AccordionGroup>
+  <Accordion title="Why does filtering Tickets by Work Type return nothing?">
+    Tickets generated from a blueprint on a web project all carry a work type of **User Story**, and that value is missing from the filter's options. Filter by **Source** instead, or use search. See [What are Tickets](/tickets/what-are-tickets).
+  </Accordion>
+
+  <Accordion title="Why did changes I never reviewed get saved to my CAB?">
+    Because undecided counts as accepted. Saving keeps everything you accepted **and** everything you did not look at — only changes you explicitly discarded are dropped. See [Editing your CAB](/cab/editing-your-cab).
+  </Accordion>
+
+  <Accordion title="Why did restoring an old CAB version delete my newer ones?">
+    Restoring is a permanent jump backward, not an undo step. It deletes every version created after the one you restore. See [Editing your CAB](/cab/editing-your-cab).
+  </Accordion>
+
+  <Accordion title="Why doesn't my Design System theme appear in the built application?">
+    The Design System applies to what the prototype agent produces. It does not carry into Build Mode. Restate the colours and type you want in your build prompt, or attach the reference. See [Output Handoff](/web-apps/prototype-mode/output-handoff).
+  </Accordion>
+
+  <Accordion title="Why is there no Low option for model quality in Build?">
+    They are separate controls, not one setting seen twice. The CAB workspace offers Low, Medium and High; Build offers Medium and High. See [Build Mode Overview](/web-apps/build-mode/overview).
+  </Accordion>
+
+  <Accordion title="Why doesn't Build remember my Prototype conversation?">
+    Build Mode starts a fresh conversation and inherits nothing from Prototype. Save what you want to keep, then attach those files to your first build prompt. See [Output Handoff](/web-apps/prototype-mode/output-handoff).
+  </Accordion>
+
+  <Accordion title="Why didn't my cloned project bring its Tickets and Epics?">
+    A clone copies the specification, not the work breakdown — no Tickets, no Epics, no conversation history. Generate Tickets again from the cloned blueprint. A cloned low-code project copies only the blueprint. See [Cloning your project](/admin-platform/cloning-your-project).
+  </Accordion>
+
+  <Accordion title="Why doesn't typing @ show me any tickets?">
+    The picker needs at least two characters after the `@`. One is not enough, and `@` alone does nothing. It searches ticket ids and titles. See [Using Tickets in Build Mode](/tickets/using-tickets-in-build-mode).
+  </Accordion>
+
+  <Accordion title="Why won't Ask mode make the change I asked for?">
+    Ask is read-only, and the restriction is enforced rather than requested: the agent is given only the four capabilities that read. It outlines the change instead. Switch the composer to **Build** to apply it. See [Ask Mode](/web-apps/ask-mode).
+  </Accordion>
+
+  <Accordion title="Why did regenerating Tickets wipe my statuses and assignments?">
+    Regenerating deletes every Ticket sourced from the blueprint and creates a fresh set. Statuses, assignees, and epic assignments go with them. Manual Tickets are untouched. See [CAB-to-Ticket conversion](/tickets/cab-to-ticket-conversion).
+  </Accordion>
+
+  <Accordion title="Why did re-evaluating the build order lose my epic names?">
+    It deletes every Epic and rebuilds the grouping from scratch. Renames, custom Epics, and manual ticket assignments are lost. The Tickets themselves survive and are regrouped. See [Epics](/tickets/epics).
+  </Accordion>
+
+  <Accordion title="Where is the control to restore a previous build?">
+    On the message itself, not in a panel. Every prompt you send the build agent creates a checkpoint, shown as a badge under the reply. Hover the badge and a **Restore** button appears. See [Build Agent Guide](/web-apps/build-mode/build-agent-guide).
+  </Accordion>
+
+  <Accordion title="Why can't I find the Design System on my low-code project?">
+    It is available on web projects only. Low-code prototypes are generated against the target platform's own conventions instead.
+  </Accordion>
+
+  <Accordion title="Why does my application URL look different from a colleague's?">
+    Projects come in two architectures. Newer ones get a single address for the whole application; older ones get one address per service, over plain HTTP. Neither is broken. See [Deployment Guide](/web-apps/build-mode/deployment-guide).
+  </Accordion>
+</AccordionGroup>
+
+## Still stuck
+
+If a message is not here, the wording usually names the condition directly — something is in progress, something has not been generated yet, or something is only available on a different kind of project. Reading it literally resolves most of them.
+
+<CardGroup cols={2}>
+  <Card title="Write prompts that need fewer retries" icon="pen-line" href="/tips-and-tricks/prompting-best-practices">
+    What to include so the agent gets it right first time.
+  </Card>
+
+  <Card title="See how a project runs end to end" icon="rocket" href="/getting-started/quick-start-guide">
+    Requirements to deployed application, in one pass.
+  </Card>
+</CardGroup>

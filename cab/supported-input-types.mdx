@@ -1,0 +1,78 @@
+---
+title: "Supported Input Types"
+description: "The file types a CAB accepts, how each is handled, and the states a file passes through after upload."
+icon: "file-arrow-up"
+---
+
+A CAB is generated from files you upload: written documents, images, and source code delivered as an archive.
+
+## What you'll learn
+
+Which file types are accepted, how each is handled, and what the status beside a file means.
+
+<Frame caption="The upload area and file list in CAB Configuration. Each row shows the file size and the category the CAB assigned it.">
+  ![The CAB Configuration panel showing the Upload Documents or Source Code area above an Uploaded Files list containing a 9.0 MB source archive marked Archive with a green Uploaded status.](/images/cab/supported-input-types-uploaded-files.png)
+</Frame>
+
+## Accepted file types
+
+| Category | Extensions | How it is handled |
+| --- | --- | --- |
+| Documents | `.pdf` `.docx` `.doc` `.pptx` `.ppt` `.xlsx` `.xls` `.csv` `.rtf` | Parsed to text before analysis |
+| Text documents | `.md` `.txt` `.html` `.htm` | Read directly, no parsing step |
+| Archives | `.zip` `.tar` `.gz` `.tgz` `.tar.gz` `.7z` `.rar` | Extracted, then the files inside are examined |
+| Images | `.png` `.jpg` `.jpeg` `.gif` `.bmp` `.webp` `.svg` | Uploaded and held with the source set |
+
+Anything outside these four sets is rejected at upload.
+
+## Source code goes in as an archive
+
+**There is no source-code file type above, and that is deliberate.** Source code always arrives as an archive and is extracted. Inside it, any text-based file not on the excluded list counts as source code, whatever its extension — a COBOL copybook, a MUMPS routine, and a `.jsx` component are read the same way. One archive can therefore carry an entire legacy system without you classifying anything first.
+
+## How a file is categorised
+
+Every uploaded file is assigned one of five categories, tested in this order.
+
+| Order | Category | Test |
+| --- | --- | --- |
+| 1 | Archive | Extension is in the archive set |
+| 2 | Document | Extension is in either document set |
+| 3 | Image | Extension is in the image set |
+| 4 | Unknown | Matches none of the above |
+| — | Source code | Assigned to text files found inside an extracted archive |
+
+Order matters in one place: `.gz` is an archive, so it is extracted rather than read.
+
+## What the status beside a file means
+
+Each file carries two independent statuses: one for the transfer, one for converting it to analysable text.
+
+| Upload status | Meaning |
+| --- | --- |
+| `uploading` | Transfer in progress |
+| `completed` | File is stored |
+| `error` | Transfer failed |
+
+| Parse status | Meaning |
+| --- | --- |
+| `pending` | Queued, not started |
+| `parsing` | Being converted to text |
+| `parsed` | Text extracted and ready |
+| `error` | Conversion failed |
+| `not_applicable` | Nothing to parse, such as an image |
+
+`completed` with `not_applicable` means the file arrived and needs no conversion. That combination is normal, not a failure.
+
+## Your next step
+
+With your files in, the next decision is which sections to generate.
+
+<CardGroup cols={2}>
+  <Card title="Generate your first blueprint" icon="play" href="/cab/step-by-step-workflow">
+    What you choose before you start, and what happens during the run.
+  </Card>
+
+  <Card title="Feed an existing system into a CAB" icon="file-code" href="/cab/legacy-code-translation-guide">
+    How uploaded source code becomes requirements.
+  </Card>
+</CardGroup>
