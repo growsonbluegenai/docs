@@ -1,5 +1,5 @@
 ---
-title: "User Help Center Portal"
+title: "BlueGenAI Documentation"
 mode: "custom"
 ---
 
@@ -14,8 +14,8 @@ mode: "custom"
                                    previously rendered all content twice.
   - Outer wrapper: max-w-full mx-auto, NO horizontal padding.
                                    Horizontal padding lives on the INNER
-                                   containers instead, so that the dark
-                                   full-bleed bands reach the viewport edges.
+                                   containers instead, so the dark hero band
+                                   reaches the viewport edges.
                                    (Changed 2026-08-11 for the Direction A
                                    redesign; previously px-6 md:px-12 sat on
                                    the outer wrapper.)
@@ -25,27 +25,49 @@ mode: "custom"
   Before changing ANY of the above, confirm with the docs owner.
   ============================================================
 
-  STYLING RULES FOR THIS PAGE (Mintlify constraints — do not "simplify"):
+  THEME CONTRACT (read before touching any colour):
+
+  This page is deliberately split in two.
+
+  1. HERO + COMMITMENTS = fixed dark bands. Their background is hard-coded
+     (#050E17), so exact brand hex values are safe here and are used:
+     #2E75B6 accents, #E8EEF5 / #B6C6D6 / #8FA3B8 text.
+
+  2. EVERYTHING BELOW = theme-aware. These sections deliberately set NO
+     background, so Mintlify's own page background shows through and matches
+     the navbar in BOTH light and dark mode. Text and borders therefore MUST
+     use Tailwind utilities with dark: variants, never inline colours:
+       headings  -> text-slate-900 dark:text-white
+       body      -> text-slate-600 dark:text-slate-400
+       borders   -> border-slate-200 dark:border-slate-800
+       accents   -> text-blue-900 dark:text-blue-300
+     Setting an inline colour in the lower half WILL break one of the two
+     themes. This is the whole reason the split exists.
+
+  MINTLIFY CONSTRAINTS (do not "simplify"):
   - Tailwind ARBITRARY VALUES ARE NOT SUPPORTED by Mintlify
     (no text-[68px], no bg-[#1F4E79], no max-w-[46ch]).
-    Use standard Tailwind utilities for layout/responsive behaviour and the
-    inline `style` prop for every brand colour and one-off size.
-  - Inline styles cannot express :hover. Do not add hover effects here without
-    either a Tailwind hover: utility using standard palette values, or a
-    globally-loaded .css file (which Mintlify applies to EVERY page).
+    Use standard Tailwind utilities for layout, responsive behaviour and
+    theme-aware colour; use the inline `style` prop only for sizes and for
+    brand colours inside the fixed-dark bands.
+  - Inline styles cannot express :hover, and Tailwind's blue-900/blue-300 pair
+    is the nearest standard match to brand #1F4E79 / #2E75B6. To get exact
+    brand accents AND hover states in the lower half, add a small prefixed
+    stylesheet (e.g. home-landing.css) to the repo root via GitHub — Mintlify
+    loads any .css in the content directory on every page, so prefix every
+    class and never target Mintlify's own selectors.
   - Do not rely on a <style> block. The previous one on this page was
     vestigial — it targeted a Card component no longer used.
   - Brand palette: #1F4E79 deep, #2E75B6 mid, #EBF3FB tint.
-    Direction A surface: #050E17 ink, #0A1725 ink-2, #E8EEF5 fg, #8FA3B8 dim.
   ============================================================
   */}
 
 <div className="max-w-full mx-auto">
   {/* ============================================================
-        HERO — full-bleed dark, schematic grid backdrop, video right
+        HERO — fixed-dark full-bleed band, schematic grid, video right
         ============================================================ */}
 
-  <div style={{ background: "#050E17", color: "#E8EEF5", position: "relative", overflow: "hidden", borderBottom: "1px solid rgba(46,117,182,0.18)" }}>
+  <div style={{ background: "#050E17", color: "#E8EEF5", position: "relative", overflow: "hidden" }}>
     <div style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, pointerEvents: "none", backgroundImage: "linear-gradient(rgba(46,117,182,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(46,117,182,0.18) 1px, transparent 1px)", backgroundSize: "64px 64px", maskImage: "radial-gradient(120% 90% at 22% 8%, #000 0%, rgba(0,0,0,0.35) 55%, transparent 82%)", WebkitMaskImage: "radial-gradient(120% 90% at 22% 8%, #000 0%, rgba(0,0,0,0.35) 55%, transparent 82%)" }} />
 
     <div className="px-6 md:px-12" style={{ position: "relative", maxWidth: "1280px", margin: "0 auto", paddingTop: "88px", paddingBottom: "76px" }}>
@@ -85,11 +107,11 @@ mode: "custom"
   </div>
 
   {/* ============================================================
-        THREE COMMITMENTS — schematic rows, hairline separated
+        THREE COMMITMENTS — still inside the fixed-dark band
         ============================================================ */}
 
-  <div style={{ background: "#050E17", color: "#E8EEF5", borderBottom: "1px solid rgba(46,117,182,0.18)" }}>
-    <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "76px", paddingBottom: "76px" }}>
+  <div style={{ background: "#050E17", color: "#E8EEF5", borderTop: "1px solid rgba(46,117,182,0.18)" }}>
+    <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "72px", paddingBottom: "80px" }}>
       <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#FFFFFF", letterSpacing: "-0.025em", margin: "0 0 44px" }}>Three commitments, each a feature rather than a promise</h2>
 
       <div style={{ borderTop: "1px solid rgba(46,117,182,0.18)" }}>
@@ -137,214 +159,208 @@ mode: "custom"
   </div>
 
   {/* ============================================================
-        HOW A PROJECT RUNS — six-step pipeline
+        HOW A PROJECT RUNS — theme-aware. No background is set here.
         ============================================================ */}
 
-  <div style={{ background: "#050E17", color: "#E8EEF5", borderBottom: "1px solid rgba(46,117,182,0.18)" }}>
-    <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "76px", paddingBottom: "76px" }}>
-      <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "18px", flexWrap: "wrap", marginBottom: "40px" }}>
-        <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#FFFFFF", letterSpacing: "-0.025em", margin: 0 }}>How a project runs</h2>
-        <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#8FA3B8" }}>Join at any step</span>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6" style={{ border: "1px solid rgba(46,117,182,0.18)", borderRadius: "4px", overflow: "hidden", gap: "1px", background: "rgba(46,117,182,0.18)" }}>
-        <div style={{ background: "#050E17", padding: "22px 18px 26px" }}>
-          <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", color: "#2E75B6", letterSpacing: "0.14em" }}>STEP 01</div>
-          <h4 style={{ margin: "12px 0 6px", fontSize: "15.5px", color: "#FFFFFF", letterSpacing: "-0.01em" }}>Upload</h4>
-          <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.5, color: "#8FA3B8" }}>A solicitation, a requirements pack, an existing codebase, or all three.</p>
-        </div>
-
-        <div style={{ background: "#050E17", padding: "22px 18px 26px" }}>
-          <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", color: "#2E75B6", letterSpacing: "0.14em" }}>STEP 02</div>
-          <h4 style={{ margin: "12px 0 6px", fontSize: "15.5px", color: "#FFFFFF", letterSpacing: "-0.01em" }}>Generate a CAB</h4>
-          <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.5, color: "#8FA3B8" }}>The platform writes the specification — including what your source material left undecided.</p>
-        </div>
-
-        <div style={{ background: "#050E17", padding: "22px 18px 26px" }}>
-          <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", color: "#2E75B6", letterSpacing: "0.14em" }}>STEP 03</div>
-          <h4 style={{ margin: "12px 0 6px", fontSize: "15.5px", color: "#FFFFFF", letterSpacing: "-0.01em" }}>Correct it</h4>
-          <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.5, color: "#8FA3B8" }}>Every change goes through review before it lands.</p>
-        </div>
-
-        <div style={{ background: "#050E17", padding: "22px 18px 26px" }}>
-          <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", color: "#2E75B6", letterSpacing: "0.14em" }}>STEP 04</div>
-          <h4 style={{ margin: "12px 0 6px", fontSize: "15.5px", color: "#FFFFFF", letterSpacing: "-0.01em" }}>Generate Tickets</h4>
-          <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.5, color: "#8FA3B8" }}>The corrected specification becomes units of work, grouped into Epics.</p>
-        </div>
-
-        <div style={{ background: "#050E17", padding: "22px 18px 26px" }}>
-          <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", color: "#2E75B6", letterSpacing: "0.14em" }}>STEP 05</div>
-          <h4 style={{ margin: "12px 0 6px", fontSize: "15.5px", color: "#FFFFFF", letterSpacing: "-0.01em" }}>Prototype, then build</h4>
-          <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.5, color: "#8FA3B8" }}>See it before committing to it, then build the real thing wave by wave.</p>
-        </div>
-
-        <div style={{ background: "#050E17", padding: "22px 18px 26px" }}>
-          <div style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", color: "#2E75B6", letterSpacing: "0.14em" }}>STEP 06</div>
-          <h4 style={{ margin: "12px 0 6px", fontSize: "15.5px", color: "#FFFFFF", letterSpacing: "-0.01em" }}>Test & deploy</h4>
-          <p style={{ margin: 0, fontSize: "13px", lineHeight: 1.5, color: "#8FA3B8" }}>The agent tests against acceptance criteria and gives you a URL.</p>
-        </div>
-      </div>
-
-      <p style={{ margin: "22px 0 0", color: "#8FA3B8", maxWidth: "74ch", fontSize: "15px" }}>
-        A team with settled requirements can start at Tickets. A team with only a solicitation starts at step one.
-      </p>
+  <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "80px", paddingBottom: "16px" }}>
+    <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "18px", flexWrap: "wrap", marginBottom: "36px" }}>
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white" style={{ letterSpacing: "-0.025em", margin: 0 }}>How a project runs</h2>
+      <span className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase" }}>Join at any step</span>
     </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+      <div className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "20px 18px 24px" }}>
+        <div className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em" }}>STEP 01</div>
+        <h4 className="text-slate-900 dark:text-white" style={{ margin: "12px 0 6px", fontSize: "15.5px", letterSpacing: "-0.01em" }}>Upload</h4>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "13px", lineHeight: 1.5 }}>A solicitation, a requirements pack, an existing codebase, or all three.</p>
+      </div>
+
+      <div className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "20px 18px 24px" }}>
+        <div className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em" }}>STEP 02</div>
+        <h4 className="text-slate-900 dark:text-white" style={{ margin: "12px 0 6px", fontSize: "15.5px", letterSpacing: "-0.01em" }}>Generate a CAB</h4>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "13px", lineHeight: 1.5 }}>The platform writes the specification — including what your source material left undecided.</p>
+      </div>
+
+      <div className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "20px 18px 24px" }}>
+        <div className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em" }}>STEP 03</div>
+        <h4 className="text-slate-900 dark:text-white" style={{ margin: "12px 0 6px", fontSize: "15.5px", letterSpacing: "-0.01em" }}>Correct it</h4>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "13px", lineHeight: 1.5 }}>Every change goes through review before it lands.</p>
+      </div>
+
+      <div className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "20px 18px 24px" }}>
+        <div className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em" }}>STEP 04</div>
+        <h4 className="text-slate-900 dark:text-white" style={{ margin: "12px 0 6px", fontSize: "15.5px", letterSpacing: "-0.01em" }}>Generate Tickets</h4>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "13px", lineHeight: 1.5 }}>The corrected specification becomes units of work, grouped into Epics.</p>
+      </div>
+
+      <div className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "20px 18px 24px" }}>
+        <div className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em" }}>STEP 05</div>
+        <h4 className="text-slate-900 dark:text-white" style={{ margin: "12px 0 6px", fontSize: "15.5px", letterSpacing: "-0.01em" }}>Prototype, then build</h4>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "13px", lineHeight: 1.5 }}>See it before committing to it, then build the real thing wave by wave.</p>
+      </div>
+
+      <div className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "20px 18px 24px" }}>
+        <div className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em" }}>STEP 06</div>
+        <h4 className="text-slate-900 dark:text-white" style={{ margin: "12px 0 6px", fontSize: "15.5px", letterSpacing: "-0.01em" }}>Test & deploy</h4>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "13px", lineHeight: 1.5 }}>The agent tests against acceptance criteria and gives you a URL.</p>
+      </div>
+    </div>
+
+    <p className="text-slate-600 dark:text-slate-400" style={{ margin: "22px 0 0", maxWidth: "74ch", fontSize: "15px" }}>
+      A team with settled requirements can start at Tickets. A team with only a solicitation starts at step one.
+    </p>
   </div>
 
   {/* ============================================================
-        START WHERE YOU ARE — three entry points
+        START WHERE YOU ARE — theme-aware
         ============================================================ */}
 
-  <div style={{ background: "#050E17", color: "#E8EEF5", borderBottom: "1px solid rgba(46,117,182,0.18)" }}>
-    <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "76px", paddingBottom: "76px" }}>
-      <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#FFFFFF", letterSpacing: "-0.025em", margin: "0 0 40px" }}>Start where you are</h2>
+  <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "72px", paddingBottom: "16px" }}>
+    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white" style={{ letterSpacing: "-0.025em", margin: "0 0 36px" }}>Start where you are</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: "1px", background: "rgba(46,117,182,0.18)", border: "1px solid rgba(46,117,182,0.18)", borderRadius: "4px", overflow: "hidden" }}>
-        <a href="/getting-started/what-is-bluegenai" style={{ background: "#050E17", padding: "30px 26px 28px", textDecoration: "none", display: "block" }}>
-          <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#2E75B6" }}>Evaluating</span>
-          <h3 style={{ margin: "14px 0 8px", fontSize: "19px", color: "#FFFFFF", letterSpacing: "-0.015em" }}>New to BlueGenAI</h3>
-          <p style={{ margin: 0, color: "#8FA3B8", fontSize: "14.5px", lineHeight: 1.55 }}>What the platform is, what it produces, and how it differs from a code-generation tool.</p>
-          <span style={{ display: "block", marginTop: "18px", fontSize: "13.5px", color: "#2E75B6", fontWeight: 600 }}>What is BlueGenAI? →</span>
-        </a>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="/getting-started/what-is-bluegenai" className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "28px 26px 26px", textDecoration: "none", display: "block" }}>
+        <span className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em", textTransform: "uppercase" }}>Evaluating</span>
+        <h3 className="text-slate-900 dark:text-white" style={{ margin: "14px 0 8px", fontSize: "19px", letterSpacing: "-0.015em" }}>New to BlueGenAI</h3>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "14.5px", lineHeight: 1.55 }}>What the platform is, what it produces, and how it differs from a code-generation tool.</p>
+        <span className="text-blue-900 dark:text-blue-300" style={{ display: "block", marginTop: "18px", fontSize: "13.5px", fontWeight: 600 }}>What is BlueGenAI? →</span>
+      </a>
 
-        <a href="/getting-started/quick-start-guide" style={{ background: "#050E17", padding: "30px 26px 28px", textDecoration: "none", display: "block" }}>
-          <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#2E75B6" }}>Building</span>
-          <h3 style={{ margin: "14px 0 8px", fontSize: "19px", color: "#FFFFFF", letterSpacing: "-0.015em" }}>On a project now</h3>
-          <p style={{ margin: 0, color: "#8FA3B8", fontSize: "14.5px", lineHeight: 1.55 }}>One pass through the whole platform: requirements to a deployed application.</p>
-          <span style={{ display: "block", marginTop: "18px", fontSize: "13.5px", color: "#2E75B6", fontWeight: 600 }}>Quick Start Guide →</span>
-        </a>
+      <a href="/getting-started/quick-start-guide" className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "28px 26px 26px", textDecoration: "none", display: "block" }}>
+        <span className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em", textTransform: "uppercase" }}>Building</span>
+        <h3 className="text-slate-900 dark:text-white" style={{ margin: "14px 0 8px", fontSize: "19px", letterSpacing: "-0.015em" }}>On a project now</h3>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "14.5px", lineHeight: 1.55 }}>One pass through the whole platform: requirements to a deployed application.</p>
+        <span className="text-blue-900 dark:text-blue-300" style={{ display: "block", marginTop: "18px", fontSize: "13.5px", fontWeight: 600 }}>Quick Start Guide →</span>
+      </a>
 
-        <a href="/low-code/overview" style={{ background: "#050E17", padding: "30px 26px 28px", textDecoration: "none", display: "block" }}>
-          <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#2E75B6" }}>Delivering</span>
-          <h3 style={{ margin: "14px 0 8px", fontSize: "19px", color: "#FFFFFF", letterSpacing: "-0.015em" }}>Low-code implementations</h3>
-          <p style={{ margin: 0, color: "#8FA3B8", fontSize: "14.5px", lineHeight: 1.55 }}>Tyler Application Platform, ServiceNow, PowerApps, and Salesforce configuration.</p>
-          <span style={{ display: "block", marginTop: "18px", fontSize: "13.5px", color: "#2E75B6", fontWeight: 600 }}>Low Code overview →</span>
-        </a>
-      </div>
-
-      <p style={{ margin: "22px 0 0", fontSize: "15px", color: "#8FA3B8" }}>
-        Looking for your own role? <a href="/tips-and-tricks/common-workflows-by-role" style={{ color: "#2E75B6", fontWeight: 600, textDecoration: "none" }}>Common Workflows by Role →</a>
-      </p>
+      <a href="/low-code/overview" className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "28px 26px 26px", textDecoration: "none", display: "block" }}>
+        <span className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em", textTransform: "uppercase" }}>Delivering</span>
+        <h3 className="text-slate-900 dark:text-white" style={{ margin: "14px 0 8px", fontSize: "19px", letterSpacing: "-0.015em" }}>Low-code implementations</h3>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "14.5px", lineHeight: 1.55 }}>Tyler Application Platform, ServiceNow, PowerApps, and Salesforce configuration.</p>
+        <span className="text-blue-900 dark:text-blue-300" style={{ display: "block", marginTop: "18px", fontSize: "13.5px", fontWeight: 600 }}>Low Code overview →</span>
+      </a>
     </div>
+
+    <p className="text-slate-600 dark:text-slate-400" style={{ margin: "22px 0 0", fontSize: "15px" }}>
+      Looking for your own role? <a href="/tips-and-tricks/common-workflows-by-role" className="text-blue-900 dark:text-blue-300" style={{ fontWeight: 600, textDecoration: "none" }}>Common Workflows by Role →</a>
+    </p>
   </div>
 
   {/* ============================================================
-        THE WHOLE LIBRARY — full index of eight sections
+        THE WHOLE LIBRARY — theme-aware
         ============================================================ */}
 
-  <div style={{ background: "#050E17", color: "#E8EEF5", borderBottom: "1px solid rgba(46,117,182,0.18)" }}>
-    <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "76px", paddingBottom: "76px" }}>
-      <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "18px", flexWrap: "wrap", marginBottom: "40px" }}>
-        <h2 className="text-3xl md:text-4xl font-bold" style={{ color: "#FFFFFF", letterSpacing: "-0.025em", margin: 0 }}>The whole library</h2>
-        <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#8FA3B8" }}>Eight sections</span>
+  <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "72px", paddingBottom: "24px" }}>
+    <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "18px", flexWrap: "wrap", marginBottom: "36px" }}>
+      <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white" style={{ letterSpacing: "-0.025em", margin: 0 }}>The whole library</h2>
+      <span className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase" }}>Eight sections</span>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "32px 36px" }}>
+      <div>
+        <h4 className="text-blue-900 dark:text-blue-300 border-b border-slate-200 dark:border-slate-800" style={{ margin: "0 0 12px", paddingBottom: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase" }}>Getting Started</h4>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <a href="/getting-started/what-is-bluegenai" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>What is BlueGenAI?</a>
+          <a href="/getting-started/platform-overview-architecture" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Platform Overview & Architecture</a>
+          <a href="/getting-started/navigation-ui-guide" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Navigation & UI Guide</a>
+          <a href="/getting-started/user-role-management" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>User & Role Management</a>
+          <a href="/getting-started/quick-start-guide" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Quick Start Guide</a>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "32px 36px" }}>
-        <div>
-          <h4 style={{ margin: "0 0 12px", paddingBottom: "10px", borderBottom: "1px solid rgba(46,117,182,0.18)", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#2E75B6" }}>Getting Started</h4>
+      <div>
+        <h4 className="text-blue-900 dark:text-blue-300 border-b border-slate-200 dark:border-slate-800" style={{ margin: "0 0 12px", paddingBottom: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase" }}>CAB</h4>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <a href="/getting-started/what-is-bluegenai" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>What is BlueGenAI?</a>
-            <a href="/getting-started/platform-overview-architecture" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Platform Overview & Architecture</a>
-            <a href="/getting-started/navigation-ui-guide" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Navigation & UI Guide</a>
-            <a href="/getting-started/user-role-management" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>User & Role Management</a>
-            <a href="/getting-started/quick-start-guide" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Quick Start Guide</a>
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <a href="/cab/what-is-cab" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>What is CAB?</a>
+          <a href="/cab/supported-input-types" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Supported Input Types</a>
+          <a href="/cab/blueprint-output-reference" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Blueprint Output Reference</a>
+          <a href="/cab/step-by-step-workflow" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Step-by-Step Workflow</a>
+          <a href="/cab/legacy-code-translation-guide" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Legacy Code Translation</a>
+          <a href="/cab/requirement-clarification" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Requirement Clarification</a>
+          <a href="/cab/editing-your-cab" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Editing your CAB</a>
         </div>
+      </div>
 
-        <div>
-          <h4 style={{ margin: "0 0 12px", paddingBottom: "10px", borderBottom: "1px solid rgba(46,117,182,0.18)", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#2E75B6" }}>CAB</h4>
+      <div>
+        <h4 className="text-blue-900 dark:text-blue-300 border-b border-slate-200 dark:border-slate-800" style={{ margin: "0 0 12px", paddingBottom: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase" }}>Tickets</h4>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <a href="/cab/what-is-cab" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>What is CAB?</a>
-            <a href="/cab/supported-input-types" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Supported Input Types</a>
-            <a href="/cab/blueprint-output-reference" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Blueprint Output Reference</a>
-            <a href="/cab/step-by-step-workflow" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Step-by-Step Workflow</a>
-            <a href="/cab/legacy-code-translation-guide" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Legacy Code Translation</a>
-            <a href="/cab/requirement-clarification" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Requirement Clarification</a>
-            <a href="/cab/editing-your-cab" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Editing your CAB</a>
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <a href="/tickets/what-are-tickets" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>What are Tickets?</a>
+          <a href="/tickets/cab-to-ticket-conversion" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>CAB-to-Ticket conversion</a>
+          <a href="/tickets/creating-editing-tickets" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Creating & editing tickets</a>
+          <a href="/tickets/epics" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Epics</a>
+          <a href="/tickets/using-tickets-in-build-mode" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Tickets in Build Mode</a>
         </div>
+      </div>
 
-        <div>
-          <h4 style={{ margin: "0 0 12px", paddingBottom: "10px", borderBottom: "1px solid rgba(46,117,182,0.18)", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#2E75B6" }}>Tickets</h4>
+      <div>
+        <h4 className="text-blue-900 dark:text-blue-300 border-b border-slate-200 dark:border-slate-800" style={{ margin: "0 0 12px", paddingBottom: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase" }}>Web Apps</h4>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <a href="/tickets/what-are-tickets" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>What are Tickets?</a>
-            <a href="/tickets/cab-to-ticket-conversion" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>CAB-to-Ticket conversion</a>
-            <a href="/tickets/creating-editing-tickets" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Creating & editing tickets</a>
-            <a href="/tickets/epics" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Epics</a>
-            <a href="/tickets/using-tickets-in-build-mode" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Tickets in Build Mode</a>
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <a href="/web-apps/prototype-mode/overview" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Prototype Mode</a>
+          <a href="/web-apps/build-mode/overview" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Build Mode</a>
+          <a href="/web-apps/build-mode/tech-stack-reference" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Tech Stack Reference</a>
+          <a href="/web-apps/build-mode/deployment-guide" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Deployment Guide</a>
+          <a href="/web-apps/app-testing" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>App Testing</a>
+          <a href="/web-apps/git-integration" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Git Integration</a>
         </div>
+      </div>
 
-        <div>
-          <h4 style={{ margin: "0 0 12px", paddingBottom: "10px", borderBottom: "1px solid rgba(46,117,182,0.18)", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#2E75B6" }}>Web Apps</h4>
+      <div>
+        <h4 className="text-blue-900 dark:text-blue-300 border-b border-slate-200 dark:border-slate-800" style={{ margin: "0 0 12px", paddingBottom: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase" }}>Low Code</h4>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <a href="/web-apps/prototype-mode/overview" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Prototype Mode</a>
-            <a href="/web-apps/build-mode/overview" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Build Mode</a>
-            <a href="/web-apps/build-mode/tech-stack-reference" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Tech Stack Reference</a>
-            <a href="/web-apps/build-mode/deployment-guide" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Deployment Guide</a>
-            <a href="/web-apps/app-testing" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>App Testing</a>
-            <a href="/web-apps/git-integration" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Git Integration</a>
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <a href="/low-code/overview" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Low Code Overview</a>
+          <a href="/low-code/tap/overview" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Tyler Application Platform</a>
+          <a href="/low-code/servicenow/overview" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>ServiceNow</a>
+          <a href="/low-code/powerapps/build-mode/overview" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>MS PowerApps</a>
+          <a href="/low-code/salesforce" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Salesforce</a>
         </div>
+      </div>
 
-        <div>
-          <h4 style={{ margin: "0 0 12px", paddingBottom: "10px", borderBottom: "1px solid rgba(46,117,182,0.18)", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#2E75B6" }}>Low Code</h4>
+      <div>
+        <h4 className="text-blue-900 dark:text-blue-300 border-b border-slate-200 dark:border-slate-800" style={{ margin: "0 0 12px", paddingBottom: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase" }}>Tips & Tricks</h4>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <a href="/low-code/overview" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Low Code Overview</a>
-            <a href="/low-code/tap/overview" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Tyler Application Platform</a>
-            <a href="/low-code/servicenow/overview" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>ServiceNow</a>
-            <a href="/low-code/powerapps/build-mode/overview" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>MS PowerApps</a>
-            <a href="/low-code/salesforce" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Salesforce</a>
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <a href="/tips-and-tricks/prompting-best-practices" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Prompting Best Practices</a>
+          <a href="/tips-and-tricks/common-workflows-by-role" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Common Workflows by Role</a>
+          <a href="/tips-and-tricks/bd-pre-sales-usage-guide" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>BD & Pre-Sales Usage</a>
+          <a href="/tips-and-tricks/troubleshooting-faq" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Troubleshooting & FAQ</a>
         </div>
+      </div>
 
-        <div>
-          <h4 style={{ margin: "0 0 12px", paddingBottom: "10px", borderBottom: "1px solid rgba(46,117,182,0.18)", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#2E75B6" }}>Tips & Tricks</h4>
+      <div>
+        <h4 className="text-blue-900 dark:text-blue-300 border-b border-slate-200 dark:border-slate-800" style={{ margin: "0 0 12px", paddingBottom: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase" }}>Admin & Platform</h4>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <a href="/tips-and-tricks/prompting-best-practices" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Prompting Best Practices</a>
-            <a href="/tips-and-tricks/common-workflows-by-role" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Common Workflows by Role</a>
-            <a href="/tips-and-tricks/bd-pre-sales-usage-guide" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>BD & Pre-Sales Usage</a>
-            <a href="/tips-and-tricks/troubleshooting-faq" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Troubleshooting & FAQ</a>
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <a href="/admin-platform/collaboration-features" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Collaboration Features</a>
+          <a href="/admin-platform/integrations" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Integrations</a>
+          <a href="/admin-platform/cloning-your-project" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Cloning your project</a>
         </div>
+      </div>
 
-        <div>
-          <h4 style={{ margin: "0 0 12px", paddingBottom: "10px", borderBottom: "1px solid rgba(46,117,182,0.18)", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#2E75B6" }}>Admin & Platform</h4>
+      <div>
+        <h4 className="text-blue-900 dark:text-blue-300 border-b border-slate-200 dark:border-slate-800" style={{ margin: "0 0 12px", paddingBottom: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase" }}>Changelog</h4>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <a href="/admin-platform/collaboration-features" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Collaboration Features</a>
-            <a href="/admin-platform/integrations" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Integrations</a>
-            <a href="/admin-platform/cloning-your-project" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Cloning your project</a>
-          </div>
-        </div>
-
-        <div>
-          <h4 style={{ margin: "0 0 12px", paddingBottom: "10px", borderBottom: "1px solid rgba(46,117,182,0.18)", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.13em", textTransform: "uppercase", color: "#2E75B6" }}>Changelog</h4>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-            <a href="/changelog/weekly-release-notes" style={{ fontSize: "14.5px", color: "#B6C6D6", textDecoration: "none" }}>Weekly release notes</a>
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <a href="/changelog/weekly-release-notes" className="text-slate-600 dark:text-slate-400" style={{ fontSize: "14.5px", textDecoration: "none" }}>Weekly release notes</a>
         </div>
       </div>
     </div>
   </div>
 
   {/* ============================================================
-        FOOTER STRIP
+        FOOTER STRIP — theme-aware
         ============================================================ */}
 
-  <div style={{ background: "#050E17", color: "#8FA3B8" }}>
-    <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "40px", paddingBottom: "56px", display: "flex", justifyContent: "space-between", gap: "20px", flexWrap: "wrap", fontSize: "13.5px" }}>
-      <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase" }}>BlueGenAI · Documentation</span>
+  <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "40px", paddingBottom: "64px" }}>
+    <div className="border-t border-slate-200 dark:border-slate-800" style={{ paddingTop: "24px", display: "flex", justifyContent: "space-between", gap: "20px", flexWrap: "wrap", fontSize: "13.5px" }}>
+      <span className="text-slate-600 dark:text-slate-400" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase" }}>BlueGenAI · Documentation</span>
 
-      <span>
-        Something missing or wrong? <a href="/tips-and-tricks/troubleshooting-faq" style={{ color: "#B6C6D6", textDecoration: "none" }}>Troubleshooting & FAQ</a>
+      <span className="text-slate-600 dark:text-slate-400">
+        Something missing or wrong? <a href="/tips-and-tricks/troubleshooting-faq" className="text-blue-900 dark:text-blue-300" style={{ fontWeight: 600, textDecoration: "none" }}>Troubleshooting & FAQ</a>
       </span>
     </div>
   </div>
