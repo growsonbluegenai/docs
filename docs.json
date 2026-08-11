@@ -42,8 +42,8 @@
               "cab/supported-input-types",
               "cab/blueprint-output-reference",
               "cab/step-by-step-workflow",
-              "cab/requirement-clarification",
               "cab/legacy-code-translation-guide",
+              "cab/requirement-clarification",
               "cab/editing-your-cab"
             ]
           }
