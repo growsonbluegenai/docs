@@ -10,7 +10,7 @@ The CAB reads an existing codebase and writes down what it does, in the form of 
   **This is code-to-requirements, not code-to-code.** Nothing here converts COBOL to Java, or any language to any other language. The output is a specification in plain language, not a translated codebase. If you are looking for automated language migration, this is not that.
 </Note>
 
-## What you'll learn
+## What You'll Learn
 
 What happens to source code you upload, what comes out of it, and where it fits in a modernisation project.
 
@@ -18,7 +18,7 @@ What happens to source code you upload, what comes out of it, and where it fits 
   ![The CAB Configuration panel showing a 9.0 MB source archive named GMRV underscore 50 underscore 40V19 underscore src dot zip in the Uploaded Files list, categorised as Archive with a green Uploaded status.](/images/cab/legacy-code-translation-source-archive.png)
 </Frame>
 
-## What actually happens
+## What Actually Happens
 
 **Your code is read and described, not parsed.** There is no compiler, no syntax tree, and no language-specific analyser in this path. A language model reads each file the way a senior analyst would and writes down what it found.
 
@@ -29,7 +29,7 @@ The run works through four steps.
 3. **Summarisation.** Each batch goes to a language model, which returns a purpose line and an implementation summary per file, plus any blueprint-relevant items it recognised.
 4. **Carry-forward.** Those summaries become input to the phases that build your blueprint. The original code is not carried into the finished document.
 
-## What it looks for
+## What It Looks For
 
 The model is not summarising in the abstract. It is told which kinds of thing to watch for, and that list comes from the sections you selected before the run.
 
@@ -47,7 +47,7 @@ Deselect a section and the model stops looking for that kind of thing. This is w
 
 The model is instructed to use the exact names it finds in your code, to record specific values such as validation thresholds and status codes, and not to invent anything that is not there.
 
-## What is skipped
+## What Is Skipped
 
 Compiled output and binary files carry nothing a reader can use, so they are excluded before analysis begins. The exclusion list covers ordinary build artifacts and a long tail of platform-specific ones, including COBOL compiled output, mainframe load modules, MUMPS and VistA binary exports, and Java, .NET, and Delphi build products.
 
@@ -57,7 +57,7 @@ Documents are excluded here too, because they are parsed separately in the phase
   Upload the source tree rather than a built or packaged release. An archive of compiled artifacts yields nothing, because everything in it is on the exclusion list.
 </Tip>
 
-## Where this fits in a modernisation project
+## Where This Fits in a Modernisation Project
 
 The result is a written specification of a system that already exists. That is useful in three situations, and worth being clear about which one you are in.
 
@@ -71,7 +71,7 @@ The result is a written specification of a system that already exists. That is u
   This phase is skipped when no source code was uploaded. A CAB built only from written documents runs the same way without it.
 </Note>
 
-## Your next step
+## Your Next Step
 
 Source code alone rarely settles every question, and the blueprint tells you which ones remain open.
 
