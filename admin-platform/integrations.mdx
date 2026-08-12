@@ -10,7 +10,7 @@ The platform runs on a set of supporting services, most of which you never confi
 
 Which services the platform depends on, which ones you have to set up, and where the integrations you control are documented.
 
-## Services the platform provides
+## Services the Platform Provides
 
 These come with the platform. There is nothing to connect and nothing to configure.
 
@@ -21,13 +21,13 @@ These come with the platform. There is nothing to connect and nothing to configu
 | **Search index** | Lets the agents retrieve the relevant parts of large source material | Blueprint generation skips indexing when your material is small enough to read whole |
 | **Application hosting** | Runs the applications the platform builds | Your application's URL, and the start and stop controls |
 
-### Source control
+### Source Control
 
 Every project's generated code lives in a repository, a versioned store the platform hosts for you. Access is managed automatically, and your access token can be reset if it stops working.
 
 You reach it from the Codebase panel rather than from here. See [Git Integration](/web-apps/git-integration).
 
-## Low-code platforms you connect
+## Low-Code Platforms You Connect
 
 A low-code project talks to your own environment, so it needs credentials for it. Each platform asks for a different set.
 
@@ -44,13 +44,13 @@ A low-code project talks to your own environment, so it needs credentials for it
   Some low-code build work is carried out by a service outside this platform. Your specification, Tickets, and build order are produced here; the platform-specific build is handed onward, along with the credentials you linked.
 </Note>
 
-## Tools you connect to the build agent
+## Tools You Connect to the Build Agent
 
 **External tools are connected per project, through MCP.** That is a separate mechanism from anything on this page: you add a server, it exposes its tools, and the build agent can use them during a build.
 
 Adding servers, connection states, and how credentials are scoped across a project are covered in full on [MCP Integrations](/web-apps/mcp-integrations).
 
-## Your next step
+## Your Next Step
 
 <CardGroup cols={2}>
   <Card title="Connect an external tool" icon="plug" href="/web-apps/mcp-integrations">
