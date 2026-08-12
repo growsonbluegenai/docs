@@ -8,11 +8,11 @@ A generated blueprint is a first draft, and there are two ways to change it: edi
 
 Both routes end in the same place — a review screen where you accept or discard each change before anything is written.
 
-## What you'll learn
+## What You'll Learn
 
 How to make a change, how to review one, and what the blueprint records about who changed what.
 
-## The blueprint toolbar
+## The Blueprint Toolbar
 
 <Frame caption="The toolbar above the blueprint preview, with every button named.">
   ![The blueprint preview toolbar beside the Generate Tickets button, its six icon buttons labelled Version History, Open in New Tab, Share CAB, Edit CAB, Download Markdown and Download PDF. A badge on the Version History clock shows the number of saved versions.](/images/cab/editing-your-cab-toolbar.png)
@@ -29,7 +29,7 @@ How to make a change, how to review one, and what the blueprint records about wh
 
 The buttons carry no visible labels, so hover for about a second to see each one. **Version History appears only once the blueprint has saved versions**, so a freshly generated blueprint shows five rather than six.
 
-## Sharing a blueprint outside the platform
+## Sharing a Blueprint Outside the Platform
 
 **Share CAB gives a blueprint to people who do not have a BlueGenAI account.** A stakeholder, a client, or a colleague on the business side can read the whole document from a link, without signing up and without being added to the project.
 
@@ -41,7 +41,7 @@ This is what makes a blueprint usable as a review artifact. A specification is o
 
 This is a different mechanism from inviting someone to the project. An invitation gives a person a role and a sign-in; a share link gives one document to anyone who has the URL. See [Collaboration Features](/admin-platform/collaboration-features).
 
-## Editing it yourself
+## Editing It Yourself
 
 **Edit CAB** turns the blueprint into a form. After a few seconds the panel title gains an **Editing** pill and the toolbar becomes **Review with AI**, **Save Changes**, and a close control.
 
@@ -57,7 +57,7 @@ This is a different mechanism from inviting someone to the project. An invitatio
 
 **Removals are pending until you save.** A removed item stays on screen struck through, so you can see what you are about to lose.
 
-### One edit, start to finish
+### One Edit, Start to Finish
 
 <Frame caption="Adding a role, reviewing it, and saving. The single manual edit produces one 'your edit' change and fourteen AI suggestions, and saving takes the blueprint to version 5.">
   ![A recording of the CAB editor: selecting Add role produces a blank role card, which is filled in as ROLE-004 Program Auditor with a description, a primary goal and a permission row. Review with AI runs a spinner, then the review surface opens showing one your-edit change and fourteen AI suggestions across fifteen cards. Save All applies them and the version badge increments to five.](/images/cab/editing-your-cab-add-role-review.gif)
@@ -65,7 +65,7 @@ This is a different mechanism from inviting someone to the project. An invitatio
 
 **Notice the count.** One added role produced fourteen further suggestions. Adding a role means deciding what it can reach, which screens mention it, and which stories belong to it, and the review works those out rather than leaving you to find them. That is the review earning its cost — see [Reviewing changes](#reviewing-changes) below.
 
-## Asking the agent instead
+## Asking the Agent Instead
 
 The **BlueGenAI CAB Agent** tab beside **CAB Configuration** takes requests in plain language. Its composer reads `Ask anything about your CAB, or request changes...`.
 
@@ -84,7 +84,7 @@ Requests that work:
 
 **One request can change several sections.** A single rule request produced six changes across user stories, the data model, three screens, and the rules section — the agent works out what else the change implies rather than editing only what you named.
 
-## Reviewing changes
+## Reviewing Changes
 
 Both routes land here. Hand edits go through it when you select **Review with AI**; agent changes go through it automatically.
 
@@ -108,7 +108,7 @@ Modifications show a **WAS** row and a **NOW** row; additions show what is being
   **Reviewing with AI is optional and it costs.** You can save hand edits without it, though you then lose the consistency check. When you do run it, the cost is added to the project's generation cost.
 </Note>
 
-## Deciding what to keep
+## Deciding What to Keep
 
 <Frame caption="The same review, before and after two decisions. Deciding anything relabels the buttons and starts a tally.">
   ![Two boxed views of the review surface with an arrow between them. In the before state the toolbar reads Save All and Discard All and there is no tally beside the pager. In the after state, with one change accepted and one discarded, the buttons read Save and Discard and a tally beside the pager reads one accepted, one discarded and eight still undecided.](/images/cab/editing-your-cab-decisions.png)
@@ -122,7 +122,7 @@ Accept or discard each change with the controls on its card. Nothing is applied 
 
 **Discard All** drops everything and writes nothing. It does not create a version.
 
-## Version history
+## Version History
 
 **Saving creates a version.** Open the clock button to see them.
 
@@ -136,7 +136,7 @@ Each entry is a timestamp — no author, no description, no summary. The current
   ![The Restore this version confirmation, warning that it will replace the current blueprint with the selected version, that all versions created after it will be permanently deleted, and that the action cannot be undone.](/images/cab/editing-your-cab-restore-warning.png)
 </Frame>
 
-## What is recorded, and what is not
+## What Is Recorded, and What Is Not
 
 This distinction matters if anyone ever asks you who changed what.
 
@@ -148,11 +148,11 @@ Version history records _when_, not _who_ — versions are named by timestamp, a
 
 **So the review process is auditable; the finished document is not self-describing.** If your organisation needs a change record, capture it during review rather than expecting to reconstruct it afterwards.
 
-## Working with other people
+## Working with Other People
 
 Only one person can edit a blueprint at a time. The platform holds a lock while a review is running or awaiting a decision, and checks that the version you started from is still current before applying anything.
 
-## Your next step
+## Your Next Step
 
 A corrected blueprint is what everything downstream is built from.
 
