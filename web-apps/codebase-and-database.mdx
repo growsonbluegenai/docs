@@ -6,7 +6,7 @@ icon: "folder-tree"
 
 Two panels let you inspect what the agent built: **Codebase** for the source tree, **Database** for the data behind it.
 
-## What you'll learn
+## What You'll Learn
 
 How to browse generated code, how to query the application database, and what the destructive control in the database panel does.
 
@@ -42,7 +42,7 @@ The `drizzle` schema holds the migration bookkeeping the ORM maintains. Your app
 
 The editor runs SQL against the application database. It opens with a template, and the results area reads `Run a query to see results here` until you run something. `⌘ + Enter` runs the query.
 
-## Deleting the database
+## Deleting the Database
 
 <Frame caption="The delete confirmation lists exactly what is dropped.">
   ![The Delete Database confirmation asking whether to delete the entire database, with a red-bordered box listing that it will drop all tables and data, drop all custom schemas, and that the action cannot be undone, above Cancel and Delete Database buttons.](/images/web-apps/codebase-and-database-delete.png)
@@ -52,7 +52,7 @@ The editor runs SQL against the application database. It opens with a template, 
   Deleting the database drops every table, all data, and any custom schemas. It cannot be undone, and it does not remove the code that expects those tables to exist.
 </Warning>
 
-## When something is not available
+## When Something Is Not Available
 
 | Message | What it means |
 | --- | --- |
@@ -62,7 +62,7 @@ The editor runs SQL against the application database. It opens with a template, 
 
 If the connection is unavailable, start the application and let its health checks pass before retrying. See [Deployment Guide](/web-apps/build-mode/deployment-guide).
 
-## Your next step
+## Your Next Step
 
 Reading the code is one way to check the agent's work. Asking it to explain itself is another.
 

@@ -6,7 +6,7 @@ icon: "code-branch"
 
 The Codebase panel footer carries three Git controls: **Checkout**, **Pull**, and **Push**.
 
-## What you'll learn
+## What You'll Learn
 
 What each control does, what blocks them, and what version control is not available here.
 
@@ -14,7 +14,7 @@ What each control does, what blocks them, and what version control is not availa
   ![The Codebase panel showing a file tree and viewer, with Checkout, Pull and Push controls in the footer beside a branch icon.](/images/web-apps/git-integration-footer.png)
 </Frame>
 
-## The three controls
+## The Three Controls
 
 **Checkout** switches branches.
 
@@ -22,7 +22,7 @@ What each control does, what blocks them, and what version control is not availa
 
 **Push** sends your project's commits to the remote. If there are uncommitted changes, you are asked for a commit message so they can be committed and pushed together.
 
-## What blocks them
+## What Blocks Them
 
 Git operations are refused while a build is running, because the agent is writing to the same files.
 
@@ -34,11 +34,11 @@ Git operations are refused while a build is running, because the agent is writin
 | `There are uncommitted changes. Provide a commit message to commit and push.` | Push needs a message before it can proceed |
 | `Project has no working directory` | Nothing has been built yet |
 
-## Where the repository lives
+## Where the Repository Lives
 
 Projects are backed by a self-hosted Git server rather than an external host. Access is managed for you, and the platform can reset your access token if it stops working.
 
-## This is not the same as checkpoints
+## This Is Not the Same as Checkpoints
 
 The controls above are for the project's repository — branches, and moving commits to and from a remote.
 
@@ -46,7 +46,7 @@ The controls above are for the project's repository — branches, and moving com
 
 Use Git when you want the code in a repository your other tools can reach. Use a checkpoint restore when you want to undo what the agent just did.
 
-## Your next step
+## Your Next Step
 
 With the code in a repository, the rest of your toolchain can reach it.
 
