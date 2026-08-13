@@ -155,11 +155,13 @@
           {
             "group": "MS PowerApps",
             "pages": [
+              "low-code/powerapps/overview",
               {
                 "group": "PowerApps Build Mode",
                 "pages": [
                   "low-code/powerapps/build-mode/overview",
-                  "low-code/powerapps/build-mode/workflow"
+                  "low-code/powerapps/build-mode/workflow",
+                  "low-code/powerapps/build-mode/component-reference"
                 ]
               }
             ]

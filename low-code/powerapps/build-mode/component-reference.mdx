@@ -1,0 +1,163 @@
+---
+title: "Component Reference"
+description: "Every PowerApps component the agent reaches: Dataverse tables, columns and relationships, model-driven forms and views, the sitemap, solutions, business rules, and the areas it specifies rather than applies."
+---
+
+This page is the full inventory of what a PowerApps request can reach. Each section states whether the agent **applies** the change or **specifies** it for you to apply, because in PowerApps that varies by area.
+
+## What You'll Learn
+
+Which Dataverse and model-driven components are configurable, what options each carries, and exactly where direct configuration stops.
+
+## Dataverse Schema
+
+_Applied directly._
+
+### Tables
+
+Tables are created as **Org-owned** or **User-owned**, and that choice is permanent in practice: it determines whether row-level ownership and sharing exist at all, which the security model then depends on.
+
+Per table you can enable or disable notes, activities, change tracking, auditing, and search, and set the description and behaviour.
+
+### Columns
+
+| Group | Types and options |
+| --- | --- |
+| Text | Single-line and multi-line |
+| Numeric | Integer, Decimal, Money |
+| Temporal | DateOnly and DateTime, with behaviour including UserLocal and TimeZoneIndependent |
+| Logical | Boolean, with custom labels for the two options |
+| Sets | Choice and Option Sets, local or global, with explicit values |
+| Files | File and Image |
+| Relational | Lookup, with its relationship |
+
+Each column carries a required level of **Business Required**, **Recommended**, or **Optional**, plus minimum and maximum values and format where the type supports them.
+
+<Note>
+  DateTime behaviour is worth deciding deliberately. TimeZoneIndependent stores what was entered; UserLocal converts for the viewer. Changing it after data exists is disruptive, so the agent will ask rather than default.
+</Note>
+
+### Relationships
+
+One-to-many and many-to-one through lookups, and many-to-many directly. Each relationship carries a **referential behaviour** governing what happens to related rows: Cascade, Restrict, or Remove Link among them. Relationship schema names and navigation property names are set explicitly rather than left to generation, because integrations and flows reference them by name.
+
+### Publishing
+
+Schema changes are published so that tables, columns, and relationships become available to the app, its views, and any flows. Unpublished metadata is the usual explanation for a column that exists but does not appear.
+
+## Model-Driven App UI
+
+_Applied directly._
+
+### Forms
+
+Four form types are in scope: **Main**, **Quick Create**, **Quick View**, and **Card**.
+
+The agent can list and inspect existing forms, including their tabs, sections, and field order, their subgrids and the views those subgrids use, and any registered JavaScript libraries and event handlers. **Registered scripts are read and described, not rewritten.**
+
+Configurable on a form:
+
+- Tab and section organisation
+- Adding, removing, and reordering fields
+- Subgrids, including related-entity subgrids bound to a specific view
+- Key fields placed in the header or footer
+- A System Information section, which is where owner and status fields belong so they stay out of an operator's way
+
+### Views
+
+System views are created and modified: selected columns with their order and widths, and sort and filter definitions. Personal and system views are distinguished where the environment supports the difference.
+
+**Views are where the security model becomes visible to users.** Aligning them to roles and workflow states is what makes an app usable: "My active records", "Completed with errors", "Needs review".
+
+### Navigation and Sitemap
+
+The sitemap is structured in three levels:
+
+| Level | Purpose | Examples |
+| --- | --- | --- |
+| **Areas** | Top-level separation by audience or function | Operations, Configuration, Reports |
+| **Groups** | Related destinations within an area | Daily Work, Templates and Profiles |
+| **Subareas** | The destinations themselves | A table, a dashboard, or a custom URL |
+
+## Solutions and Apps
+
+_Applied directly._
+
+Solutions are created with a specified publisher and version. Components are then associated into them: tables, forms, views, charts, dashboards, security roles, flows, web resources, and apps.
+
+Model-driven apps are defined by which sitemap, tables, and artifacts belong to them.
+
+<Tip>
+  Add components to the solution as they are created rather than at the end. A solution assembled retrospectively tends to be missing exactly the pieces that break in the next environment.
+</Tip>
+
+## Security Model
+
+_Specified, not applied._
+
+Direct role creation and privilege updates have limited write surface through the tooling. The agent therefore produces the design and the exact settings, and you apply them.
+
+What it produces:
+
+- Business rules translated into Dataverse privileges: **Create, Read, Write, Delete, Append, Append To, Assign, and Share**
+- A scope for each privilege: **User**, **Business Unit**, **Parent-Child Business Unit**, or **Organization**
+- A privilege matrix per role, table by table
+- Instructions for adding the roles to the solution so they travel with it
+
+The matrix is checked for consistency against the data model, so a privilege on a table that does not exist, or a scope that ownership type cannot support, gets caught at design time.
+
+## Business Logic
+
+### Business Rules
+
+_Applied directly._ Table-level business rules show and hide fields, set default values, calculate field values, and set required or locked states based on conditions. A rule that derives a banding field from a score, or that requires one lookup to be populated before a record can be used, belongs here.
+
+### Power Automate Cloud Flows
+
+_Specified, not applied._ The agent defines the trigger, for example on create or update of a record or on a status change, outlines the steps including calls to an external service and the status and log writes that follow, and provides full JSON and body mappings for HTTP actions. You build the flow from that definition.
+
+### Form JavaScript
+
+_Specified, not applied._ Client-side logic is specified and the code pattern generated, along with how to register it on the form and which event to bind it to. Disabling edit on fields written by a background service, or surfacing a warning banner on an error state, are the common cases.
+
+## Data Operations and Reporting
+
+_Applied directly, subject to the operations exposed._
+
+**Queries.** Filtered queries against your custom tables to inspect what is stored, and sample rows pulled back to confirm that schema and process match.
+
+**Seeding.** Configuration records and realistic test records created so a process can be exercised end to end before real data arrives.
+
+**Charts and dashboards.** Charts designed against your tables, for example counts by status or distribution across a banded field, and dashboards combining list views with charts for a given audience.
+
+## Consistency and Integration Guard Rails
+
+_Advisory, and worth asking for explicitly._
+
+| Concern | What the agent checks or designs |
+| --- | --- |
+| **Naming** | Logical names, prefixes, relationship names, and choice values, consistent across the solution |
+| **Integration safety** | That the model supports idempotent upserts, meaning the keys, foreign keys, and status fields an external service needs to write the same result twice without damage |
+| **State models** | Clear states and the transitions between them, for example Draft, Submitted, In Progress, then Completed or Failed |
+| **Audit posture** | Which tables and columns to audit and which to exclude, avoiding high-churn counters that generate volume without information |
+| **Change tracking** | Where it is needed for synchronisation or downstream consumers |
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="Understand where the boundary sits" icon="circle-info" href="/low-code/powerapps/overview">
+    What is applied directly and what is specified.
+  </Card>
+
+  <Card title="See what a Build request sends" icon="play" href="/low-code/powerapps/build-mode/workflow">
+    What goes out, and what comes back.
+  </Card>
+
+  <Card title="Write better requests" icon="pen-line" href="/tips-and-tricks/prompting-best-practices">
+    How to ask at the right level of detail.
+  </Card>
+
+  <Card title="Compare the low-code platforms" icon="puzzle-piece" href="/low-code/overview">
+    What each supported platform covers.
+  </Card>
+</CardGroup>

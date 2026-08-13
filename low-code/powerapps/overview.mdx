@@ -1,0 +1,85 @@
+---
+title: "PowerApps Overview"
+description: "Microsoft PowerApps projects: what the agent configures directly in Dataverse, what it designs for you to apply, and why that distinction matters here."
+---
+
+A PowerApps project targets Microsoft Dataverse and the model-driven app layer above it. The platform connects to your Dataverse environment and configures schema, forms, views, and solution structure there.
+
+## What You'll Learn
+
+What a PowerApps project covers, which parts of the work the agent applies directly and which it specifies for you to apply, and why PowerApps splits that way when TAP and ServiceNow do not.
+
+## Direct Configuration and Specification
+
+**PowerApps is the one platform where the boundary runs through the middle of the work**, so it is worth understanding before you start rather than discovering it mid-build.
+
+| The agent applies directly | The agent specifies for you to apply |
+| --- | --- |
+| Tables, columns, and relationships in Dataverse | Security roles and privilege assignments |
+| Metadata publishing | Power Automate cloud flows |
+| Forms, including tabs, sections, fields, and subgrids | Client-side JavaScript on forms |
+| Views and their columns, sorting, and filters |  |
+| Sitemap areas, groups, and subareas |  |
+| Solutions and model-driven app definitions |  |
+| Table-level business rules |  |
+| Data queries and sample records |  |
+| Charts and dashboards |  |
+
+The right-hand column is not a gap in the design. Those three areas have limited write surface through the tooling, so instead of half-applying them the agent produces exact configuration instructions: precise per-table and per-privilege settings for roles, full trigger and step definitions with JSON body mappings for flows, and code patterns with the event registration for form scripts.
+
+<Note>
+  Specification is checked against your data model rather than written in isolation. A privilege matrix is validated against the tables that actually exist, and a flow definition against the columns it references.
+</Note>
+
+## What a PowerApps Project Produces
+
+The output is **configuration in your Dataverse environment**, packaged into a solution. That packaging matters more here than on the other platforms: Dataverse solutions are the unit of movement between development, test, and production, so components are added to a solution as they are created rather than retrofitted later.
+
+<Note>
+  A PowerApps project asks you to connect an environment before Build Mode becomes available. See [Integrations](/admin-platform/integrations).
+</Note>
+
+## The Areas in Scope
+
+Each is covered in detail in [Component Reference](/low-code/powerapps/build-mode/component-reference).
+
+| Area | What it covers |
+| --- | --- |
+| **Dataverse schema** | Tables, columns of every standard type, relationships and referential behaviour, metadata publishing |
+| **Model-driven app UI** | Main, Quick Create, Quick View, and Card forms; system views; the sitemap |
+| **Solutions and apps** | Solution creation, component association, and model-driven app definition |
+| **Security model** | Privilege matrices by table and scope, specified rather than applied |
+| **Business logic** | Table-level business rules applied directly; flows and form scripts specified |
+| **Data and reporting** | Queries, sample records, charts, and dashboards |
+| **Consistency** | Naming, integration guard rails, state models, and audit posture |
+
+## Documentation as an Output
+
+PowerApps configuration is easy to build and hard to hand over. The agent also produces the material that makes it maintainable:
+
+- Entity and relationship diagrams, described in text, from the schema as actually implemented
+- Field dictionaries giving each column's type, requirement level, and purpose, per table
+- Security role responsibilities mapped to user groups and personas
+- Runbooks covering how operators run the process day to day and how administrators manage configuration
+
+Ask for these once the schema settles. Generated from the implemented model, they are accurate; written from memory afterwards, they usually are not.
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="See every component in detail" icon="list-tree" href="/low-code/powerapps/build-mode/component-reference">
+    Schema, forms, views, solutions, logic, and data.
+  </Card>
+
+  <Card title="Enter Build Mode" icon="code" href="/low-code/powerapps/build-mode/overview">
+    What a PowerApps project needs before it can build.
+  </Card>
+
+  <Card title="See what a Build request sends" icon="play" href="/low-code/powerapps/build-mode/workflow">
+    What goes out, and what comes back.
+  </Card>
+
+  <Card title="Compare the low-code platforms" icon="puzzle-piece" href="/low-code/overview">
+    What each supported platform covers.
+  </Card>
+</CardGroup>

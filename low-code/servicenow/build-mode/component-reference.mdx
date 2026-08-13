@@ -1,6 +1,150 @@
 ---
 title: "Component Reference"
-description: "ServiceNow component reference."
+description: "Every ServiceNow component the agent configures: tables and fields, users and roles, forms and lists, Service Portal pages and widgets, state models, business rules and scripts, and reports."
 ---
 
-Documents the ServiceNow components the build agent works with.
+This page is the full inventory of what a ServiceNow configuration request can reach, organised by platform area.
+
+## What You'll Learn
+
+Which ServiceNow components the agent creates and updates, what options each carries, and which ones interact with each other.
+
+## Data Model
+
+### Tables
+
+New tables are created scoped or global, and either standalone or **extending an existing table** such as `task` or `cmdb_ci`. Extending inherits the parent's fields and behaviour, which is usually the right choice for anything that behaves like a ticket.
+
+Table properties include the number prefix, icon, auto-numbering, and access settings. Unused custom tables can be deactivated or retired.
+
+### Fields
+
+All standard types are available: string, integer, decimal, date and date/time, boolean, reference, choice, glide list, journal, and HTML.
+
+Per field you can set:
+
+- Mandatory and read-only at the schema level
+- Default values
+- Maximum length
+- Reference qualifiers
+- Choice list values, their order, labels, and internal values
+
+<Note>
+  Schema-level read-only and mandatory are not the same as a UI policy. Schema settings apply everywhere the field is touched, including imports and scripts. A UI policy applies only to the form. Ask for the one you actually mean.
+</Note>
+
+### Relationships
+
+Reference fields, plus **reference qualifiers** that filter the available choices based on another field or on the current user. One-to-many is a reference field; many-to-many is an intermediate table. Dependent choice lists and related lists follow from these.
+
+## Users, Roles, and Groups
+
+| Component | What is configurable |
+| --- | --- |
+| **Users** | Records in `sys_user` including name, email, phone, department, and manager; account lock state; role membership held directly on the user |
+| **Groups** | Group creation with description and purpose, membership, and roles attached to the group |
+| **Roles** | New and existing roles, and table-level Create, Read, Update, and Delete permissions |
+
+**Attach roles to groups rather than to users** wherever the structure allows it. Permissions then follow group membership, which is one change instead of many when someone moves team.
+
+The role model and the workflow are designed together: restricting who may move a record to an approved state is a role decision expressed in the transition.
+
+## Classic UI
+
+### Form Layout
+
+Which fields appear and in what order, plus sections, tabs, and column breaks. Related lists such as child records, tasks, and approvals are configured here.
+
+**Multiple form views** are supported, so the same table can present differently to different audiences. Self-Service, Admin, and Mobile are the common three.
+
+### List Layout
+
+List columns, sorting, grouping, and filters, including the default list a role sees. Saved list views cover the recurring cases: "My Team's Tickets", "High Priority Only".
+
+### UI Policies
+
+Show or hide fields, and make them mandatory or read-only, based on conditions. A worked example: when state is Closed, make Resolution both mandatory and read-only.
+
+### UI Actions
+
+Buttons on forms and lists, context menu items, and related links. Each carries its own visibility conditions and role restrictions, and runs server-side or client-side logic when clicked. Quick-close and escalate actions are typical.
+
+## Service Portal
+
+| Component | What is configurable |
+| --- | --- |
+| **Portals** | Creation and modification, title, URL suffix, associated homepage, theme, header and footer, login behaviour, and special pages including 404, unauthorized, search, catalog, and knowledge base |
+| **Pages** | Structure built from containers, rows, and columns; assignment as a homepage or module target; page-level roles and conditions |
+| **Widgets** | Widget instances placed on a page, their options and parameters such as filters, target table, display options, and labels; reuse of existing widgets across pages |
+| **Layout and access** | Dashboard tiles, charts, navigation, widget replacement and removal, and control of who sees what on a page |
+
+Reusing an existing widget rather than creating a variant is what keeps a portal consistent as it grows.
+
+## Workflows and State Machines
+
+Custom status values define the lifecycle, for example New, In Progress, Pending Approval, and Closed. Configuration covers the transitions between them, any guards on those transitions, the initial state, and which transitions are allowed at all.
+
+Transitions carry **role-based control**, so moving a record to an approved state can be limited to managers, and they align with business rules and notifications so that a state change can trigger the rest of the process.
+
+## Automation and Scripting
+
+### Business Rules
+
+Server-side, in four timings: **before**, **after**, **async**, and **display**. They set or validate fields, enforce logic such as auto-population or preventing an invalid state change, and call script includes for anything reusable.
+
+### Script Includes
+
+Reusable server-side functions and classes, available to business rules, UI actions, and GlideAjax calls from the client.
+
+### Client Scripts
+
+Form and list logic running in the browser, in four kinds:
+
+| Kind | When it runs |
+| --- | --- |
+| `onLoad` | Form initialisation |
+| `onChange` | A field value changes |
+| `onSubmit` | Validation before submission |
+| `onCellEdit` | Inline edit in a list |
+
+Client scripts reach the server through GlideAjax where they need to.
+
+### Scheduled Jobs
+
+Recurring work on a daily, weekly, monthly, or custom interval: maintenance, recalculation, synchronisation, and clean-up.
+
+### Email Notifications
+
+Triggered by record insert or update, or by a named event. Recipients are users, groups, roles, or resolved dynamically from fields. Subject and body are configurable, including templates, variables, and conditions.
+
+## Reporting
+
+Standard report types are available: list, bar, pie, line, and others. Each is defined by its group-by, aggregation, time series, and filters, against any table and field combination.
+
+Saved list reports are reusable and can be run from modules or dashboards. Reports are embedded into homepages, classic dashboards, or Service Portal pages.
+
+**Report access is part of the role model.** Who may run, edit, or even see a given report is configured alongside it rather than left to default.
+
+## Designing Across Areas
+
+New applications and modules are defined as a coordinated set: tables, roles, forms, workflows, and portal pages that work together, with naming, security, and UX patterns aligned across them. That coordination is the point. Individually correct components with inconsistent naming and mismatched permissions are how instances become hard to maintain.
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="Understand what a ServiceNow project is" icon="circle-info" href="/low-code/servicenow/overview">
+    How the connection works, and what stays in your hands.
+  </Card>
+
+  <Card title="See what a Build request sends" icon="play" href="/low-code/servicenow/build-mode/workflow">
+    What goes out, and what comes back.
+  </Card>
+
+  <Card title="Write better requests" icon="pen-line" href="/tips-and-tricks/prompting-best-practices">
+    How to ask at the right level of detail.
+  </Card>
+
+  <Card title="Compare the low-code platforms" icon="puzzle-piece" href="/low-code/overview">
+    What each supported platform covers.
+  </Card>
+</CardGroup>

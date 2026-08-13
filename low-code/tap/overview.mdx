@@ -1,6 +1,82 @@
 ---
 title: "TAP Overview"
-description: "Tyler Application Platform projects."
+description: "Tyler Application Platform projects: how the platform connects to a TAP environment, what it configures there, and where Prototype and Build Mode fit."
 ---
 
-Introduces TAP projects, the credentials they need, and how a TAP site is linked.
+A TAP project targets Tyler Application Platform. Instead of generating a codebase, the platform produces the configuration a TAP environment expects and applies it to the site you connect.
+
+## What You'll Learn
+
+What a TAP project is, what has to be connected before you can build, which parts of TAP the agent configures, and where the boundary of that configuration sits.
+
+## What a TAP Project Produces
+
+The platform does not host a TAP application. It acts as a configuration specialist against your own TAP environment, reached over the platform's API connection to that site.
+
+The practical consequence is that the output of a TAP project is **configuration in your TAP site**, not a repository you deploy. Objects, fields, forms, workflows, roles, and reports are created and updated in place.
+
+<Note>
+  A TAP project asks you to link your TAP site before Build Mode becomes available. Until a site is connected there is nothing for configuration changes to apply to. See [Integrations](/admin-platform/integrations).
+</Note>
+
+## What the Agent Configures
+
+Five areas of TAP are in scope. Each is covered field by field in [Component Reference](/low-code/tap/build-mode/component-reference).
+
+| Area | What it covers |
+| --- | --- |
+| **Data model and reference data** | Base and child tracked objects, their data elements, and the reference data objects behind choice fields |
+| **User interface** | Data forms, UI policies, data listings, charts, and custom views |
+| **Workflows** | States, statuses, transition categories, transitions, and which roles may perform them |
+| **Security** | Roles with per-object permissions and access scope, users, and groups |
+| **Reports** | Jasper report definitions, their fields, parameters, and selection logic |
+
+## Two Ways to Work
+
+TAP is the one low-code platform with both modes.
+
+**Prototype Mode** produces a data model and an HTML mockup you can look at and share, without touching your TAP site. Use it to agree a shape before committing to configuration. See [TAP Prototype Mode](/low-code/tap/prototype-mode/overview).
+
+**Build Mode** applies configuration to the connected site. See [TAP Build Mode](/low-code/tap/build-mode/overview).
+
+Work from a prototype carries forward rather than being redone. See [Output Handoff](/low-code/tap/prototype-mode/output-handoff).
+
+## Asking at the Right Level
+
+Requests work at three levels of granularity, and the level you choose changes how much the agent decides for you.
+
+| Level | Example request |
+| --- | --- |
+| **Whole solution** | "Design a complete configuration for managing building permits." |
+| **A feature** | "Add a workflow to the existing Case object for New, Assigned, and Closed, and restrict closing to Supervisors." |
+| **A single change** | "Add a choice of Urgent to the Case Priority reference object and make the field required." |
+
+A whole-solution request returns a proposed design first: which objects to create, which should be base and which child, the workflow states, the roles, the listings, and the reports. Configuration follows once you accept it.
+
+The most useful things to state up front are the domain you are working in, what you need to track, and who the user types are. Those three answers determine most of the data model and all of the security model.
+
+## What the Agent Does Not Do
+
+**Configuration is bounded by the operations the platform exposes for TAP.** The agent works through the platform's TAP connection, so anything that connection does not cover has to be done in TAP directly. User account creation in particular is supported only where the connected environment allows it.
+
+**Design advice and configuration are separate activities.** The agent will tell you whether something should be a tracked object, a reference object, or a child object, and will argue against over-nesting or workflow sprawl, without changing anything until you ask.
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="See every component in detail" icon="list-tree" href="/low-code/tap/build-mode/component-reference">
+    Objects, forms, workflows, roles, and reports, field by field.
+  </Card>
+
+  <Card title="Try a shape before configuring it" icon="wand-magic-sparkles" href="/low-code/tap/prototype-mode/overview">
+    What Prototype Mode builds, and what it deliberately does not.
+  </Card>
+
+  <Card title="Apply configuration to your site" icon="code" href="/low-code/tap/build-mode/overview">
+    What Build Mode requires and what a request sends.
+  </Card>
+
+  <Card title="Compare the low-code platforms" icon="puzzle-piece" href="/low-code/overview">
+    What each supported platform covers.
+  </Card>
+</CardGroup>
