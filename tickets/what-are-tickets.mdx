@@ -8,7 +8,7 @@ A Ticket is one unit of work on a project, either generated from your blueprint 
 
 Tickets are where a specification stops being a document and becomes a list of things to do. Each one carries enough detail to be picked up, assigned, and tracked.
 
-## What you'll learn
+## What You'll Learn
 
 What a Ticket holds, how Tickets get created, and how to read the list.
 
@@ -16,7 +16,7 @@ What a Ticket holds, how Tickets get created, and how to read the list.
   ![The All Tickets list showing forty tickets with columns for ID, title, status, priority, work type, source, assigned to, and created date, above a filter bar with search and five dropdowns.](/images/tickets/what-are-tickets-list.png)
 </Frame>
 
-## Where Tickets come from
+## Where Tickets Come From
 
 Every Ticket carries a **Source** of either `CAB` or `Manual`, and that is the clearest thing about it.
 
@@ -24,7 +24,7 @@ Every Ticket carries a **Source** of either `CAB` or `Manual`, and that is the c
 
 **Manual** means somebody wrote it. See [Manually creating or editing tickets](/tickets/creating-editing-tickets).
 
-## What a Ticket carries
+## What a Ticket Carries
 
 <Frame caption="A Ticket opened from the list. Empty fields render as an em dash.">
   ![The ticket detail panel for TKT-001 showing status, priority, epic and wave on the first row, then work type, source, expertise and estimated effort, then platform, assigned to, due date and created date, followed by created by and CAB reference, above a description block.](/images/tickets/what-are-tickets-detail.png)
@@ -44,7 +44,7 @@ Every Ticket carries a **Source** of either `CAB` or `Manual`, and that is the c
 | Description | The body of the work, including acceptance criteria on generated Tickets |
 | Note | Reviewer commentary. Carried over from the blueprint, never written by the AI |
 
-## Status is a label, not a workflow
+## Status Is a Label, Not a Workflow
 
 **Nothing enforces an order.** A Ticket can move from any status to any other, in any direction. `Closed` is not final, and there is no rule requiring `In Progress` before it.
 
@@ -52,15 +52,19 @@ The field records where a piece of work stands, in the judgement of whoever set 
 
 If your team needs a sequence, that agreement lives with your team rather than in the product.
 
-## Epic and Wave are the same thing
+## Epic and Wave Are the Same Thing
 
 The detail panel shows **Epic** and **Wave** as two adjacent fields, which makes them look like two attributes. They are one.
 
 An Epic is a group of Tickets. Its position in the build order is its Wave. Move an Epic and its Wave changes; you never set a Wave on a Ticket directly. See [Epics](/tickets/epics).
 
-## Filtering the list
+## Filtering the List
 
 The filter bar offers search plus five dropdowns: **Status**, **Priority**, **Source**, **Work Type**, and **Expertise**. All five accept more than one value at a time. Sort, page, and filter state all live in the URL, so a filtered list can be shared as a link.
+
+<Frame caption="The filter bar. Five dropdowns, each accepting more than one value at a time.">
+  ![A magnified view of the Tickets filter bar showing the result count, the search field, the Status, Priority, Source, Work Type and Expertise dropdowns and the Create Ticket button, set against a faded view of the Tickets list so the bar's position is clear.](/images/tickets/what-are-tickets-filter-bar.png)
+</Frame>
 
 <Note>
   **The Work Type filter does not list `User Story`, and Tickets generated from a blueprint on a Web project all carry exactly that work type.**
@@ -68,7 +72,7 @@ The filter bar offers search plus five dropdowns: **Status**, **Priority**, **So
   Filtering by Work Type on such a project returns nothing. The filter offers 10 options; the product recognises 11. Use search, or filter by **Source** instead, until the option is added.
 </Note>
 
-## Your next step
+## Your Next Step
 
 Tickets are most useful once they are grouped and ordered, which is what Epics are for.
 

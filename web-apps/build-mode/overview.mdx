@@ -6,7 +6,7 @@ icon: "code"
 
 Build Mode turns requirements into a running application, with a database behind it and a URL you can open.
 
-## What you'll learn
+## What You'll Learn
 
 What Build Mode does, how it differs from Prototype Mode, and the two ways of talking to the agent inside it.
 
@@ -14,7 +14,7 @@ What Build Mode does, how it differs from Prototype Mode, and the two ways of ta
   ![The Build Mode workspace showing a conversation with a user message and an agent response, above a composer with a paperclip, a Build dropdown, a High dropdown, a settings gear with a badge reading one, and a send button.](/images/web-apps/build-mode-overview-composer.png)
 </Frame>
 
-## How it differs from Prototype Mode
+## How It Differs from Prototype Mode
 
 [Prototype Mode](/web-apps/prototype-mode/overview) builds a front end with mock data and no infrastructure behind it. Build Mode builds the real thing: front end, backend, database, and everything needed to run them.
 
@@ -24,7 +24,7 @@ That difference sets everything else. A prototype changes in seconds because the
   **Build Mode starts a fresh conversation.** It does not inherit your Prototype Mode chat history, and it does not pick up your Design System either. Anything from prototyping that should influence the build has to be attached to your prompt. See [Output Handoff](/web-apps/prototype-mode/output-handoff).
 </Note>
 
-## Two ways of talking to the agent
+## Two Ways of Talking to the Agent
 
 Inside Build Mode the composer carries its own selector with two options, and the distinction matters.
 
@@ -41,7 +41,7 @@ Inside Build Mode the composer carries its own selector with two options, and th
 
 The difference is enforced rather than advisory. In Ask, the agent is given only tools that read — it cannot write a file or run a command even if you ask it to. See [Ask Mode](/web-apps/ask-mode).
 
-## Choosing a quality setting
+## Choosing a Quality Setting
 
 Beside the composer's mode selector sits a quality selector offering **Medium** and **High**.
 
@@ -49,18 +49,18 @@ Beside the composer's mode selector sits a quality selector offering **Medium** 
   Build offers two settings. The CAB workspace offers three, including a **Low** option, under a heading that reads **Model Quality** rather than **MODEL SELECTION**. They are separate controls with separate option sets, not one shared setting seen from two places.
 </Warning>
 
-## When to use it
+## When to Use It
 
 - **The requirements are settled enough to build against.** Tickets, a corrected blueprint, or a prototype you are happy with.
 - **You need real data.** Anything that has to persist needs Build Mode.
 - **You need something people can use.** A build produces a URL you can hand to a colleague.
 
-## When not to
+## When Not To
 
 - **You are still deciding what to make.** Iterate in Prototype Mode, where changes cost a prompt.
 - **You only want to understand existing code.** Use the composer's Ask option, which changes nothing.
 
-## Your next step
+## Your Next Step
 
 A build starts with a prompt, and what happens next is worth knowing before you send one.
 

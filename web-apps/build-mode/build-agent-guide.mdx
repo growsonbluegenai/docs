@@ -8,11 +8,11 @@ The build agent works inside your project on its own, using a fixed set of capab
 
 This page is about trust rather than mechanics: what it is able to touch, what it is prevented from touching, and what it does without being asked.
 
-## What you'll learn
+## What You'll Learn
 
 The agent's capabilities, the rules governing how it uses them, and the boundaries enforced regardless of what you ask.
 
-## What the agent can do
+## What the Agent Can Do
 
 Nineteen capabilities, grouped by what they affect.
 
@@ -26,13 +26,13 @@ Nineteen capabilities, grouped by what they affect.
 | Allocate ports | Reserve the externally reachable ports your services need |
 | Test the application | Run browser tests against the running app, and save notes for future test runs |
 
-## What it does without being asked
+## What It Does Without Being Asked
 
 **The agent brings your application up and fixes what breaks, before it replies.** Its instructions require it to run the containers, confirm they are healthy, and resolve errors as part of the same turn. A build that reports success has been run, not just written.
 
 It also generates internal secrets for you rather than asking. Database credentials, session keys, and signing keys are created automatically; only third-party service keys are requested.
 
-## Boundaries it cannot cross
+## Boundaries It Cannot Cross
 
 These are enforced in the platform rather than requested in the prompt, so they hold regardless of what you ask for.
 
@@ -46,7 +46,7 @@ These are enforced in the platform rather than requested in the prompt, so they 
 
 **Browser testing runs in isolation.** The sub-agent that tests your application gets browser controls only. It has no access to your files, your terminal, or the web.
 
-## The one setting you control
+## The One Setting You Control
 
 <Frame caption="The agent settings menu holds a single toggle. The badge on the gear counts settings that are on, not settings that exist.">
   ![The composer's settings menu headed AGENT SETTINGS showing one option, App testing, described as Agent tests your app automatically, with its toggle switched on.](/images/web-apps/build-mode-agent-guide-settings.png)
@@ -56,11 +56,11 @@ These are enforced in the platform rather than requested in the prompt, so they 
 
 The number on the gear is a count of settings currently enabled. With one toggle, on, it reads `1`.
 
-## When it stops to ask
+## When It Stops to Ask
 
 If your request is ambiguous, the agent writes out its understanding of the requirements and waits for you to approve or correct it before writing code. See [Workflow](/web-apps/build-mode/workflow).
 
-## Checkpoints and restoring
+## Checkpoints and Restoring
 
 **Every prompt you send the build agent creates a checkpoint automatically.** You do not ask for one, and there is nothing to configure — each change to your project produces a save point you can return to.
 
@@ -78,7 +78,7 @@ Restoring also rebuilds the running application, which takes a few minutes. The 
 
 For version control you operate yourself — branches, and pushing to a repository — see [Git Integration](/web-apps/git-integration).
 
-## Your next step
+## Your Next Step
 
 Knowing the limits makes the read-only mode more useful, because it is the safe way to interrogate what the agent built.
 

@@ -8,11 +8,11 @@ After a build, the agent opens your application in a browser and works through i
 
 Two controls govern this. **App testing** in the agent settings turns it on and off, and **Testing Context** is where you tell the testing agent what it needs to know.
 
-## What you'll learn
+## What You'll Learn
 
 How to turn testing on and off, what to put in the testing context, and what the testing agent is allowed to do.
 
-## Turning it on and off
+## Turning It On and Off
 
 <Frame caption="Agent settings holds one toggle. The badge counts settings that are on.">
   ![The composer settings menu headed AGENT SETTINGS showing a single option, App testing, described as Agent tests your app automatically, with its toggle switched on.](/images/web-apps/app-testing-toggle.png)
@@ -38,7 +38,7 @@ The field is free text. There is no required format, so write it in whatever sha
   Test logins are the highest-value thing to put here. Without them the testing agent cannot get past your sign-in screen, and every test it runs stops at the front door.
 </Tip>
 
-## What the testing agent can do
+## What the Testing Agent Can Do
 
 **The agent that tests your application is a separate one, and it is deliberately confined.** It gets browser controls only — no access to your files, no ability to run commands, no access to the web. It can look at your running application and interact with it, and nothing else.
 
@@ -46,7 +46,7 @@ Within the browser it can navigate, click, fill single fields and whole forms, t
 
 It cannot open new tabs or take screenshots. Both are handled outside it.
 
-## How a test run works
+## How a Test Run Works
 
 The agent writes its own test scenarios, each a complete user journey starting from navigation. Every scenario runs in a fresh browser session, so one cannot leave state behind that affects another.
 
@@ -54,13 +54,13 @@ Only the pass or fail summary comes back into your conversation. The clicking an
 
 A build can run at most five test rounds. That is a cap on repeated attempts within one request, not a limit on how often you can ask for testing.
 
-## What you should see
+## What You Should See
 
 The agent reports which scenarios passed and which failed, and generally attempts a fix for failures before finishing the turn.
 
 If everything fails at the same point, check Testing Context first. A missing or stale test login is the usual cause.
 
-## Your next step
+## Your Next Step
 
 Testing is the last step of a build. What happens before it is worth understanding too.
 

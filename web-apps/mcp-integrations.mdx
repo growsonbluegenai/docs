@@ -8,7 +8,7 @@ An MCP server connection gives the build agent tools from an external service, a
 
 MCP is the Model Context Protocol, an open standard for exposing a service's capabilities to an AI agent. Connecting one means the agent can act against that service during a build.
 
-## What you'll learn
+## What You'll Learn
 
 How to add a server, what the connection states mean, and how credentials are scoped across a project.
 
@@ -16,7 +16,7 @@ How to add a server, what the connection states mean, and how credentials are sc
   ![The MCP Servers drawer subtitled Connect external tools to Build mode via MCP, with an Add MCP server button and an empty state reading No MCP Servers.](/images/web-apps/mcp-integrations-panel.png)
 </Frame>
 
-## Adding a server
+## Adding a Server
 
 <Frame caption="The Add MCP Server form.">
   ![The Add MCP Server form showing fields for Name, an optional Description with a character counter, a Transport dropdown set to Streamable HTTP, a URL field, Credential sharing radios set to Shared, and an Add header link.](/images/web-apps/mcp-integrations-add-server.png)
@@ -31,7 +31,7 @@ How to add a server, what the connection states mean, and how credentials are sc
 | **Credential sharing** | `Shared` or `Individual` — see below |
 | **Custom headers** | Optional key-value headers sent with each request |
 
-### URLs are checked before they are accepted
+### URLs Are Checked Before They Are Accepted
 
 The URL is validated against a set of rules that block servers on private or internal addresses. The hostname is resolved first, so a public name pointing at an internal address is rejected too.
 
@@ -42,7 +42,7 @@ The URL is validated against a set of rules that block servers on private or int
 | A hostname that does not resolve | `Could not resolve hostname '<name>'` |
 | A private or internal address | `Hostname '<name>' resolves to a private or internal address and is not allowed` |
 
-## Connection states
+## Connection States
 
 | State | What it means |
 | --- | --- |
@@ -52,19 +52,19 @@ The URL is validated against a set of rules that block servers on private or int
 | `connected` | The last test succeeded |
 | `error` | The last test failed for some other reason |
 
-## Shared or individual credentials
+## Shared or Individual Credentials
 
 **Shared** means one credential set is used by everyone on the project. **Individual** means the server definition is visible to everyone, but each person authorises with their own credentials.
 
 Shared is the default. Choose Individual when the external service should see who is acting rather than one shared identity.
 
-## How the agent uses them
+## How the Agent Uses Them
 
 Tools from your connected servers are added to the agent's own set for that project. They are treated cautiously by default: the platform does not assume an external tool is read-only, and none of them are available in Ask mode.
 
 That last point is deliberate. Ask mode is a read-only boundary, and an external tool could write, so MCP tools are excluded from it entirely.
 
-## Your next step
+## Your Next Step
 
 Connected tools widen what a build can do. What the agent does with them follows the same rules as everything else.
 

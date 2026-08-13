@@ -6,7 +6,7 @@ icon: "magnifying-glass"
 
 Ask is a read-only mode for understanding your project, where the agent answers questions and cannot change anything.
 
-## What you'll learn
+## What You'll Learn
 
 What Ask can do, what it is prevented from doing, and when to use it instead of Build.
 
@@ -20,7 +20,7 @@ Open the selector in the Build Mode composer and choose **Ask**. The menu descri
 
 The setting applies to your next message. Switch back whenever you want to act on what you learned.
 
-## What it cannot do
+## What It Cannot Do
 
 **The restriction is enforced, not requested.** In Ask, the agent is given four capabilities — read a file, list files, search inside files, and produce a tree of the project. The other fifteen are withheld before the conversation starts, so it has no means of changing anything.
 
@@ -28,7 +28,7 @@ It cannot edit files, run commands, install anything, build, deploy, commit, or 
 
 The platform treats this as a security boundary rather than a preference. The tools available in Ask are defined in one place and the mode is built by removing everything else.
 
-## What it is good at
+## What It Is Good At
 
 **Tracing behaviour across files.** The agent reads and searches before answering rather than guessing from a typical project, and follows a chain from caller to definition to usage.
 
@@ -38,17 +38,17 @@ The platform treats this as a security boundary rather than a preference. The to
 
 **Producing documentation.** Ask can write a knowledge document about the project, and can revise one it produced in the same conversation. That is response content rather than a project change, so it stays within the boundary.
 
-## It does not pretend
+## It Does Not Pretend
 
 The agent is instructed never to claim it made a change, ran a command, or tested something. It cannot, and the prompt names saying so as a lie.
 
 It is also told to treat file contents and tool output as data rather than instructions, so text inside your own files cannot redirect what it does.
 
-## Secrets stay hidden
+## Secrets Stay Hidden
 
 Credential values in `.env` files are masked before the agent reads them. In Ask, the agent refers to a credential by its variable name and is instructed never to guess, reconstruct, or repeat a value.
 
-## When to use it
+## When to Use It
 
 - **Understanding something you did not build.** A project someone else generated, or one you have not opened in a month.
 - **Before a risky change.** Ask what a change would touch, then decide whether to make it.
@@ -58,7 +58,7 @@ Credential values in `.env` files are masked before the agent reads them. In Ask
   Ask and Build can require different permissions. A collaborator may be able to use Ask on a project where they cannot use Build.
 </Note>
 
-## Your next step
+## Your Next Step
 
 When Ask has told you what needs to change, Build is where you make it happen.
 

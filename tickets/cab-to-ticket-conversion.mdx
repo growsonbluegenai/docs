@@ -6,7 +6,7 @@ icon: "wand-magic-sparkles"
 
 **Generate Tickets** turns a finished blueprint into a set of Tickets, one per unit of work it finds.
 
-## What you'll learn
+## What You'll Learn
 
 How to run the conversion, what comes out of it, and why running it a second time is a destructive act.
 
@@ -14,11 +14,11 @@ How to run the conversion, what comes out of it, and why running it a second tim
   ![The CAB workspace with the Common Application Blueprint Preview pane on the right, showing the Generate Tickets button in its toolbar above the rendered document.](/images/tickets/cab-to-ticket-conversion-generate.png)
 </Frame>
 
-## Before you start
+## Before You Start
 
 You need a finished blueprint. Running the conversion without one returns `CAB blueprint not found. Generate the blueprint first.`
 
-## Running the conversion
+## Running the Conversion
 
 <Steps>
   <Step title="Open the blueprint preview">
@@ -32,7 +32,7 @@ You need a finished blueprint. Running the conversion without one returns `CAB b
   </Step>
 </Steps>
 
-## What the conversion produces
+## What the Conversion Produces
 
 On a Web project, the conversion reads the **User Stories** section and creates one Ticket per story. Each keeps the story's title, its acceptance criteria, and its steps in the description, and each is stamped `Open`, `Medium` priority, and a work type of `User Story`.
 
@@ -42,7 +42,7 @@ Nothing is merged or skipped. The count of Tickets matches the count of user sto
   On low-code projects the conversion is handled by an external service rather than in the platform, so the work types and the level of breakdown differ from what is described here.
 </Note>
 
-## Running it again replaces what is there
+## Running It Again Replaces What Is There
 
 **Regenerating deletes every Ticket with a source of `CAB` and creates a fresh set.** Manual Tickets are untouched.
 
@@ -54,11 +54,11 @@ Anything you changed on a generated Ticket goes with it — status, assignee, pr
   Regenerate after correcting your blueprint, not after working your Tickets. If your team has been updating statuses and assignments for a week, regenerating discards that week.
 </Warning>
 
-## What you should see
+## What You Should See
 
 The Tickets list fills with entries numbered `TKT-001` upward, each showing `CAB` in the Source column. Opening one shows the user story it came from, with its acceptance criteria and steps in the description and the originating element in **CAB Reference**.
 
-## Your next step
+## Your Next Step
 
 Generated Tickets arrive ungrouped. Epics put them in build order.
 

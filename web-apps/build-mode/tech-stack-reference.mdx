@@ -10,7 +10,7 @@ Every Web project the build agent produces uses the same stack, and it is fixed 
   This is what the agent is **instructed** to build, not a guarantee of what a given project contains. It is a standing instruction in the agent's prompt, so a project that was steered elsewhere can differ.
 </Note>
 
-## The stack
+## The Stack
 
 | Layer | Technology |
 | --- | --- |
@@ -28,7 +28,7 @@ The Create Project form states it more briefly, as `Made with React, Node.js, an
   ![The Create New Project drawer with Web Application selected, showing a single pre-selected Platform Type radio whose label reads Made with React, Node.js, and PostgreSQL.](/images/web-apps/build-mode-tech-stack-create.png)
 </Frame>
 
-## Two project versions
+## Two Project Versions
 
 Projects carry a prompt version that changes the architecture the agent builds.
 
@@ -41,7 +41,7 @@ Projects carry a prompt version that changes the architecture the agent builds.
 
 New projects are created at version 2. Version 1 projects continue to work and are not migrated.
 
-## Conventions the agent follows
+## Conventions the Agent Follows
 
 | Convention | Rule |
 | --- | --- |
@@ -53,11 +53,11 @@ New projects are created at version 2. Version 1 projects continue to work and a
 | External secrets | Third-party service keys are requested from you — see [Credentials](/web-apps/credentials) |
 | Repository contents | Code only. Anything describing the project is produced as a knowledge document, not committed |
 
-## Version 2 project layout
+## Version 2 Project Layout
 
 Version 2 projects add an `nginx/` directory containing a production reverse-proxy configuration and its own Dockerfile based on `nginx:alpine`. Every service in `docker-compose.yaml` follows a fixed port-exposure pattern, and the gateway and database are the services that expose ports externally.
 
-## Your next step
+## Your Next Step
 
 The stack is fixed, but what the agent does with it is governed by a longer set of rules.
 
