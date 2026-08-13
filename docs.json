@@ -135,7 +135,13 @@
           {
             "group": "Salesforce",
             "pages": [
-              "low-code/salesforce"
+              "low-code/salesforce/overview",
+              {
+                "group": "Salesforce Build Mode",
+                "pages": [
+                  "low-code/salesforce/build-mode/component-reference"
+                ]
+              }
             ]
           },
           {
@@ -222,6 +228,11 @@
     {
       "source": "/home",
       "destination": "/index",
+      "permanent": true
+    },
+    {
+      "source": "/low-code/salesforce",
+      "destination": "/low-code/salesforce/overview",
       "permanent": true
     }
   ],
