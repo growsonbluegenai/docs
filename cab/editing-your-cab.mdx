@@ -6,7 +6,7 @@ icon: "pen-line"
 
 A generated blueprint is a first draft, and there are two ways to change it: edit it yourself, or ask the CAB agent to.
 
-Both routes end in the same place — a review screen where you accept or discard each change before anything is written.
+Both routes end in the same place: a review screen where you accept or discard each change before anything is written.
 
 ## What You'll Learn
 
@@ -36,7 +36,7 @@ The buttons carry no visible labels, so hover for about a second to see each one
 This is what makes a blueprint usable as a review artifact. A specification is only worth generating if the people who need to agree with it can read it, and most of them are not platform users.
 
 <Warning>
-  A shared blueprint needs no account and no approval — anyone holding the link can read it. Share it only where you would be content for the whole document to travel.
+  A shared blueprint needs no account and no approval; anyone holding the link can read it. Share it only where you would be content for the whole document to travel.
 </Warning>
 
 This is a different mechanism from inviting someone to the project. An invitation gives a person a role and a sign-in; a share link gives one document to anyone who has the URL. See [Collaboration Features](/admin-platform/collaboration-features).
@@ -63,14 +63,14 @@ This is a different mechanism from inviting someone to the project. An invitatio
   ![A recording of the CAB editor: selecting Add role produces a blank role card, which is filled in as ROLE-004 Program Auditor with a description, a primary goal and a permission row. Review with AI runs a spinner, then the review surface opens showing one your-edit change and fourteen AI suggestions across fifteen cards. Save All applies them and the version badge increments to five.](/images/cab/editing-your-cab-add-role-review.gif)
 </Frame>
 
-**Notice the count.** One added role produced fourteen further suggestions. Adding a role means deciding what it can reach, which screens mention it, and which stories belong to it, and the review works those out rather than leaving you to find them. That is the review earning its cost — see [Reviewing changes](#reviewing-changes) below.
+**Notice the count.** One added role produced fourteen further suggestions. Adding a role means deciding what it can reach, which screens mention it, and which stories belong to it, and the review works those out rather than leaving you to find them. That is the review earning its cost; see [Reviewing changes](#reviewing-changes) below.
 
 ## Asking the Agent Instead
 
 The **BlueGenAI CAB Agent** tab beside **CAB Configuration** takes requests in plain language. Its composer reads `Ask anything about your CAB, or request changes...`.
 
 <Note>
-  **The agent tab opens completely blank** — no heading, no examples, nothing describing what it can do. It works, but the product does not tell you what to ask it.
+  **The agent tab opens completely blank:** no heading, no examples, nothing describing what it can do. It works, but the product does not tell you what to ask it.
 </Note>
 
 Requests that work:
@@ -79,10 +79,10 @@ Requests that work:
 | --- | --- |
 | A new item in a named section | Add a business rule requiring a completed W-9 before an application can be submitted |
 | A change to something specific | Change the applicant role so it cannot approve its own submission |
-| A correction across the blueprint | The system is called LEAD, not Lead Grants — fix it wherever it appears |
+| A correction across the blueprint | The system is called LEAD, not Lead Grants; fix it wherever it appears |
 | An answer rather than a change | Which screens does the reviewer role reach? |
 
-**One request can change several sections.** A single rule request produced six changes across user stories, the data model, three screens, and the rules section — the agent works out what else the change implies rather than editing only what you named.
+**One request can change several sections.** A single rule request produced six changes across user stories, the data model, three screens, and the rules section; the agent works out what else the change implies rather than editing only what you named.
 
 ## Reviewing Changes
 
@@ -126,10 +126,10 @@ Accept or discard each change with the controls on its card. Nothing is applied 
 
 **Saving creates a version.** Open the clock button to see them.
 
-Each entry is a timestamp — no author, no description, no summary. The current version sits at the top, and selecting an older one previews it without restoring.
+Each entry is a timestamp: no author, no description, no summary. The current version sits at the top, and selecting an older one previews it without restoring.
 
 <Warning>
-  **Restoring deletes every version newer than the one you restore.** This is not an undo stack you can move up and down — going back three versions destroys the two in between, permanently. The confirmation says so, and the confirm button is styled like an ordinary action rather than a destructive one.
+  **Restoring deletes every version newer than the one you restore.** This is not an undo stack you can move up and down; going back three versions destroys the two in between, permanently. The confirmation says so, and the confirm button is styled like an ordinary action rather than a destructive one.
 </Warning>
 
 <Frame caption="The restore confirmation. The second sentence is the one that matters.">
@@ -144,7 +144,7 @@ This distinction matters if anyone ever asks you who changed what.
 
 **Once a change is applied, none of that travels with the blueprint.** The document has no edited marker, no record of who edited it, and no per-section history. Reading a finished blueprint tells you what it says, not which parts a person rewrote.
 
-Version history records _when_, not _who_ — versions are named by timestamp, and the save operation is not given a user identity.
+Version history records _when_, not _who_; versions are named by timestamp, and the save operation is not given a user identity.
 
 **So the review process is auditable; the finished document is not self-describing.** If your organisation needs a change record, capture it during review rather than expecting to reconstruct it afterwards.
 

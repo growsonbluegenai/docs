@@ -42,7 +42,7 @@ These are enforced in the platform rather than requested in the prompt, so they 
 
 **Dangerous commands are blocked.** Shell commands are parsed and classified before they run, rather than matched against a list of forbidden words. Deleting a build directory inside your project is allowed; deleting outside it is not, and neither is smuggling one command inside another.
 
-**Ask mode is read-only.** Switching the composer to Ask gives the agent only the four capabilities that read — read a file, list files, search, and produce a tree. The rest are withheld, so it cannot change anything even if you ask it to. The code marks this a security boundary.
+**Ask mode is read-only.** Switching the composer to Ask gives the agent only the four capabilities that read: read a file, list files, search, and produce a tree. The rest are withheld, so it cannot change anything even if you ask it to. The code marks this a security boundary.
 
 **Browser testing runs in isolation.** The sub-agent that tests your application gets browser controls only. It has no access to your files, your terminal, or the web.
 
@@ -62,21 +62,21 @@ If your request is ambiguous, the agent writes out its understanding of the requ
 
 ## Checkpoints and Restoring
 
-**Every prompt you send the build agent creates a checkpoint automatically.** You do not ask for one, and there is nothing to configure — each change to your project produces a save point you can return to.
+**Every prompt you send the build agent creates a checkpoint automatically.** You do not ask for one, and there is nothing to configure; each change to your project produces a save point you can return to.
 
 A checkpoint appears as a small badge beneath the agent's reply, showing a short reference and the checkpoint's title. **Hover the badge and a `Restore` button appears.** Selecting it takes your project's code back to that point.
 
 Restoring is available in Build Mode, and only to people who can change the project. It is unavailable while the agent is working.
 
 <Warning>
-  **Restoring is a permanent jump backward, not an undo step.** Your code returns to the checkpoint, and the work done after it is no longer what your project contains. There is no confirmation prompt — the button acts immediately.
+  **Restoring is a permanent jump backward, not an undo step.** Your code returns to the checkpoint, and the work done after it is no longer what your project contains. There is no confirmation prompt; the button acts immediately.
 </Warning>
 
 After a restore the conversation continues on a new branch. The earlier branch is kept and marked in the conversation, so the history of what you tried is not lost even though the code has moved back.
 
 Restoring also rebuilds the running application, which takes a few minutes. The platform waits for the containers to come back healthy rather than reporting success immediately.
 
-For version control you operate yourself — branches, and pushing to a repository — see [Git Integration](/web-apps/git-integration).
+For version control you operate yourself (branches and pushing to a repository), see [Git Integration](/web-apps/git-integration).
 
 ## Your Next Step
 

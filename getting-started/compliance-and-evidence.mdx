@@ -6,7 +6,7 @@ icon: "shield-check"
 
 Regulated work is not judged only on whether the software runs. It is judged on whether you can show how it came to be that way.
 
-This page collects what the platform records as a by-product of normal use. There is no separate compliance mode to switch on — the chain described here is produced by working through a project in the usual order.
+This page collects what the platform records as a by-product of normal use. There is no separate compliance mode to switch on; the chain described here is produced by working through a project in the usual order.
 
 ## What You'll Learn
 
@@ -40,7 +40,7 @@ Every change to a blueprint goes through review before it lands, whether you mad
 <Note>
   **What is auditable is the review process, not the finished document.**
 
-  While a change is under review, provenance is complete. Once a change is applied, that record stays with the review — the blueprint itself carries no per-section history, so reading a finished CAB does not tell you which parts a person rewrote.
+  While a change is under review, provenance is complete. Once a change is applied, that record stays with the review; the blueprint itself carries no per-section history, so reading a finished CAB does not tell you which parts a person rewrote.
 
   Previous versions are retained as timestamped snapshots, but the snapshots record when, not who.
 </Note>
@@ -56,7 +56,7 @@ A specification that quietly fills its own gaps is more dangerous than one with 
 | Your material never named the project or client | Both are inferred and marked `[Inferred]` |
 | Two source documents contradict each other | Both readings appear and the discrepancy is noted, not silently resolved |
 | Your material described no reports | The Reporting section is generated empty rather than invented |
-| Your material implies no business rules | Only rules present or implied in your documents appear — there is no standard rule set supplied |
+| Your material implies no business rules | Only rules present or implied in your documents appear; there is no standard rule set supplied |
 | Something could not be determined at all | It becomes a **Suggested Question**, with the context that prompted it, the impact of leaving it open, and concrete options |
 
 Suggested Questions are deduplicated across your whole source set and ordered by impact, so the ones that most affect the build appear first. Treat that section as the agenda for your next requirements conversation rather than as a list of defects.
@@ -67,10 +67,10 @@ The platform runs several agents, each confined to its own job.
 
 | Agent | Confined to |
 | --- | --- |
-| **Prototype agent** | Front ends with mock data — it does not touch databases |
-| **Build agent** | Your project's own workspace — it cannot reach outside it |
-| **Testing agent** | Browser controls only — no file access, no command execution, no internet |
-| **Ask Mode** | Read-only — it is prevented from changing anything, and cites answers at `path/file.ext:line` |
+| **Prototype agent** | Front ends with mock data; it does not touch databases |
+| **Build agent** | Your project's own workspace; it cannot reach outside it |
+| **Testing agent** | Browser controls only: no file access, no command execution, no internet |
+| **Ask Mode** | Read-only; it is prevented from changing anything, and cites answers at `path/file.ext:line` |
 
 **That separation is enforced by the platform rather than requested in an instruction.** It is a property of how the agents are wired, not a rule they have been asked to follow.
 
@@ -80,7 +80,7 @@ The agent that writes your application never sees the values of your credentials
 
 - Values are **masked before the agent reads them**. It can see that a credential is set and refer to it by name; the value itself never reaches it.
 - It can write a stored value into your application's configuration **without that value passing through the conversation**.
-- Internal secrets — database passwords, session and signing keys — are generated automatically. The only things you are asked for are keys that come from outside.
+- Internal secrets (database passwords, session and signing keys) are generated automatically. The only things you are asked for are keys that come from outside.
 - You can decline any request. The agent proceeds without it and is instructed not to ask again for the same one.
 
 ## Testing against Acceptance Criteria

@@ -48,7 +48,7 @@ Several messages exist to tell you that a step earlier in the sequence has not h
 | `Project has no working directory. Generate code first.` | You tried to start an application before anything was built | Run a build in Build Mode first |
 | `HTML file not found. Please generate HTML first.` | You opened a prototype preview before prototyping | Prompt the agent in Prototype Mode first |
 | `Project workspace not initialized` | File operations before the project has any files | Send your first prompt; the workspace is created with it |
-| `Please link your TAP site to enable the chat` | Build Mode on a low-code project with no environment connected | Link your site — see [Integrations](/admin-platform/integrations) |
+| `Please link your TAP site to enable the chat` | Build Mode on a low-code project with no environment connected | Link your site; see [Integrations](/admin-platform/integrations) |
 
 ## Generating or Editing a CAB
 
@@ -82,14 +82,14 @@ Several messages exist to tell you that a step earlier in the sequence has not h
   </Accordion>
 
   <Accordion title="This conversation was permanently stopped by user and cannot be resumed">
-    A hard stop cannot be undone. Start a new conversation in the same project — your code and files are unaffected.
+    A hard stop cannot be undone. Start a new conversation in the same project; your code and files are unaffected.
   </Accordion>
 
-  <Accordion title="Service Busy — the AI service is experiencing high traffic">
+  <Accordion title="Service Busy: the AI service is experiencing high traffic">
     Capacity, not your project. Wait a moment and send the message again. The same applies to **Service Busy** from high demand rather than rate limiting.
   </Accordion>
 
-  <Accordion title="Message Too Long — your conversation is too long">
+  <Accordion title="Message Too Long: your conversation is too long">
     The conversation has outgrown what the agent can hold at once. Start a new conversation in the same project, or shorten the message. Work already built is unaffected.
   </Accordion>
 </AccordionGroup>
@@ -97,7 +97,7 @@ Several messages exist to tell you that a step earlier in the sequence has not h
 ## Opening Your Application
 
 <AccordionGroup>
-  <Accordion title="Preview not available — this app is served over HTTP">
+  <Accordion title="Preview not available: this app is served over HTTP">
     Older projects serve their application over plain HTTP, which a page served over HTTPS cannot embed. Use **Open in new tab** instead. See [Deployment Guide](/web-apps/build-mode/deployment-guide).
   </Accordion>
 
@@ -146,7 +146,7 @@ Behaviours that surprise people. Each answer is short, and links to the page tha
   </Accordion>
 
   <Accordion title="Why did changes I never reviewed get saved to my CAB?">
-    Because undecided counts as accepted. Saving keeps everything you accepted **and** everything you did not look at — only changes you explicitly discarded are dropped. See [Editing your CAB](/cab/editing-your-cab).
+    Because undecided counts as accepted. Saving keeps everything you accepted **and** everything you did not look at; only changes you explicitly discarded are dropped. See [Editing your CAB](/cab/editing-your-cab).
   </Accordion>
 
   <Accordion title="Why did restoring an old CAB version delete my newer ones?">
@@ -166,7 +166,7 @@ Behaviours that surprise people. Each answer is short, and links to the page tha
   </Accordion>
 
   <Accordion title="Why didn't my cloned project bring its Tickets and Epics?">
-    A clone copies the specification, not the work breakdown — no Tickets, no Epics, no conversation history. Generate Tickets again from the cloned blueprint. A cloned low-code project copies only the blueprint. See [Cloning your project](/admin-platform/cloning-your-project).
+    A clone copies the specification, not the work breakdown: no Tickets, no Epics, no conversation history. Generate Tickets again from the cloned blueprint. A cloned low-code project copies only the blueprint. See [Cloning your project](/admin-platform/cloning-your-project).
   </Accordion>
 
   <Accordion title="Why doesn't typing @ show me any tickets?">
@@ -200,7 +200,7 @@ Behaviours that surprise people. Each answer is short, and links to the page tha
 
 ## Still Stuck
 
-If a message is not here, the wording usually names the condition directly — something is in progress, something has not been generated yet, or something is only available on a different kind of project. Reading it literally resolves most of them.
+If a message is not here, the wording usually names the condition directly: something is in progress, something has not been generated yet, or something is only available on a different kind of project. Reading it literally resolves most of them.
 
 <CardGroup cols={2}>
   <Card title="Write prompts that need fewer retries" icon="pen-line" href="/tips-and-tricks/prompting-best-practices">

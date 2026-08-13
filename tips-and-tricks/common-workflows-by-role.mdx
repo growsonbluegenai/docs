@@ -16,11 +16,11 @@ What each role does here, the access they typically hold, and where to send them
 
 ## Access, Briefly
 
-Two levels, and neither decides what someone does on the project — only what they are permitted to do.
+Two levels, and neither decides what someone does on the project, only what they are permitted to do.
 
 | Level | Options |
 | --- | --- |
-| Platform | **User** — this is what everyone on a customer team holds |
+| Platform | **User**: this is what everyone on a customer team holds |
 | Project | **Owner** (created it), **Editor** (works in it), **Viewer** (reads it) |
 
 That is the whole mechanism. See [User & Role Management](/getting-started/user-role-management) for how it works, and [Collaboration Features](/admin-platform/collaboration-features) for inviting people and setting it.
@@ -38,7 +38,7 @@ That is the whole mechanism. See [User & Role Management](/getting-started/user-
 | **Business analysts** | Generate and correct the CAB, turn it into Tickets, shape the build order | Editor |
 | **Project leadership** | Track scope, sequence, and progress against the plan | Viewer or Editor |
 | **Application engineers and developers** | Inspect generated code, connect repositories and tools, judge what was built | Editor |
-| **AI Platform Engineer** | Drive the build — prompt the agents, decide when to iterate and when to revert | Editor or Owner |
+| **AI Platform Engineer** | Drive the build: prompt the agents, decide when to iterate and when to revert | Editor or Owner |
 
 <Note>
   This list is expected to grow as more teams use the platform. It reflects the roles seen on real projects rather than a fixed taxonomy.
@@ -52,7 +52,7 @@ That is the whole mechanism. See [User & Role Management](/getting-started/user-
   </Card>
 
   <Card title="Subject matter experts" icon="lightbulb" href="/cab/requirement-clarification">
-    Answer the questions the source material left open — usually the highest-value hour anyone spends.
+    Answer the questions the source material left open, usually the highest-value hour anyone spends.
   </Card>
 
   <Card title="Business analysts" icon="book-open" href="/cab/editing-your-cab">
@@ -76,7 +76,7 @@ That is the whole mechanism. See [User & Role Management](/getting-started/user-
 
 **This is the primary human builder, and the name is deliberate.** It describes a discipline rather than a job title, because the work does not map onto anything in a traditional delivery team.
 
-The people who do it well have a blended skillset. **Technically minded, but fluent in the subject matter** — they understand the domain the application serves, not only the mechanics of building one. **Aware of good system design, but not carrying strong opinions about implementation.** They recognise a bad structural decision when they see one, without arriving with a fixed view of how every piece should be constructed.
+The people who do it well have a blended skillset. **Technically minded, but fluent in the subject matter.** They understand the domain the application serves, not only the mechanics of building one. **Aware of good system design, but not carrying strong opinions about implementation.** They recognise a bad structural decision when they see one, without arriving with a fixed view of how every piece should be constructed.
 
 That second half matters more than it sounds. The habits that make someone effective writing code by hand can work against them here, because the most productive instruction describes an outcome rather than a construction. Someone who cannot resist specifying the implementation gets a narrower result than someone who states what the application must do and lets the agent decide how.
 
@@ -88,7 +88,7 @@ For why the platform rewards this shape of person, see [What is BlueGenAI?](/get
 
 **This is the clearest case of the platform treating roles differently**, and it is worth setting up properly on any project with more than a couple of people.
 
-Ask is read-only and enforced — the agent is given only the capabilities that read, so it cannot change anything even when asked to. That makes it the right access for two quite different situations.
+Ask is read-only and enforced; the agent is given only the capabilities that read, so it cannot change anything even when asked to. That makes it the right access for two quite different situations.
 
 **People who need information out of the build but should not change it.** Stakeholders, business development, contracts. They can ask what the application does, how a rule works, or what a screen contains, and get an answer grounded in the actual code, without any possibility of altering it.
 
