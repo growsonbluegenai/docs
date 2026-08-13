@@ -1,6 +1,8 @@
 ---
 title: "Workflow"
-description: "Working in TAP Build Mode."
+description: "What a TAP Build request carries to the orchestrator, and what comes back."
 ---
 
-Covers what a Build request sends to the orchestrator and what comes back.
+A Build request does not go straight to the site. It is handed to an orchestrator, which works out which platform areas the request touches and applies the changes together.
+
+Order matters, because TAP components depend on each other. An object has to exist before a form can lay it out, and a role has to exist before a workflow transition can be restricted to it. Requests that span several areas are therefore applied as a set rather than one edit at a time.
