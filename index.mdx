@@ -50,11 +50,11 @@ mode: "custom"
   - Inline styles cannot express :hover, and Tailwind's blue-900/blue-300 pair
     is the nearest standard match to brand #1F4E79 / #2E75B6. To get exact
     brand accents AND hover states in the lower half, add a small prefixed
-    stylesheet (e.g. home-landing.css) to the repo root via GitHub — Mintlify
+    stylesheet (e.g. home-landing.css) to the repo root via GitHub. Mintlify
     loads any .css in the content directory on every page, so prefix every
     class and never target Mintlify's own selectors.
   - Do not rely on a <style> block. The previous one on this page was
-    vestigial — it targeted a Card component no longer used.
+    vestigial; it targeted a Card component no longer used.
   - EDITING WARNING: string-replace edits on this page have timed out and
     silently dropped whole heading lines. After any edit_page call here,
     verify the four <h2> elements still exist before saving.
@@ -64,8 +64,8 @@ mode: "custom"
 
 <div className="max-w-full mx-auto">
   {/* ============================================================
-                                HERO — fixed-dark full-bleed band, schematic grid, video right
-                                ============================================================ */}
+                                                              HERO: fixed-dark full-bleed band, schematic grid, video right
+                                                              ============================================================ */}
 
   <div style={{ background: "#050E17", color: "#E8EEF5", position: "relative", overflow: "hidden" }}>
     <div style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, pointerEvents: "none", backgroundImage: "linear-gradient(rgba(46,117,182,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(46,117,182,0.18) 1px, transparent 1px)", backgroundSize: "64px 64px", maskImage: "radial-gradient(120% 90% at 22% 8%, #000 0%, rgba(0,0,0,0.35) 55%, transparent 82%)", WebkitMaskImage: "radial-gradient(120% 90% at 22% 8%, #000 0%, rgba(0,0,0,0.35) 55%, transparent 82%)" }} />
@@ -98,7 +98,7 @@ mode: "custom"
           <iframe className="w-full aspect-video" style={{ border: "1px solid rgba(46,117,182,0.42)", borderRadius: "4px", background: "#0A1725", display: "block" }} src="https://www.youtube.com/embed/91OfobYrUSE" title="BlueGenAI Enterprise Platform Overview" allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture" allowFullScreen />
 
           <div style={{ display: "flex", justifyContent: "space-between", gap: "12px", marginTop: "10px", fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#8FA3B8" }}>
-            <span>Fig. 01 — Enterprise Platform Overview</span>
+            <span>Fig. 01: Enterprise Platform Overview</span>
             <span>Watch first</span>
           </div>
         </div>
@@ -107,8 +107,8 @@ mode: "custom"
   </div>
 
   {/* ============================================================
-                                FOUR COMMITMENTS — still inside the fixed-dark band
-                                ============================================================ */}
+                                                              FOUR COMMITMENTS: still inside the fixed-dark band
+                                                              ============================================================ */}
 
   <div style={{ background: "#050E17", color: "#E8EEF5", borderTop: "1px solid rgba(46,117,182,0.18)" }}>
     <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "72px", paddingBottom: "80px" }}>
@@ -123,7 +123,7 @@ mode: "custom"
           </div>
 
           <p className="md:col-span-2" style={{ margin: 0, fontSize: "15.5px", lineHeight: 1.6, color: "#B6C6D6" }}>
-            Every project starts from a <strong style={{ color: "#FFFFFF", fontWeight: 650 }}>Common Application Blueprint (CAB)</strong> — a specification generated from your own documents and source code, which you review and correct.
+            Every project starts from a <strong style={{ color: "#FFFFFF", fontWeight: 650 }}>Common Application Blueprint (CAB)</strong>, a specification generated from your own documents and source code, which you review and correct.
           </p>
         </div>
 
@@ -135,7 +135,7 @@ mode: "custom"
           </div>
 
           <p className="md:col-span-2" style={{ margin: 0, fontSize: "15.5px", lineHeight: 1.6, color: "#B6C6D6" }}>
-            Work is broken into <strong style={{ color: "#FFFFFF", fontWeight: 650 }}>Tickets</strong> and grouped into <strong style={{ color: "#FFFFFF", fontWeight: 650 }}>Epics</strong> — each Epic a wave in a deliberate build order.
+            Work is broken into <strong style={{ color: "#FFFFFF", fontWeight: 650 }}>Tickets</strong> and grouped into <strong style={{ color: "#FFFFFF", fontWeight: 650 }}>Epics</strong>, each Epic a wave in a deliberate build order.
           </p>
         </div>
 
@@ -147,7 +147,7 @@ mode: "custom"
           </div>
 
           <p className="md:col-span-2" style={{ margin: 0, fontSize: "15.5px", lineHeight: 1.6, color: "#B6C6D6" }}>
-            The build agent works from the Ticket, the Epic, and the requirement behind them — so speed comes from knowing precisely what to build, not from cutting corners. Every change it makes stays traceable to the line of specification that asked for it, and the engineering conventions it follows are fixed rather than improvised per project.
+            The build agent works from the Ticket, the Epic, and the requirement behind them, so speed comes from knowing precisely what to build, not from cutting corners. Every change it makes stays traceable to the line of specification that asked for it, and the engineering conventions it follows are fixed rather than improvised per project.
           </p>
         </div>
 
@@ -171,8 +171,8 @@ mode: "custom"
   </div>
 
   {/* ============================================================
-                                AI SPEED, ENTERPRISE DISCIPLINE — theme-aware. No background set.
-                                ============================================================ */}
+                                                              AI SPEED, ENTERPRISE DISCIPLINE: theme-aware. No background set.
+                                                              ============================================================ */}
 
   <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "80px", paddingBottom: "16px" }}>
     <div style={{ marginBottom: "36px" }}>
@@ -196,7 +196,7 @@ mode: "custom"
       <div className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "20px 18px 24px" }}>
         <div className="text-blue-900 dark:text-blue-300" style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace", fontSize: "10.5px", letterSpacing: "0.14em" }}>STEP 02</div>
         <h4 className="text-slate-900 dark:text-white" style={{ margin: "12px 0 6px", fontSize: "15.5px", letterSpacing: "-0.01em" }}>Generate a CAB</h4>
-        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "13px", lineHeight: 1.5 }}>The platform writes the specification — including what your source material left undecided.</p>
+        <p className="text-slate-600 dark:text-slate-400" style={{ margin: 0, fontSize: "13px", lineHeight: 1.5 }}>The platform writes the specification, including what your source material left undecided.</p>
       </div>
 
       <div className="border border-slate-200 dark:border-slate-800 rounded" style={{ padding: "20px 18px 24px" }}>
@@ -225,13 +225,13 @@ mode: "custom"
     </div>
 
     <p className="text-slate-600 dark:text-slate-400" style={{ margin: "22px 0 0", maxWidth: "74ch", fontSize: "15px" }}>
-      This is the ideal flow, but while each phase interoperates — a builder may start anywhere along the path.
+      This is the ideal flow, but while each phase interoperates, a builder may start anywhere along the path.
     </p>
   </div>
 
   {/* ============================================================
-                                START WHERE YOU ARE — theme-aware
-                                ============================================================ */}
+                                                              START WHERE YOU ARE: theme-aware
+                                                              ============================================================ */}
 
   <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "72px", paddingBottom: "16px" }}>
     <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white" style={{ letterSpacing: "-0.025em", margin: "0 0 36px" }}>Start where you are</h2>
@@ -265,8 +265,8 @@ mode: "custom"
   </div>
 
   {/* ============================================================
-                                THE WHOLE LIBRARY — theme-aware
-                                ============================================================ */}
+                                                              THE WHOLE LIBRARY: theme-aware
+                                                              ============================================================ */}
 
   <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "72px", paddingBottom: "24px" }}>
     <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: "18px", flexWrap: "wrap", marginBottom: "36px" }}>
@@ -370,8 +370,8 @@ mode: "custom"
   </div>
 
   {/* ============================================================
-                                FOOTER STRIP — theme-aware
-                                ============================================================ */}
+                                                              FOOTER STRIP: theme-aware
+                                                              ============================================================ */}
 
   <div className="px-6 md:px-12" style={{ maxWidth: "1280px", margin: "0 auto", paddingTop: "40px", paddingBottom: "64px" }}>
     <div className="border-t border-slate-200 dark:border-slate-800" style={{ paddingTop: "24px", display: "flex", justifyContent: "space-between", gap: "20px", flexWrap: "wrap", fontSize: "13.5px" }}>

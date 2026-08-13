@@ -20,11 +20,11 @@ Every Web project the build agent produces uses the same stack, and it is fixed 
 | State | React Query |
 | Auth | JWT on protected routes |
 | Containers | Docker, via `docker-compose.yaml` |
-| Gateway | Nginx reverse proxy — **version 2 projects only** |
+| Gateway | Nginx reverse proxy, **version 2 projects only** |
 
 The Create Project form states it more briefly, as `Made with React, Node.js, and PostgreSQL`.
 
-<Frame caption="The stack is stated on the Create Project form. It is a description, not a choice — Web projects have one option.">
+<Frame caption="The stack is stated on the Create Project form. It is a description, not a choice; Web projects have one option.">
   ![The Create New Project drawer with Web Application selected, showing a single pre-selected Platform Type radio whose label reads Made with React, Node.js, and PostgreSQL.](/images/web-apps/build-mode-tech-stack-create.png)
 </Frame>
 
@@ -50,7 +50,7 @@ New projects are created at version 2. Version 1 projects continue to work and a
 | Env var names | `DATABASE_EXTERNAL_PORT`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`, `DATABASE_NAME`. Alternates such as `POSTGRES_USER`, `DB_PORT` and `FRONTEND_PORT` are disallowed |
 | Validation | Applied in both the frontend and the backend |
 | Internal secrets | `JWT_SECRET`, database credentials, session and encryption keys are auto-generated |
-| External secrets | Third-party service keys are requested from you — see [Credentials](/web-apps/credentials) |
+| External secrets | Third-party service keys are requested from you; see [Credentials](/web-apps/credentials) |
 | Repository contents | Code only. Anything describing the project is produced as a knowledge document, not committed |
 
 ## Version 2 Project Layout
