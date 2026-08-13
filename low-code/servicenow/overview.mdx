@@ -1,6 +1,79 @@
 ---
 title: "ServiceNow Overview"
-description: "ServiceNow projects."
+description: "ServiceNow projects: how the platform connects to an instance, the seven areas of configuration it covers, and what stays in your hands."
 ---
 
-Introduces ServiceNow projects and the credentials they require.
+A ServiceNow project targets a ServiceNow instance. The platform configures that instance through its APIs, so the effect is the same as configuring through Studio or the ServiceNow UI, arrived at a different way.
+
+## What You'll Learn
+
+What a ServiceNow project is, which parts of the instance the agent configures, and how to frame a request so it covers the whole feature rather than one piece of it.
+
+## What a ServiceNow Project Produces
+
+The output is **configuration in your instance**, not a repository. Tables, fields, forms, portal pages, workflows, business rules, and reports are created and updated in place.
+
+The agent can also read your current configuration first, which is what makes changes to an existing application practical rather than guesswork. It can inspect tables, widgets, reports, and roles before proposing anything.
+
+<Note>
+  A ServiceNow project asks you to connect an instance before Build Mode becomes available. Configuration is normally applied to a development instance. See [Integrations](/admin-platform/integrations).
+</Note>
+
+## What the Agent Configures
+
+Seven areas are in scope. Each is covered in detail in [Component Reference](/low-code/servicenow/build-mode/component-reference).
+
+| Area | What it covers |
+| --- | --- |
+| **Data model** | Tables scoped or global, with or without extending an existing table; fields of all standard types; relationships and reference qualifiers |
+| **Access control** | Users, groups, roles, and table-level permissions |
+| **Classic UI** | Form layout and views, list layout and saved views, UI policies, and UI actions |
+| **Service Portal** | Portals, pages, widget instances, and who can see what |
+| **Workflows** | Status models, transitions, guards, and role-based transition control |
+| **Automation** | Business rules, scheduled jobs, script includes, client scripts, and email notifications |
+| **Reporting** | Reports, saved filters, and where reports are surfaced |
+
+## Working Across Areas Rather Than Within One
+
+The most useful requests name a business outcome and let the agent coordinate the pieces, because a real ServiceNow feature almost never lives in one area.
+
+Locking down a portal, for example, touches page roles, table permissions, and possibly a UI policy. Adding an approval step touches the status model, transition permissions, a business rule, and a notification. Asking for the outcome gets those changed together and consistently; asking for one piece at a time tends to leave the others behind.
+
+Two request shapes that work well:
+
+- "Build a clinician-facing dashboard for overdue lab results."
+- "Restrict this portal to administrators and add an approval workflow."
+
+## Beyond Building New Things
+
+Two kinds of work matter as much as new configuration and are easy to overlook.
+
+**Refactoring.** Unused widgets, rows, and modules can be removed, duplicate reports and fields consolidated, and inconsistent naming and UX patterns brought into line. Instances accumulate this over years.
+
+**Troubleshooting.** Why a field is not visible, why a record will not move to a state, or why a portal widget returns no data are all answerable by inspecting the configuration rather than guessing at it, and the fix is applied to the cause rather than worked around.
+
+## What Stays in Your Hands
+
+**The agent works through APIs, not the browser.** It does not click through Studio. Anything that has no API surface has to be done in ServiceNow directly.
+
+**Scope discipline is yours to set.** Whether a change belongs in a scoped application or the global scope is a decision with long consequences for upgrades and delegation, and the agent will raise it rather than assume.
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="See every component in detail" icon="list-tree" href="/low-code/servicenow/build-mode/component-reference">
+    Tables, UI, portal, workflow, automation, and reporting.
+  </Card>
+
+  <Card title="Enter Build Mode" icon="code" href="/low-code/servicenow/build-mode/overview">
+    What a ServiceNow project needs before it can build.
+  </Card>
+
+  <Card title="See what a Build request sends" icon="play" href="/low-code/servicenow/build-mode/workflow">
+    What goes out, and what comes back.
+  </Card>
+
+  <Card title="Compare the low-code platforms" icon="puzzle-piece" href="/low-code/overview">
+    What each supported platform covers.
+  </Card>
+</CardGroup>

@@ -1,12 +1,70 @@
 ---
 title: "Low Code Overview"
-description: "The four low-code platforms and how they differ."
+description: "The four supported low-code platforms, what the agent configures on each, and how low-code output differs from a full-code web application."
 ---
 
-Introduces the low-code workspace and what each supported platform can and cannot do.
+A low-code project produces configuration in a platform you already own, rather than a codebase the platform hosts. That difference shapes everything else about how these projects work.
+
+## What You'll Learn
+
+How a low-code project differs from a full-code one, which platforms are supported, what the agent configures on each, and where to go for the detail.
+
+## Choosing a Platform
 
 Which platforms you can choose is decided at the moment you create the project. Selecting **Low Code Application** as the Project Type replaces the single fixed Web stack with the four low-code platforms.
 
 <Frame caption="Project Type decides which platforms are offered. Custom Domain is Web-only and disappears under Low Code.">
   ![Two versions of the Create New Project drawer side by side. With Web Application selected, Platform Type shows a single fixed option reading Made with React, Node.js and PostgreSQL. With Low Code Application selected, Platform Type instead offers Tyler Application Platform, ServiceNow, PowerApps and Salesforce.](/images/low-code/overview-project-type-platform.png)
 </Frame>
+
+The project type cannot be changed afterwards, so it is worth being deliberate. Everything downstream, including which modes are available and whether the platform hosts the result, follows from it.
+
+## Full-Code and Low-Code Projects Compared
+
+Both start from the same place: requirements, and a specification generated from them. They diverge in what they produce.
+
+|  | Full-code web application | Low-code application |
+| --- | --- | --- |
+| **Output** | A generated codebase | Configuration in your platform |
+| **Where it runs** | Hosted by the platform at its own address | In the platform environment you connect |
+| **Prerequisite** | None beyond a project | A connected site or environment |
+| **Custom domain** | Available | Not applicable |
+
+The specification is application-neutral, which is what allows the same reviewed blueprint to drive either target. See [What is CAB?](/cab/what-is-cab).
+
+## The Supported Platforms
+
+| Platform | Modes | What the agent configures |
+| --- | --- | --- |
+| [**Tyler Application Platform**](/low-code/tap/overview) | Prototype and Build | Tracked objects and reference data, forms and UI policies, listings and charts, custom views, workflow states and transitions, roles and groups, Jasper reports |
+| [**ServiceNow**](/low-code/servicenow/overview) | Build | Tables and fields, users, roles and groups, classic UI forms and lists, Service Portal pages and widgets, state models, business rules and scripts, reports |
+| [**PowerApps**](/low-code/powerapps/overview) | Build | Dataverse tables, columns and relationships, model-driven forms and views, the sitemap, solutions, business rules, charts and dashboards |
+| [**Salesforce**](/low-code/salesforce) | Build | Supported as a target; its configuration surface is not yet documented here |
+
+**TAP is the only platform with Prototype Mode.** On the others, a build applies configuration to the connected environment, so there is no equivalent of looking at a mockup first.
+
+## Where Direct Configuration Stops
+
+All three documented platforms are reached through APIs rather than by driving their user interfaces, so anything without an API surface has to be done in the platform directly.
+
+**PowerApps carries an additional and more specific boundary.** Security roles, Power Automate flows, and form JavaScript are specified in exact detail rather than applied, because those areas have limited write surface through the tooling. If you are planning a PowerApps build, read that distinction before you start: [PowerApps Overview](/low-code/powerapps/overview).
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="Tyler Application Platform" icon="building-columns" href="/low-code/tap/overview">
+    The only platform with both Prototype and Build Mode.
+  </Card>
+
+  <Card title="ServiceNow" icon="gear" href="/low-code/servicenow/overview">
+    Seven configuration areas, from tables to Service Portal.
+  </Card>
+
+  <Card title="PowerApps" icon="table-cells" href="/low-code/powerapps/overview">
+    Dataverse schema, model-driven UI, and where the boundary sits.
+  </Card>
+
+  <Card title="Start from requirements" icon="book-open" href="/cab/what-is-cab">
+    How the specification that drives either target gets generated.
+  </Card>
+</CardGroup>

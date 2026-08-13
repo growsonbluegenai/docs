@@ -1,6 +1,211 @@
 ---
 title: "Component Reference"
-description: "TAP naming conventions and template structure."
+description: "Every TAP component the agent configures: tracked objects and data elements, reference data, forms and UI policies, listings and charts, workflows, roles and groups, and Jasper reports."
 ---
 
-Documents the naming conventions TAP generation follows, and the data model and form views.
+This page is the full inventory of what a TAP configuration request can reach. It is organised by platform area, in the order you normally build in: data model first, then interface, then workflow, then security, then reporting.
+
+## What You'll Learn
+
+Which TAP components the agent creates and updates, what options each one carries, and what a well-formed request for each looks like.
+
+## Data Model
+
+### Tracked Data Objects
+
+Two kinds, and choosing correctly between them is the most consequential data-model decision on a TAP project.
+
+| Kind | What it is | Examples |
+| --- | --- | --- |
+| **Base Tracked Object (BTO)** | A top-level entity that stands on its own | Cases, Applications, Requests, Incidents |
+| **Child Tracked Object (CTO)** | Detail that belongs to a parent record | Case Notes, Attachments, Tasks, Related Parties |
+
+Parent and child relationships are established as one-to-many or one-to-one.
+
+### Data Elements
+
+Every field on a tracked object is a data element with a declared type.
+
+| Group | Types |
+| --- | --- |
+| Primitive | Text, Long Text, Number, Currency |
+| Temporal | Date, Timestamp |
+| Logical | Yes/No |
+| Other | File upload, Choice, Reference (to another object or a reference data object) |
+
+Each element can be marked required or optional, and carries its own name and display label.
+
+### Reference Data Objects
+
+Reference data objects (RDOs) hold the values behind Choice and Reference fields. Case Type, Priority, Status Reason, and Document Type are typical.
+
+You supply the human-readable values only. The platform manages the underlying codes and ordering.
+
+**Typical requests**
+
+- "Create a Case object with fields for Case Number, Case Type, Open Date, Assigned User, and Status."
+- "Add a child object for Case Notes with note text, author, and timestamp."
+- "Link Violations as a child object of Inspections."
+- "Create a reference object for Inspection Outcome with values Pass, Fail, and Reinspection Required."
+- "Add a Case Type of Appeal to the existing reference object and make it available immediately."
+
+<Tip>
+  Ask before you build. The agent will tell you what belongs as a tracked object rather than reference data, when an object should be split into parent and child, and where nesting is adding complexity without adding meaning.
+</Tip>
+
+## User Interface
+
+### Data Forms
+
+Each tracked object gets one or more data forms, usually including a default form.
+
+Configurable on a form:
+
+- Field order, and which of the two columns each field sits in
+- Section headers and banners
+- Embedded data listings, typically child records or related items
+- Embedded charts, typically summary figures for related records
+
+**Typical requests**
+
+- "Redesign the Case form to group contact details into their own section."
+- "On the Application form, show a listing of related Payments."
+
+### UI Policies
+
+UI policies make a form react to the data in it. Conditions are built on field values such as Case Type or Status.
+
+| Policy type | Effect |
+| --- | --- |
+| Show or hide | A field appears only when the condition holds |
+| Require | A field becomes mandatory only when the condition holds |
+| Read-only | A field becomes non-editable only when the condition holds |
+
+**Each policy is a single type.** A rule that both reveals a field and makes it mandatory is two policies, and the agent creates both.
+
+**Typical requests**
+
+- "If Case Type is Other, show and require the Other Case Type Description field."
+- "Make Closure Date required when Status is Closed."
+
+### Data Listings
+
+Listings are the queues users work from. For any tracked object you can set the columns shown, the default filters, the sort order, and therefore which records appear.
+
+Listings also embed into a parent form to show child records.
+
+**Typical requests**
+
+- "Create a listing of open Cases assigned to the current user, sorted by due date."
+- "Create a listing of Payments associated with a particular Application."
+
+### Charts
+
+Charts are built from an existing data listing. Specify the chart type, the grouping field, and the aggregation such as count or sum. Charts embed on forms and in custom views.
+
+**Typical requests**
+
+- "Show a bar chart of open Cases by priority on the Case dashboard."
+- "On the inspector dashboard, chart inspections completed by month."
+
+### Custom Views
+
+Custom views are dashboards, portal pages, and landing pages, laid out with containers, rows, and columns. They hold listings, charts, static content and banners, and navigation controls.
+
+**Typical requests**
+
+- "Build a supervisor dashboard with three columns: my team's open Cases, aging Cases, and a chart of Cases by type."
+- "Create a public landing page that shows basic figures and allows no editing."
+
+## Workflows
+
+A workflow is configured per tracked object and has to be turned on for that object before states exist.
+
+### States and Statuses
+
+Two levels. States are the high-level lifecycle; statuses are the detail within a state.
+
+| State | Statuses within it |
+| --- | --- |
+| Open | New, Assigned |
+| In Progress | Under Review, Investigating |
+| Closed | Resolved, Withdrawn |
+
+### Transitions
+
+Transitions move a record from one status to another. Each belongs to a transition category such as Opening, Progress, Escalation, or Closing, and exactly one transition is marked as the **initial transition**, which is how records enter the workflow.
+
+### Transition Permissions
+
+Transitions are restricted by system role, which is what ties the workflow to the security model. A transition from Assigned to Closed can be limited to supervisors, and that restriction is enforced by the workflow rather than by form design.
+
+**Typical requests**
+
+- "Set up a workflow of New, Under Review, then Approved or Rejected."
+- "Add a Pending Client Response status and the transitions into and out of it, available to case workers only."
+
+## Roles, Users, and Groups
+
+### Roles
+
+A role carries permissions per tracked object: Create, Read, Update, Delete, and Search. Each permission is granted at an access scope.
+
+| Scope | What the role can reach |
+| --- | --- |
+| User or Group | Only records belonging to the user or their group |
+| Organizational | Records within the user's organization |
+| Global | All records |
+| None | No access to the object |
+
+Case Worker, Supervisor, Read-Only Auditor, Public User, and Admin are typical shapes.
+
+### Users and Groups
+
+Users are assigned a default role and any supporting roles, and can be locked or unlocked. **User creation and update are available where the connected environment supports them.**
+
+Groups collect users, and roles assigned to a group are conferred on its members. Groups are how regional and team structures usually get expressed.
+
+**Typical requests**
+
+- "Create an Investigator role with full permissions on Case and read-only on Contacts."
+- "Ensure Clerk can only see Cases in their own organization."
+- "Create a Permits Team group and assign the Permit Processor role to it."
+
+<Tip>
+  Ask for the security model as a whole rather than role by role. Describing the outcome, for example that case workers manage their own cases, supervisors see their team's, and administrators see everything, produces a coherent set of roles and scopes rather than a pile of overlapping ones.
+</Tip>
+
+## Reports
+
+TAP reporting uses Jasper reports. For a new report, the agent works from the fields and columns you need, the parameters and filters such as date range, status, or assigned user, and the selection logic determining which records appear. Those requirements become a report definition referencing the underlying objects and elements.
+
+Existing reports can have their fields, parameters, and filter conditions changed.
+
+**Typical requests**
+
+- "Create a report of all Cases closed in the last 30 days, grouped by case type."
+- "Create a parameterised report of Inspections filtered by inspector and date range."
+
+<Note>
+  Not everything needs to be a report. A data listing is often the better answer for something a user checks routinely, and the agent will say so. Reports earn their cost when the output has to be parameterised, printed, or handed to someone who does not use the application.
+</Note>
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="Understand what a TAP project is" icon="circle-info" href="/low-code/tap/overview">
+    How the connection works and where the boundary sits.
+  </Card>
+
+  <Card title="See what a Build request sends" icon="play" href="/low-code/tap/build-mode/workflow">
+    What goes to the orchestrator, and what comes back.
+  </Card>
+
+  <Card title="Meet the agents behind Build Mode" icon="robot" href="/low-code/tap/build-mode/build-agent-guide">
+    The specialists for forms, workflows, administration, and reports.
+  </Card>
+
+  <Card title="Write better requests" icon="pen-line" href="/tips-and-tricks/prompting-best-practices">
+    How to ask at the right level of detail.
+  </Card>
+</CardGroup>
