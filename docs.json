@@ -135,7 +135,8 @@
           {
             "group": "Salesforce",
             "pages": [
-              "low-code/salesforce"
+              "low-code/salesforce",
+              "low-code/salesforce/component-reference"
             ]
           },
           {

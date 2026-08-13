@@ -1,0 +1,190 @@
+---
+title: "Component Reference"
+description: "Every Salesforce component the agent configures: objects and fields, profiles and sharing, layouts and list views, Lightning pages and components, flows and Apex, reports, and platform configuration."
+---
+
+Organised by platform area, in the order you normally build in: schema first, then security, then interface, then automation, then reporting.
+
+Everything on this page is applied to the connected org. Where a component has a Salesforce concept behind it that changes the outcome, that is called out rather than left implicit.
+
+## Data Model and Schema
+
+### Custom Objects
+
+Created, retrieved, updated, listed, and deleted.
+
+### Custom Fields
+
+All field types are available.
+
+| Group | Types |
+| --- | --- |
+| Text and numeric | Text, Number, Currency |
+| Temporal | Date, and date and time |
+| Logical | Checkbox |
+| Selection | Picklist |
+| Relational | Lookup, Master-Detail |
+| Derived | Formula |
+
+<Note>
+  **Lookup and Master-Detail are not interchangeable.** Master-Detail cascades deletion, inherits sharing from the parent, and makes roll-up summaries possible; Lookup does none of those. It is also difficult to change after records exist, so it is worth stating which behaviour you want rather than just asking for a relationship.
+</Note>
+
+### Record Types
+
+Created and configured, including which picklist values are available per record type. Record types are what let one object serve two processes without two objects, and they interact with page layouts and profiles, so they are usually set up alongside both.
+
+### Field Sets
+
+Created and managed. Field sets are the mechanism that lets Apex, Visualforce, and Lightning components render a field list that an administrator can change without a code deployment.
+
+### Related Lists
+
+Inspected on an object, so that the right ones can be placed when a page layout is built.
+
+**Typical requests**
+
+- "Create a Complaint object with fields for complaint number, type, received date, priority, and assigned user."
+- "Add a Master-Detail relationship from Complaint Note to Complaint so notes are deleted with their parent."
+- "Create a record type for Anonymous Complaints and limit the Source picklist to Web and Phone on it."
+
+## Security and Access
+
+| Component | What is configurable |
+| --- | --- |
+| **Profiles** | Object-level create, read, update, and delete, plus field-level security as read and edit per field |
+| **Permission sets** | Created and assigned to users |
+| **Public groups** | Created, with membership managed |
+| **Org-wide defaults** | Sharing defaults on custom objects |
+| **Sharing rules** | Criteria-based and owner-based |
+| **Restriction rules** | Record visibility limited by user criteria |
+
+**Build the model in the order Salesforce evaluates it.** Org-wide defaults set the floor, sharing rules open access outward from there, and restriction rules narrow what a user can see regardless. Asking for the outcome, for example that intake staff see only their own complaints while supervisors see their team's, produces a coherent set across all three rather than a stack of overlapping rules.
+
+<Tip>
+  Prefer permission sets over profile edits where either would work. A profile is one per user; permission sets are additive, which makes access easier to grant and withdraw without rebuilding a profile.
+</Tip>
+
+## Classic UI
+
+### Page Layouts
+
+Created and configured: sections, field placement, related lists, and assignment to record types and profiles. Assignment is the part most often forgotten, because a layout that exists but is not assigned changes nothing for anyone.
+
+### Compact Layouts
+
+Configure the highlights panel and the field list shown on mobile.
+
+### List Views
+
+Created with their columns, filters, and scope.
+
+### Custom Buttons and Links
+
+Classic detail and list buttons, OnClick JavaScript, and URL links.
+
+### Quick Actions
+
+Lightning quick actions, in five kinds: create a record, update a record, log a call, launch a flow, and launch a component.
+
+**Typical requests**
+
+- "Build a Complaint page layout with intake details in one section and investigation in another, and assign it to the Intake profile."
+- "Create a list view of open complaints assigned to me, sorted by received date."
+- "Add a quick action on Complaint that launches the escalation flow."
+
+## Lightning Experience
+
+| Component | What is configurable |
+| --- | --- |
+| **Lightning apps** | Created and configured in App Manager |
+| **Lightning pages** | Record pages, home pages, and app pages, built and customised with components |
+| **Custom tabs** | Navigation tabs for custom objects and other content |
+| **Lightning Web Components** | Bundles and their files created, updated, retrieved, and deleted |
+
+### Migrating Aura and Visualforce
+
+Existing Aura components and Visualforce pages are read and migrated to Lightning Web Components.
+
+This is the one place in the low-code documentation where the agent modernizes existing implementation rather than configuring new behaviour, and it is the closest analogue in Salesforce to what the platform does with a legacy codebase. See [Legacy Code Translation Guide](/cab/legacy-code-translation-guide) for the equivalent at project scale.
+
+## Process Automation
+
+### Flows
+
+Four trigger types plus reusable subflows.
+
+| Kind | When it runs |
+| --- | --- |
+| **Record-triggered** | A record is created, updated, or deleted |
+| **Schedule-triggered** | On a time-based schedule |
+| **Platform event-triggered** | A platform event is published |
+| **Screen** | A user steps through it, for guided multi-step work |
+| **Subflow** | Called from another flow, for logic used in more than one place |
+
+**Custom notification types** are created alongside flows, because a flow's Send Notification action needs one to exist before it can send anything.
+
+### Apex
+
+| Component | What it does |
+| --- | --- |
+| **Apex classes** | Server-side logic, written and deployed |
+| **Apex triggers** | DML-event-driven logic on an object |
+| **Anonymous Apex** | One-off scripts executed directly |
+| **Apex tests** | Test classes run, with results reported |
+
+### Validation Rules
+
+Formula-based rules that block a save, for enforcing data quality at the point of entry.
+
+<Note>
+  **Flow, Apex, and validation rules can all enforce the same thing, and choosing badly is expensive.** A validation rule is the cheapest way to block bad data; a record-triggered flow is right when something has to happen as a consequence; Apex is for logic the first two cannot express. The agent will say which it is using and why, because three mechanisms silently enforcing overlapping rules is how an org becomes unpredictable.
+</Note>
+
+**Typical requests**
+
+- "When a complaint is set to high priority, notify the assigned supervisor."
+- "Prevent a complaint from being closed while it has an open investigation task."
+- "Write a test class for the escalation trigger and run it."
+
+## Reporting
+
+| Component | What is configurable |
+| --- | --- |
+| **Reports** | Tabular, Summary, Matrix, and MultiBlock |
+| **Report folders** | Created, to organise reports |
+| **Custom report types** | Defined for object relationships the standard types do not cover |
+
+A custom report type is the answer when a report needs to span objects that Salesforce does not already pair, and it has to exist before the report that uses it can be built.
+
+## Platform Configuration
+
+**Platform events.** Event definitions created and managed. These are what a platform event-triggered flow subscribes to, and what an external system publishes into.
+
+**Custom metadata types.** `__mdt` type definitions created, and their records managed. Custom metadata is configuration that deploys between orgs, which makes it the right home for values that behave like settings rather than data.
+
+## Working Across Areas in One Request
+
+A real Salesforce feature spans most of this page. A single request can create an object, add its fields, set the security model, build a page layout and a Lightning record page, add the automation, and produce a report over the result.
+
+That coordination is the point rather than a convenience. Individually correct components with mismatched permissions, an unassigned layout, or a flow referencing a field that does not exist yet are the usual reasons a Salesforce change appears to work and does not.
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="Understand what a Salesforce project is" icon="circle-info" href="/low-code/salesforce">
+    The surface, the dependency handling, and what stays in your hands.
+  </Card>
+
+  <Card title="Connect an org" icon="plug" href="/admin-platform/integrations">
+    The credentials a Salesforce project asks for.
+  </Card>
+
+  <Card title="Write better requests" icon="pen-line" href="/tips-and-tricks/prompting-best-practices">
+    How to ask at the right level of detail.
+  </Card>
+
+  <Card title="Compare the low-code platforms" icon="puzzle-piece" href="/low-code/overview">
+    What each supported platform covers.
+  </Card>
+</CardGroup>

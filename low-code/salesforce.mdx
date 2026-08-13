@@ -1,8 +1,69 @@
 ---
-title: "Salesforce"
-description: "Salesforce projects: what is supported today, and what is not yet documented."
+title: "Salesforce Overview"
+description: "Salesforce projects: the widest configuration surface of the four platforms, applied directly to your org rather than specified for you."
 ---
 
-Salesforce is available as a low-code target when you create a project, and a build requires credentials for the target org in the same way the other low-code platforms require a connected site or environment.
+Everything the agent does on Salesforce is applied. There is no advisory half here: schema, security, layouts, Lightning pages, Apex, flows, and reports are all written to your org through the platform API, and a request that spans all of them is applied as one coordinated change.
 
-Its configuration surface is not yet documented here. For the platforms covered in detail, see [TAP](/low-code/tap/overview), [ServiceNow](/low-code/servicenow/overview), and [PowerApps](/low-code/powerapps/overview).
+That makes Salesforce the widest surface of the four supported platforms, and the one where a single request can reasonably cover an entire feature.
+
+<Note>
+  A Salesforce project asks you for credentials to the target org before Build Mode becomes available. See [Integrations](/admin-platform/integrations).
+</Note>
+
+## What the Agent Configures
+
+Seven areas are in scope. Each is covered in detail in [Component Reference](/low-code/salesforce/component-reference).
+
+| Area | What it covers |
+| --- | --- |
+| **Data model and schema** | Custom objects, custom fields of every type, record types, field sets, related lists |
+| **Security and access** | Profiles with object and field-level permissions, permission sets, public groups, org-wide defaults, sharing rules, restriction rules |
+| **Classic UI** | Page layouts, compact layouts, list views, custom buttons and links, quick actions |
+| **Lightning Experience** | Lightning apps, record and home and app pages, custom tabs, Lightning Web Component bundles |
+| **Process automation** | Flows of every trigger type, Apex classes and triggers, validation rules, custom notification types |
+| **Reporting** | Tabular, Summary, Matrix, and MultiBlock reports, report folders, custom report types |
+| **Platform configuration** | Platform events, custom metadata types |
+
+## Dependencies Are Resolved for You
+
+Salesforce configuration is unusually order-dependent, and getting the order wrong is the usual reason a change fails halfway. The agent works the dependencies out rather than asking you to sequence them:
+
+- Fields exist before a page layout tries to place them
+- Apex classes exist before a Lightning Web Component references them
+- Record types exist before layouts are assigned to them
+- Objects exist before a report type is built over them
+
+The practical consequence is that you can describe an outcome rather than a build order. "Create a Complaint object with intake fields, restrict it to the intake team, put it on a Lightning record page, notify a supervisor when priority is high, and give me a report of open complaints by type" is one request rather than five.
+
+## Two Capabilities the Other Platforms Do Not Have
+
+**Modernization inside the org.** The agent reads existing Aura components and Visualforce pages and migrates them to Lightning Web Components. This is the only platform of the four where it modernizes what is already there rather than only building what is new, and it matters if your org carries years of accumulated Visualforce.
+
+**Test execution.** Apex test classes can be run and their results reported, and one-off Apex can be executed directly. Testing is part of the configuration surface here rather than something that happens after it.
+
+## What Stays in Your Hands
+
+**Deployment between orgs.** The agent configures the org you connect. Moving that configuration from a sandbox to production is a Salesforce release process and is not something the platform performs for you.
+
+**Governor limits.** Apex the agent writes runs under the same limits as Apex anyone writes. A request implying work at a scale Salesforce will not permit needs rethinking rather than retrying.
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="See every component in detail" icon="list-tree" href="/low-code/salesforce/component-reference">
+    Objects, security, layouts, Lightning, automation, and reporting.
+  </Card>
+
+  <Card title="Connect an org" icon="plug" href="/admin-platform/integrations">
+    The credentials a Salesforce project asks for.
+  </Card>
+
+  <Card title="Write better requests" icon="pen-line" href="/tips-and-tricks/prompting-best-practices">
+    How to ask at the right level of detail.
+  </Card>
+
+  <Card title="Compare the low-code platforms" icon="puzzle-piece" href="/low-code/overview">
+    What each supported platform covers.
+  </Card>
+</CardGroup>
