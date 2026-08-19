@@ -1,48 +1,60 @@
 ---
 title: "User & Role Management"
-description: "Who can do what on a project: the three roles, how invitations work, and the two different ways to share."
+description: "Who can do what on a project: the three project permission levels, how invitations work, and the different ways you can share your project."
 icon: "users"
 ---
 
-A project has one owner and any number of people invited to it, each holding a role that decides what they can do.
+A project has one owner and any number of people invited to it, each holding a certain permission level that decides what they can do.
 
-## The Three Roles
+## The Three Permission Levels
 
-| Role | What it means |
+| Level | What it means |
 | --- | --- |
 | **Owner** | The person who created the project. Manages collaborators and their roles |
-| **Editor** | Can work in the project: prompt the agents, edit the CAB, change Tickets |
-| **Viewer** | Can see the project without changing it |
+| **Editor** | Can work in the project: prompt the agents, edit the CAB, change Tickets, and may perform Build and Test activities |
+| **Viewer** | Can see the full project without making any changes to it |
 
-**Owner is not something you are granted.** It comes from creating the project.
+**Owner is not something you may be granted.** It comes from creating the project. Each project will have only one owner.
 
 ## Inviting Someone
 
-<Frame caption="Manage Collaboration. Invitations take a role, and the members list shows who already has one.">
-  ![The Manage Collaboration drawer showing an Invite Collaborators card with an email field and Viewer and Editor permission options, a Shareable Link Access toggle, and a members list.](/images/getting-started/user-role-management-collaboration.png)
+You may invite collaborators into your project from two places: From the Projects Dashboard and using the Manage Collaborations icon from the project tools rail.
+
+<Frame caption="Manage Collaboration - Create an Invitation or view the members list to see who already has access">
+  <img
+    src="/images/Manage-Collaboration-3.gif"
+    alt="Manage Collaboration"
+    title="Manage Collaboration"
+  />
 </Frame>
 
-Open **Manage Collaborators** from the panel rail, or **Manage Collaborations** from a project card on the dashboard. Both open the same drawer.
+To create an invitation:
 
-Enter one or more email addresses, choose **Viewer** or **Editor**, and send. Invitations appear in the recipient's **Invitations** tab on their dashboard, and in your **Pending Invites** list until they respond.
+1. Set the Permission Type (Viewer or Editor). This may be changed later
+2. Enter one or more email addresses
+3. Send. 
+
+Invitations appear in the **_recipient's_** **Invitations** tab on their dashboard, and in **_your_** **Pending Invites** list until they respond.
 
 <Frame caption="The members list separates people who have accepted from invitations still outstanding.">
   ![The members list showing tabs for Active Members and Pending Invites, a search field, and rows showing each member's name, email, date added, and role.](/images/getting-started/user-role-management-members.png)
 </Frame>
 
-An invitation can be accepted, rejected, or withdrawn before it is accepted. Someone who has accepted can later leave, or be removed.
+An invitation can be Accepted, Rejected.  The request may also be withdrawn by the project owner before it is accepted. Someone who has accepted can later leave, or be removed.
+
+Once Accepted, the user will appear in the Active Members tab of the collaboration panel.
 
 <Note>
-  Each collaborator carries a billing preference, set when they are invited: their agent runs are charged either to the project owner or to the collaborator.
+  When setting Permission Type to Editor, you must choose a billing preference. <br />   Selecting **Owner** means that the user's actions will charge to the Project Owner.<br />   Selecting **Collaborator** will charge the user's activity to their own account's credits.
 </Note>
 
-## Two Kinds of Sharing
+## Other Types of Sharing
 
 These are different mechanisms with different audiences, and it is worth not confusing them.
 
-**Shareable Link Access** is a toggle in the collaboration drawer. It lets anyone who is signed in and has the link **request** access to the project. It does not grant access; someone still approves the request.
+**Shareable Link Access** is an additional toggle in the collaboration drawer. It creates a special invitation URL lets ANY user of the platform who has an account, is signed in, and has the link **request** access to the project. It does not immediately grant access; someone still approves the request.
 
-**Read-only share links** are set per item, on things like an artifact or a finished CAB. Anyone with the link can open that one item **without signing in at all**. Nothing else in the project becomes visible.
+**Read-only share links** are available for the CAB. Anyone with the link can open the generated CAB **without signing in at all**. Nothing else in the project becomes visible and nothing is editable.
 
 <Warning>
   A read-only share link needs no account and no approval. Only enable one on an item you are content for anyone holding the URL to read.
