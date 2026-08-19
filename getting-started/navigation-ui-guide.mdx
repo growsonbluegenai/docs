@@ -6,15 +6,17 @@ icon: "compass"
 
 The platform landing page is a dashboard listing your projects. Selecting a project opens into that project's workspace.
 
-## The Dashboard
+## The Dashboard Landing Page
+
+Upon signing into BlueGenAI you will land at your Projects Dashboard page.
 
 <Frame caption="The dashboard. Every project you own or can see, with a platform badge on each card.">
   ![The Projects dashboard showing a search field, an Application Type filter, tabs for My Projects, Shared with Me and Invitations, and a grid of project cards each carrying a platform badge.](/images/getting-started/navigation-ui-guide-dashboard.png)
 </Frame>
 
-Your Projects Dashboard has three tabs: **My Projects**, **Shared with Me**, and **Invitations**. Search by name, sort, or filter by platform.
+Your Projects Dashboard has three tabs: **My Projects**, **Shared with Me**, and **Invitations**. You may also Search by name, sort your projects, or filter the list by Application type.
 
-**My Projects** will list all of the projets which you have created. You are the owner of these projects and the primary manager of each of them.
+**My Projects** will list all of the projects which you have created. You are the owner of these projects and the primary manager of each of them.
 
 **Shared with Me** shows projects which you have access to. This means that the project owner has added you via the [Collaboration Mode](https://docs.bluegenai.com/admin-platform/collaboration-features). Your access rights and permissions for each project may vary according to the owner's settings.
 
@@ -36,9 +38,9 @@ Each card shows the project name, an optional client label, when it was last upd
   > **PA** - Microsoft PowerApps
 </Tip>
 
-## Inside a Project
+## Your Project Workspace
 
-Opening a project takes you to its workspace. **There are two, and which one you get depends on the project's platform.** Web projects and low-code projects have different workspaces because they build different things. You do not choose; opening the project takes you to the right one.
+Opening a project takes you to its workspace. _Note that Web projects and low-code projects may have slightly different workspaces._ For all projects your initial project landing space will be the CAB (Common Application Blueprint.) From here you can navigate throughout the project's available modes.
 
 <Frame caption="A project workspace. The four modes sit top left, the panel controls top right.">
   ![A project workspace showing mode tabs for CAB, Tickets, Prototype and Build, with a two-pane layout below and a row of panel icons at the top right.](/images/getting-started/navigation-ui-guide-workspace.png)
@@ -46,7 +48,16 @@ Opening a project takes you to its workspace. **There are two, and which one you
 
 ## The Four Modes
 
-Every project workspace has the same four modes, selected from the tabs at the top left.
+<Columns cols={2}>
+  <Column>
+    The Project workspace has four modes\*, selected from the tabs at the top left. Selecting these pill icons allows you to access the rest of the application workspaces.
+  </Column>
+  <Column>
+    <Tip>
+      Note that some application types will not include Prototype mode.
+    </Tip>
+  </Column>
+</Columns>
 
 <Frame caption="The mode tab bar, at the top left of every project workspace.">
   ![A magnified view of the mode tab bar showing the CAB, Tickets, Prototype and Build tabs with Build selected, set against a faded view of the whole workspace so the bar's position on the page is clear.](/images/getting-started/navigation-ui-guide-mode-pills.png)
@@ -56,40 +67,26 @@ Every project workspace has the same four modes, selected from the tabs at the t
 | --- | --- |
 | **CAB** | Generate and correct the specification your project is built from - the Common Application Blueprint |
 | **Tickets** | Break that specification into units of work and order them |
-| **Prototype** | Build a front end to look at and click through |
+| **Prototype** | Mock up a front end to look at and click through |
 | **Build** | Build the real application, with data behind it |
 
-**These are modes, not pages.** Switching mode changes what fills the workspace, not where you are; you stay in the same project throughout, and your place in each mode is remembered when you come back.
+**These are modes, not pages.** Switching mode changes the whole workspace, and what tools are available to you. Your place in each mode is remembered when you come back.
 
 ## The Panel Rail
 
-The icons at the top right open panels beside your work. **Ten in Prototype Mode, eleven in Build**, which adds Testing Context.
+The icons at the top right open panels beside your work and will change depending on the Mode.
 
 <Frame caption="The panel rail in Build Mode, with every icon named.">
   ![A magnified view of the eleven panel rail icons in Build Mode, each labelled: Files, Design System, URLs, Preview, Codebase, Database, Credentials, MCP Servers, Testing Context, Stop App and Manage Collaborators, set against a faded view of the workspace so the rail's position at the top right is clear.](/images/getting-started/navigation-ui-guide-panel-rail.png)
 </Frame>
 
-| Panel | What it holds |
-| --- | --- |
-| Files | Everything uploaded to or generated by the project |
-| Design System | Colours, type, and spacing for generated prototypes |
-| URLs | Your running application's addresses |
-| Preview | The running application, embedded |
-| Codebase | The generated source, and the version-control controls |
-| Database | The application's data, browsable and queryable |
-| Credentials | Keys the agent has asked you for |
-| MCP Servers | External tools connected to the build agent |
-| Testing Context | What the testing agent should know (**Build only**) |
-| Stop App | Stops the running application |
-| Manage Collaborators | Invitations and sharing |
+You may Hover over any of the icons for about a second to see its name and function.
 
-The icons carry no visible labels. Hover one for about a second to see its name.
-
-## Getting Help
+## The Top Bar
 
 The top bar carries a dark-mode toggle, a notifications bell, a help link, and your account menu. A breadcrumb to the left shows which project you are in, with a home icon back to the dashboard.
 
-It also carries a timer. **That figure is the total AI processing time accumulated on this project:** the sum of every agent operation ever run against it. It is not a clock on your current session, and it does not reset. It advances whenever an agent does work, including blueprint generation, change-impact review, and builds.
+It also carries a counter. **The Counter is the total AI processing time accumulated on this project:** the sum of every agent operation ever run against it. It is not a clock on your current session, and it does not reset. It advances whenever an agent does work, including blueprint generation, change-impact review, and builds.
 
 <Frame caption="The top bar, left to right.">
   ![A magnified view of the top bar controls labelled Total AI processing time, Dark mode, Notifications, Help and Account, set against a faded view of the whole page so their position is clear.](/images/getting-started/navigation-ui-guide-top-bar.png)

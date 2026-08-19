@@ -45,7 +45,8 @@
               "cab/step-by-step-workflow",
               "cab/legacy-code-translation-guide",
               "cab/requirement-clarification",
-              "cab/editing-your-cab"
+              "cab/editing-your-cab",
+              "untitled-page-2"
             ]
           }
         ]
@@ -67,7 +68,7 @@
       },
       {
         "tab": "Web Apps",
-        "groups": [
+        "pages": [
           {
             "group": "Prototype Mode",
             "pages": [
@@ -86,6 +87,7 @@
               "web-apps/build-mode/deployment-guide"
             ]
           },
+          "untitled-page",
           {
             "group": "Working in a project",
             "pages": [

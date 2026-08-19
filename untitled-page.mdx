@@ -1,0 +1,11 @@
+---
+title: "Testing"
+---
+
+## Testing against Acceptance Criteria
+
+Acceptance criteria in the CAB cover error and edge paths as well as the happy path, which is what makes them usable as a test basis rather than a summary.
+
+After a build, the testing agent opens the application in a browser and works through it. It writes its own scenarios, each a complete user journey starting from navigation, and **every scenario runs in a fresh browser session** so that one cannot leave state behind that affects another. Only the pass or fail summary returns to your conversation.
+
+A build runs at most five test rounds. That caps repeated attempts within one request; it is not a limit on how often you can ask for testing.

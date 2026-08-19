@@ -74,6 +74,15 @@ Restoring also rebuilds the running application, which takes a few minutes. The 
 
 For version control you operate yourself (branches and pushing to a repository), see [Git Integration](/web-apps/git-integration).
 
+## How Secrets Are Handled
+
+The agent that writes your application never sees the values of your credentials.
+
+- Values are **masked before the agent reads them**. It can see that a credential is set and refer to it by name; the value itself never reaches it.
+- It can write a stored value into your application's configuration **without that value passing through the conversation**.
+- Internal secrets (database passwords, session and signing keys) are generated automatically. The only things you are asked for are keys that come from outside.
+- You can decline any request. The agent proceeds without it and is instructed not to ask again for the same one.
+
 ## Your Next Step
 
 Knowing the limits makes the read-only mode more useful, because it is the safe way to interrogate what the agent built.
