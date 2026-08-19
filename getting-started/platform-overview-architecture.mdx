@@ -1,56 +1,55 @@
 ---
 title: "Platform Overview & Architecture"
-description: "What the platform is made of, where your project and its application live, and which parts are agents."
+description: "Where your projects live and how they are set up."
 icon: "sitemap"
 ---
 
-The platform is one hosted application with a set of AI agents behind it, and it hosts the applications it builds for you.
-
 ## The Pieces
 
-| Part | What it does |
-| --- | --- |
-| **The workspace** | What you see: the dashboard, your projects, and the four modes |
-| **The agents** | Generate your specification, build your application, and test it |
-| **Your project** | Your uploaded material, your specification, your Tickets, and your generated code |
-| **Your running application** | The application the agents build, hosted and reachable at its own address |
-| **Supporting services** | Sign-in, source control, and the search index the agents use |
+**Your Project and the Application you build are related but separate things.** The _project_ is your workspace and it persists whether or not the application is running. This includes the CAB, Tickets, and any uploaded or system-generated artifacts. <br />The _application_ is built and deployed by the platform and has its own separate URL and login credentials. Itcan be stopped and started without affecting your project workspace.
 
-**Your project and the application it produces are separate things.** The project is your working material and it persists whether or not the application is running. The application can be stopped and started without affecting it.
+<Frame>
+  ![Image](/images/image-4.png "Image")
+</Frame>
 
-## The Agents
-
-Not one agent, several. Each has a different job and a different set of things it is allowed to do.
-
-| Agent | What it works on |
-| --- | --- |
-| **CAB generation** | Reads your uploaded material and writes the specification |
-| **CAB agent** | Answers questions about a blueprint and proposes changes to it |
-| **Prototype agent** | Builds front ends with mock data |
-| **Build agent** | Builds the real application, with data and infrastructure |
-| **Testing agent** | Opens the built application in a browser and works through it |
-
-**Each is confined to its own job.** The prototype agent does not touch databases. The testing agent has no access to your files or to the internet. The build agent cannot reach outside your project's own workspace.
-
-That separation is deliberate, and it is enforced by the platform rather than requested in an instruction.
+<Note>
+  Note that certain maintenance events or activity cleanups may bring your application down. It can be restarted at any time by navigating to the Build tab and either directing the agent or pressing the "Start Application" icon that will appear in place of the "Stop Application" icon.
+</Note>
 
 ## Where Your Application Runs
 
-Applications built on the platform are hosted by it. Each gets an address you can share, and you can stop and start it from the workspace.
+Applications built on BlueGenAI are natively hosted by our platform _(with the exception of low code platforms, which may be hosted externally)_. Each application gets a URL you can share, and you can stop and start it from the workspace. 
+
+<Info>
+  Giving access to the generated application **does NOT** grant someone access to the project workspace.
+</Info>
 
 Web projects can also be given a custom domain. See [Deployment Guide](/web-apps/build-mode/deployment-guide).
 
 ## Low-Code Projects Work Differently
 
-For Tyler Application Platform, ServiceNow, PowerApps, and Salesforce, the platform does not host the result. It produces the configuration those systems expect and sends it to the environment you connect, which is why a low-code project asks you to link your site before you can build.
+For Low Code applications (Tyler Application Platform, ServiceNow, PowerApps, and Salesforce)  the platform may not host the solution being built. 
 
-<Note>
-  Some low-code work is carried out by services outside this platform. The specification, the Tickets, and the ordering are produced here; the platform-specific build is handed onward.
-</Note>
+<Columns cols={2}>
+  <Column>
+    Instead, Users are expected to provide access to their own deployed application or else you may contact BlueGenAI for information about how to get access to a compatible low code environment.
 
-## Signing In
+    A low-code project asks you to link your site before you can build.
+  </Column>
+  <Column>
+    <img
+      src="/images/image-5.png"
+      alt="Image"
+      title="Image"
+      className="mx-auto"
+      style={{ width:"82%" }}
+    />
+  </Column>
+</Columns>
 
-Accounts and passwords are handled by a dedicated identity service rather than by the platform itself, which is why password and verification emails come from it.
+## How to Access the Application you are Building
+
+Accounts and passwords for the application your are building are handled the Builder agent and are separate and unrelated to your BlueGenAI account credentials and your Project-level collaboration permissions. Instead you will prompt the builder to provide you with access/account credentials suitable to the access that application is using.
 
 ## Your Next Step
 
