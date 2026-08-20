@@ -16,12 +16,14 @@ Generating a CAB takes three decisions from you, then runs through seven phases 
   <Step title="Upload your source material">
     Add the documents, images, or source archive the CAB should read. At least one file is needed before generation can begin.
 
-    See [Supported Input Types](/cab/supported-input-types) for what is accepted.
+    See [What Goes In?](/cab/supported-input-types) for more information
   </Step>
   <Step title="Choose which sections to generate">
     The **Sections to Generate** checklist offers 10 sections, all selected by default. **Deselect All** clears them, and the counter beside the heading tracks your selection.
 
     Deselecting a section removes it from the finished document. It also narrows what earlier phases look for, because source material is analysed against the sections you asked for.
+
+    **It is recommended to leave all sections checked each time**
   </Step>
   <Step title="Set Model Quality">
     Three options, each with a stated trade-off: **Low** for fastest and most affordable, **Medium** for balanced speed and quality, **High** for best quality output.
@@ -43,8 +45,6 @@ Once you generate, the run moves through these in order. Two are skipped automat
 | 5 | Skeleton Assembly | Assigns the IDs you see in the finished document and saves the outline | Never |
 | 6 | Vector Store Indexing | Indexes your material so later phases can retrieve the relevant parts | Your material is below the size threshold |
 | 7 | Section Generation | Writes the full detail for each selected section, in batches | Never |
-
-Indexing is skipped below 120,000 tokens, a token being roughly a fragment of a word. Small source sets are read whole, so there is nothing to gain from indexing them.
 
 The outline built in phases 3 to 5 is what makes the finished document internally consistent. Roles, entities, and screens are named once during assembly, so every later reference points at the same thing.
 
@@ -69,10 +69,10 @@ Each phase carries its own status as it goes, so a run in progress shows you whi
 
 While the run is going, the preview pane reads **Generating Blueprint** and explains that the document appears once generation completes.
 
-When it finishes, the preview fills with the document and the footer reports what the run cost and how long it took. In the example above, a 9 MB source archive generating all 10 sections at **Medium** cost \$6.53 and took 97 minutes 54 seconds.
+When it finishes, the preview fills with the document and the footer reports how long it took. 
 
 <Note>
-  Cost and elapsed time vary with the volume of source material, the number of sections selected, and the **Model Quality** setting. Treat the figure above as one observed run, not a benchmark.
+  Elapsed time vary with the volume of source material, the number of sections selected, and the **Model Quality** setting. 
 </Note>
 
 ## Your Next Step
