@@ -20,9 +20,9 @@ It is deliberately end to end. Each stage produces something the next one uses, 
       ![The Create New Project drawer showing a project title field, Project Type options for Web Application and Low Code Application, a Platform Type description, and client name and custom domain fields.](/images/getting-started/quick-start-guide-create-project.png)
     </Frame>
 
-    The project opens on the **CAB** tab, which is where every project starts.
+    By default, the project opens into the CAB, which is where every project starts.
   </Step>
-  <Step title="Upload what you have and generate your Common Application Blueprint.">
+  <Step title="Upload your chosen content and generate your Common Application Blueprint.">
     Upload documents or a source archive, leave all ten sections selected, and select **Generate Blueprint**.
 
     <Frame caption="The CAB workspace. Upload on the left, the generated blueprint on the right.">
@@ -37,16 +37,18 @@ It is deliberately end to end. Each stage produces something the next one uses, 
 
     See [Step-by-Step Workflow](/cab/step-by-step-workflow) for what happens during generation.
   </Step>
-  <Step title="Correct the Specification">
+  <Step title="Refine your CAB">
     Select **Edit CAB** to change anything the platform misread, or ask the **BlueGenAI CAB Agent** to make a change for you.
 
     Either way the change goes to a review screen where you accept or discard each one before it is written. Saving creates a version you can return to.
 
-    This step is the one people skip and regret. Everything downstream is generated from this document.
+    <Tip>
+      Everything downstream is generated from this document! Spending the time to clarify requirements and update your CAB will result in the best possible build, testing, and support clear traceability.
+    </Tip>
 
     See [Editing your CAB](/cab/editing-your-cab).
   </Step>
-  <Step title="Turn the specification into work">
+  <Step title="Turn the Specification into a Plan">
     Select **Generate Tickets** in the blueprint toolbar, then open the **Tickets** tab.
 
     <Frame caption="Tickets generated from the specification. Each traces back to the requirement that produced it.">
@@ -61,19 +63,14 @@ It is deliberately end to end. Each stage produces something the next one uses, 
 
     See [Epics](/tickets/epics).
   </Step>
-  <Step title="Prototype it">
-    Switch to **Prototype** and describe what you want to see. The agent builds a working front end with mock data, so you can click through the application before anything real is built.
-
-    Iterate here. A change costs a prompt, where the same change after a build costs a build.
-
-    When you are happy, **save the files you want to keep**; they appear in **Files**, and they are how this work reaches the next stage.
-
-    See [Prototype Mode](/web-apps/prototype-mode/overview).
-  </Step>
   <Step title="Build it">
     Switch to **Build**. This starts a fresh conversation, so attach the prototype files you saved and reference the Tickets you want built.
 
     Type `@` followed by at least two characters to reference a Ticket. Keep the number small, and stay within one Epic; the waves are ordered for a reason.
+
+    <Frame>
+      ![Build Mode Ticket Mention](/images/build-mode-ticket-mention.png "Build Mode Ticket Mention")
+    </Frame>
 
     The agent classifies your request, asks questions if it is ambiguous, then writes the application, runs it, and fixes what breaks before replying.
 
@@ -81,12 +78,15 @@ It is deliberately end to end. Each stage produces something the next one uses, 
 
     See [Build Mode](/web-apps/build-mode/overview).
   </Step>
-  <Step title="Test and open it">
+  <Step title="Test as you Go">
     With **App testing** enabled, the agent opens your application in a browser after building and works through it, checking the acceptance criteria that came from your original requirements.
 
     Open the URL from the agent's reply, or from **URLs** in the panel rail.
 
     See [App Testing](/web-apps/app-testing).
+  </Step>
+  <Step title="Review and Refine your build">
+    Periodically access your build via the URL provided on the **Application URLs** panel using credentials provided by the Builder.
   </Step>
 </Steps>
 
