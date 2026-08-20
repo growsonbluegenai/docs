@@ -12,15 +12,15 @@ The section is called **Suggested Questions**, and it is generated from the same
 
 ## How the Questions Are Found
 
-**The CAB reads your material in chunks, and each chunk is examined for gaps independently.** One chunk might flag an undefined approval threshold, another the same threshold from a different document.
+**As CAB analyzes your uploaded materials, they are examined for gaps.** For example, one portion of the code might flag an undefined approval threshold, another may identify the same threshold in a different document.
 
 Those separate findings are then reconciled in one pass over the whole set. That pass does three things worth knowing about.
 
 - **It merges duplicates.** A gap flagged in four documents becomes one question, not four.
 - **It ranks by impact.** The questions that most affect what gets built appear first, so the list is in the order you should work through it.
-- **It combines context.** Where several documents touch the same gap, the question carries what each of them said.
+- **It combines context.** Where several documents touch the same gap, the question carries what each of them said. If a question can be resolved by the CAB AI, it will do so before producing the final output.
 
-The instruction behind this pass is to read like a business analyst running a joint design session, looking for what is missing, not summarising what is present.
+The intention behind this pass is to read like a business analyst running a joint design session, looking for what is missing, not summarising what is present.
 
 ## What Each Question Carries
 
@@ -36,7 +36,7 @@ The instruction behind this pass is to read like a business analyst running a jo
 
 ## What It Looks For
 
-Nine kinds of gap are examined, and they are worth knowing because they tell you what a CAB treats as a missing requirement.
+Here are examples of the types of gaps most commony identified by the CAB generation process:
 
 | Area | Example of what gets flagged |
 | --- | --- |
