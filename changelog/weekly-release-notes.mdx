@@ -5,8 +5,20 @@ description: "What changed, week by week."
 
 ## Week of August 18, 2026
 
+### New features
+
+- **Clone a project from the dashboard.** The project card menu now has a **Clone Project** option that copies a project into a new one, letting you rename the title, description, and client name as you copy. Web projects bring the blueprint, requirements, uploaded files, source code, design system, credentials, and MCP connections; low-code projects bring the blueprint only. Tickets, Epics, conversation history, and collaborators are never copied. Failed clones retry up to three times. See [Cloning your project](/admin-platform/cloning-your-project).
+- **Edit CAB with review-before-save.** A generated blueprint can now be edited in two ways: change values inline yourself, or ask the CAB agent to make changes for you. Both routes end at a review screen where you accept or discard each change before anything is written. See [Editing your CAB](/cab/editing-your-cab).
+- **Version history for blueprints.** Every save creates a version you can open, compare, and restore. A badge on the toolbar shows how many versions exist. See [Editing your CAB](/cab/editing-your-cab).
+- **Share a blueprint outside the platform.** The new **Share CAB** control gives you a link that opens the whole blueprint for anyone, with no BlueGenAI account required. Use it for stakeholder review. See [Editing your CAB](/cab/editing-your-cab).
+- **Download blueprints as Markdown or PDF.** Two new toolbar buttons export the current blueprint as a `.md` file or a PDF. See [Editing your CAB](/cab/editing-your-cab).
+
 ### Updates
 
+- **Choose Model Quality before generating a CAB.** CAB Configuration now offers **Low**, **Medium**, and **High** for the whole run, trading speed and cost against output quality. The footer reports final cost and elapsed time once the run completes. See [Step-by-step workflow](/cab/step-by-step-workflow).
+- **Pause, resume, and stop a CAB run.** While generation is in progress you can pause and resume at will, or stop with a confirmation. Each of the seven generation phases now reports its own status so you can see which one is active. See [Step-by-step workflow](/cab/step-by-step-workflow).
+- **Pick which sections to generate.** The **Sections to Generate** checklist lets you deselect any of the 10 blueprint sections before a run, which also narrows what earlier phases look for in your source material. See [Step-by-step workflow](/cab/step-by-step-workflow).
+- **Integrations page added.** A new [Integrations](/admin-platform/integrations) page lays out the services the platform runs on (identity, source control, search, application hosting), the credentials each low-code platform needs, and where to connect external tools via MCP.
 - **Project collaborators now carry a billing preference.** When you invite an Editor, you choose whether their agent runs draw from the project owner's credits or from the collaborator's own balance. Select **Owner** to charge activity to the project owner, or **Collaborator** to charge the invitee's account. See [User & role management](/getting-started/user-role-management).
 - **Clearer three-level project permissions.** The Owner, Editor, and Viewer roles are now spelled out end to end, including what each can do, how invitations are accepted, rejected, or withdrawn, and how Viewers can still ask read-only questions of the agent on projects they cannot build. See [User & role management](/getting-started/user-role-management).
 - **Two distinct ways to share a project.** Shareable Link Access lets any signed-in platform user request access to a whole project (still requires approval). Read-only share links let anyone open a generated CAB without an account. See [Collaboration features](/admin-platform/collaboration-features).
