@@ -1,40 +1,40 @@
 ---
-title: "Blueprint Output Reference"
+title: "Blueprint Components"
 description: "What each of the 10 sections of a Common Application Blueprint contains and what question it answers."
 icon: "file-lines"
 ---
 
-You choose which sections to generate before you start, using the **Sections to Generate** checklist. All 10 are selected by default.
+When initiating a CAB you choose which sections to generate before you start, using the **Sections to Generate** checklist. All 10 are selected by default - **this is the recommended setting.**
 
 <Frame caption="A completed CAB. The Sections to Generate checklist is on the left; the rendered document opens on the right.">
   ![CAB mode showing the Sections to Generate checklist with all ten sections selected, and the Common Application Blueprint Preview pane displaying a generated document with its table of contents.](/images/cab/blueprint-output-reference-preview.png)
 </Frame>
 
-## The 10 Sections
+## The 10 Sections Defined
 
 The rendered document groups the 10 sections under four top-level headings, with seven of them nested beneath **System Design**. The checklist labels differ slightly from the headings in the document.
 
 | # | Section | Answers |
 | --- | --- | --- |
 | 1 | **Project Identity** | Why this project exists, and what the system is |
-| 2 | **User Stories** | What each role needs to accomplish |
-| 3 | **System Design** | Groups the seven sections that specify the system itself |
-| 3.1 | **Data Model** | What the system stores |
-| 3.2 | **Screens & UI/UX** | What people see and interact with |
-| 3.3 | **Roles** | Who uses it, and what each role may do |
-| 3.4 | **Workflows** | How a record moves from one state to the next |
-| 3.5 | **Rules** | The logic that governs behaviour |
+| 2 | **User Stories** | What the system does, expressed in conditions faced by users of the system |
+| 3 | **System Design** | Groups the seven sections below that specify the system itself |
+| 3.1 | **Data Model** | What the system stores and how it stores it |
+| 3.2 | **Screens & UI/UX** | What people see and interact with, including any special or required screens or forms critical to the system's purpose |
+| 3.3 | **Roles** | Who uses it, and what each role may do (permissions, etc) |
+| 3.4 | **Workflows** | What processes define how information moves through the system? Defines the States and Statuses of each of these flows |
+| 3.5 | **Rules** | Collects the business processes, automated functions, and other rules required for processing in this application |
 | 3.6 | **Reporting & Analytics** | What gets reported, to whom, and how often |
-| 3.7 | **System Integrations** | What other systems it exchanges data with |
-| 4 | **Suggested Questions** | What the source material left undecided |
-
-Sections are generated in a different order from the one they are read in, so roles and entities exist before other sections reference them.
+| 3.7 | **System Integrations** | What other systems it exchanges data with and how |
+| 4 | **Suggested Questions** | What the source material left undecided or unclear |
 
 ### 1. Project Identity
 
 **This is the section a stakeholder reads first, and often the only one they read.** It carries the project name, the client, and one to three business domains, then four narrative fields: why the project exists, what the system does, who uses it, and the technology it runs on. It closes with cross-cutting constraints and an explicit in-scope and out-of-scope list.
 
-Where the source material named neither the project nor the client, the CAB infers both and marks them `[Inferred]`. Where two source documents contradict each other, both readings appear and the discrepancy is noted rather than silently resolved.
+<Info>
+  Where the source material named neither the project nor the client, the CAB infers both and marks them `[Inferred]`. Where two source documents contradict each other, both readings appear and the discrepancy is noted rather than silently resolved.
+</Info>
 
 ### 2. User Stories
 
