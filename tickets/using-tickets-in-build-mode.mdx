@@ -1,19 +1,15 @@
 ---
 title: "Using Tickets and Epics in Build Mode"
-description: "Referencing a Ticket in a Build conversation so the agent gets the requirement behind it, not just its title."
+description: "How to use Tickets and Epics in Build mode to ensure the best possible Build."
 icon: "code"
 ---
+
+## Referencing a Ticket
 
 Typing `@` followed by part of a Ticket id or title in Build Mode attaches that Ticket to your prompt. This is how the Build agent receives the requirement the Ticket came from, so you do not have to restate it.
 
 <Frame>
-  ![Image](/images/image.png "Image")
-</Frame>
-
-## Referencing a Ticket
-
-<Frame caption="The picker after typing @TKT. Each row shows the category, the ticket id and title, and its current status.">
-  ![The Build Mode composer with @TKT typed, showing a suggestion list of ticket rows each labelled Tickets, with the ticket id and title in monospace and the status Open or Closed in parentheses at the right.](/images/tickets/using-tickets-in-build-mode-mention.png)
+  ![Build Mode Ticket Mention](/images/build-mode-ticket-mention-1.png "Build Mode Ticket Mention")
 </Frame>
 
 <Steps>
@@ -52,9 +48,13 @@ See [Epics](/tickets/epics) for how the ordering is set.
   **Tag only one Epic per prompt.** An Epic is a wave, and waves are meant to be built in sequence. Spanning two in one prompt asks the agent to build work that was deliberately ordered.
 </Tip>
 
-## What You Should See
+## What You Should See Upon Completion
 
-The agent responds having read the Ticket's requirement, and its plan reflects the acceptance criteria rather than only the title you referenced.
+The agent responds having read and implemented the Ticket or Epic's requirement(s). It's report upon completion will include details about how the functionality was implemented, and if Test Mode was enabled  - will include Test results which track to each Tickets Acceptance Criteria.
+
+<Frame>
+  ![Image](/images/image-8.png "Image")
+</Frame>
 
 ## Your Next Step
 

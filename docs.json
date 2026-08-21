@@ -70,14 +70,6 @@
         "tab": "Web Apps",
         "pages": [
           {
-            "group": "Prototype Mode",
-            "pages": [
-              "web-apps/prototype-mode/overview",
-              "web-apps/prototype-mode/workflow",
-              "web-apps/prototype-mode/output-handoff"
-            ]
-          },
-          {
             "group": "Build Mode",
             "pages": [
               "web-apps/build-mode/overview",
@@ -88,6 +80,14 @@
             ]
           },
           "untitled-page",
+          {
+            "group": "Prototype Mode",
+            "pages": [
+              "web-apps/prototype-mode/overview",
+              "web-apps/prototype-mode/workflow",
+              "web-apps/prototype-mode/output-handoff"
+            ]
+          },
           {
             "group": "Working in a project",
             "pages": [
