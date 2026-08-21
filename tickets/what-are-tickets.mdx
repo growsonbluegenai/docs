@@ -1,12 +1,12 @@
 ---
 title: "What are Tickets and how do they help me?"
-description: "Tickets are the unit of work on a project: what each one carries, where they come from, and what the status field does and does not mean."
+description: "What do tickets include, where do they come from, and how are they used?"
 icon: "ticket"
 ---
 
-A Ticket is one unit of work on a project, either generated from your blueprint or written by hand.
+A Ticket is an individual unit of work on a project, either generated from your CAB or created manually.
 
-Tickets are where a specification stops being a document and becomes a list of things to do. Each one carries enough detail to be picked up, assigned, and tracked.
+Tickets are where a specification stops being part of a document and becomes a list of things to do. Each one carries enough detail to be picked up, assigned, and tracked.
 
 <Frame caption="The Tickets list. Every column except the title is sortable, and the status dropdown is editable directly from the row.">
   ![The All Tickets list showing forty tickets with columns for ID, title, status, priority, work type, source, assigned to, and created date, above a filter bar with search and five dropdowns.](/images/tickets/what-are-tickets-list.png)
@@ -14,13 +14,13 @@ Tickets are where a specification stops being a document and becomes a list of t
 
 ## Where Tickets Come From
 
-Every Ticket carries a **Source** of either `CAB` or `Manual`, and that is the clearest thing about it.
+Every Ticket carries a **Source** of either `CAB` or `Manual` to clearly identify it's origin.
 
 **CAB** means the Ticket was generated from your blueprint. Each one keeps a **CAB Reference** pointing back at the element it came from, so you can trace a piece of work to the requirement that produced it. See [CAB-to-Ticket conversion](/tickets/cab-to-ticket-conversion).
 
 **Manual** means somebody wrote it. See [Manually creating or editing tickets](/tickets/creating-editing-tickets).
 
-## What a Ticket Carries
+## What is in a Ticket
 
 <Frame caption="A Ticket opened from the list. Empty fields render as an em dash.">
   ![The ticket detail panel for TKT-001 showing status, priority, epic and wave on the first row, then work type, source, expertise and estimated effort, then platform, assigned to, due date and created date, followed by created by and CAB reference, above a description block.](/images/tickets/what-are-tickets-detail.png)
@@ -30,19 +30,19 @@ Every Ticket carries a **Source** of either `CAB` or `Manual`, and that is the c
 | --- | --- |
 | Status | `Open`, `In Progress`, or `Closed` |
 | Priority | `Low`, `Medium`, or `High` |
-| Work Type | What kind of work this is |
+| Work Type | What kind of work needs to be done |
 | Source | `CAB` or `Manual` |
 | Expertise | `Agent`, `Human`, or `Agent + Human` |
-| Estimated Effort | A number or a free-text estimate |
-| Epic and Wave | Which group of work this belongs to, and where that group sits in the build order |
+| Estimated Effort | for Human or Agent \+ Human tickets, this shows an estimated Level of Effort (LOE) as determined by the Ticket AI agent |
+| Epic | Which group of work this belongs to, and where that group sits in the build order |
 | Assigned To | A name and email, or `Unassigned` |
-| CAB Reference | The blueprint element this came from |
-| Description | The body of the work, including acceptance criteria on generated Tickets |
-| Note | Reviewer commentary. Carried over from the blueprint, never written by the AI |
+| CAB Reference | The blueprint element this came from - this is key to traceability |
+| Description | Details surrounding the body of the work. For system-generated Tickets this will include testing tests and acceptance criteria |
+| Note | Reviewer or Developer commentary. If present on the CAB, it will be carried over from the blueprint. Otherwise it can be manually added into the ticket as the work is performed, tested, or otherwise reviewed |
 
 ## Status Is a Label, Not a Workflow
 
-**Nothing enforces an order.** A Ticket can move from any status to any other, in any direction. `Closed` is not final, and there is no rule requiring `In Progress` before it.
+A Ticket can move from any status to any other, in any direction. `Closed` is not final, and there is no rule requiring `In Progress` before it. Tickets may be re-opened as necessary to refine that functionality.
 
 The field records where a piece of work stands, in the judgement of whoever set it. It does not gate anything, block anything, or trigger anything.
 

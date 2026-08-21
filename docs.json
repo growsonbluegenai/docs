@@ -41,12 +41,12 @@
             "pages": [
               "cab/what-is-cab",
               "cab/supported-input-types",
-              "cab/blueprint-output-reference",
               "cab/step-by-step-workflow",
-              "cab/legacy-code-translation-guide",
-              "cab/requirement-clarification",
+              "cab/blueprint-output-reference",
+              "untitled-page-2",
               "cab/editing-your-cab",
-              "untitled-page-2"
+              "cab/legacy-code-translation-guide",
+              "cab/requirement-clarification"
             ]
           }
         ]

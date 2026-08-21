@@ -6,13 +6,17 @@ icon: "wand-magic-sparkles"
 
 **Generate Tickets** turns a finished blueprint into a set of Tickets, one per unit of work it finds.
 
-<Frame caption="Generate Tickets sits in the blueprint preview toolbar, available once a blueprint exists.">
-  ![The CAB workspace with the Common Application Blueprint Preview pane on the right, showing the Generate Tickets button in its toolbar above the rendered document.](/images/tickets/cab-to-ticket-conversion-generate.png)
+<Frame>
+  ![Image](/images/image-6.png "Image")
 </Frame>
 
 ## Before You Start
 
 You need a finished blueprint. Running the conversion without one returns `CAB blueprint not found. Generate the blueprint first.`
+
+<Frame>
+  ![Image](/images/image-7.png "Image")
+</Frame>
 
 ## Running the Conversion
 
@@ -35,19 +39,19 @@ On a Web project, the conversion reads the **User Stories** section and creates 
 Nothing is merged or skipped. The count of Tickets matches the count of user stories in your blueprint.
 
 <Note>
-  On low-code projects the conversion is handled by an external service rather than in the platform, so the work types and the level of breakdown differ from what is described here.
+  On low-code projects the conversion is handled by different process which caters to the unique properties of each low code platform. As a result, the work types and the level of breakdown differ from what is described here.
 </Note>
 
 ## Running It Again Replaces What Is There
 
 **Regenerating deletes every Ticket with a source of `CAB` and creates a fresh set.** Manual Tickets are untouched.
 
-Anything you changed on a generated Ticket goes with it: status, assignee, priority, epic assignment, and any note you added. The product warns you before it happens:
+Anything you changed on a generated Ticket goes with it: status, assignee, priority, epic assignment, and any note you added. Selecting "Generate Tickets" when tickets already exist will result in the warning message below. Please note that this change is permanent and cannot be undone.
 
 > Tickets already exist from this Blueprint. Regenerating will replace all previously generated CAB tickets. Are you sure?
 
 <Warning>
-  Regenerate after correcting your blueprint, not after working your Tickets. If your team has been updating statuses and assignments for a week, regenerating discards that week.
+  Regenerate after correcting your blueprint, not after working your Tickets. If your team has been updating Ticket statuses and assignments, regenerating discards those changes.
 </Warning>
 
 ## What You Should See
