@@ -11,13 +11,6 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Home",
-        "icon": "house",
-        "pages": [
-          "index"
-        ]
-      },
-      {
         "tab": "Getting Started",
         "groups": [
           {
@@ -26,9 +19,7 @@
               "getting-started/what-is-bluegenai",
               "getting-started/quick-start-guide",
               "getting-started/platform-overview-architecture",
-              "getting-started/compliance-and-evidence",
-              "getting-started/navigation-ui-guide",
-              "getting-started/user-role-management"
+              "getting-started/navigation-ui-guide"
             ]
           }
         ]
@@ -43,9 +34,7 @@
               "cab/supported-input-types",
               "cab/step-by-step-workflow",
               "cab/blueprint-output-reference",
-              "traceability",
               "cab/editing-your-cab",
-              "cab/legacy-code-translation-guide",
               "cab/requirement-clarification"
             ]
           }
@@ -59,6 +48,7 @@
             "pages": [
               "tickets/what-are-tickets",
               "tickets/cab-to-ticket-conversion",
+              "traceability",
               "tickets/creating-editing-tickets",
               "tickets/epics",
               "tickets/using-tickets-in-build-mode"
@@ -76,28 +66,27 @@
               "web-apps/build-mode/workflow",
               "web-apps/build-mode/tech-stack-reference",
               "web-apps/build-mode/build-agent-guide",
-              "web-apps/build-mode/deployment-guide"
+              "web-apps/build-mode/deployment-guide",
+              {
+                "group": "Working in a project",
+                "pages": [
+                  "web-apps/ask-mode",
+                  "web-apps/files",
+                  "web-apps/codebase-and-database",
+                  "web-apps/git-integration",
+                  "web-apps/credentials",
+                  "web-apps/mcp-integrations",
+                  "web-apps/app-testing"
+                ]
+              }
             ]
           },
-          "untitled-page",
           {
             "group": "Prototype Mode",
             "pages": [
               "web-apps/prototype-mode/overview",
               "web-apps/prototype-mode/workflow",
               "web-apps/prototype-mode/output-handoff"
-            ]
-          },
-          {
-            "group": "Working in a project",
-            "pages": [
-              "web-apps/ask-mode",
-              "web-apps/files",
-              "web-apps/codebase-and-database",
-              "web-apps/git-integration",
-              "web-apps/credentials",
-              "web-apps/mcp-integrations",
-              "web-apps/app-testing"
             ]
           }
         ]
@@ -127,9 +116,7 @@
                 "group": "TAP Build Mode",
                 "pages": [
                   "low-code/tap/build-mode/overview",
-                  "low-code/tap/build-mode/workflow",
-                  "low-code/tap/build-mode/component-reference",
-                  "low-code/tap/build-mode/build-agent-guide"
+                  "low-code/tap/build-mode/component-reference"
                 ]
               }
             ]
@@ -154,7 +141,6 @@
                 "group": "ServiceNow Build Mode",
                 "pages": [
                   "low-code/servicenow/build-mode/overview",
-                  "low-code/servicenow/build-mode/workflow",
                   "low-code/servicenow/build-mode/component-reference"
                 ]
               }
@@ -168,7 +154,6 @@
                 "group": "PowerApps Build Mode",
                 "pages": [
                   "low-code/powerapps/build-mode/overview",
-                  "low-code/powerapps/build-mode/workflow",
                   "low-code/powerapps/build-mode/component-reference"
                 ]
               }
@@ -182,10 +167,9 @@
           {
             "group": "Tips & Tricks",
             "pages": [
+              "tips-and-tricks/troubleshooting-faq",
               "tips-and-tricks/prompting-best-practices",
-              "tips-and-tricks/bd-pre-sales-usage-guide",
-              "tips-and-tricks/common-workflows-by-role",
-              "tips-and-tricks/troubleshooting-faq"
+              "tips-and-tricks/common-workflows-by-role"
             ]
           }
         ]
@@ -196,6 +180,7 @@
           {
             "group": "Admin & Platform",
             "pages": [
+              "getting-started/user-role-management",
               "admin-platform/collaboration-features",
               "admin-platform/integrations",
               "admin-platform/cloning-your-project"
