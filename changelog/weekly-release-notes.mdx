@@ -3,6 +3,21 @@ title: "Weekly release notes"
 description: "What changed, week by week."
 ---
 
+## Week of September 8, 2026
+
+### New features
+
+- **Checkpoints and Restore in Build Mode.** Every prompt you send the build agent now creates a checkpoint automatically. A badge appears beneath each agent reply; hover it and press **Restore** to jump your project's code back to that point. Restoring rebuilds the running application and starts a new branch in the conversation, keeping the earlier branch in history. See [Checkpoints and restoring](/web-apps/build-mode/build-agent-guide).
+- **Traceability across the Platform.** A new page collects what the platform records as a by-product of normal use: the chain from source material through CAB, Tickets, Epics, Build, and App Testing, plus what the review record captures and the boundaries each agent works inside. See [Traceability](/traceability).
+
+### Updates
+
+- **Version 2 gateway architecture for new Web projects.** New Web projects are created on the gateway architecture: a single Nginx reverse proxy fronts your services, only `nginx` and `database` expose ports externally, and the project is served from one subdomain URL. Version 1 projects continue to work and are not migrated. See [Default tech stack](/web-apps/build-mode/tech-stack-reference).
+- **Clearer CAB generation workflow.** The [Generating your first CAB](/cab/step-by-step-workflow) page now spells out the three decisions before a run (source material, sections, model quality), the seven generation phases and when each is skipped, and the six run statuses with what you can do in each.
+- **Refreshed blueprint reference.** The [Elements of your Blueprint](/cab/blueprint-output-reference) page now documents all 10 sections end to end, including how the CAB handles inferred project names, contradictory sources, missing reports, and gaps (which become Suggested Questions ordered by impact).
+- **Ticket detail clarifications.** The [Tickets](/tickets/what-are-tickets) page now lists every field on a Ticket, explains that Status is a label rather than a workflow (any status can move to any other), and confirms that Epic and Wave are the same thing (an Epic's position in the build order is its Wave).
+- **Full low-code component inventories.** The component reference pages for [TAP](/low-code/tap/build-mode/component-reference), [ServiceNow](/low-code/servicenow/build-mode/component-reference), [PowerApps](/low-code/powerapps/build-mode/component-reference), and [Salesforce](/low-code/salesforce/build-mode/component-reference) now enumerate every component the agent configures, grouped by platform area, with per-platform notes on what is applied to the environment versus specified for you to apply.
+
 ## Week of August 21, 2026
 
 ### New features
