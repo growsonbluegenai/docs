@@ -1,6 +1,6 @@
 ---
 title: "What is BlueGenAI?"
-description: "BlueGenAI is an enterprise-grade AI software modernization platform. It carries a project from source material (requirements, documents, or a legacy codebase) through clarification, design specification, build, and testing to a running application, keeping every step traceable back to your organization's requirements."
+description: "BlueGenAI is an enterprise-grade AI software modernization platform for the organizations that run mission-critical systems. It carries a project from source material (a legacy codebase, contractual requirements, or knowledge that currently lives only in your experts' heads) through specification, build, and testing to a running application, keeping every step traceable back to your organization's requirements."
 icon: "circle-info"
 ---
 
@@ -10,19 +10,33 @@ icon: "circle-info"
 
 ## An Enterprise Approach
 
-**BlueGenAI's approach is the opposite of vibe coding.** <br />Prompting your way to something "good enough" may be ok for prototypes, but it is not good enough for producing production-grade enterprise applications. Producing software an organisation can sign off on, maintain, and securely deploy is a different discipline, and that is what this platform is built for.
+**Modernization is slow because it is blind.** Decades of accumulated code, requirements buried in documents nobody has opened in years, documentation that was never finished, and risk no one can quantify. Teams are forced to move without confidence.
+
+The current generation of AI tools does not fix that. Generating code is no longer the hard part; everyone can do that now. Coding assistants stop at the code. Specification tools stop at the plan. Somebody still has to reconcile the two, test the result, and stand behind it.
+
+**BlueGenAI's approach is the opposite of vibe coding.** <br />Prompting your way to something "good enough" may be fine for prototypes, but it is not good enough for the systems an organization actually depends on. Producing software an organization can sign off on, maintain, and securely deploy is a different discipline, and that is what this platform is built for.
 
 This approach can be summarized by several core concepts:
 
 | Concept | How the platform delivers it |
 | --- | --- |
-| **Traceability** back to well-clarified requirements | Every project starts by producing a **Common Application Blueprint** - a specification generated from your own documents and source code, which you refine and correct. |
+| **Traceability** back to well-clarified requirements | Every project starts by producing a **Common Application Blueprint**: the single structured source of truth for your workflows, data, business rules, roles, integrations, and acceptance criteria, generated from your own material and corrected by your experts. |
 | **Carefully planned stages** that build interlocked functionality in sequence | Work is broken into **Tickets** and grouped into **Epics**, each Epic is a wave engineered in a deliberate build order |
 | **Rigorous validation** against well-defined acceptance criteria | Acceptance criteria are written into User Stories, and **App testing** exercises them against the application as it is built |
 
-These principles fit together. The acceptance criteria that get tested are the ones written into the User Stories within the CAB which produce the requirements that generated the Ticket, in the Epic that set its place in the Build. Nothing in that chain is added afterwards to make the work look organised.
+The Blueprint is not documentation about the system. It is what the new system is generated from. The same corrected Blueprint drives every target, full-code or low-code, so the workflows, rules, and acceptance criteria agreed once are the ones that reach the build.
+
+These principles fit together. The acceptance criteria that get tested are the ones written into the User Stories within the CAB which produce the requirements that generated the Ticket, in the Epic that set its place in the Build. Nothing in that chain is added afterwards to make the work look organized.
 
 See [Compliance & Evidence](/getting-started/compliance-and-evidence) for what the platform records as that chain runs.
+
+## Modernizing What Already Exists
+
+BlueGenAI is a modernization platform first. A project can start from a blank requirement, but the case it is built for is the system that already runs the business and cannot simply be switched off: the application whose original authors have moved on, whose documentation was never finished, and whose real behavior now lives only in the code.
+
+The platform reads that codebase alongside whatever written material survives, and reverse-engineers the specification from both. The modernized system is then built from what the code actually does rather than from what anyone remembers it doing, and the places where those two disagree become explicit questions instead of silent assumptions.
+
+That is the position most regulated enterprises, government agencies, and the system integrators who serve them are actually in.
 
 ## What You Can Build
 
@@ -42,13 +56,13 @@ See [Compliance & Evidence](/getting-started/compliance-and-evidence) for what t
 ## How a Project Runs
 
 1. **Create your Project.** Choose your technology platform and prepare your materials
-2. **Upload what you have.** A solicitation, a requirements pack, an existing codebase, or all three. Then **Generate a CAB.** The platform reads your material and writes the specification, including a list of what your source material left undecided. _(Optionally create mock ups in **Prototype** mode to aid your design discussions)_
+2. **Upload what you have.** Source code, database schemas, APIs and integrations, contractual requirements, process flows, SOPs, and training material. Whatever your organization knows about the system, in whatever form it survived. Then **Generate a CAB.** The platform reads your material and writes the specification, including a list of what your source material left undecided. _(Optionally create mock ups in **Prototype** mode to aid your design discussions)_
 3. **Refine and Clarify your requirements.** Edit your CAB using the platform's tools to guide you to clear requirements.
 4. **Generate Tickets.** The corrected specification becomes units of work, grouped into Epics that set the build order.
 5. **Build your Application.** Guided by your expertise; BlueGenAI's builder will leverage Epics, Tickets, supplementary materials, and manual direction to iteratively build your application
-6. **Test and Deploy.** As it is being built the platform tests the development of your application against the previously defined acceptance criteria. The end result is a full stack application ready for review, refinement, and acceptance testing.
+6. **Test and Deploy.** As it is being built the platform tests the development of your application against the previously defined acceptance criteria. Testing is where modernization projects usually stall, because it is the part no code generator does for you. Here it runs as part of the build rather than after it. The end result is a full stack application ready for review, refinement, and acceptance testing.
 
-While the best applications use the whole process end-to-end, BlueGenAI's features are flexible and independent, allowing you to use exactly the tools you need for a given effort.
+Your technical and domain experts review, correct, and approve at every stage. While the best applications use the whole process end to end, BlueGenAI's features are flexible and independent, allowing you to use exactly the tools you need for a given effort.
 
 ## Where to Go Next
 
