@@ -208,13 +208,23 @@
   },
   "redirects": [
     {
+      "source": "/",
+      "destination": "/getting-started/what-is-bluegenai",
+      "permanent": false
+    },
+    {
+      "source": "/index",
+      "destination": "/getting-started/what-is-bluegenai",
+      "permanent": true
+    },
+    {
       "source": "/user-help-center-portal",
-      "destination": "/index",
+      "destination": "/getting-started/what-is-bluegenai",
       "permanent": true
     },
     {
       "source": "/home",
-      "destination": "/index",
+      "destination": "/getting-started/what-is-bluegenai",
       "permanent": true
     },
     {
