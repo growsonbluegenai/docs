@@ -3,31 +3,44 @@
    are subject to change, so re-check after any platform upgrade. */
 
 /* --- Top navigation tab band -------------------------------------------- */
-/* Black band, white labels, chartreuse active state. */
+/* Black band, white labels, chartreuse for the selected section.
+   The box-shadow/clip-path pair paints the fill edge to edge regardless of
+   how wide the tab container itself is, so the band spans the viewport. */
 
 nav-tabs {
+  display: block;
   background: #1B1B1B;
-  border-bottom: 1px solid #1B1B1B;
+  box-shadow: 0 0 0 100vmax #1B1B1B;
+  clip-path: inset(0 -100vmax);
+  border-bottom: none;
 }
 
 nav-tabs-item,
 nav-tabs-item a,
-.nav-tabs-item {
+.nav-tabs-item,
+mobile-nav-tabs-item,
+.mobile-nav-tabs-item {
   color: #FFFFFF;
+  border-bottom-color: transparent;
 }
 
 nav-tabs-item:hover,
+nav-tabs-item a:hover,
 .nav-tabs-item:hover {
   color: #BCD232;
 }
 
-.nav-tabs-item[data-active] {
+.nav-tabs-item[data-active],
+.nav-tabs-item[data-active] a,
+nav-tabs-item[data-active],
+mobile-nav-tabs-item[data-active],
+.mobile-nav-tabs-item[data-active] {
   color: #BCD232;
-  border-bottom-color: #BCD232;
+  border-bottom: 2px solid #BCD232;
 }
 
-/* Dark mode: the band stays black, one step above the page ground. */
+/* Dark mode: the band already reads as intended, so only the divider moves. */
 .dark nav-tabs {
   background: #1B1B1B;
-  border-bottom-color: #22262F;
+  box-shadow: 0 0 0 100vmax #1B1B1B;
 }
