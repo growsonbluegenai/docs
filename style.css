@@ -1,46 +1,32 @@
 /* Veylo docs - custom styling
-   Selectors come from Mintlify's documented CSS hooks. Mintlify warns these
-   are subject to change, so re-check after any platform upgrade. */
+   Verified against the rendered DOM 2026-09-17. Note that Mintlify's hooks are
+   CSS CLASSES here (.nav-tabs, .nav-tabs-item), not custom element names, and
+   the band's background sits two levels above .nav-tabs on an otherwise
+   unnamed wrapper, which is why the :has() selector is needed. The !important
+   flags are required to beat the theme's own Tailwind utilities. Re-check after
+   any Mintlify platform upgrade. */
 
 /* --- Top navigation tab band -------------------------------------------- */
-/* Black band, white labels, chartreuse for the selected section.
-   The box-shadow/clip-path pair paints the fill edge to edge regardless of
-   how wide the tab container itself is, so the band spans the viewport. */
+/* Black band, white labels, chartreuse for the selected section. */
 
-nav-tabs {
-  display: block;
-  background: #1B1B1B;
-  box-shadow: 0 0 0 100vmax #1B1B1B;
-  clip-path: inset(0 -100vmax);
-  border-bottom: none;
+div:has(> div > .nav-tabs) {
+  background-color: #1B1B1B !important;
 }
 
-nav-tabs-item,
-nav-tabs-item a,
-.nav-tabs-item,
-mobile-nav-tabs-item,
-.mobile-nav-tabs-item {
-  color: #FFFFFF;
-  border-bottom-color: transparent;
+.nav-tabs .nav-tabs-item {
+  color: #FFFFFF !important;
 }
 
-nav-tabs-item:hover,
-nav-tabs-item a:hover,
-.nav-tabs-item:hover {
-  color: #BCD232;
+.nav-tabs .nav-tabs-item:hover {
+  color: #BCD232 !important;
 }
 
-.nav-tabs-item[data-active],
-.nav-tabs-item[data-active] a,
-nav-tabs-item[data-active],
-mobile-nav-tabs-item[data-active],
-.mobile-nav-tabs-item[data-active] {
-  color: #BCD232;
-  border-bottom: 2px solid #BCD232;
+.nav-tabs .nav-tabs-item[data-active] {
+  color: #BCD232 !important;
 }
 
-/* Dark mode: the band already reads as intended, so only the divider moves. */
-.dark nav-tabs {
-  background: #1B1B1B;
-  box-shadow: 0 0 0 100vmax #1B1B1B;
+/* The active underline is a positioned child div using the theme primary. */
+.nav-tabs .nav-tabs-item[data-active] > div {
+  background-color: #BCD232 !important;
+  height: 2px !important;
 }
