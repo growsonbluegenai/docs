@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "BlueGenAI",
+  "theme": "sequoia",
+  "name": "Veylo",
   "colors": {
-    "primary": "#2563EB",
-    "light": "#60A5FA",
-    "dark": "#1D4ED8"
+    "primary": "#748028",
+    "light": "#C5D84D",
+    "dark": "#748028"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -258,5 +258,11 @@
         ]
       }
     ]
+  },
+  "background": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#0C0E12"
+    }
   }
 }
