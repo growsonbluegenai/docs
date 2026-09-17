@@ -16,7 +16,7 @@
           {
             "group": "Getting Started",
             "pages": [
-              "getting-started/what-is-bluegenai",
+              "getting-started/what-is-veylo",
               "getting-started/quick-start-guide",
               "getting-started/platform-overview-architecture",
               "getting-started/navigation-ui-guide"
@@ -209,27 +209,32 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/getting-started/what-is-bluegenai",
+      "destination": "/getting-started/what-is-veylo",
       "permanent": false
     },
     {
       "source": "/index",
-      "destination": "/getting-started/what-is-bluegenai",
+      "destination": "/getting-started/what-is-veylo",
       "permanent": true
     },
     {
       "source": "/user-help-center-portal",
-      "destination": "/getting-started/what-is-bluegenai",
+      "destination": "/getting-started/what-is-veylo",
       "permanent": true
     },
     {
       "source": "/home",
-      "destination": "/getting-started/what-is-bluegenai",
+      "destination": "/getting-started/what-is-veylo",
       "permanent": true
     },
     {
       "source": "/low-code/salesforce",
       "destination": "/low-code/salesforce/overview",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/what-is-bluegenai",
+      "destination": "/getting-started/what-is-veylo",
       "permanent": true
     }
   ],
