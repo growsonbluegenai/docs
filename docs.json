@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "BlueGenAI",
+  "theme": "sequoia",
+  "name": "Veylo",
   "colors": {
-    "primary": "#2563EB",
-    "light": "#60A5FA",
-    "dark": "#1D4ED8"
+    "primary": "#748028",
+    "light": "#C5D84D",
+    "dark": "#748028"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -16,7 +16,7 @@
           {
             "group": "Getting Started",
             "pages": [
-              "getting-started/what-is-bluegenai",
+              "index",
               "getting-started/quick-start-guide",
               "getting-started/platform-overview-architecture",
               "getting-started/navigation-ui-guide"
@@ -202,29 +202,29 @@
     ]
   },
   "logo": {
-    "light": "https://bluegenai.com/logo.svg",
-    "dark": "https://bluegenai.com/logo.svg",
-    "href": "https://www.bluegenai.com/"
+    "light": "/images/veylo-wordmark-black.svg",
+    "dark": "/images/veylo-wordmark-white.svg",
+    "href": "https://www.veylo.com/"
   },
   "redirects": [
     {
-      "source": "/",
-      "destination": "/getting-started/what-is-bluegenai",
-      "permanent": false
-    },
-    {
-      "source": "/index",
-      "destination": "/getting-started/what-is-bluegenai",
+      "source": "/home",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/user-help-center-portal",
-      "destination": "/getting-started/what-is-bluegenai",
+      "destination": "/",
       "permanent": true
     },
     {
-      "source": "/home",
-      "destination": "/getting-started/what-is-bluegenai",
+      "source": "/getting-started/what-is-veylo",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/getting-started/what-is-bluegenai",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -253,10 +253,19 @@
           },
           {
             "label": "Contact Support",
-            "href": "mailto:feedback@bluegenai.com"
+            "href": "mailto:feedback@veylo.com"
           }
         ]
       }
     ]
+  },
+  "background": {
+    "color": {
+      "light": "#FFFFFF",
+      "dark": "#0C0E12"
+    }
+  },
+  "icons": {
+    "library": "lucide"
   }
 }

@@ -1,0 +1,32 @@
+/* Veylo docs - custom styling
+   Verified against the rendered DOM 2026-09-17. Note that Mintlify's hooks are
+   CSS CLASSES here (.nav-tabs, .nav-tabs-item), not custom element names, and
+   the band's background sits two levels above .nav-tabs on an otherwise
+   unnamed wrapper, which is why the :has() selector is needed. The !important
+   flags are required to beat the theme's own Tailwind utilities. Re-check after
+   any Mintlify platform upgrade. */
+
+/* --- Top navigation tab band -------------------------------------------- */
+/* Black band, white labels, chartreuse for the selected section. */
+
+div:has(> div > .nav-tabs) {
+  background-color: #1B1B1B !important;
+}
+
+.nav-tabs .nav-tabs-item {
+  color: #FFFFFF !important;
+}
+
+.nav-tabs .nav-tabs-item:hover {
+  color: #BCD232 !important;
+}
+
+.nav-tabs .nav-tabs-item[data-active] {
+  color: #BCD232 !important;
+}
+
+/* The active underline is a positioned child div using the theme primary. */
+.nav-tabs .nav-tabs-item[data-active] > div {
+  background-color: #BCD232 !important;
+  height: 2px !important;
+}
