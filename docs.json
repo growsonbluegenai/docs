@@ -264,8 +264,5 @@
       "light": "#FFFFFF",
       "dark": "#0C0E12"
     }
-  },
-  "icons": {
-    "library": "lucide"
   }
 }
