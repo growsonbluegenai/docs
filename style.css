@@ -1,0 +1,33 @@
+/* Veylo docs - custom styling
+   Selectors come from Mintlify's documented CSS hooks. Mintlify warns these
+   are subject to change, so re-check after any platform upgrade. */
+
+/* --- Top navigation tab band -------------------------------------------- */
+/* Black band, white labels, chartreuse active state. */
+
+nav-tabs {
+  background: #1B1B1B;
+  border-bottom: 1px solid #1B1B1B;
+}
+
+nav-tabs-item,
+nav-tabs-item a,
+.nav-tabs-item {
+  color: #FFFFFF;
+}
+
+nav-tabs-item:hover,
+.nav-tabs-item:hover {
+  color: #BCD232;
+}
+
+.nav-tabs-item[data-active] {
+  color: #BCD232;
+  border-bottom-color: #BCD232;
+}
+
+/* Dark mode: the band stays black, one step above the page ground. */
+.dark nav-tabs {
+  background: #1B1B1B;
+  border-bottom-color: #22262F;
+}
