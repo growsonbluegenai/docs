@@ -202,9 +202,9 @@
     ]
   },
   "logo": {
-    "light": "https://bluegenai.com/logo.svg",
-    "dark": "https://bluegenai.com/logo.svg",
-    "href": "https://www.bluegenai.com/"
+    "light": "/images/veylo-wordmark-black.svg",
+    "dark": "/images/veylo-wordmark-white.svg",
+    "href": "https://www.veylo.com/"
   },
   "redirects": [
     {
