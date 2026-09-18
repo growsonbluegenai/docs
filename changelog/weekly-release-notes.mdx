@@ -3,160 +3,160 @@ title: "Weekly release notes"
 description: "What changed, week by week."
 ---
 
-<Update label="Week of September 15, 2026" tags={["Core Platform"]} rss={{ title:"Week of September 15, 2026",description:"BlueGenAI is now Veylo" }}>
+<Update label="Week of September 15, 2026" rss={{ title:"Week of September 15, 2026",description:"BlueGenAI is now Veylo" }}>
   **Veylo Core Platform**
 
-  ## BlueGenAI is now Veylo
+  ## 🏷️ BlueGenAI is now Veylo
 
   The platform has been renamed. The product, your projects, credits, and integrations are unchanged; only the name and brand have updated. See [What is Veylo?](/) for the refreshed overview.
 </Update>
 
-<Update label="Week of September 8, 2026" tags={["Core Platform","Web Apps","Low Code"]} rss={{ title:"Week of September 8, 2026",description:"Checkpoints and Restore, Traceability, and the version 2 gateway architecture" }}>
+<Update label="Week of September 8, 2026" rss={{ title:"Week of September 8, 2026",description:"Checkpoints and Restore, Traceability, and the version 2 gateway architecture" }}>
   **Veylo Core Platform**
 
-  ## Checkpoints and Restore in Build Mode
+  ## ⏮️ Checkpoints and Restore in Build Mode
 
   Every prompt you send the build agent now creates a checkpoint automatically. A badge appears beneath each agent reply; hover it and press **Restore** to jump your project's code back to that point. Restoring rebuilds the running application and starts a new branch in the conversation, keeping the earlier branch in history. See [Checkpoints and restoring](/web-apps/build-mode/build-agent-guide).
 
-  ## Traceability across the Platform
+  ## 🗂️ Traceability across the Platform
 
   A new page collects what the platform records as a by-product of normal use: the chain from source material through CAB, Tickets, Epics, Build, and App Testing, plus what the review record captures and the boundaries each agent works inside. See [Traceability](/traceability).
 
-  ## Version 2 gateway architecture for new Web projects
+  ## 🏗️ Version 2 gateway architecture for new Web projects
 
   New Web projects are created on the gateway architecture: a single Nginx reverse proxy fronts your services, only `nginx` and `database` expose ports externally, and the project is served from one subdomain URL. Version 1 projects continue to work and are not migrated. See [Default tech stack](/web-apps/build-mode/tech-stack-reference).
 
-  ## Clearer CAB generation workflow
+  ## 🧭 Clearer CAB generation workflow
 
   The [Generating your first CAB](/cab/step-by-step-workflow) page now spells out the three decisions before a run (source material, sections, model quality), the seven generation phases and when each is skipped, and the six run statuses with what you can do in each.
 
-  ## Refreshed blueprint reference
+  ## 🧱 Refreshed blueprint reference
 
   The [Elements of your Blueprint](/cab/blueprint-output-reference) page now documents all 10 sections end to end, including how the CAB handles inferred project names, contradictory sources, missing reports, and gaps (which become Suggested Questions ordered by impact).
 
-  ## Ticket detail clarifications
+  ## 🎫 Ticket detail clarifications
 
   The [Tickets](/tickets/what-are-tickets) page now lists every field on a Ticket, explains that Status is a label rather than a workflow (any status can move to any other), and confirms that Epic and Wave are the same thing (an Epic's position in the build order is its Wave).
 
-  ## Full low-code component inventories
+  ## 🧩 Full low-code component inventories
 
   The component reference pages for [TAP](/low-code/tap/build-mode/component-reference), [ServiceNow](/low-code/servicenow/build-mode/component-reference), [PowerApps](/low-code/powerapps/build-mode/component-reference), and [Salesforce](/low-code/salesforce/build-mode/component-reference) now enumerate every component the agent configures, grouped by platform area, with per-platform notes on what is applied to the environment versus specified for you to apply.
 </Update>
 
-<Update label="Week of August 21, 2026" tags={["Core Platform","Web Apps"]} rss={{ title:"Week of August 21, 2026",description:"Tickets and Epics, Prototype Mode, Build Mode, Ask sub-mode, app testing, MCP integrations" }}>
+<Update label="Week of August 21, 2026" rss={{ title:"Week of August 21, 2026",description:"Tickets and Epics, Prototype Mode, Build Mode, Ask sub-mode, app testing, MCP integrations" }}>
   **Veylo Core Platform**
 
-  ## Tickets and Epics
+  ## 🎟️ Tickets and Epics
 
   Every project now carries a Tickets list where each item captures status, priority, work type, expertise (Agent, Human, or both), estimated effort, an assignee, and a link back to the CAB element it came from. Group Tickets into Epics to set the build order; an Epic's position is its Wave, so reordering Epics renumbers Waves automatically. Filter and sort state lives in the URL so a view can be shared as a link. See [What are Tickets](/tickets/what-are-tickets) and [Epics](/tickets/epics).
 
-  ## Generate Tickets from a CAB
+  ## 🪄 Generate Tickets from a CAB
 
   Convert a blueprint into a working set of Tickets in one step, with each Ticket keeping a CAB Reference back to its source element. See [CAB-to-Ticket conversion](/tickets/cab-to-ticket-conversion).
 
-  ## Reference a Ticket in Build Mode
+  ## 🔗 Reference a Ticket in Build Mode
 
   Mention a Ticket in a build conversation to hand its full description and acceptance criteria to the build agent as context. See [Using Tickets in Build Mode](/tickets/using-tickets-in-build-mode).
 
   **Veylo for Custom Web Applications**
 
-  ## Prototype Mode
+  ## ✨ Prototype Mode
 
   Build a working front end with mock data, no backend, and no infrastructure to stand up. Iterate on layout, colour, typography, and copy in seconds, then hand the output into Build. See [Prototype Mode overview](/web-apps/prototype-mode/overview) and [Output handoff](/web-apps/prototype-mode/output-handoff).
 
-  ## Build Mode
+  ## 🏗️ Build Mode
 
   Generate a full application (front end, backend, database) through a conversation with the build agent, with a per-message quality selector for Medium or High. See [Build Mode overview](/web-apps/build-mode/overview) and the [Workflow](/web-apps/build-mode/workflow).
 
-  ## Ask sub-mode for read-only questions
+  ## 👁️ Ask sub-mode for read-only questions
 
   Inside Build Mode's composer, switch to **Ask** to query your codebase without any risk of changes. The agent is given read-only tools only, cites answers with `path/file.ext:line`, and can produce a plan for a change before you switch back to Build to apply it. See [Ask Mode](/web-apps/ask-mode).
 
-  ## App testing agent
+  ## ✅ App testing agent
 
   With **App testing** enabled in agent settings, a separate testing agent runs browser-based scenarios against your built application after each build and reports pass or fail scenarios in the chat. Provide test logins and app notes in **Testing Context**. See [App testing and Testing Context](/web-apps/app-testing).
 
-  ## MCP integrations
+  ## 🔌 MCP integrations
 
   Connect a remote MCP server to extend what the build agent can reach, with `Streamable HTTP` or `SSE` transports, optional custom headers, and per-project `Shared` or `Individual` credential sharing. URLs are validated to block private and internal addresses. See [MCP Integrations](/web-apps/mcp-integrations).
 
-  ## Credentials panel
+  ## 🔑 Credentials panel
 
   Third-party keys are requested by the agent as it needs them and stored in a project credentials panel; internal secrets (database password, session keys) are generated for you. Values are masked before the agent reads them, so the agent references credentials by name only. See [Credentials](/web-apps/credentials).
 
-  ## Git integration for generated projects
+  ## 🔀 Git integration for generated projects
 
   **Checkout**, **Pull**, and **Push** controls in the Codebase panel footer let you sync a generated project with its repository, with a commit message prompt when there are uncommitted local changes. See [Git Integration](/web-apps/git-integration).
 
-  ## Custom domains for Web projects
+  ## 🌐 Custom domains for Web projects
 
   New Web projects on the gateway architecture can be given a custom subdomain of `veyloapp.ai` in place of the generated address. See [Deployment guide](/web-apps/build-mode/deployment-guide).
 
-  ## Codebase and Database viewers
+  ## 🗄️ Codebase and Database viewers
 
   Browse the generated source in a tree with a file viewer, and inspect the application's database either by browsing tables row-by-row or by running SQL against it. See [Codebase and Database view](/web-apps/codebase-and-database).
 
-  ## Tips and tricks section
+  ## 💡 Tips and tricks section
 
   A new guides area covers [prompting best practices](/tips-and-tricks/prompting-best-practices), [common workflows by role](/tips-and-tricks/common-workflows-by-role), a BD / pre-sales usage guide, and a [troubleshooting FAQ](/tips-and-tricks/troubleshooting-faq).
 
-  ## Files panel across modes
+  ## 📁 Files panel across modes
 
   A shared **Files** panel now lists everything uploaded to or generated by a project, available from the panel rail in both Prototype and Build. See [Files](/web-apps/files).
 </Update>
 
-<Update label="Week of August 18, 2026" tags={["Core Platform"]} rss={{ title:"Week of August 18, 2026",description:"Project cloning, CAB editing with review-before-save, version history, sharing and export" }}>
+<Update label="Week of August 18, 2026" rss={{ title:"Week of August 18, 2026",description:"Project cloning, CAB editing with review-before-save, version history, sharing and export" }}>
   **Veylo Core Platform**
 
-  ## Clone a project from the dashboard
+  ## 🧪 Clone a project from the dashboard
 
   The project card menu now has a **Clone Project** option that copies a project into a new one, letting you rename the title, description, and client name as you copy. Web projects bring the blueprint, requirements, uploaded files, source code, design system, credentials, and MCP connections; low-code projects bring the blueprint only. Tickets, Epics, conversation history, and collaborators are never copied. Failed clones retry up to three times. See [Cloning your project](/admin-platform/cloning-your-project).
 
-  ## Edit CAB with review-before-save
+  ## ✏️ Edit CAB with review-before-save
 
   A generated blueprint can now be edited in two ways: change values inline yourself, or ask the CAB agent to make changes for you. Both routes end at a review screen where you accept or discard each change before anything is written. See [Editing your CAB](/cab/editing-your-cab).
 
-  ## Version history for blueprints
+  ## 🕮 Version history for blueprints
 
   Every save creates a version you can open, compare, and restore. A badge on the toolbar shows how many versions exist. See [Editing your CAB](/cab/editing-your-cab).
 
-  ## Share a blueprint outside the platform
+  ## 🔗 Share a blueprint outside the platform
 
   The new **Share CAB** control gives you a link that opens the whole blueprint for anyone, with no Veylo account required. Use it for stakeholder review. See [Editing your CAB](/cab/editing-your-cab).
 
-  ## Download blueprints as Markdown or PDF
+  ## 📄 Download blueprints as Markdown or PDF
 
   Two new toolbar buttons export the current blueprint as a `.md` file or a PDF. See [Editing your CAB](/cab/editing-your-cab).
 
-  ## Choose Model Quality before generating a CAB
+  ## 🎚️ Choose Model Quality before generating a CAB
 
   CAB Configuration now offers **Low**, **Medium**, and **High** for the whole run, trading speed and cost against output quality. The footer reports final cost and elapsed time once the run completes. See [Step-by-step workflow](/cab/step-by-step-workflow).
 
-  ## Pause, resume, and stop a CAB run
+  ## ⏸️ Pause, resume, and stop a CAB run
 
   While generation is in progress you can pause and resume at will, or stop with a confirmation. Each of the seven generation phases now reports its own status so you can see which one is active. See [Step-by-step workflow](/cab/step-by-step-workflow).
 
-  ## Pick which sections to generate
+  ## ☑️ Pick which sections to generate
 
   The **Sections to Generate** checklist lets you deselect any of the 10 blueprint sections before a run, which also narrows what earlier phases look for in your source material. See [Step-by-step workflow](/cab/step-by-step-workflow).
 
-  ## Integrations page added
+  ## 🔌 Integrations page added
 
   A new [Integrations](/admin-platform/integrations) page lays out the services the platform runs on (identity, source control, search, application hosting), the credentials each low-code platform needs, and where to connect external tools via MCP.
 
-  ## Project collaborators now carry a billing preference
+  ## 💳 Project collaborators now carry a billing preference
 
   When you invite an Editor, you choose whether their agent runs draw from the project owner's credits or from the collaborator's own balance. Select **Owner** to charge activity to the project owner, or **Collaborator** to charge the invitee's account. See [User & role management](/getting-started/user-role-management).
 
-  ## Clearer three-level project permissions
+  ## 🎯 Clearer three-level project permissions
 
   The Owner, Editor, and Viewer roles are now spelled out end to end, including what each can do, how invitations are accepted, rejected, or withdrawn, and how Viewers can still ask read-only questions of the agent on projects they cannot build. See [User & role management](/getting-started/user-role-management).
 </Update>
 
-<Update label="Week of August 11, 2026" tags={["Low Code"]} rss={{ title:"Week of August 11, 2026",description:"Low-code platform support: TAP, ServiceNow, PowerApps, and Salesforce" }}>
+<Update label="Week of August 11, 2026" rss={{ title:"Week of August 11, 2026",description:"Low-code platform support: TAP, ServiceNow, PowerApps, and Salesforce" }}>
   **Veylo for Low Code Platforms**
 
-  ## Low-code platform support: TAP, ServiceNow, PowerApps, and Salesforce
+  ## 🧰 Low-code platform support: TAP, ServiceNow, PowerApps, and Salesforce
 
   You can now build projects that produce configuration in a platform you already own, instead of a hosted codebase. Select **Low Code Application** as the Project Type when creating a project to choose between Tyler Application Platform, ServiceNow, PowerApps, or Salesforce. See the [Low Code overview](/low-code/overview) for the platform comparison and where direct configuration stops.
 
@@ -165,12 +165,12 @@ description: "What changed, week by week."
   - **[PowerApps](/low-code/powerapps/overview).** Connect a Dataverse environment and configure model-driven apps, tables, columns, views, and relationships. Security roles, Power Automate flows, and form JavaScript are specified rather than applied; the overview page shows exactly what the agent applies versus what it specifies. Full inventory in the [PowerApps component reference](/low-code/powerapps/build-mode/component-reference).
   - **[Salesforce](/low-code/salesforce/overview).** Connect an org and configure the widest surface of the four: objects and fields, profiles and sharing rules, page layouts, Lightning apps and pages, Lightning Web Components, flows and Apex, and reports. Everything is applied to the org rather than specified, and existing Aura components and Visualforce pages can be migrated to Lightning Web Components. Full inventory in the [Salesforce component reference](/low-code/salesforce/build-mode/component-reference).
 
-  ## Low Code overview rewritten
+  ## 📖 Low Code overview rewritten
 
   The [overview page](/low-code/overview) now includes a full-code vs low-code comparison, a per-platform capability table, and explicit notes on where direct configuration stops for each platform.
 </Update>
 
-<Update label="Week of August 3, 2026" tags={["Core Platform"]} rss={{ title:"Week of August 3, 2026",description:"Cheaper ticket tagging and daily usage reports" }}>
+<Update label="Week of August 3, 2026" rss={{ title:"Week of August 3, 2026",description:"Cheaper ticket tagging and daily usage reports" }}>
   **Veylo Core Platform**
 
   ## 💸 Tag a Ticket, Skip the Bill
@@ -182,7 +182,7 @@ description: "What changed, week by week."
   Project-level and user-level usage reports now arrive automatically every day at 1 AM EST. No more pulling numbers by hand when you want to know where spend is going.
 </Update>
 
-<Update label="Week of July 27, 2026" tags={["Core Platform"]} rss={{ title:"Week of July 27, 2026",description:"High mode now runs on Opus 5" }}>
+<Update label="Week of July 27, 2026" rss={{ title:"Week of July 27, 2026",description:"High mode now runs on Opus 5" }}>
   **Veylo Core Platform**
 
   ## 🧠 High Mode, Meet Opus 5
@@ -190,7 +190,7 @@ description: "What changed, week by week."
   Anthropic released Opus 5 and we shipped it the same day. High mode now runs on the new model. This means stronger reasoning on complex builds, better adherence to your Implementation Plan, and sharper output on large CABs. There is no setting to change; if you're using High mode, you're already on it.
 </Update>
 
-<Update label="Week of July 13, 2026" tags={["Core Platform","Low Code"]} rss={{ title:"Week of July 13, 2026",description:"MCP support, CAB Notes, Chat Navigator, and Tickets-to-Build for low code" }}>
+<Update label="Week of July 13, 2026" rss={{ title:"Week of July 13, 2026",description:"MCP support, CAB Notes, Chat Navigator, and Tickets-to-Build for low code" }}>
   **Veylo Core Platform**
 
   ## 🔌 Meet Anything, Anywhere — MCP Is Here
@@ -212,7 +212,7 @@ description: "What changed, week by week."
   The ticket-to-build loop now closes on low-code platforms exactly the way it does on Web. Tag a ticket or an epic in Build Mode and the Build Agent picks up the requirement and its CAB context, then configures directly against your target platform. Blueprint becomes tickets; tickets become a configured application.
 </Update>
 
-<Update label="Week of July 6, 2026" tags={["Core Platform","Web Apps"]} rss={{ title:"Week of July 6, 2026",description:"Adaptive Thinking for the Dev Agent, Implementation Plan handoff, ask-only access, inline ticket status" }}>
+<Update label="Week of July 6, 2026" rss={{ title:"Week of July 6, 2026",description:"Adaptive Thinking for the Dev Agent, Implementation Plan handoff, ask-only access, inline ticket status" }}>
   **Veylo Core Platform**
 
   ## ⚙️ Dev Agent Levels Up with Adaptive Thinking
@@ -238,7 +238,7 @@ description: "What changed, week by week."
   Test runs are now sharable and downloadable — and you can play them back at 1x, 2x, or 4x. Review what happened on your schedule, at your pace.
 </Update>
 
-<Update label="Week of June 29, 2026" tags={["Core Platform","Web Apps"]} rss={{ title:"Week of June 29, 2026",description:"Model upgrades, CAB-to-backlog traceability, Epics, prompt queueing, Ask Mode" }}>
+<Update label="Week of June 29, 2026" rss={{ title:"Week of June 29, 2026",description:"Model upgrades, CAB-to-backlog traceability, Epics, prompt queueing, Ask Mode" }}>
   **Veylo Core Platform**
 
   ## 🧠 More Horsepower — Sonnet 5 & Opus 4.8
@@ -272,7 +272,7 @@ description: "What changed, week by week."
   Interrogate your blueprint conversationally. CAB Ask Mode lets you ask questions of your CAB and get grounded answers.
 </Update>
 
-<Update label="Week of June 15, 2026" tags={["Core Platform","Web Apps","Low Code"]} rss={{ title:"Week of June 15, 2026",description:"Custom domains, cross-platform cloning, Testing Mode, Test Context, low-code level of effort" }}>
+<Update label="Week of June 15, 2026" rss={{ title:"Week of June 15, 2026",description:"Custom domains, cross-platform cloning, Testing Mode, Test Context, low-code level of effort" }}>
   **Veylo Core Platform**
 
   ## 🌐 Bring Your Own Domain
@@ -300,7 +300,7 @@ description: "What changed, week by week."
   Every low-code human ticket now carries an Estimated Level of Effort — across TAP, ServiceNow, and Salesforce alike. Planning and scoping context right where you need it.
 </Update>
 
-<Update label="Week of May 25, 2026" tags={["Core Platform"]} rss={{ title:"Week of May 25, 2026",description:"CAB-to-Ticket generation for low-code builds" }}>
+<Update label="Week of May 25, 2026" rss={{ title:"Week of May 25, 2026",description:"CAB-to-Ticket generation for low-code builds" }}>
   **Veylo Core Platform**
 
   ## 🎫 Low-Code Tickets, Straight From Your CAB
@@ -308,7 +308,7 @@ description: "What changed, week by week."
   CAB-to-Ticket generation now speaks low-code. Your blueprint converts into platform-specific tickets for your low-code build, and those tickets feed directly to the Build Agent — closing the loop from requirements to configured application.
 </Update>
 
-<Update label="Week of May 18, 2026" tags={["Core Platform"]} rss={{ title:"Week of May 18, 2026",description:"Ticket Evaluation V1, CAB AI Edit and Chatbot, running-apps view, Admin Panel reskin" }}>
+<Update label="Week of May 18, 2026" rss={{ title:"Week of May 18, 2026",description:"Ticket Evaluation V1, CAB AI Edit and Chatbot, running-apps view, Admin Panel reskin" }}>
   **Veylo Core Platform**
 
   ## 🔎 How Much for a Ticket?
@@ -328,7 +328,7 @@ description: "What changed, week by week."
   The Admin page now matches the rest of the portal, Dark and Light modes included. Consistency that's easy on the eyes.
 </Update>
 
-<Update label="Week of May 4, 2026" tags={["Core Platform"]} rss={{ title:"Week of May 4, 2026",description:"First version of CAB-to-Ticket generation, plus fixes" }}>
+<Update label="Week of May 4, 2026" rss={{ title:"Week of May 4, 2026",description:"First version of CAB-to-Ticket generation, plus fixes" }}>
   **Veylo Core Platform**
 
   ## 🎫 Hail the CAB, Collect Your Tickets
@@ -340,7 +340,7 @@ description: "What changed, week by week."
   We squashed a few that were getting in your way: in-app web previews that wouldn't load, previews that reloaded whenever you typed in Build Mode, and a document sorting glitch. Smoother all around.
 </Update>
 
-<Update label="Week of April 27, 2026" tags={["Core Platform","Low Code"]} rss={{ title:"Week of April 27, 2026",description:"CAB Edit, CAB Version History, stability work, and the TAP data listing framework" }}>
+<Update label="Week of April 27, 2026" rss={{ title:"Week of April 27, 2026",description:"CAB Edit, CAB Version History, stability work, and the TAP data listing framework" }}>
   **Veylo Core Platform**
 
   ## ✏️ Edit Your CAB In Place
@@ -362,7 +362,7 @@ description: "What changed, week by week."
   A new data-listing framework brings rich, configurable list views to Tyler Application Platform builds — a major addition to what the platform can stand up on TAP.
 </Update>
 
-<Update label="Week of April 20, 2026" tags={["Core Platform","Low Code"]} rss={{ title:"Week of April 20, 2026",description:"Restructured CAB layout, faster PDF export, dashboard filtering, and Salesforce support" }}>
+<Update label="Week of April 20, 2026" rss={{ title:"Week of April 20, 2026",description:"Restructured CAB layout, faster PDF export, dashboard filtering, and Salesforce support" }}>
   **Veylo Core Platform**
 
   ## 🧱 A Cleaner CAB, Top to Bottom
@@ -384,7 +384,7 @@ description: "What changed, week by week."
   Salesforce is now a supported low-code target. Connect your org with an Instance URL, Client ID, and Client Secret — the same simple pattern you know from TAP — and let our AI agents work against your Salesforce objects, records, and related data. Our newest multi-platform frontier, and it's just getting started.
 </Update>
 
-<Update label="Week of April 13, 2026" tags={["Web Apps"]} rss={{ title:"Week of April 13, 2026",description:"One-click Start/Stop, test data migration, and Git integration" }}>
+<Update label="Week of April 13, 2026" rss={{ title:"Week of April 13, 2026",description:"One-click Start/Stop, test data migration, and Git integration" }}>
   **Veylo for Custom Web Applications**
 
   ## ▶️ Start and Stop with One Click
@@ -400,7 +400,7 @@ description: "What changed, week by week."
   Your projects are now connected to a Git repository, accessible directly by the project owner. Every iteration is tracked, every version is reachable, and the integration runs both ways — make changes outside of Veylo using your own tools, sync them back in, and pick up exactly where you left off. Experimented your way into a corner? Roll back to any previous version, anytime.
 </Update>
 
-<Update label="Week of April 6, 2026" tags={["Core Platform","Low Code"]} rss={{ title:"Week of April 6, 2026",description:"CAB export to PDF and Markdown, TAP Portals, and CAB for TAP projects" }}>
+<Update label="Week of April 6, 2026" rss={{ title:"Week of April 6, 2026",description:"CAB export to PDF and Markdown, TAP Portals, and CAB for TAP projects" }}>
   **Veylo Core Platform**
 
   ## 📄 Your Blueprint, Your Way — PDF, Markdown, or Just Let It Build
@@ -418,7 +418,7 @@ description: "What changed, week by week."
   Feed it anything — RFPs, legacy code, statements of work — and CAB spits out a structured application blueprint in minutes. Jumpstart your JAD sessions, supercharge your sprint planning, and walk into stakeholder reviews showing your complete and comprehensive understanding of their needs. Also, your Data Model carries forward automatically into Prototype and onward to Build. New to CAB for TAP? Start here before you build.
 </Update>
 
-<Update label="Week of March 30, 2026" tags={["Core Platform","Web Apps","Low Code"]} rss={{ title:"Week of March 30, 2026",description:"Database View, CAB navigation, premium models, and expanded ServiceNow capabilities" }}>
+<Update label="Week of March 30, 2026" rss={{ title:"Week of March 30, 2026",description:"Database View, CAB navigation, premium models, and expanded ServiceNow capabilities" }}>
   **Veylo Core Platform**
 
   ## 🗄️ Database View is Here
@@ -442,7 +442,7 @@ description: "What changed, week by week."
   ServiceNow support takes a massive leap forward. Our AI agents can now generate and configure dashboards, metrics, reports, analytics, and portal experiences — rounding out the ServiceNow offering into a comprehensive, end-to-end development accelerator.
 </Update>
 
-<Update label="Week of March 3, 2026" tags={["Core Platform"]} rss={{ title:"Week of March 3, 2026",description:"Infrastructure migration and a refreshed project creation flow" }}>
+<Update label="Week of March 3, 2026" rss={{ title:"Week of March 3, 2026",description:"Infrastructure migration and a refreshed project creation flow" }}>
   **Veylo Core Platform**
 
   ## 🏗️ Scalability Under the Hood
@@ -454,7 +454,7 @@ description: "What changed, week by week."
   The Create Project experience gets a cleaner, more intuitive design. A streamlined three-step flow clearly guides you through naming your project, choosing your platform (Custom Web or Low Code), and selecting your target technology.
 </Update>
 
-<Update label="Week of February 17, 2026" tags={["Core Platform","Low Code"]} rss={{ title:"Week of February 17, 2026",description:"Common Application Blueprint V1, Prototype Mode, and ServiceNow support" }}>
+<Update label="Week of February 17, 2026" rss={{ title:"Week of February 17, 2026",description:"Common Application Blueprint V1, Prototype Mode, and ServiceNow support" }}>
   **Veylo Core Platform**
 
   ## 🏛️ Common Application Blueprint V1 is Live!
@@ -484,7 +484,7 @@ description: "What changed, week by week."
   We're excited to announce full ServiceNow support across the platform. Our AI agents can now configure ServiceNow data models, forms, workflows, business rules, and administration — all from the same intuitive interface. This is a major expansion of our multi-platform vision, and it's just the beginning.
 </Update>
 
-<Update label="Week of February 3, 2026" tags={["Core Platform","Low Code"]} rss={{ title:"Week of February 3, 2026",description:"Collaboration for TAP, logo uploads, TAP Orchestrator Agent, and a TAP UX upgrade" }}>
+<Update label="Week of February 3, 2026" rss={{ title:"Week of February 3, 2026",description:"Collaboration for TAP, logo uploads, TAP Orchestrator Agent, and a TAP UX upgrade" }}>
   **Veylo Core Platform**
 
   ## 🤝 Collaboration Comes to TAP
@@ -510,7 +510,7 @@ description: "What changed, week by week."
   Notice a typo mid-prompt? Now you can stop TAP Design processing instantly and course-correct without waiting for a full response.
 </Update>
 
-<Update label="Week of January 20, 2026" tags={["Core Platform","Web Apps","Low Code"]} rss={{ title:"Week of January 20, 2026",description:"Smart project defaults, the Files Panel, stop generation, and TAP Reports" }}>
+<Update label="Week of January 20, 2026" rss={{ title:"Week of January 20, 2026",description:"Smart project defaults, the Files Panel, stop generation, and TAP Reports" }}>
   **Veylo Core Platform**
 
   ## 🧠 Smart Project Defaults
@@ -542,7 +542,7 @@ description: "What changed, week by week."
   Just like Custom Web Applications, TAP Design Mode now shows runtime counters for every AI interaction — full transparency across the platform.
 </Update>
 
-<Update label="Week of January 12, 2026" tags={["Core Platform","Web Apps","Low Code"]} rss={{ title:"Week of January 12, 2026",description:"Team collaboration, sharing, flexible billing, real-time sync, and permissions" }}>
+<Update label="Week of January 12, 2026" rss={{ title:"Week of January 12, 2026",description:"Team collaboration, sharing, flexible billing, real-time sync, and permissions" }}>
   **Veylo Core Platform**
 
   ## 👥 Team Collaboration is Here!
@@ -590,7 +590,7 @@ description: "What changed, week by week."
   We've optimized the Tyler Application Platform for speed and responsiveness. Navigation across TAP projects is now noticeably snappier, with streamlined routing and reduced load times — so you spend less time waiting and more time building.
 </Update>
 
-<Update label="Week of January 5, 2026" tags={["Core Platform"]} rss={{ title:"Week of January 5, 2026",description:"A new year note from the team" }}>
+<Update label="Week of January 5, 2026" rss={{ title:"Week of January 5, 2026",description:"A new year note from the team" }}>
   ## 🎉 Happy New Year from Veylo!
 
   As we close out 2025, we want to take a moment to thank our incredible community for an amazing year of innovation and growth.
@@ -608,7 +608,7 @@ description: "What changed, week by week."
   Here's to an incredible 2026! 🚀
 </Update>
 
-<Update label="Week of December 27, 2025" tags={["Web Apps"]} rss={{ title:"Week of December 27, 2025",description:"Spreadsheet support, drag-and-drop documents, smarter previews, streaming responses" }}>
+<Update label="Week of December 27, 2025" rss={{ title:"Week of December 27, 2025",description:"Spreadsheet support, drag-and-drop documents, smarter previews, streaming responses" }}>
   **Veylo for Custom Web Applications**
 
   ## 📊 Spreadsheet Support Has Arrived
@@ -636,7 +636,7 @@ description: "What changed, week by week."
   We've resolved port conflict issues, ensuring your local development environment runs smoothly without those frustrating "port already in use" errors.
 </Update>
 
-<Update label="Week of December 19, 2025" tags={["Core Platform","Low Code"]} rss={{ title:"Week of December 19, 2025",description:"Foundation work, streamlined TAP registration, and first TAP customers live" }}>
+<Update label="Week of December 19, 2025" rss={{ title:"Week of December 19, 2025",description:"Foundation work, streamlined TAP registration, and first TAP customers live" }}>
   **Veylo Core Platform**
 
   ## 🚧 Reinforcing The Foundations!
@@ -654,7 +654,7 @@ description: "What changed, week by week."
   We're thrilled to announce our first customers are now live on the platform for Tyler Application Platform! What started as a vision to bring AI-powered development and configuration that actually works to save projects time and cost is now helping real teams ship real applications faster than ever.
 </Update>
 
-<Update label="Week of December 12, 2025" tags={["Core Platform","Low Code"]} rss={{ title:"Week of December 12, 2025",description:"Document Panel, Dark Mode, on-demand indexing, custom lookups, and Form Queues" }}>
+<Update label="Week of December 12, 2025" rss={{ title:"Week of December 12, 2025",description:"Document Panel, Dark Mode, on-demand indexing, custom lookups, and Form Queues" }}>
   **Veylo Core Platform**
 
   ## 📁 Document Panel: Your Design and Build agents now have more to work with
@@ -680,7 +680,7 @@ description: "What changed, week by week."
   Form Queues used to be that "nice-to-have" feature that required specialist hours you didn't want to pay for. Not anymore — our Builder AI now builds and inserts them automatically, turning advanced functionality into standard equipment.
 </Update>
 
-<Update label="Week of December 5, 2025" tags={["Core Platform","Web Apps","Low Code"]} rss={{ title:"Week of December 5, 2025",description:"Project dashboard, cost transparency, and Design-to-Build handoff on TAP" }}>
+<Update label="Week of December 5, 2025" rss={{ title:"Week of December 5, 2025",description:"Project dashboard, cost transparency, and Design-to-Build handoff on TAP" }}>
   **Veylo Core Platform**
 
   ## 📊 You don't need Project Managers to manage your projects — use your new Dashboard instead
@@ -700,7 +700,7 @@ description: "What changed, week by week."
   Our Design Agent now hands off data models and form specs directly to our Build Agents — no translation needed, no details lost. What used to take days of documentation now happens instantly, so your TAP solution goes from whiteboard to working app faster than you can say "change request."
 </Update>
 
-<Update label="Week of November 21, 2025" tags={["Core Platform","Low Code"]} rss={{ title:"Week of November 21, 2025",description:"Persistent TAP conversation history, navigation cleanup, and new email templates" }}>
+<Update label="Week of November 21, 2025" rss={{ title:"Week of November 21, 2025",description:"Persistent TAP conversation history, navigation cleanup, and new email templates" }}>
   **Veylo for Low Code Platforms — Tyler Application Platform**
 
   ## 💬 Persistent Conversation History
@@ -718,7 +718,7 @@ description: "What changed, week by week."
   Sign-up and password reset emails now feature professionally designed HTML templates that we can customize for special announcements and updates.
 </Update>
 
-<Update label="Week of November 14, 2025" tags={["Low Code"]} rss={{ title:"Week of November 14, 2025",description:"Design Mode optimization, design without deployment, admin visibility, version history" }}>
+<Update label="Week of November 14, 2025" rss={{ title:"Week of November 14, 2025",description:"Design Mode optimization, design without deployment, admin visibility, version history" }}>
   **Veylo for Low Code Platforms — Tyler Application Platform**
 
   ## ⚡ Smarter Design Mode
@@ -746,7 +746,7 @@ description: "What changed, week by week."
   Tyler Application Design projects can now be downloaded and run locally — work anywhere, even without an internet connection.
 </Update>
 
-<Update label="Week of November 7, 2025" tags={["Web Apps","Low Code"]} rss={{ title:"Week of November 7, 2025",description:"Form Business Rules 1.0, primary key workflows, Design Mode architecture upgrade" }}>
+<Update label="Week of November 7, 2025" rss={{ title:"Week of November 7, 2025",description:"Form Business Rules 1.0, primary key workflows, Design Mode architecture upgrade" }}>
   **Veylo for Low Code Platforms — Tyler Application Platform**
 
   ## ✅ Form Business Rules Complete
@@ -768,7 +768,7 @@ description: "What changed, week by week."
   Multi-agent architecture research, UI/UX enhancements, and feedback system improvements — setting the foundation for major releases ahead.
 </Update>
 
-<Update label="Week of October 31, 2025" tags={["Low Code"]} rss={{ title:"Week of October 31, 2025",description:"Design Mode launch for Tyler Application Platform" }}>
+<Update label="Week of October 31, 2025" rss={{ title:"Week of October 31, 2025",description:"Design Mode launch for Tyler Application Platform" }}>
   **Veylo for Low Code Platforms — Tyler Application Platform**
 
   ## 🎬 Design Mode Launch
@@ -784,7 +784,7 @@ description: "What changed, week by week."
   Form functionality development is in full swing, with core capabilities now allowing users to adjust the order of data elements, set Required fields, arrange data across columns, and even set business rules like Conditional Show/Hides and Conditionally Required.
 </Update>
 
-<Update label="Week of October 24, 2025" tags={["Core Platform"]} rss={{ title:"Week of October 24, 2025",description:"Product lines named" }}>
+<Update label="Week of October 24, 2025" rss={{ title:"Week of October 24, 2025",description:"Product lines named" }}>
   **Veylo Core Platform**
 
   ## 🏷️ Introducing Product Lines
@@ -792,7 +792,7 @@ description: "What changed, week by week."
   We've named our two major product lines: Tyler Applications for TAP-focused development, and Web Applications for custom web applications.
 </Update>
 
-<Update label="Week of October 17, 2025" tags={["Web Apps","Low Code"]} rss={{ title:"Week of October 17, 2025",description:"Claude Sonnet 4.5 upgrade, Forms AI 1.0, expanded reference data support" }}>
+<Update label="Week of October 17, 2025" rss={{ title:"Week of October 17, 2025",description:"Claude Sonnet 4.5 upgrade, Forms AI 1.0, expanded reference data support" }}>
   **Veylo for Custom Web Applications**
 
   ## 🚀 Upgraded to Claude Sonnet 4.5
@@ -810,7 +810,7 @@ description: "What changed, week by week."
   Data Model AI now includes expanded support for Reference Data, making it easier to build complex relational structures.
 </Update>
 
-<Update label="Week of October 10, 2025" tags={["Core Platform","Web Apps","Low Code"]} rss={{ title:"Week of October 10, 2025",description:"UI/UX refresh, credit management, admin tooling, billing infrastructure, Admin AI" }}>
+<Update label="Week of October 10, 2025" rss={{ title:"Week of October 10, 2025",description:"UI/UX refresh, credit management, admin tooling, billing infrastructure, Admin AI" }}>
   **Veylo for Custom Web Applications**
 
   ## ✨ UI/UX Refresh
@@ -838,7 +838,7 @@ description: "What changed, week by week."
   AI-powered administration is ready for production. Create, modify, and configure Groups; create, modify, and configure Roles; create and modify User Accounts. Manage your Tyler Application administration through natural conversation.
 </Update>
 
-<Update label="September 2025" tags={["Core Platform","Web Apps","Low Code"]} rss={{ title:"September 2025",description:"UI/UX evolution, enterprise authentication, requirements processing, credential management" }}>
+<Update label="September 2025" rss={{ title:"September 2025",description:"UI/UX evolution, enterprise authentication, requirements processing, credential management" }}>
   **Veylo Core Platform**
 
   ## 🎨 Major UI/UX Evolution
