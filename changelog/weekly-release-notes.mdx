@@ -3,80 +3,877 @@ title: "Weekly release notes"
 description: "What changed, week by week."
 ---
 
-## Week of September 15, 2026
+<Update label="September 15, 2026" rss={{ title:"September 15, 2026",description:"BlueGenAI is now Veylo" }}>
+  **Veylo Core Platform**
 
-### Updates
+  ## 🏷️ BlueGenAI is now Veylo
 
-- **BlueGenAI is now Veylo.** The platform has been renamed. The product, your projects, credits, and integrations are unchanged; only the name and brand have updated. See [What is Veylo?](/) for the refreshed overview.
+  The platform has been renamed. The product, your projects, credits, and integrations are unchanged; only the name and brand have updated. See [What is Veylo?](/) for the refreshed overview.
+</Update>
 
-## Week of September 8, 2026
+<Update label="September 8, 2026" rss={{ title:"September 8, 2026",description:"Checkpoints and Restore, Traceability, and the version 2 gateway architecture" }}>
+  **Veylo Core Platform**
 
-### New features
+  ## ⏮️ Checkpoints and Restore in Build Mode
 
-- **Checkpoints and Restore in Build Mode.** Every prompt you send the build agent now creates a checkpoint automatically. A badge appears beneath each agent reply; hover it and press **Restore** to jump your project's code back to that point. Restoring rebuilds the running application and starts a new branch in the conversation, keeping the earlier branch in history. See [Checkpoints and restoring](/web-apps/build-mode/build-agent-guide).
-- **Traceability across the Platform.** A new page collects what the platform records as a by-product of normal use: the chain from source material through CAB, Tickets, Epics, Build, and App Testing, plus what the review record captures and the boundaries each agent works inside. See [Traceability](/traceability).
+  Every prompt you send the build agent now creates a checkpoint automatically. A badge appears beneath each agent reply; hover it and press **Restore** to jump your project's code back to that point. Restoring rebuilds the running application and starts a new branch in the conversation, keeping the earlier branch in history. See [Checkpoints and restoring](/web-apps/build-mode/build-agent-guide).
 
-### Updates
+  ## 🗂️ Traceability across the Platform
 
-- **Version 2 gateway architecture for new Web projects.** New Web projects are created on the gateway architecture: a single Nginx reverse proxy fronts your services, only `nginx` and `database` expose ports externally, and the project is served from one subdomain URL. Version 1 projects continue to work and are not migrated. See [Default tech stack](/web-apps/build-mode/tech-stack-reference).
-- **Clearer CAB generation workflow.** The [Generating your first CAB](/cab/step-by-step-workflow) page now spells out the three decisions before a run (source material, sections, model quality), the seven generation phases and when each is skipped, and the six run statuses with what you can do in each.
-- **Refreshed blueprint reference.** The [Elements of your Blueprint](/cab/blueprint-output-reference) page now documents all 10 sections end to end, including how the CAB handles inferred project names, contradictory sources, missing reports, and gaps (which become Suggested Questions ordered by impact).
-- **Ticket detail clarifications.** The [Tickets](/tickets/what-are-tickets) page now lists every field on a Ticket, explains that Status is a label rather than a workflow (any status can move to any other), and confirms that Epic and Wave are the same thing (an Epic's position in the build order is its Wave).
-- **Full low-code component inventories.** The component reference pages for [TAP](/low-code/tap/build-mode/component-reference), [ServiceNow](/low-code/servicenow/build-mode/component-reference), [PowerApps](/low-code/powerapps/build-mode/component-reference), and [Salesforce](/low-code/salesforce/build-mode/component-reference) now enumerate every component the agent configures, grouped by platform area, with per-platform notes on what is applied to the environment versus specified for you to apply.
+  A new page collects what the platform records as a by-product of normal use: the chain from source material through CAB, Tickets, Epics, Build, and App Testing, plus what the review record captures and the boundaries each agent works inside. See [Traceability](/traceability).
 
-## Week of August 21, 2026
+  ## 🏗️ Version 2 gateway architecture for new Web projects
 
-### New features
+  New Web projects are created on the gateway architecture: a single Nginx reverse proxy fronts your services, only `nginx` and `database` expose ports externally, and the project is served from one subdomain URL. Version 1 projects continue to work and are not migrated. See [Default tech stack](/web-apps/build-mode/tech-stack-reference).
 
-- **Tickets and Epics.** Every project now carries a Tickets list where each item captures status, priority, work type, expertise (Agent, Human, or both), estimated effort, an assignee, and a link back to the CAB element it came from. Group Tickets into Epics to set the build order; an Epic's position is its Wave, so reordering Epics renumbers Waves automatically. Filter and sort state lives in the URL so a view can be shared as a link. See [What are Tickets](/tickets/what-are-tickets) and [Epics](/tickets/epics).
-- **Generate Tickets from a CAB.** Convert a blueprint into a working set of Tickets in one step, with each Ticket keeping a CAB Reference back to its source element. See [CAB-to-Ticket conversion](/tickets/cab-to-ticket-conversion).
-- **Reference a Ticket in Build Mode.** Mention a Ticket in a build conversation to hand its full description and acceptance criteria to the build agent as context. See [Using Tickets in Build Mode](/tickets/using-tickets-in-build-mode).
-- **Web Apps: Prototype Mode.** Build a working front end with mock data, no backend, and no infrastructure to stand up. Iterate on layout, colour, typography, and copy in seconds, then hand the output into Build. See [Prototype Mode overview](/web-apps/prototype-mode/overview) and [Output handoff](/web-apps/prototype-mode/output-handoff).
-- **Web Apps: Build Mode.** Generate a full application (front end, backend, database) through a conversation with the build agent, with a per-message quality selector for Medium or High. See [Build Mode overview](/web-apps/build-mode/overview) and the [Workflow](/web-apps/build-mode/workflow).
-- **Ask sub-mode for read-only questions.** Inside Build Mode's composer, switch to **Ask** to query your codebase without any risk of changes. The agent is given read-only tools only, cites answers with `path/file.ext:line`, and can produce a plan for a change before you switch back to Build to apply it. See [Ask Mode](/web-apps/ask-mode).
-- **App testing agent.** With **App testing** enabled in agent settings, a separate testing agent runs browser-based scenarios against your built application after each build and reports pass or fail scenarios in the chat. Provide test logins and app notes in **Testing Context**. See [App testing and Testing Context](/web-apps/app-testing).
-- **MCP integrations.** Connect a remote MCP server to extend what the build agent can reach, with `Streamable HTTP` or `SSE` transports, optional custom headers, and per-project `Shared` or `Individual` credential sharing. URLs are validated to block private and internal addresses. See [MCP Integrations](/web-apps/mcp-integrations).
-- **Credentials panel.** Third-party keys are requested by the agent as it needs them and stored in a project credentials panel; internal secrets (database password, session keys) are generated for you. Values are masked before the agent reads them, so the agent references credentials by name only. See [Credentials](/web-apps/credentials).
-- **Git integration for generated projects.** **Checkout**, **Pull**, and **Push** controls in the Codebase panel footer let you sync a generated project with its repository, with a commit message prompt when there are uncommitted local changes. See [Git Integration](/web-apps/git-integration).
-- **Custom domains for Web projects.** New Web projects on the gateway architecture can be given a custom subdomain of `apps.bluegenai.ai` in place of the generated address. See [Deployment guide](/web-apps/build-mode/deployment-guide).
-- **Codebase and Database viewers.** Browse the generated source in a tree with a file viewer, and inspect the application's database either by browsing tables row-by-row or by running SQL against it. See [Codebase and Database view](/web-apps/codebase-and-database).
+  ## 🧭 Clearer CAB generation workflow
 
-### Updates
+  The [Generating your first CAB](/cab/step-by-step-workflow) page now spells out the three decisions before a run (source material, sections, model quality), the seven generation phases and when each is skipped, and the six run statuses with what you can do in each.
 
-- **Tips and tricks section.** A new guides area covers [prompting best practices](/tips-and-tricks/prompting-best-practices), [common workflows by role](/tips-and-tricks/common-workflows-by-role), a [BD / pre-sales usage guide](/tips-and-tricks/bd-pre-sales-usage-guide), and a [troubleshooting FAQ](/tips-and-tricks/troubleshooting-faq).
-- **Files panel across modes.** A shared **Files** panel now lists everything uploaded to or generated by a project, available from the panel rail in both Prototype and Build. See [Files](/web-apps/files).
+  ## 🧱 Refreshed blueprint reference
 
-## Week of August 18, 2026
+  The [Elements of your Blueprint](/cab/blueprint-output-reference) page now documents all 10 sections end to end, including how the CAB handles inferred project names, contradictory sources, missing reports, and gaps (which become Suggested Questions ordered by impact).
 
-### New features
+  ## 🎫 Ticket detail clarifications
 
-- **Clone a project from the dashboard.** The project card menu now has a **Clone Project** option that copies a project into a new one, letting you rename the title, description, and client name as you copy. Web projects bring the blueprint, requirements, uploaded files, source code, design system, credentials, and MCP connections; low-code projects bring the blueprint only. Tickets, Epics, conversation history, and collaborators are never copied. Failed clones retry up to three times. See [Cloning your project](/admin-platform/cloning-your-project).
-- **Edit CAB with review-before-save.** A generated blueprint can now be edited in two ways: change values inline yourself, or ask the CAB agent to make changes for you. Both routes end at a review screen where you accept or discard each change before anything is written. See [Editing your CAB](/cab/editing-your-cab).
-- **Version history for blueprints.** Every save creates a version you can open, compare, and restore. A badge on the toolbar shows how many versions exist. See [Editing your CAB](/cab/editing-your-cab).
-- **Share a blueprint outside the platform.** The new **Share CAB** control gives you a link that opens the whole blueprint for anyone, with no Veylo account required. Use it for stakeholder review. See [Editing your CAB](/cab/editing-your-cab).
-- **Download blueprints as Markdown or PDF.** Two new toolbar buttons export the current blueprint as a `.md` file or a PDF. See [Editing your CAB](/cab/editing-your-cab).
+  The [Tickets](/tickets/what-are-tickets) page now lists every field on a Ticket, explains that Status is a label rather than a workflow (any status can move to any other), and confirms that Epic and Wave are the same thing (an Epic's position in the build order is its Wave).
 
-### Updates
+  ## 🧩 Full low-code component inventories
 
-- **Choose Model Quality before generating a CAB.** CAB Configuration now offers **Low**, **Medium**, and **High** for the whole run, trading speed and cost against output quality. The footer reports final cost and elapsed time once the run completes. See [Step-by-step workflow](/cab/step-by-step-workflow).
-- **Pause, resume, and stop a CAB run.** While generation is in progress you can pause and resume at will, or stop with a confirmation. Each of the seven generation phases now reports its own status so you can see which one is active. See [Step-by-step workflow](/cab/step-by-step-workflow).
-- **Pick which sections to generate.** The **Sections to Generate** checklist lets you deselect any of the 10 blueprint sections before a run, which also narrows what earlier phases look for in your source material. See [Step-by-step workflow](/cab/step-by-step-workflow).
-- **Integrations page added.** A new [Integrations](/admin-platform/integrations) page lays out the services the platform runs on (identity, source control, search, application hosting), the credentials each low-code platform needs, and where to connect external tools via MCP.
-- **Project collaborators now carry a billing preference.** When you invite an Editor, you choose whether their agent runs draw from the project owner's credits or from the collaborator's own balance. Select **Owner** to charge activity to the project owner, or **Collaborator** to charge the invitee's account. See [User & role management](/getting-started/user-role-management).
-- **Clearer three-level project permissions.** The Owner, Editor, and Viewer roles are now spelled out end to end, including what each can do, how invitations are accepted, rejected, or withdrawn, and how Viewers can still ask read-only questions of the agent on projects they cannot build. See [User & role management](/getting-started/user-role-management).
-- **Two distinct ways to share a project.** Shareable Link Access lets any signed-in platform user request access to a whole project (still requires approval). Read-only share links let anyone open a generated CAB without an account. See [Collaboration features](/admin-platform/collaboration-features).
+  The component reference pages for [TAP](/low-code/tap/build-mode/component-reference), [ServiceNow](/low-code/servicenow/build-mode/component-reference), [PowerApps](/low-code/powerapps/build-mode/component-reference), and [Salesforce](/low-code/salesforce/build-mode/component-reference) now enumerate every component the agent configures, grouped by platform area, with per-platform notes on what is applied to the environment versus specified for you to apply.
+</Update>
 
-## Week of August 11, 2026
+<Update label="August 21, 2026" rss={{ title:"August 21, 2026",description:"Tickets and Epics, Prototype Mode, Build Mode, Ask sub-mode, app testing, MCP integrations" }}>
+  **Veylo Core Platform**
 
-### New features
+  ## 🎟️ Tickets and Epics
 
-**Low-code platform support: TAP, ServiceNow, PowerApps, and Salesforce.** You can now build projects that produce configuration in a platform you already own, instead of a hosted codebase. Select **Low Code Application** as the Project Type when creating a project to choose between Tyler Application Platform, ServiceNow, PowerApps, or Salesforce. See the [Low Code overview](/low-code/overview) for the platform comparison and where direct configuration stops.
+  Every project now carries a Tickets list where each item captures status, priority, work type, expertise (Agent, Human, or both), estimated effort, an assignee, and a link back to the CAB element it came from. Group Tickets into Epics to set the build order; an Epic's position is its Wave, so reordering Epics renumbers Waves automatically. Filter and sort state lives in the URL so a view can be shared as a link. See [What are Tickets](/tickets/what-are-tickets) and [Epics](/tickets/epics).
 
-- **[Tyler Application Platform](/low-code/tap/overview).** Connect a TAP environment and configure data model, security, forms, workflows, and user management within the operations the platform exposes. Full component inventory in the [TAP component reference](/low-code/tap/build-mode/component-reference).
-- **[ServiceNow](/low-code/servicenow/overview).** Connect a ServiceNow instance and configure across seven areas including tables, forms, business rules, workflows, and portals. Cross-area requests are supported. See the [ServiceNow component reference](/low-code/servicenow/build-mode/component-reference).
-- **[PowerApps](/low-code/powerapps/overview).** Connect a Dataverse environment and configure model-driven apps, tables, columns, views, and relationships. Security roles, Power Automate flows, and form JavaScript are specified rather than applied; the overview page shows exactly what the agent applies versus what it specifies. Full inventory in the [PowerApps component reference](/low-code/powerapps/build-mode/component-reference).
-- **[Salesforce](/low-code/salesforce/overview).** Connect an org and configure the widest surface of the four: objects and fields, profiles and sharing rules, page layouts, Lightning apps and pages, Lightning Web Components, flows and Apex, and reports. Everything is applied to the org rather than specified, and existing Aura components and Visualforce pages can be migrated to Lightning Web Components. Full inventory in the [Salesforce component reference](/low-code/salesforce/build-mode/component-reference).
+  ## 🪄 Generate Tickets from a CAB
 
-### Updates
+  Convert a blueprint into a working set of Tickets in one step, with each Ticket keeping a CAB Reference back to its source element. See [CAB-to-Ticket conversion](/tickets/cab-to-ticket-conversion).
 
-- **Low Code overview rewritten.** The [overview page](/low-code/overview) now includes a full-code vs low-code comparison, a per-platform capability table, and explicit notes on where direct configuration stops for each platform.
+  ## 🔗 Reference a Ticket in Build Mode
+
+  Mention a Ticket in a build conversation to hand its full description and acceptance criteria to the build agent as context. See [Using Tickets in Build Mode](/tickets/using-tickets-in-build-mode).
+
+  **Veylo for Custom Web Applications**
+
+  ## ✨ Prototype Mode
+
+  Build a working front end with mock data, no backend, and no infrastructure to stand up. Iterate on layout, colour, typography, and copy in seconds, then hand the output into Build. See [Prototype Mode overview](/web-apps/prototype-mode/overview) and [Output handoff](/web-apps/prototype-mode/output-handoff).
+
+  ## 🏗️ Build Mode
+
+  Generate a full application (front end, backend, database) through a conversation with the build agent, with a per-message quality selector for Medium or High. See [Build Mode overview](/web-apps/build-mode/overview) and the [Workflow](/web-apps/build-mode/workflow).
+
+  ## 👁️ Ask sub-mode for read-only questions
+
+  Inside Build Mode's composer, switch to **Ask** to query your codebase without any risk of changes. The agent is given read-only tools only, cites answers with `path/file.ext:line`, and can produce a plan for a change before you switch back to Build to apply it. See [Ask Mode](/web-apps/ask-mode).
+
+  ## ✅ App testing agent
+
+  With **App testing** enabled in agent settings, a separate testing agent runs browser-based scenarios against your built application after each build and reports pass or fail scenarios in the chat. Provide test logins and app notes in **Testing Context**. See [App testing and Testing Context](/web-apps/app-testing).
+
+  ## 🔌 MCP integrations
+
+  Connect a remote MCP server to extend what the build agent can reach, with `Streamable HTTP` or `SSE` transports, optional custom headers, and per-project `Shared` or `Individual` credential sharing. URLs are validated to block private and internal addresses. See [MCP Integrations](/web-apps/mcp-integrations).
+
+  ## 🔑 Credentials panel
+
+  Third-party keys are requested by the agent as it needs them and stored in a project credentials panel; internal secrets (database password, session keys) are generated for you. Values are masked before the agent reads them, so the agent references credentials by name only. See [Credentials](/web-apps/credentials).
+
+  ## 🔀 Git integration for generated projects
+
+  **Checkout**, **Pull**, and **Push** controls in the Codebase panel footer let you sync a generated project with its repository, with a commit message prompt when there are uncommitted local changes. See [Git Integration](/web-apps/git-integration).
+
+  ## 🌐 Custom domains for Web projects
+
+  New Web projects on the gateway architecture can be given a custom subdomain of `veyloapp.ai` in place of the generated address. See [Deployment guide](/web-apps/build-mode/deployment-guide).
+
+  ## 🗄️ Codebase and Database viewers
+
+  Browse the generated source in a tree with a file viewer, and inspect the application's database either by browsing tables row-by-row or by running SQL against it. See [Codebase and Database view](/web-apps/codebase-and-database).
+
+  ## 💡 Tips and tricks section
+
+  A new guides area covers [prompting best practices](/tips-and-tricks/prompting-best-practices), [common workflows by role](/tips-and-tricks/common-workflows-by-role), a BD / pre-sales usage guide, and a [troubleshooting FAQ](/tips-and-tricks/troubleshooting-faq).
+
+  ## 📁 Files panel across modes
+
+  A shared **Files** panel now lists everything uploaded to or generated by a project, available from the panel rail in both Prototype and Build. See [Files](/web-apps/files).
+</Update>
+
+<Update label="August 18, 2026" rss={{ title:"August 18, 2026",description:"Project cloning, CAB editing with review-before-save, version history, sharing and export" }}>
+  **Veylo Core Platform**
+
+  ## 🧪 Clone a project from the dashboard
+
+  The project card menu now has a **Clone Project** option that copies a project into a new one, letting you rename the title, description, and client name as you copy. Web projects bring the blueprint, requirements, uploaded files, source code, design system, credentials, and MCP connections; low-code projects bring the blueprint only. Tickets, Epics, conversation history, and collaborators are never copied. Failed clones retry up to three times. See [Cloning your project](/admin-platform/cloning-your-project).
+
+  ## ✏️ Edit CAB with review-before-save
+
+  A generated blueprint can now be edited in two ways: change values inline yourself, or ask the CAB agent to make changes for you. Both routes end at a review screen where you accept or discard each change before anything is written. See [Editing your CAB](/cab/editing-your-cab).
+
+  ## 🕮 Version history for blueprints
+
+  Every save creates a version you can open, compare, and restore. A badge on the toolbar shows how many versions exist. See [Editing your CAB](/cab/editing-your-cab).
+
+  ## 🔗 Share a blueprint outside the platform
+
+  The new **Share CAB** control gives you a link that opens the whole blueprint for anyone, with no Veylo account required. Use it for stakeholder review. See [Editing your CAB](/cab/editing-your-cab).
+
+  ## 📄 Download blueprints as Markdown or PDF
+
+  Two new toolbar buttons export the current blueprint as a `.md` file or a PDF. See [Editing your CAB](/cab/editing-your-cab).
+
+  ## 🎚️ Choose Model Quality before generating a CAB
+
+  CAB Configuration now offers **Low**, **Medium**, and **High** for the whole run, trading speed and cost against output quality. The footer reports final cost and elapsed time once the run completes. See [Step-by-step workflow](/cab/step-by-step-workflow).
+
+  ## ⏸️ Pause, resume, and stop a CAB run
+
+  While generation is in progress you can pause and resume at will, or stop with a confirmation. Each of the seven generation phases now reports its own status so you can see which one is active. See [Step-by-step workflow](/cab/step-by-step-workflow).
+
+  ## ☑️ Pick which sections to generate
+
+  The **Sections to Generate** checklist lets you deselect any of the 10 blueprint sections before a run, which also narrows what earlier phases look for in your source material. See [Step-by-step workflow](/cab/step-by-step-workflow).
+
+  ## 🔌 Integrations page added
+
+  A new [Integrations](/admin-platform/integrations) page lays out the services the platform runs on (identity, source control, search, application hosting), the credentials each low-code platform needs, and where to connect external tools via MCP.
+
+  ## 💳 Project collaborators now carry a billing preference
+
+  When you invite an Editor, you choose whether their agent runs draw from the project owner's credits or from the collaborator's own balance. Select **Owner** to charge activity to the project owner, or **Collaborator** to charge the invitee's account. See [User & role management](/getting-started/user-role-management).
+
+  ## 🎯 Clearer three-level project permissions
+
+  The Owner, Editor, and Viewer roles are now spelled out end to end, including what each can do, how invitations are accepted, rejected, or withdrawn, and how Viewers can still ask read-only questions of the agent on projects they cannot build. See [User & role management](/getting-started/user-role-management).
+</Update>
+
+<Update label="August 11, 2026" rss={{ title:"August 11, 2026",description:"Low-code platform support: TAP, ServiceNow, PowerApps, and Salesforce" }}>
+  **Veylo for Low Code Platforms**
+
+  ## 🧰 Low-code platform support: TAP, ServiceNow, PowerApps, and Salesforce
+
+  You can now build projects that produce configuration in a platform you already own, instead of a hosted codebase. Select **Low Code Application** as the Project Type when creating a project to choose between Tyler Application Platform, ServiceNow, PowerApps, or Salesforce. See the [Low Code overview](/low-code/overview) for the platform comparison and where direct configuration stops.
+
+  - **[Tyler Application Platform](/low-code/tap/overview).** Connect a TAP environment and configure data model, security, forms, workflows, and user management within the operations the platform exposes. Full component inventory in the [TAP component reference](/low-code/tap/build-mode/component-reference).
+  - **[ServiceNow](/low-code/servicenow/overview).** Connect a ServiceNow instance and configure across seven areas including tables, forms, business rules, workflows, and portals. Cross-area requests are supported. See the [ServiceNow component reference](/low-code/servicenow/build-mode/component-reference).
+  - **[PowerApps](/low-code/powerapps/overview).** Connect a Dataverse environment and configure model-driven apps, tables, columns, views, and relationships. Security roles, Power Automate flows, and form JavaScript are specified rather than applied; the overview page shows exactly what the agent applies versus what it specifies. Full inventory in the [PowerApps component reference](/low-code/powerapps/build-mode/component-reference).
+  - **[Salesforce](/low-code/salesforce/overview).** Connect an org and configure the widest surface of the four: objects and fields, profiles and sharing rules, page layouts, Lightning apps and pages, Lightning Web Components, flows and Apex, and reports. Everything is applied to the org rather than specified, and existing Aura components and Visualforce pages can be migrated to Lightning Web Components. Full inventory in the [Salesforce component reference](/low-code/salesforce/build-mode/component-reference).
+
+  ## 📖 Low Code overview rewritten
+
+  The [overview page](/low-code/overview) now includes a full-code vs low-code comparison, a per-platform capability table, and explicit notes on where direct configuration stops for each platform.
+</Update>
+
+<Update label="August 3, 2026" rss={{ title:"August 3, 2026",description:"Cheaper ticket tagging and daily usage reports" }}>
+  **Veylo Core Platform**
+
+  ## 💸 Tag a Ticket, Skip the Bill
+
+  Creating a ticket or epic used to mean heavily searching your CAB for relevant context. We replaced that lookup entirely to get the same relevance in roughly a quarter of the time and a fifth of the cost. Additionally, Relevant CAB-entity search now bills to Build Mode rather than the Ticketing section, so your costs land where the work actually happened.
+
+  ## 📈 Daily Usage Reports for Platform and Organization Admins
+
+  Project-level and user-level usage reports now arrive automatically every day at 1 AM EST. No more pulling numbers by hand when you want to know where spend is going.
+</Update>
+
+<Update label="July 27, 2026" rss={{ title:"July 27, 2026",description:"High mode now runs on Opus 5" }}>
+  **Veylo Core Platform**
+
+  ## 🧠 High Mode, Meet Opus 5
+
+  Anthropic released Opus 5 and we shipped it the same day. High mode now runs on the new model. This means stronger reasoning on complex builds, better adherence to your Implementation Plan, and sharper output on large CABs. There is no setting to change; if you're using High mode, you're already on it.
+</Update>
+
+<Update label="July 13, 2026" rss={{ title:"July 13, 2026",description:"MCP support, CAB Notes, Chat Navigator, and Tickets-to-Build for low code" }}>
+  **Veylo Core Platform**
+
+  ## 🔌 Meet Anything, Anywhere — MCP Is Here
+
+  Veylo now speaks MCP. Our platform can connect to any Model Context Protocol server — AWS, Jira, GitHub, Figma, and more — so your agents can reach out to external services without a single custom integration. Paste a Jira ticket and the agent pulls the details. Point it at a Figma file and it generates screens that actually match the design. Connect once, build everywhere.
+
+  ## 🗒️ Notes That the Builder Actually Reads
+
+  Every CAB object now has a Notes field. Drop in a Figma link, a special instruction, or any extra context — and the Veylo Build Agent picks it up automatically during generation for sharper, more on-target results.
+
+  ## 🧭 Never Lose Your Place — Chat Navigator
+
+  Long conversation? No problem. The new Chat Navigator lets you jump straight to any historical message — all the way back to the very first one — without endless scrolling.
+
+  **Veylo for Low Code Platforms**
+
+  ## 🎟️ Tickets-to-Build Comes to Low Code
+
+  The ticket-to-build loop now closes on low-code platforms exactly the way it does on Web. Tag a ticket or an epic in Build Mode and the Build Agent picks up the requirement and its CAB context, then configures directly against your target platform. Blueprint becomes tickets; tickets become a configured application.
+</Update>
+
+<Update label="July 6, 2026" rss={{ title:"July 6, 2026",description:"Adaptive Thinking for the Dev Agent, Implementation Plan handoff, ask-only access, inline ticket status" }}>
+  **Veylo Core Platform**
+
+  ## ⚙️ Dev Agent Levels Up with Adaptive Thinking
+
+  The Veylo Dev Agent now uses the latest Anthropic model's Adaptive Thinking — planning each step before it acts, then acting with intent. The result is meaningfully higher accuracy. We paired it with a smarter LLM request-caching strategy so the net effect on your cost is roughly a wash, and often a little lower.
+
+  ## 🗺️ The Builder Gets the Plan
+
+  When tickets hand off to the Builder, they now carry the Implementation Plan with them. The Build Agent works from the same plan you approved — recommended sequence, dependencies, and intent intact — instead of inferring its way forward one ticket at a time.
+
+  ## 👁️ Ask, Don't Touch — Ask-Only for Read-Only Collaborators
+
+  Share a project in read-only mode and your viewers are no longer limited to looking. Turn on ask-only access and they can interrogate the project conversationally — asking questions, getting grounded answers — with zero ability to change anything. Built for stakeholders, reviewers, and executives who need understanding, not edit rights.
+
+  ## 🔀 Change Ticket Status Right From the List
+
+  Open, In Progress, Closed — flip a ticket's status straight from the Ticket List or Epic List. No more opening the detail page just to move something forward.
+
+  **Veylo for Custom Web Applications**
+
+  ## ⏺️ Test Recordings: Share, Download, Rewatch at Speed
+
+  Test runs are now sharable and downloadable — and you can play them back at 1x, 2x, or 4x. Review what happened on your schedule, at your pace.
+</Update>
+
+<Update label="June 29, 2026" rss={{ title:"June 29, 2026",description:"Model upgrades, CAB-to-backlog traceability, Epics, prompt queueing, Ask Mode" }}>
+  **Veylo Core Platform**
+
+  ## 🧠 More Horsepower — Sonnet 5 & Opus 4.8
+
+  We've upgraded the models under the hood: Sonnet 4.6 → Sonnet 5 and Opus 4.6 → Opus 4.8. Smarter reasoning, better output, same seamless experience.
+
+  ## 🗂️ From Blueprint to Backlog — Traceability from CAB to final product
+
+  Your Common Application Blueprint now becomes a working backlog. Every user story turns into a ticket you can tag in Build Mode to build, and related stories are grouped into Epics and prioritized — so you build in the order the AI recommends, not the order you happened to write them.
+
+  ## 🎸 Tickets just became Epic
+
+  Veylo doesn't just create tickets anymore. It groups them into recommended Epics, prioritizes them, and orders them in a logical build sequence — so the Builder works your backlog in the order that makes sense, not the order you happened to write it.
+
+  **Veylo for Custom Web Applications**
+
+  ## ⏸️ Prompt Queueing
+
+  Line up your next instructions while the agent is still working. Queue your prompts and let the build roll on without you standing guard.
+
+  ## 💬 Ask Mode vs. Agent Mode
+
+  Need an answer, not an action? Build Mode now has an Ask Mode for questions and exploration, alongside Agent Mode for hands-on building. Pick the right gear for the moment.
+
+  ## 📄 Generate Project Documents in Build Mode
+
+  Build Mode can now produce project documentation on the spot — one more artifact you don't have to write by hand.
+
+  ## 🗨️ CAB Ask Mode
+
+  Interrogate your blueprint conversationally. CAB Ask Mode lets you ask questions of your CAB and get grounded answers.
+</Update>
+
+<Update label="June 15, 2026" rss={{ title:"June 15, 2026",description:"Custom domains, cross-platform cloning, Testing Mode, Test Context, low-code level of effort" }}>
+  **Veylo Core Platform**
+
+  ## 🌐 Bring Your Own Domain
+
+  Your generated apps can now live at a custom domain — `<your-domain>.veyloapp.ai`. Already in production on our own West Virginia GMS build. Professional URLs, zero fuss.
+
+  ## 🧪 Clone Any Project, Any Direction
+
+  Project cloning got a serious glow-up. Clone Web → any Low-Code platform, or any Low-Code project → Web — CAB and all. Reuse your best work instead of rebuilding it.
+
+  **Veylo for Custom Web Applications**
+
+  ## ✅ Testing Mode — Your Agent QAs Its Own Work
+
+  Flip the Testing switch in the chat input and, after building, the agent tests the functionality it just created (and if you ask it to test something specific, it will — switch on or off). Watch the test stream live, then replay the recording whenever you like.
+
+  ## 🗝️ Test Context — Shared Memory for Your Test Agent
+
+  Give the Test Agent what it needs to do its job: credentials, system-specific instructions, or reusable context. Run a Sign-Up test that creates a user, and that user is remembered for the next Sign-In test. Especially handy when the app's auth system won't let you create users from inside the app.
+
+  **Veylo for Low Code Platforms**
+
+  ## 📏 Level of Effort, Built In
+
+  Every low-code human ticket now carries an Estimated Level of Effort — across TAP, ServiceNow, and Salesforce alike. Planning and scoping context right where you need it.
+</Update>
+
+<Update label="May 25, 2026" rss={{ title:"May 25, 2026",description:"CAB-to-Ticket generation for low-code builds" }}>
+  **Veylo Core Platform**
+
+  ## 🎫 Low-Code Tickets, Straight From Your CAB
+
+  CAB-to-Ticket generation now speaks low-code. Your blueprint converts into platform-specific tickets for your low-code build, and those tickets feed directly to the Build Agent — closing the loop from requirements to configured application.
+</Update>
+
+<Update label="May 18, 2026" rss={{ title:"May 18, 2026",description:"Ticket Evaluation V1, CAB AI Edit and Chatbot, running-apps view, Admin Panel reskin" }}>
+  **Veylo Core Platform**
+
+  ## 🔎 How Much for a Ticket?
+
+  New V1 of Ticket Evaluation scores and checks generated tickets before you build — with Time and Cost tracking so you can see exactly what each evaluation run takes.
+
+  ## 💬 CAB AI Edit & CAB AI Chatbot
+
+  Two new ways to shape your blueprint with AI: CAB AI Edit for direct changes, and a CAB AI Chatbot that handles requests conversationally with notably higher accuracy. CAB's new edit capabilities include AI-assessment of desired changes to ensure the changes are properly cascaded across the full CAB.
+
+  ## 🛑 See — and Stop — Running Apps
+
+  A new view surfaces every app currently running on the server, with the ability to stop any of them. Full visibility, full control.
+
+  ## 🎛️ Admin Panel, Reskinned
+
+  The Admin page now matches the rest of the portal, Dark and Light modes included. Consistency that's easy on the eyes.
+</Update>
+
+<Update label="May 4, 2026" rss={{ title:"May 4, 2026",description:"First version of CAB-to-Ticket generation, plus fixes" }}>
+  **Veylo Core Platform**
+
+  ## 🎫 Hail the CAB, Collect Your Tickets
+
+  The first version of CAB-to-Ticket generation lands: turn your blueprint's requirements into structured tickets automatically. The foundation for the full Epics-and-Tickets workflow to come.
+
+  ## 🧹 We're always working to Clean & Polish
+
+  We squashed a few that were getting in your way: in-app web previews that wouldn't load, previews that reloaded whenever you typed in Build Mode, and a document sorting glitch. Smoother all around.
+</Update>
+
+<Update label="April 27, 2026" rss={{ title:"April 27, 2026",description:"CAB Edit, CAB Version History, stability work, and the TAP data listing framework" }}>
+  **Veylo Core Platform**
+
+  ## ✏️ Edit Your CAB In Place
+
+  CAB Edit arrives — manually refine your blueprint directly, no workarounds required.
+
+  ## 🕮 CAB Version History
+
+  Every change to your CAB is now tracked, and you can revisit earlier versions anytime. Experiment freely; your history has your back.
+
+  ## 🛡️ Stability & Sign-In Polish
+
+  We firmed up Start/Stop app behavior, cleaned up Sign-Up and Forgot-Password edge cases, and added safeguards against the server-hang situations from the week prior. Less friction, fewer surprises.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 📋 TAP Data Listing Framework
+
+  A new data-listing framework brings rich, configurable list views to Tyler Application Platform builds — a major addition to what the platform can stand up on TAP.
+</Update>
+
+<Update label="April 20, 2026" rss={{ title:"April 20, 2026",description:"Restructured CAB layout, faster PDF export, dashboard filtering, and Salesforce support" }}>
+  **Veylo Core Platform**
+
+  ## 🧱 A Cleaner CAB, Top to Bottom
+
+  The Common Application Blueprint gets a restructured layout: Project Identity, User Stories, a new System Design parent section (Data Model, Screens, Roles, Workflow, Rules, Reports, Integrations), and Questions. Problem statements now live at the end and only appear when they're actually defined in your source materials — no more inferred filler. The new structure flows through the HTML preview, the PDF, and the Markdown export, and existing blueprints render in it automatically.
+
+  ## ⚡ Faster CAB PDF Downloads
+
+  Downloading large blueprints (think AL SOS-scale CABs) is now noticeably faster and no longer risks straining the server — a smoother export, even for your heaviest documents.
+
+  ## 🧭 Smarter Dashboard Filtering
+
+  With more application types on the platform than ever, the dashboard filters got an upgrade so you can find the project you want, fast.
+
+  **Veylo for Low Code Platforms — Salesforce**
+
+  ## 🚀 Salesforce Joins the Lineup
+
+  Salesforce is now a supported low-code target. Connect your org with an Instance URL, Client ID, and Client Secret — the same simple pattern you know from TAP — and let our AI agents work against your Salesforce objects, records, and related data. Our newest multi-platform frontier, and it's just getting started.
+</Update>
+
+<Update label="April 13, 2026" rss={{ title:"April 13, 2026",description:"One-click Start/Stop, test data migration, and Git integration" }}>
+  **Veylo for Custom Web Applications**
+
+  ## ▶️ Start and Stop with One Click
+
+  Launching or stopping your application just got a lot simpler. A new Start/Stop control lives right in the project interface, putting you in command without any extra navigation. One click. Done.
+
+  ## 🛡️ Your Test Data is Safe Now
+
+  Iterating on your schema no longer means losing what you've built. When column changes occur that would previously have wiped out your test data, the platform now automatically snapshots and migrates it — seamlessly, in the background. Build faster. Break less.
+
+  ## 🔀 Git Integration & Full Version Control
+
+  Your projects are now connected to a Git repository, accessible directly by the project owner. Every iteration is tracked, every version is reachable, and the integration runs both ways — make changes outside of Veylo using your own tools, sync them back in, and pick up exactly where you left off. Experimented your way into a corner? Roll back to any previous version, anytime.
+</Update>
+
+<Update label="April 6, 2026" rss={{ title:"April 6, 2026",description:"CAB export to PDF and Markdown, TAP Portals, and CAB for TAP projects" }}>
+  **Veylo Core Platform**
+
+  ## 📄 Your Blueprint, Your Way — PDF, Markdown, or Just Let It Build
+
+  Your Common Application Blueprint is now exportable as a polished PDF complete with a navigable table of contents, or as a clean Markdown file for those who prefer their docs a little more dev-flavored. Perfect for stakeholder reviews, procurement packages, or just having a tidy offline reference. But here's the real magic: when you're done, your CAB doesn't wait around — it automatically hands itself off to the Builder, whether you're heading to a Custom Web Application or a Low Code Platform. Define once. Export anywhere. Build everywhere.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 🌐 TAP Portals Have Arrived
+
+  The platform now supports Tyler Application Platform Portal capabilities. Design and configure public-facing portals, citizen self-service experiences, and external user interfaces — all powered by the same AI-augmented workflow you know and love.
+
+  ## 🗺️ CAB is available for TAP Projects — And Your Project Planning Will Never Be the Same
+
+  Feed it anything — RFPs, legacy code, statements of work — and CAB spits out a structured application blueprint in minutes. Jumpstart your JAD sessions, supercharge your sprint planning, and walk into stakeholder reviews showing your complete and comprehensive understanding of their needs. Also, your Data Model carries forward automatically into Prototype and onward to Build. New to CAB for TAP? Start here before you build.
+</Update>
+
+<Update label="March 30, 2026" rss={{ title:"March 30, 2026",description:"Database View, CAB navigation, premium models, and expanded ServiceNow capabilities" }}>
+  **Veylo Core Platform**
+
+  ## 🗄️ Database View is Here
+
+  See your data like never before. A brand-new Database View sits alongside your Codebase view, giving you direct visibility into your application's data layer. Browse, inspect, and manage your database content without leaving the platform.
+
+  ## 🧭 Smarter CAB Navigation
+
+  Navigating large Common Application Blueprints just got easier. A new navigation bar lets you jump across sections of your CAB instantly — no more scrolling through dozens of requirements to find what you need.
+
+  **Veylo for Custom Web Applications**
+
+  ## 🧠 Premium Model Support
+
+  Need more horsepower? You can now tap into higher-level AI models for your most complex builds. The platform transparently communicates the increased capability — giving you the choice to go bigger when the project calls for it.
+
+  **Veylo for Low Code Platforms — ServiceNow**
+
+  ## 📊 ServiceNow Capabilities Let You Create More Service… Right Now!
+
+  ServiceNow support takes a massive leap forward. Our AI agents can now generate and configure dashboards, metrics, reports, analytics, and portal experiences — rounding out the ServiceNow offering into a comprehensive, end-to-end development accelerator.
+</Update>
+
+<Update label="March 3, 2026" rss={{ title:"March 3, 2026",description:"Infrastructure migration and a refreshed project creation flow" }}>
+  **Veylo Core Platform**
+
+  ## 🏗️ Scalability Under the Hood
+
+  We've completed a major infrastructure migration to strengthen the platform's backbone. These behind-the-scenes improvements ensure the platform stays fast and responsive as our user base grows.
+
+  ## 🆕 Refreshed Project Creation
+
+  The Create Project experience gets a cleaner, more intuitive design. A streamlined three-step flow clearly guides you through naming your project, choosing your platform (Custom Web or Low Code), and selecting your target technology.
+</Update>
+
+<Update label="February 17, 2026" rss={{ title:"February 17, 2026",description:"Common Application Blueprint V1, Prototype Mode, and ServiceNow support" }}>
+  **Veylo Core Platform**
+
+  ## 🏛️ Common Application Blueprint V1 is Live!
+
+  The feature we've been building toward is here. The Common Application Blueprint (CAB) is a platform-agnostic requirements engine that ingests your documents, legacy artifacts, and natural language descriptions — then produces a structured blueprint that can be deployed to any of our supported platforms. Think of it as the Rosetta Stone between what you need and how it gets built.
+
+  ## 🔗 CAB-to-Prototype Handoff
+
+  Once your CAB is ready, hand it off to Prototype Mode with a single click. Your structured requirements flow directly into the design phase — no re-entry, no lost context.
+
+  ## ✨ Introducing Prototype Mode
+
+  Design Mode has evolved. We've renamed it to Prototype Mode to better reflect what it actually does: generate interactive, clickable prototypes that bring your requirements to life before a single line of production code is written.
+
+  ## 🔒 Platform Security Hardening
+
+  We've strengthened our defenses against spam and bot accounts with enhanced verification and authentication controls. Security isn't glamorous, but it matters.
+
+  ## 👋 Guided Welcome Messages
+
+  Every mode now greets new users with a tailored introduction explaining what it can do and how to get started. Whether you're in Prototype Mode for TAP, ServiceNow, or Custom Web — you'll know exactly where to begin.
+
+  **Veylo for Low Code Platforms — ServiceNow**
+
+  ## 🚀 ServiceNow is Live!
+
+  We're excited to announce full ServiceNow support across the platform. Our AI agents can now configure ServiceNow data models, forms, workflows, business rules, and administration — all from the same intuitive interface. This is a major expansion of our multi-platform vision, and it's just the beginning.
+</Update>
+
+<Update label="February 3, 2026" rss={{ title:"February 3, 2026",description:"Collaboration for TAP, logo uploads, TAP Orchestrator Agent, and a TAP UX upgrade" }}>
+  **Veylo Core Platform**
+
+  ## 🤝 Collaboration Comes to TAP
+
+  The same powerful collaboration features you've been using in Custom Web Applications are now available for Tyler Application Platform projects. Invite teammates, assign roles, and work together on TAP configurations in real-time.
+
+  ## 📸 Drop Your Logo Right In
+
+  Upload actual logos and images directly into your projects and watch the AI incorporate them faithfully — no more AI-generated approximations of your brand. What you upload is what you get.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 🤖 TAP Orchestrator Agent
+
+  A brand-new master orchestrator agent now powers the TAP build experience. This brings the same streamlined, consolidated workflow that Custom Web Application users enjoy to the Tyler Application Platform — smarter routing, better context, and a more cohesive build process.
+
+  ## 🎨 TAP Gets a UX Upgrade
+
+  Collapsible sections, cleaner icons, and a refreshed interface bring the TAP experience in line with our Custom Web Application tools. Building on TAP now feels as polished as building anywhere else on the platform.
+
+  ## ⏹️ Stop Button for TAP Design Mode
+
+  Notice a typo mid-prompt? Now you can stop TAP Design processing instantly and course-correct without waiting for a full response.
+</Update>
+
+<Update label="January 20, 2026" rss={{ title:"January 20, 2026",description:"Smart project defaults, the Files Panel, stop generation, and TAP Reports" }}>
+  **Veylo Core Platform**
+
+  ## 🧠 Smart Project Defaults
+
+  The platform now remembers how you work. When you open a project, it defaults to the mode you last used — Build or Design. No more extra clicks to get back to where you left off.
+
+  ## 📁 Say Hello to the Files Panel
+
+  What was once the "Document Panel" is now the Files Panel — because your projects contain far more than documents. This rename reflects the full range of files our platform supports and processes.
+
+  **Veylo for Custom Web Applications**
+
+  ## ⏹️ Stop Generation on Demand
+
+  Spot an error in your prompt? Hit the new stop button to halt Design Mode processing instantly. Take control of your AI interactions without waiting for a full response cycle.
+
+  ## ⏱️ Runtime Tracking in Design Mode
+
+  Design Mode now displays real-time runtime counters, matching the transparency you already have in Build Mode. See exactly how long each AI interaction takes.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 📊 TAP Reports Support
+
+  The platform can now generate and configure reports within the Tyler Application Platform. Another critical capability added to the growing TAP toolkit.
+
+  ## ⏱️ Runtime Tracking for TAP Design
+
+  Just like Custom Web Applications, TAP Design Mode now shows runtime counters for every AI interaction — full transparency across the platform.
+</Update>
+
+<Update label="January 12, 2026" rss={{ title:"January 12, 2026",description:"Team collaboration, sharing, flexible billing, real-time sync, and permissions" }}>
+  **Veylo Core Platform**
+
+  ## 👥 Team Collaboration is Here!
+
+  The feature you've been asking for has arrived: Multi-User Project Collaboration. Invite your team members via email, assign roles (Owner, Editor, or Viewer), and work together in real-time. Whether you're coordinating across departments or bringing in external stakeholders, collaboration just became effortless.
+
+  ## 🔗 Share Your Work Instantly
+
+  Generate shareable links for any project with one click. Perfect for demos, stakeholder reviews, or getting quick feedback — anyone with the link can view your work in read-only mode. Toggle sharing on or off anytime, and copy links straight to your clipboard.
+
+  ## 💳 Flexible Billing for Teams
+
+  You're in control: choose whether the project owner covers costs or each collaborator pays for their own usage. Set the billing model per team member during invitation — perfect for client projects, internal teams, or partnership work.
+
+  ## 🌐 Share Beyond the Platform
+
+  Enable artifact link sharing to send your work to anyone — even people without a Veylo account. Perfect for client presentations, executive reviews, or showcasing what's possible.
+
+  **Veylo for Custom Web Applications**
+
+  ## ⚡ Real-Time Synchronization Across Everything
+
+  Watch the magic happen: AI responses, messages, and development progress now stream live across all users and browser windows simultaneously. Whether your team is in the same room or spread across time zones, everyone sees updates the instant they happen. WebSocket-based synchronization keeps Dev Mode and Design Mode perfectly in sync.
+
+  ## 🎯 Smart Permission System
+
+  Role-based access control that actually works. The interface dynamically adapts to show exactly what each user can do — no confusing buttons or accidental changes. Owners control everything, Editors can build and modify, Viewers can observe and learn. All backed by secure API-level permission validation.
+
+  ## 🔄 Never Lose Your Progress
+
+  Refresh the page, switch tabs, even navigate away — your AI processing continues in the background. Come back to find your work exactly where you left it, with all responses completed and ready to review.
+
+  ## 🎨 Polish & Performance
+
+  We've eliminated those annoying visual glitches in Dev Mode, fixed message flickering, and optimized our credit system with Redis caching for lightning-fast performance. Plus, smart navigation remembers where you were and takes you right back after login or session timeout.
+
+  ## 🛡️ Data Protection Built In
+
+  Your project data is now better safeguarded with enhanced data protection measures across the platform. We've reinforced how your work is stored, transmitted, and managed — because trust starts with how we handle your data.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## ⚡ Faster, Smoother TAP Experience
+
+  We've optimized the Tyler Application Platform for speed and responsiveness. Navigation across TAP projects is now noticeably snappier, with streamlined routing and reduced load times — so you spend less time waiting and more time building.
+</Update>
+
+<Update label="January 5, 2026" rss={{ title:"January 5, 2026",description:"A new year note from the team" }}>
+  ## 🎉 Happy New Year from Veylo!
+
+  As we close out 2025, we want to take a moment to thank our incredible community for an amazing year of innovation and growth.
+
+  What a year it's been! We are so excited to have launched a bold vision to revolutionize how government agencies and organizations build software. What started as an idea in June became a living, breathing platform that's already changing the game. We've watched our community grow, seen real projects come to life, and proven that AI-augmented development can deliver what traditional approaches never could. The journey from concept to platform has been extraordinary, and having you with us makes it all worthwhile.
+
+  But here's the exciting part: everything we've built this year is just the beginning.
+
+  2026 is going to be extraordinary. We have game-changing features in development that will redefine what's possible with AI-powered software delivery. Multi-agent architectures that tackle complexity like never before. Platform expansions that go far beyond what you've seen. Tools that will make you wonder how you ever built software any other way.
+
+  We can't wait to share what's coming — and we're not making you wait long.
+
+  Stay tuned. The best is yet to come.
+
+  Here's to an incredible 2026! 🚀
+</Update>
+
+<Update label="December 27, 2025" rss={{ title:"December 27, 2025",description:"Spreadsheet support, drag-and-drop documents, smarter previews, streaming responses" }}>
+  **Veylo for Custom Web Applications**
+
+  ## 📊 Spreadsheet Support Has Arrived
+
+  Unwrap full support for CSV, XLS, and XLSX files. Upload your spreadsheets and let our AI understand your data structures, making it easier than ever to build applications around your existing datasets.
+
+  ## 🎯 Enhanced Document Management
+
+  The Document Panel now supports drag-and-drop. Simply drag your files into place — it's like hanging ornaments on a tree, but for your development workflow.
+
+  ## ⚡ Smarter Artifact Previews
+
+  Artifact previews now automatically close when you switch requirements, keeping your workspace clean and focused. Less clutter, more productivity — our gift to your workflow.
+
+  ## 🌊 Real-Time Streaming Responses
+
+  Watch your Tyler Application projects come to life with streaming responses. See AI-generated code and configurations appear in real-time, making the development process more transparent and engaging.
+
+  ## 📜 Scroll to Latest Updates
+
+  New scroll-to-bottom functionality in Chat History means you'll never lose track of the conversation. Jump to the most recent message with a single click.
+
+  ## 🔧 Smoother Local Development
+
+  We've resolved port conflict issues, ensuring your local development environment runs smoothly without those frustrating "port already in use" errors.
+</Update>
+
+<Update label="December 19, 2025" rss={{ title:"December 19, 2025",description:"Foundation work, streamlined TAP registration, and first TAP customers live" }}>
+  **Veylo Core Platform**
+
+  ## 🚧 Reinforcing The Foundations!
+
+  We continue to make our platform smarter, faster, easier… and better looking! The past week has seen notable enhancements under the hood so that we can ensure every first impression is a good first impression.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## ⚡ TAP Registration — "Less Clicking, More Building"
+
+  We have streamlined our registration process so you can stop filling out forms and start building applications. Because the best onboarding is the one you barely notice.
+
+  ## 👋 Tyler Application Platform: Meet Veylo
+
+  We're thrilled to announce our first customers are now live on the platform for Tyler Application Platform! What started as a vision to bring AI-powered development and configuration that actually works to save projects time and cost is now helping real teams ship real applications faster than ever.
+</Update>
+
+<Update label="December 12, 2025" rss={{ title:"December 12, 2025",description:"Document Panel, Dark Mode, on-demand indexing, custom lookups, and Form Queues" }}>
+  **Veylo Core Platform**
+
+  ## 📁 Document Panel: Your Design and Build agents now have more to work with
+
+  Our enhanced Document Panel allows users a quick view into system generated documents and an easy place to upload and locate the support materials they have provided. Both the Design and Build Agents benefit from helpful project documentation.
+
+  ## 🌙 🦉 Night Owl? Work all night with our enhanced Dark Mode
+
+  Dark mode takes the strain off your eyes to let you start as early or go as late as you want.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## ⚡ On-Demand Indexing: Our AI Build Agent codes as fast as your system evolves
+
+  By keeping appraised to all system changes (made by human, AI, or introduced through upgrades), our Build tools will provide the best and smartest solution to the challenge of configuring your application.
+
+  ## 🔎 We're on the Lookup!
+
+  The Tyler Platform's Data Model and Form agents are now able to create complex and custom lookups automatically. Not only can lookups pull from reference data, now they can pull from your own tracked data — and apply logic to subsets of data.
+
+  ## 🧰 Advanced Features, Zero Developer Tax
+
+  Form Queues used to be that "nice-to-have" feature that required specialist hours you didn't want to pay for. Not anymore — our Builder AI now builds and inserts them automatically, turning advanced functionality into standard equipment.
+</Update>
+
+<Update label="December 5, 2025" rss={{ title:"December 5, 2025",description:"Project dashboard, cost transparency, and Design-to-Build handoff on TAP" }}>
+  **Veylo Core Platform**
+
+  ## 📊 You don't need Project Managers to manage your projects — use your new Dashboard instead
+
+  The updated Project dashboard gives you quick view into every one of your projects, making it easy to tell at a glance the project name, customer, type of project (Web app or Low Code Platform) as well as clone or edit the project — quickly and easily. We believe that managing your projects should be quick and easy.
+
+  **Veylo for Custom Web Applications**
+
+  ## 💰 Cost Transparency Across Your Projects
+
+  Every Tyler Application feature now tracks and displays token usage and costs in real-time. See exactly what each request costs at both the request and project level, with Design costs separated from Development for complete visibility into your AI spend.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 🤝 Design Meets Build (Finally)
+
+  Our Design Agent now hands off data models and form specs directly to our Build Agents — no translation needed, no details lost. What used to take days of documentation now happens instantly, so your TAP solution goes from whiteboard to working app faster than you can say "change request."
+</Update>
+
+<Update label="November 21, 2025" rss={{ title:"November 21, 2025",description:"Persistent TAP conversation history, navigation cleanup, and new email templates" }}>
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 💬 Persistent Conversation History
+
+  Your Tyler Application feature conversations now persist across sessions. Jump between tabs without losing context — all your historic messages automatically load when you return.
+
+  ## 🎯 Streamlined Navigation
+
+  We've reorganized the Tyler Application Project left menu for a more intuitive workflow, and introduced a dedicated Administration Tab to keep your project management clean and focused.
+
+  **Veylo Core Platform**
+
+  ## ✉️ Beautiful Email Templates
+
+  Sign-up and password reset emails now feature professionally designed HTML templates that we can customize for special announcements and updates.
+</Update>
+
+<Update label="November 14, 2025" rss={{ title:"November 14, 2025",description:"Design Mode optimization, design without deployment, admin visibility, version history" }}>
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## ⚡ Smarter Design Mode
+
+  We've dramatically optimized Tyler Application Design Mode to use fewer tokens and require fewer iterations — making your design process faster and more cost-effective.
+
+  ## 🎨 Design Without [requiring] Deployment
+
+  Create Tyler Application projects and iterate on designs without connecting to a live site. You only need to link your site when you're ready to build — perfect for early-stage planning and client presentations.
+
+  ## 👥 Admin Project Visibility
+
+  Admins can now view any user's project in read-only mode, making it easier to provide support and collaborate across teams.
+
+  ## 📊 Lifetime Usage Analytics
+
+  The Admin Panel now displays comprehensive lifetime usage statistics for every user.
+
+  ## ⏮️ Version History & Rollback
+
+  Introducing Version History for Tyler Application Design Mode. Experiment freely knowing you can revert to any previous version with a single click.
+
+  ## 💻 Offline Design Capability
+
+  Tyler Application Design projects can now be downloaded and run locally — work anywhere, even without an internet connection.
+</Update>
+
+<Update label="November 7, 2025" rss={{ title:"November 7, 2025",description:"Form Business Rules 1.0, primary key workflows, Design Mode architecture upgrade" }}>
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## ✅ Form Business Rules Complete
+
+  Version 1.0 of AI-powered Form Business Rules is now live, enabling intelligent form validation and logic.
+
+  ## 🔄 Primary Key Workflow Intelligence
+
+  We've initiated AI capabilities for Primary Key workflows, streamlining one of the most critical aspects of Tyler Application configuration.
+
+  ## 🏗️ Design Mode Architecture Upgrade
+
+  Major refactor, optimization, and redeployment of Design Mode infrastructure for improved performance and reliability.
+
+  **Veylo for Custom Web Applications**
+
+  ## 🔬 Under the Hood
+
+  Multi-agent architecture research, UI/UX enhancements, and feedback system improvements — setting the foundation for major releases ahead.
+</Update>
+
+<Update label="October 31, 2025" rss={{ title:"October 31, 2025",description:"Design Mode launch for Tyler Application Platform" }}>
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 🎬 Design Mode Launch
+
+  We're thrilled to introduce Tyler Application Design Mode — a revolutionary way to design Tyler applications with AI assistance.
+
+  ## 🔗 Seamless Design-to-Development
+
+  Tyler Application Design Mode now integrates directly with Data Model Builder, creating a smooth transition from design concepts to working implementations.
+
+  ## 📋 Forms Taking Shape
+
+  Form functionality development is in full swing, with core capabilities now allowing users to adjust the order of data elements, set Required fields, arrange data across columns, and even set business rules like Conditional Show/Hides and Conditionally Required.
+</Update>
+
+<Update label="October 24, 2025" rss={{ title:"October 24, 2025",description:"Product lines named" }}>
+  **Veylo Core Platform**
+
+  ## 🏷️ Introducing Product Lines
+
+  We've named our two major product lines: Tyler Applications for TAP-focused development, and Web Applications for custom web applications.
+</Update>
+
+<Update label="October 17, 2025" rss={{ title:"October 17, 2025",description:"Claude Sonnet 4.5 upgrade, Forms AI 1.0, expanded reference data support" }}>
+  **Veylo for Custom Web Applications**
+
+  ## 🚀 Upgraded to Claude Sonnet 4.5
+
+  We've updated our primary LLM to Claude Sonnet 4.5, bringing enhanced reasoning and generation capabilities to your projects.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 📝 Forms AI 1.0
+
+  The first version of AI-powered Forms creation is here, intelligently generating form structures based on your requirements.
+
+  ## 🗃️ Enhanced Reference Data Support
+
+  Data Model AI now includes expanded support for Reference Data, making it easier to build complex relational structures.
+</Update>
+
+<Update label="October 10, 2025" rss={{ title:"October 10, 2025",description:"UI/UX refresh, credit management, admin tooling, billing infrastructure, Admin AI" }}>
+  **Veylo for Custom Web Applications**
+
+  ## ✨ UI/UX Refresh
+
+  Major interface improvements across the platform for a more intuitive and polished experience.
+
+  ## 💳 Credit Management
+
+  Users can now manage their own credits and plan types directly, with full transparency into usage and billing.
+
+  ## 🔧 Enhanced Admin Tools
+
+  Completely revamped Admin mode with better controls and visibility.
+
+  **Veylo Core Platform**
+
+  ## 💰 Billing Infrastructure
+
+  Full support for billing and credit management is now live, providing flexible pricing options and usage tracking.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 👤 Admin AI Complete
+
+  AI-powered administration is ready for production. Create, modify, and configure Groups; create, modify, and configure Roles; create and modify User Accounts. Manage your Tyler Application administration through natural conversation.
+</Update>
+
+<Update label="September 2025" rss={{ title:"September 2025",description:"UI/UX evolution, enterprise authentication, requirements processing, credential management" }}>
+  **Veylo Core Platform**
+
+  ## 🎨 Major UI/UX Evolution
+
+  We shipped a comprehensive interface overhaul including slidable panels for better workspace management, an enhanced statistics panel with richer insights, drag-and-drop support for images and documents, smart scrolling that respects your review flow, and a cleaner project dashboard with optimized spacing.
+
+  ## 🔐 Enterprise Authentication
+
+  Integrated Keycloak for robust, enterprise-grade user management.
+
+  **Veylo for Custom Web Applications**
+
+  ## 🧠 Intelligent Requirements Processing
+
+  New requirement elaboration and iteration system transforms brief descriptions into comprehensive specifications.
+
+  ## 🔑 Secure Credential Management
+
+  Built-in credential management for third-party services (Claude, OpenAI, SendGrid, and more).
+
+  ## 🌐 Web Tools Integration
+
+  New capabilities for screenshot capture, image downloads, and URL content extraction.
+
+  ## 📊 Usage Analytics Foundation
+
+  Project-level and user-level token and cost tracking infrastructure.
+
+  ## 📦 Portable Code Generation
+
+  Generated source code is now fully portable and ready to run on any machine.
+
+  **Veylo for Low Code Platforms — Tyler Application Platform**
+
+  ## 🤖 AI-Specific Enhancements
+
+  Integrated specialized AI capabilities optimized for Tyler Application workflows and configurations.
+</Update>
