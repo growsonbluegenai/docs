@@ -100,6 +100,13 @@ description: "See how we are improving our platform every day."
 
   A new page collects what the platform records as a by-product of normal use: the chain from source material through CAB, Tickets, Epics, Build, and App Testing, plus what the review record captures and the boundaries each agent works inside. See [Traceability](/traceability).
 
+  <Frame>
+    <img
+      src="/images/changelog/2026-09-traceability-end-to-end.png"
+      alt="One requirement traced from a CAB user story to its Ticket and on to a passing automated test"
+    />
+  </Frame>
+
   ## 🏗️ Version 2 gateway architecture for new Web projects
 
   New Web projects are created on the gateway architecture: a single Nginx reverse proxy fronts your services, only `nginx` and `database` expose ports externally, and the project is served from one subdomain URL. Version 1 projects continue to work and are not migrated. See [Default tech stack](/web-apps/build-mode/tech-stack-reference).
