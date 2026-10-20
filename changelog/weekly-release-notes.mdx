@@ -3,20 +3,67 @@ title: "Veylo Platform Changelog"
 description: "See how we are improving our platform every day."
 ---
 
-<Update label="September 30, 2026" rss={{ title:"September 30, 2026",description:"Medium model upgraded to Sonnet 5.5, CAB creation defaults to High, Low Code Build agent gets stop and queue controls" }}>
+<Update label="October 16, 2026" rss={{ title:"October 16, 2026",description:"Technology stack choice for Web projects" }}>
+  **Veylo for Custom Web Applications**
+
+  ## 🧱 Build on the technology that's right for you
+
+  Every organization has its own standards: the languages its developers know, the platforms its IT teams support, and the systems its users depend on. Web projects now let you choose a **Tech Stack** when you create the project, including Node.js, React and PostgreSQL; Python, React and PostgreSQL; and .NET, Blazor and Microsoft SQL Server, with more on the way. See [Tech Stack](/web-apps/build-mode/tech-stack-reference).
+
+  <Frame>
+    <img
+      src="/images/changelog/2026-10-tech-stack-choice.png"
+      alt="The Create New Project drawer with the Tech Stack options for a Web Application"
+      width="360"
+    />
+  </Frame>
+</Update>
+
+<Update label="October 15, 2026" rss={{ title:"October 15, 2026",description:"Two-way CAB and Ticket sync for Web projects" }}>
+  **Veylo Core Platform**
+
+  ## 🔄 CAB and Tickets stay in sync
+
+  Edit your CAB and a banner offers to carry the change into the affected Tickets; you review each proposed Ticket change and nothing updates until you approve it. Edit a Ticket and the matching CAB update is proposed the same way, along with any other Tickets that change affects. A closed Ticket is never reopened: a new **Follow Up** Ticket is created instead. The CAB edit agent behind this was rebuilt for more accurate edits. Available for Web projects, with Low Code projects to follow. See [Editing your CAB](/cab/editing-your-cab).
+</Update>
+
+<Update label="October 6, 2026" rss={{ title:"October 6, 2026",description:"Legacy modernization from source code, files kept as uploaded, and Tickets improvements" }}>
+  **Veylo Core Platform**
+
+  ## 🏗️ Modernize legacy applications from their source
+
+  Upload a legacy application's codebase and Veylo modernizes it directly, reading the code itself rather than a summary of it, then rebuilding or extending it. Start with a CAB when you want a reviewed blueprint first, or go code-to-build when you don't. See [Feed an existing system into a CAB](/cab/legacy-code-translation-guide).
+
+  <Frame>
+    <img
+      src="/images/changelog/2026-10-legacy-source-upload.png"
+      alt="A legacy application's source code archive uploaded in CAB Configuration, with all blueprint sections selected"
+    />
+  </Frame>
+
+  ## 📎 Files kept exactly as you upload them
+
+  Uploads are no longer reduced to their text. The original file is kept, and the agent decides how to use it based on what you ask: it reads requirements, specs, spreadsheets and presentations in full, looks at screenshots and mockups as images, places PDFs, logos, photos, video, audio and fonts directly into your application, and studies a ZIP of an existing application. Files up to 250 MB are supported. See [Files](/web-apps/files).
+
+  ## 🎟️ Tickets improvements
+
+  Tickets are where your blueprint becomes buildable work and where each requirement is traced through to the build. We're refining the Tickets tool to make that work easier to see and manage, starting with resizable columns in the Tickets list. See [What are Tickets](/tickets/what-are-tickets).
+</Update>
+
+<Update label="September 30, 2026" rss={{ title:"September 30, 2026",description:"Low Code Build gets stop and queue controls" }}>
   **Veylo for Low Code Platforms**
 
   ## ⏸️ Stop and queue prompts in Low Code Build Mode
 
-  The Low Code Build agent can now be stopped mid-request, and new prompts can be queued up while it's working instead of waiting for it to finish. This allows you to make adjustments mid-course when you need to fix something!
+  The Low Code Build agent can now be stopped mid-request, and new prompts can be queued up while it's working. Make adjustments mid-course without waiting for a run to finish.
 </Update>
 
-<Update label="September 24, 2026" rss={{ title:"September 24, 2026",description:"High model upgraded to Opus 5.5" }}>
+<Update label="September 24, 2026" rss={{ title:"September 24, 2026",description:"Model upgrades for stronger reasoning" }}>
   **Veylo Core Platform**
 
   ## 🧠 More Horsepower in our Models
 
-  We've upgraded our default models to ensure consistently Smarter reasoning, better output, and the same seamless experience. 
+  We've upgraded our default models for stronger reasoning and better output.
 </Update>
 
 <Update label="September 15, 2026" rss={{ title:"September 15, 2026",description:"BlueGenAI is now Veylo" }}>
@@ -213,12 +260,12 @@ description: "See how we are improving our platform every day."
   Project-level and user-level usage reports now arrive automatically every day at 1 AM EST. No more pulling numbers by hand when you want to know where spend is going.
 </Update>
 
-<Update label="July 27, 2026" rss={{ title:"July 27, 2026",description:"High mode now runs on Opus 5" }}>
+<Update label="July 27, 2026" rss={{ title:"July 27, 2026",description:"High mode model upgrade" }}>
   **Veylo Core Platform**
 
-  ## 🧠 High Mode, Meet Opus 5
+  ## 🧠 High Mode Gets a Model Upgrade
 
-  Anthropic released Opus 5 and we shipped it the same day. High mode now runs on the new model. This means stronger reasoning on complex builds, better adherence to your Implementation Plan, and sharper output on large CABs. There is no setting to change; if you're using High mode, you're already on it.
+  High mode now runs on an upgraded model, shipped the same day it became available. This means stronger reasoning on complex builds, better adherence to your Implementation Plan, and sharper output on large CABs. There is no setting to change; if you're using High mode, you're already on it.
 </Update>
 
 <Update label="July 13, 2026" rss={{ title:"July 13, 2026",description:"MCP support, CAB Notes, Chat Navigator, and Tickets-to-Build for low code" }}>
@@ -243,12 +290,12 @@ description: "See how we are improving our platform every day."
   The ticket-to-build loop now closes on low-code platforms exactly the way it does on Web. Tag a ticket or an epic in Build Mode and the Build Agent picks up the requirement and its CAB context, then configures directly against your target platform. Blueprint becomes tickets; tickets become a configured application.
 </Update>
 
-<Update label="July 6, 2026" rss={{ title:"July 6, 2026",description:"Adaptive Thinking for the Dev Agent, Implementation Plan handoff, ask-only access, inline ticket status" }}>
+<Update label="July 6, 2026" rss={{ title:"July 6, 2026",description:"Step-by-step planning for the Dev Agent, Implementation Plan handoff, ask-only access, inline ticket status" }}>
   **Veylo Core Platform**
 
-  ## ⚙️ Dev Agent Levels Up with Adaptive Thinking
+  ## ⚙️ Dev Agent Levels Up: Plans Before It Acts
 
-  The Veylo Dev Agent now uses the latest Anthropic model's Adaptive Thinking — planning each step before it acts, then acting with intent. The result is meaningfully higher accuracy. We paired it with a smarter LLM request-caching strategy so the net effect on your cost is roughly a wash, and often a little lower.
+  The Veylo Dev Agent now plans each step before it acts, then acts with intent. The result is meaningfully higher accuracy. We paired it with a smarter request-caching strategy so the net effect on your cost is roughly a wash, and often a little lower.
 
   ## 🗺️ The Builder Gets the Plan
 
@@ -272,9 +319,9 @@ description: "See how we are improving our platform every day."
 <Update label="June 29, 2026" rss={{ title:"June 29, 2026",description:"Model upgrades, CAB-to-backlog traceability, Epics, prompt queueing, Ask Mode" }}>
   **Veylo Core Platform**
 
-  ## 🧠 More Horsepower — Sonnet 5 & Opus 4.8
+  ## 🧠 More Horsepower — Model Upgrades
 
-  We've upgraded the models under the hood: Sonnet 4.6 → Sonnet 5 and Opus 4.6 → Opus 4.8. Smarter reasoning, better output, same seamless experience.
+  We've upgraded the models under the hood. Smarter reasoning, better output, same seamless experience.
 
   ## 🗂️ From Blueprint to Backlog — Traceability from CAB to final product
 
@@ -339,7 +386,7 @@ description: "See how we are improving our platform every day."
   CAB-to-Ticket generation now speaks low-code. Your blueprint converts into platform-specific tickets for your low-code build, and those tickets feed directly to the Build Agent — closing the loop from requirements to configured application.
 </Update>
 
-<Update label="May 18, 2026" rss={{ title:"May 18, 2026",description:"Ticket Evaluation V1, CAB AI Edit and Chatbot, running-apps view, Admin Panel reskin" }}>
+<Update label="May 18, 2026" rss={{ title:"May 18, 2026",description:"Ticket Evaluation V1, CAB AI Edit and Chatbot" }}>
   **Veylo Core Platform**
 
   ## 🔎 How Much for a Ticket?
@@ -349,14 +396,6 @@ description: "See how we are improving our platform every day."
   ## 💬 CAB AI Edit & CAB AI Chatbot
 
   Two new ways to shape your blueprint with AI: CAB AI Edit for direct changes, and a CAB AI Chatbot that handles requests conversationally with notably higher accuracy. CAB's new edit capabilities include AI-assessment of desired changes to ensure the changes are properly cascaded across the full CAB.
-
-  ## 🛑 See — and Stop — Running Apps
-
-  A new view surfaces every app currently running on the server, with the ability to stop any of them. Full visibility, full control.
-
-  ## 🎛️ Admin Panel, Reskinned
-
-  The Admin page now matches the rest of the portal, Dark and Light modes included. Consistency that's easy on the eyes.
 </Update>
 
 <Update label="May 4, 2026" rss={{ title:"May 4, 2026",description:"First version of CAB-to-Ticket generation, plus fixes" }}>
@@ -823,12 +862,12 @@ description: "See how we are improving our platform every day."
   We've named our two major product lines: Tyler Applications for TAP-focused development, and Web Applications for custom web applications.
 </Update>
 
-<Update label="October 17, 2025" rss={{ title:"October 17, 2025",description:"Claude Sonnet 4.5 upgrade, Forms AI 1.0, expanded reference data support" }}>
+<Update label="October 17, 2025" rss={{ title:"October 17, 2025",description:"Primary model upgrade, Forms AI 1.0, expanded reference data support" }}>
   **Veylo for Custom Web Applications**
 
-  ## 🚀 Upgraded to Claude Sonnet 4.5
+  ## 🚀 Upgraded Our Primary Model
 
-  We've updated our primary LLM to Claude Sonnet 4.5, bringing enhanced reasoning and generation capabilities to your projects.
+  We've upgraded our primary model, bringing enhanced reasoning and generation capabilities to your projects.
 
   **Veylo for Low Code Platforms — Tyler Application Platform**
 
@@ -888,7 +927,7 @@ description: "See how we are improving our platform every day."
 
   ## 🔑 Secure Credential Management
 
-  Built-in credential management for third-party services (Claude, OpenAI, SendGrid, and more).
+  Built-in credential management for third-party services (AI providers, email services, and more).
 
   ## 🌐 Web Tools Integration
 
