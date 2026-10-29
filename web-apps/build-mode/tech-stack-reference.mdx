@@ -1,65 +1,81 @@
 ---
-title: "Default Tech Stack"
-description: "The stack the build agent is instructed to produce, the conventions it follows, and how the gateway architecture differs by project version."
+title: "Tech Stack"
+description: "Choosing the technology your Web project is built on: pre-built stacks, custom combinations, architecture, and Special Instructions."
 icon: "layers"
 ---
 
-Every Web project the build agent produces uses the same stack, and it is fixed rather than selectable.
+Every organization has its own technology constraints: approved lists, existing databases, in-house skills, and systems that have to keep running. You choose the stack a Web project is built on when you create it, either a tested pre-built combination or one you assemble yourself.
 
 <Note>
-  This is what the agent is **instructed** to build, not a guarantee of what a given project contains. It is a standing instruction in the agent's prompt, so a project that was steered elsewhere can differ.
+  The stack is set once, when the project is created, and can't be changed afterwards.
 </Note>
 
-## The Stack
+## Choosing a Stack
 
-| Layer | Technology |
-| --- | --- |
-| Frontend | React (Vite, Tailwind CSS, Wouter) |
-| Backend | Node.js \+ Express |
-| Database | PostgreSQL \+ Drizzle ORM |
-| State | React Query |
-| Auth | JWT on protected routes |
-| Containers | Docker, via `docker-compose.yaml` |
-| Gateway | Nginx reverse proxy, **version 2 projects only** |
+In **Create Project**, select **Web Application**, then pick a **Tech Stack**: one of the pre-built stacks, or **Custom**.
 
-The Create Project form states it more briefly, as `Made with React, Node.js, and PostgreSQL`.
+Prefer to build on a low-code platform your team already runs? See the [Low Code overview](/low-code/overview).
 
-<Frame caption="The stack is stated on the Create Project form. It is a description, not a choice; Web projects have one option.">
-  ![The Create New Project drawer with Web Application selected, showing a single pre-selected Platform Type radio whose label reads Made with React, Node.js, and PostgreSQL.](/images/web-apps/build-mode-tech-stack-create.png)
-</Frame>
+## Pre-Built Stacks
 
-## Two Project Versions
+| Stack | Frontend | Backend | Database |
+| --- | --- | --- | --- |
+| React + Node.js + PostgreSQL (default) | React | Node.js | PostgreSQL |
+| React + Python + PostgreSQL | React | Python | PostgreSQL |
+| React + .NET Web API + MS SQL | React | .NET Web API | Microsoft SQL Server |
+| .NET Blazor + MS SQL | .NET Blazor (full stack) | .NET Blazor (full stack) | Microsoft SQL Server |
 
-Projects carry a prompt version that changes the architecture the agent builds.
+## Building a Custom Stack
 
-|  | Version 1 (original) | Version 2 (gateway) |
+**Custom** offers four groups. Each starts at **None**; choose at least one option, or write Special Instructions.
+
+| Group | Option | What Veylo generates |
 | --- | --- | --- |
-| Entry point | Each service on its own host port | Nginx reverse proxy, single entry point |
-| Exposed ports | Frontend and backend both exposed | `nginx` (primary) and `database` |
-| Application URL | One URL per service | A single subdomain URL |
-| Subdomain proxying | Not eligible | Eligible |
+| Frontend | React | React with TypeScript, Vite, Tailwind CSS, Wouter and React Query |
+| Frontend | Angular | Angular with TypeScript, standalone components, signals and Tailwind CSS |
+| Frontend | Vue | Vue with Vite, TypeScript, Vue Router, Pinia and Tailwind CSS |
+| Backend | Node.js | Node.js with TypeScript, Express, zod, JWT sign-in and Drizzle migrations |
+| Backend | Python | Python with FastAPI, SQLAlchemy, Pydantic, JWT sign-in and Alembic migrations |
+| Backend | .NET Web API | ASP.NET Core minimal APIs with JWT sign-in and EF Core migrations |
+| Full stack | .NET Blazor | Blazor Web App with interactive server rendering, Bootstrap, ASP.NET Core Identity sign-in and EF Core migrations |
+| Database | PostgreSQL | PostgreSQL |
+| Database | MySQL | MySQL, latest LTS release |
+| Database | MS SQL | SQL Server Express, latest release |
 
-New projects are created at version 2. Version 1 projects continue to work and are not migrated.
+The footer sums up your choices as you make them, for example `Angular (Micro-frontends) + Python (Microservices) + PostgreSQL`.
 
-## Conventions the Agent Follows
+### Architecture
 
-| Convention | Rule |
-| --- | --- |
-| Persistence | PostgreSQL for all persistent data. No in-memory or mock stores |
-| Configuration | Every credential, constant, port, and host in a root `.env`, referenced from `docker-compose.yaml`. No hardcoded secrets or URLs |
-| Env var names | `DATABASE_EXTERNAL_PORT`, `DATABASE_USERNAME`, `DATABASE_PASSWORD`, `DATABASE_NAME`. Alternates such as `POSTGRES_USER`, `DB_PORT` and `FRONTEND_PORT` are disallowed |
-| Validation | Applied in both the frontend and the backend |
-| Internal secrets | `JWT_SECRET`, database credentials, session and encryption keys are auto-generated |
-| External secrets | Third-party service keys are requested from you; see [Credentials](/web-apps/credentials) |
-| Repository contents | Code only. Anything describing the project is produced as a knowledge document, not committed |
+Picking a frontend shows **Frontend architecture**: **Single app**, or **Micro-frontends**, where a shell app loads pages from separate apps by business area. Picking a backend shows **Backend architecture**: **Unified**, or **Microservices**, with one service per business area, each holding its own data and migrations. In both split designs, each part runs in its own container behind one gateway.
 
-## Version 2 Project Layout
+<Tip>
+  Unified and single-app builds keep most projects simple. Reach for microservices and micro-frontends when different teams own and release different business areas.
+</Tip>
 
-Version 2 projects add an `nginx/` directory containing a production reverse-proxy configuration and its own Dockerfile based on `nginx:alpine`. Every service in `docker-compose.yaml` follows a fixed port-exposure pattern, and the gateway and database are the services that expose ports externally.
+### Special Instructions
+
+Use up to 10,000 characters for anything the menus don't cover: coding standards, naming rules, folder structure, extra libraries, or an accessibility standard such as USWDS.
+
+### Built-In Guidance
+
+The form steps in before a conflicting choice can waste a build.
+
+- **.NET Blazor replaces Frontend and Backend.** Blazor builds both, so choosing it while a frontend or backend is selected offers a one-click **Switch to .NET Blazor** instead of letting the choices conflict.
+- **A database without a backend.** Veylo warns that the agent will write the data-access code itself, in the language you name in Special Instructions or one it chooses.
+- **Database Viewer.** Choosing a database turns on the Database Viewer and data snapshots for the project. See [Codebase and Database](/web-apps/codebase-and-database).
+
+## Examples
+
+| You need | Choose | Special Instructions |
+| --- | --- | --- |
+| A modern portal on a legacy system's existing API | Frontend: Vue, everything else: None | "Frontend only. Connect to the existing REST API in the attached spec. Do not create a backend or database." |
+| To match a Microsoft-standard agency stack | Vue (Single app) + .NET Web API (Unified) + MS SQL | "Follow USWDS for accessibility. Use feature-based folders." |
+| Separate teams owning separate business areas | Angular (Micro-frontends) + Python (Microservices) + PostgreSQL | "One app and one service per business area: Intake, Investigations, Reporting." |
+| A backend service for an existing frontend or integration | Backend: Node.js (Unified) + PostgreSQL, Frontend: None | "Expose OpenAPI docs at /docs. No UI." |
 
 ## Your Next Step
 
-The stack is fixed, but what the agent does with it is governed by a longer set of rules.
+Whichever stack you choose, what the agent does with it is governed by a longer set of rules.
 
 <CardGroup cols={2}>
   <Card title="See how the agent works" icon="bot" href="/web-apps/build-mode/build-agent-guide">
