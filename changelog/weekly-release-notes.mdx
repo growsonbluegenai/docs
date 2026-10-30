@@ -3,18 +3,51 @@ title: "Veylo Platform Changelog"
 description: "See how we are improving our platform every day."
 ---
 
+<Update label="Week of October 26, 2026" rss={{ title:"Week of October 26, 2026",description:"Custom tech stacks for Web projects" }}>
+  **Veylo for Custom Web Applications**
+
+  ## 🧩 Custom tech stacks: build on exactly what your organization runs
+
+  Public-sector teams rarely start from a blank slate. Approved technology lists, existing databases, in-house skills and legacy systems that must keep running all shape what a new application can be built on. Web projects now offer a **Custom** option under **Tech Stack**, with recommended, pre-configured options to mix and match:
+
+  - **Frontend:** React, Angular or Vue, as a single app or micro-frontends
+  - **Backend:** Node.js, Python or .NET Web API, unified or as microservices
+  - **Full stack:** .NET Blazor
+  - **Database:** PostgreSQL, MySQL or Microsoft SQL Server
+
+  These are starting points, not limits. Leave every group at **None** and describe your stack in **Special Instructions** to build on a completely custom combination, including languages and frameworks not on the list. Or leave just one group at **None** to build only what you need, such as a new frontend on top of an existing API. Special Instructions also carry your coding standards, folder structure and extra libraries, and built-in guidance flags conflicting choices before any code is generated. A fourth pre-built stack, React with .NET Web API and Microsoft SQL Server, joins the existing three. See [Tech Stack](/web-apps/build-mode/tech-stack-reference).
+
+  <Frame>
+    <video controls autoPlay muted loop playsInline src="/images/changelog/2026-10-custom-tech-stacks.mp4" aria-label="A 41-second walkthrough of Custom Tech Stacks in Create Project: the pre-built stacks, building a custom frontend, backend and database, choosing an architecture, built-in guidance, and Special Instructions" />
+  </Frame>
+</Update>
+
+<Update label="Week of October 19, 2026" rss={{ title:"Week of October 19, 2026",description:"Understand an existing low-code application before you change it" }}>
+  **Veylo for Low Code Platforms**
+
+  ## 🔍 Understand an existing low-code application before you change it
+
+  Veylo can now read low-code applications it didn't build. Point it at an application already running on your platform and get a working understanding of it before anyone touches a configuration. There are two ways to do it.
+
+  **Ask the builder.** Connect the builder to the application and ask the agent how it works: which table a form writes to, what triggers a workflow, which roles can approve a request. Ask it to document the application and it produces documentation you can review, edit and keep.
+
+  **Give it to the CAB.** Upload the configuration and installation files your team already uses to move the application between environments, such as Dev to Test. The CAB reads them the way it reads source code and builds a blueprint of the application: data model, forms, workflows, roles and business rules.
+
+  Either way, enhancement, support and modernization work starts from what the application actually does, not from what someone remembers it doing. See [Understand an existing application](/low-code/understand-existing-application).
+</Update>
+
 <Update label="Week of October 12, 2026" rss={{ title:"Week of October 12, 2026",description:"Two-way CAB and Ticket sync, and technology stack choice for Web projects" }}>
   **Veylo Core Platform**
 
-  ## 🔄 CAB and Tickets stay in sync
+  ## 🔄 CAB and Tickets now sync: Traceability that keeps your requirements and build in step
 
-  Edit your CAB and a banner offers to carry the change into the affected Tickets; you review each proposed Ticket change and nothing updates until you approve it. Edit a Ticket and the matching CAB update is proposed the same way, along with any other Tickets that change affects. A closed Ticket is never reopened: a new **Follow Up** Ticket is created instead. The CAB edit agent behind this was rebuilt for more accurate edits. Available for Web projects, with Low Code projects to follow. See [Editing your CAB](/cab/editing-your-cab).
+  Traceability is only useful if it's current, and requirements rarely stand still. Stakeholders refine them, testing surfaces gaps, and the build uncovers details no blueprint could predict. Two-way sync keeps your CAB and your Tickets telling the same story. Edit the CAB and a banner offers to carry the change into every affected Ticket; edit a Ticket and the matching CAB update is proposed the same way. You review each change, and nothing updates until you approve it. Closed Tickets are never reopened; a new **Follow Up** Ticket is created instead. The result is a blueprint that stays the source of truth from the first requirement to the finished application. Available for Web projects, with Low Code projects to follow. See [Editing your CAB](/cab/editing-your-cab).
 
   **Veylo for Custom Web Applications**
 
-  ## 🧱 Build on the technology that's right for you
+  ## 🧱 Build on the technology that's right for your organization
 
-  Every organization has its own standards: the languages its developers know, the platforms its IT teams support, and the systems its users depend on. Web projects now let you choose a **Tech Stack** when you create the project, including Node.js, React and PostgreSQL; Python, React and PostgreSQL; and .NET, Blazor and Microsoft SQL Server, with more on the way. See [Tech Stack](/web-apps/build-mode/tech-stack-reference).
+  There's no universally right technology stack. What you can run depends on many things: the languages your developers know, what your IT and security teams can support, the systems your new application has to work alongside, and more. Web projects now let you choose a **Tech Stack** when you create the project, including Node.js, React and PostgreSQL; Python, React and PostgreSQL; and .NET, Blazor and Microsoft SQL Server, with more on the way. And if your team prefers to build on a low-code platform it already trusts, Veylo continues to support TAP, ServiceNow, PowerApps and Salesforce. See [Tech Stack](/web-apps/build-mode/tech-stack-reference) and the [Low Code overview](/low-code/overview).
 
   <Frame>
     <img
@@ -28,9 +61,9 @@ description: "See how we are improving our platform every day."
 <Update label="Week of October 5, 2026" rss={{ title:"Week of October 5, 2026",description:"Legacy modernization from source code, files kept as uploaded, and Tickets improvements" }}>
   **Veylo Core Platform**
 
-  ## 🏗️ Modernize legacy applications from their source
+  ## 🏗️ Modernize in place
 
-  Upload a legacy application's codebase and Veylo modernizes it directly, reading the code itself rather than a summary of it, then rebuilding or extending it. Start with a CAB when you want a reviewed blueprint first, or go code-to-build when you don't. See [Feed an existing system into a CAB](/cab/legacy-code-translation-guide).
+  Modernization isn't always a rebuild from scratch. Sometimes the right move is to keep what works and improve it where it stands. Veylo now integrates with an existing application's codebase and works from the code itself, not a summary of it, to add capabilities, update outdated approaches and modernize the parts that need it. Start with a CAB when you want a reviewed blueprint first, or go straight from code to build when you don't. See [Feed an existing system into a CAB](/cab/legacy-code-translation-guide).
 
   <Frame>
     <img
@@ -39,9 +72,9 @@ description: "See how we are improving our platform every day."
     />
   </Frame>
 
-  ## 📎 Your files, kept whole
+  ## 📎 Getting the most out of your files
 
-  The files you upload matter to your project. Whether it's a logo, a reference screenshot, a color palette or a comprehensive SOP for your office, Veylo now keeps the full file with all of its content and context, instead of reducing it to text. Your logos and photos go straight into your application, your mockups shape how it looks, and your documents are followed in full. Files up to 250 MB are supported. See [Files](/web-apps/files).
+  Whether it's a logo, a reference screenshot, a color palette or a comprehensive SOP for your office, Veylo now keeps the full file with all of its content and context, instead of reducing it to text. Your logos and photos go straight into your application, your mockups shape how it looks, and your documents are followed in full. Files up to 250 MB are supported. See [Files](/web-apps/files).
 
   ## 🎟️ Tickets improvements
 

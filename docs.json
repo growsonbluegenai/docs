@@ -97,7 +97,8 @@
           {
             "group": "Overview",
             "pages": [
-              "low-code/overview"
+              "low-code/overview",
+              "low-code/understand-existing-application"
             ]
           },
           {

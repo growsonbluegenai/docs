@@ -1,0 +1,71 @@
+---
+title: "Understand an Existing Application"
+description: "Getting a working understanding of a low-code application Veylo didn't build, by asking the builder or giving its configuration files to the CAB."
+icon: "search"
+---
+
+Veylo can read low-code applications it didn't build. Before anyone changes a configuration, you can find out how an application already running on your platform actually works, and keep a record of it.
+
+There are two ways to do it. Ask the builder when you want answers to specific questions or documentation of the live application. Give it to the CAB when you want a structured blueprint to plan larger work from.
+
+|  | Ask the builder | Give it to the CAB |
+| --- | --- | --- |
+| You start from | A connection to the running application | The configuration and installation files your team uses to move it between environments |
+| You get | Answers in conversation, and documentation you can review, edit and keep | A blueprint: data model, forms, workflows, roles and business rules |
+| Best for | Support questions, impact checks, documenting one area | Enhancement planning, modernization, scoping |
+
+## Asking the Builder
+
+<Steps>
+  <Step title="Connect the builder to the application">
+    Open a Low Code project and connect it to the environment where the application runs. Each platform's overview covers what the connection needs: [TAP](/low-code/tap/overview), [ServiceNow](/low-code/servicenow/overview), [Salesforce](/low-code/salesforce/overview), and [PowerApps](/low-code/powerapps/overview).
+  </Step>
+  <Step title="Ask how it works">
+    Ask the questions you'd otherwise answer by clicking through the configuration: which table a form writes to, what triggers a workflow, which roles can approve a request.
+  </Step>
+  <Step title="Ask for documentation">
+    Ask the agent to document the application, or one part of it: "Document the intake workflow, including every status and who can move a request between them." It produces documentation you can review, edit and keep.
+  </Step>
+</Steps>
+
+<Tip>
+  Ask before you change. A question about what a change would touch costs far less than unpicking a change that touched more than you expected.
+</Tip>
+
+## Giving It to the CAB
+
+<Steps>
+  <Step title="Gather the configuration and installation files">
+    Use the files your team already moves between environments, such as from Dev to Test. They describe the application as it's actually deployed.
+  </Step>
+  <Step title="Upload them to the CAB">
+    In **CAB Configuration**, add the files under **Upload Documents or Source Code**. The CAB reads them the way it reads source code. See [Supported input types](/cab/supported-input-types).
+  </Step>
+  <Step title="Generate and review the blueprint">
+    The blueprint maps the application's data model, forms, workflows, roles and business rules. Review it the way you would any blueprint, and correct anything it got wrong. See [Editing your CAB](/cab/editing-your-cab).
+  </Step>
+</Steps>
+
+<Tip>
+  Add whatever documentation you have alongside the files, even if it's out of date. The CAB cross-checks the two, and each fills gaps in the other.
+</Tip>
+
+## Putting It to Work
+
+Either way, the work that follows starts from what the application actually does, not from what someone remembers it doing.
+
+- **Enhancement.** Plan new capability against the real data model and workflows, then turn the blueprint into Tickets. See [CAB to Ticket conversion](/tickets/cab-to-ticket-conversion).
+- **Support.** Answer "why does it do that?" from the configuration itself, and keep the answer as documentation.
+- **Modernization.** Use the blueprint as the starting point for rebuilding the application, on the same platform or another one. See [Feed an existing system into a CAB](/cab/legacy-code-translation-guide).
+
+## Your Next Step
+
+<CardGroup cols={2}>
+  <Card title="Choose your platform" icon="layers" href="/low-code/overview">
+    What each low-code platform supports, and where direct configuration stops.
+  </Card>
+
+  <Card title="Check what the CAB accepts" icon="file-text" href="/cab/supported-input-types">
+    The file types the CAB can read.
+  </Card>
+</CardGroup>
