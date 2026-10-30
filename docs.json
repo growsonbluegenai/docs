@@ -102,27 +102,6 @@
             ]
           },
           {
-            "group": "TAP",
-            "pages": [
-              "low-code/tap/overview",
-              {
-                "group": "TAP Prototype Mode",
-                "pages": [
-                  "low-code/tap/prototype-mode/overview",
-                  "low-code/tap/prototype-mode/workflow",
-                  "low-code/tap/prototype-mode/output-handoff"
-                ]
-              },
-              {
-                "group": "TAP Build Mode",
-                "pages": [
-                  "low-code/tap/build-mode/overview",
-                  "low-code/tap/build-mode/component-reference"
-                ]
-              }
-            ]
-          },
-          {
             "group": "Salesforce",
             "pages": [
               "low-code/salesforce/overview",
@@ -143,6 +122,27 @@
                 "pages": [
                   "low-code/servicenow/build-mode/overview",
                   "low-code/servicenow/build-mode/component-reference"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "TAP",
+            "pages": [
+              "low-code/tap/overview",
+              {
+                "group": "TAP Prototype Mode",
+                "pages": [
+                  "low-code/tap/prototype-mode/overview",
+                  "low-code/tap/prototype-mode/workflow",
+                  "low-code/tap/prototype-mode/output-handoff"
+                ]
+              },
+              {
+                "group": "TAP Build Mode",
+                "pages": [
+                  "low-code/tap/build-mode/overview",
+                  "low-code/tap/build-mode/component-reference"
                 ]
               }
             ]
